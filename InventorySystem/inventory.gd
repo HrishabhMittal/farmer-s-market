@@ -6,9 +6,10 @@ var slot_count: int
 var slots: Array[Item] = []
 
 # Needs to be called when a new inventory is made
-func initialize(new_slot_count: int) -> void:
+func _init(new_slot_count: int) -> void:
 	slot_count = new_slot_count
 	slots.resize(slot_count)
+	#SignalBus.new_inventory_ready.emit(self)
 
 func add_item(new_item: Item, amount: int) -> bool:
 	## If item does not stack then just add it to a empty slot
@@ -86,3 +87,6 @@ func get_empty_slot() -> int:
 			return i # Returning slot index
 			
 	return -1 # There is no empty slot
+
+func print_inventory() -> void:
+	prints(slots)
