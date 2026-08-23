@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-# this ndoe with behave as follows:
+# this node with behave as follows:
 # click on a building:
 # - if not current building move to it
 # - else open the scene of the current building (this is handled by the building)
