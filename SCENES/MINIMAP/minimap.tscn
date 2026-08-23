@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bykas3tdowgd8"]
+
+[ext_resource type="PackedScene" uid="uid://dc6q5i3ry0kk2" path="res://SCENES/MINIMAP/building.tscn" id="1_ll08c"]
+[ext_resource type="PackedScene" uid="uid://d26tqhsq330j5" path="res://SCENES/MINIMAP/truck.tscn" id="2_k2x7d"]
+
+[node name="minimap" type="Node2D" unique_id=195030777]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1043354683]
+zoom = Vector2(2, 2)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=713092301]
+offset_left = -287.0
+offset_top = -158.0
+offset_right = 286.0
+offset_bottom = 160.0
+mouse_filter = 2
+color = Color(0.21490003, 0.7, 0.16100001, 1)
+
+[node name="truck" parent="." unique_id=1468155965 instance=ExtResource("2_k2x7d")]
+position = Vector2(-48, -39)
+
+[node name="building" parent="." unique_id=1659768210 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
+position = Vector2(-149, 7)
+player_node = NodePath("../truck")
+
+[node name="building2" parent="." unique_id=123550651 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
+position = Vector2(57, -83)
+player_node = NodePath("../truck")
+
+[node name="building3" parent="." unique_id=500348569 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
+position = Vector2(55, 79)
+player_node = NodePath("../truck")
+
+[node name="building4" parent="." unique_id=709836686 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
+position = Vector2(184, -21)
+player_node = NodePath("../truck")

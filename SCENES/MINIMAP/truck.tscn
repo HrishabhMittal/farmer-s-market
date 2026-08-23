@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d26tqhsq330j5"]
+
+[ext_resource type="Script" uid="uid://2hkekrou8o8h" path="res://SCRIPTS/minimap/truck.gd" id="1_iof3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
+
+[node name="truck" type="CharacterBody2D" unique_id=1468155965]
+z_index = 5
+script = ExtResource("1_iof3s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=719080920]
+shape = SubResource("RectangleShape2D_3dp3j")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1448236827]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.12749998, 0.44058338, 0.85, 1)
