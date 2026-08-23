@@ -29,7 +29,7 @@ func make_item(item_id: String, amount: int = 0) -> Item:
 	return Item.new(ItemManager.get_item(item_id), amount)
 
 func make_new_palyer_inventory(slot_count: int = 50) -> InventoryUI:
-	var new_inventory := Inventory.new(50)
+	var new_inventory := Inventory.new(slot_count)
 	player_inventory = new_inventory
 	
 	var new_inventory_ui: InventoryUI = inventory_ui_scene.instantiate()
