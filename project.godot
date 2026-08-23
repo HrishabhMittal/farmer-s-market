@@ -18,6 +18,7 @@ config/icon="res://ARTWORK/icon.svg"
 [autoload]
 
 SignalBus="*uid://7a4km5degwjj"
+ItemManager="*uid://csw2p5uv741q5"
 InventoryManager="*uid://1twwv6e8n73q"
 
 [display]
