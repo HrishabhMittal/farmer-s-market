@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dc6q5i3ry0kk2"]
 
-[ext_resource type="Script" uid="uid://by5rma2jtp6le" path="res://SCRIPTS/minimap/building.gd" id="1_uxi1d"]
+[ext_resource type="Script" uid="uid://by5rma2jtp6le" path="res://Scripts/minimap/building.gd" id="1_k2piw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
 
 [node name="building" type="Area2D" unique_id=1659768210]
-script = ExtResource("1_uxi1d")
+script = ExtResource("1_k2piw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=940344624]
 shape = SubResource("RectangleShape2D_3dp3j")
