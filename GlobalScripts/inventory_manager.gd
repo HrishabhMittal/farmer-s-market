@@ -1,5 +1,7 @@
 extends Node
 
+@export var inventory_ui_scene: PackedScene
+
 var player_inventory: Inventory
 
 func add_item(item_id: String, amount: int = 0) -> bool:
@@ -25,5 +27,12 @@ func does_have_item(item_id: String, amount: int = 0) -> bool:
 
 func make_item(item_id: String, amount: int = 0) -> Item:
 	return Item.new(ItemManager.get_item(item_id), amount)
+
+func make_new_palyer_inventory(slot_count: int = 50) -> InventoryUI:
+	var new_inventory := Inventory.new(50)
+	player_inventory = new_inventory
 	
-	return null
+	var new_inventory_ui: InventoryUI = inventory_ui_scene.instantiate()
+	new_inventory_ui.initialize(new_inventory)
+	
+	return new_inventory_ui

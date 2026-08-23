@@ -9,4 +9,6 @@ func _init(new_item_data: ItemData, new_amount: int):
 	amount = new_amount
 
 func _to_string():
-	return "Name: %s, Amount: %d" %[item_data.display_name, amount]
+	if item_data:
+		return "Name: %s, Amount: %d" %[item_data.display_name, amount]
+	return "null"

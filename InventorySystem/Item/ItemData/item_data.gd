@@ -5,4 +5,3 @@ class_name ItemData
 @export var display_name: String = "Default"
 @export var item_texture: Texture2D = null
 @export var value: int = 0
-#@export var does_stack: bool

@@ -2,6 +2,8 @@
 extends Resource
 class_name Inventory
 
+signal slot_changed(slot_index: int)
+
 var slot_count: int
 var slots: Array[Item] = []
 
@@ -12,35 +14,28 @@ func _init(new_slot_count: int) -> void:
 	#SignalBus.new_inventory_ready.emit(self)
 
 func add_item(new_item: Item, amount: int) -> bool:
-	## If item does not stack then just add it to a empty slot
-	#if not new_item.item_data.does_stack:
-		#var empty_slot_indx: int = get_empty_slot()
-		#if empty_slot_indx == -1:
-			#return false # No empty slot
-		#
-		#new_item.amount = amount
-		#slots[empty_slot_indx] = new_item
-		#return true
-		
-	# If it does stack, then check if the item is already there
+	# Check if the item is already there
 	if does_have_item(new_item, amount):
 		# It is already there, so just add it to the stack
-		for slot in slots:
+		for i in range(slot_count):
 			# If slot is null, move to the next one
-			if not slot:
+			if not slots[i]:
 				continue
 			
 			# Find the item stack
-			if slot.item_data == new_item.item_data:
-				slot.amount += amount
+			if slots[i].item_data == new_item.item_data:
+				slots[i].amount += amount
+				slot_changed.emit(i)
+				return true
 				
 	# if it stacks and there it does not already exist in the inventory, then find a new slot and add there
-	var empty_slot_indx: int = get_empty_slot()
-	if empty_slot_indx == -1:
+	var empty_slot_index: int = get_empty_slot()
+	if empty_slot_index == -1:
 		return false # No empty slot
 	
 	new_item.amount = amount
-	slots[empty_slot_indx] = new_item
+	slots[empty_slot_index] = new_item
+	slot_changed.emit(empty_slot_index)
 	return true
 	
 	
@@ -60,6 +55,7 @@ func remove_item(new_item: Item, amount: int) -> bool:
 			slots[i].amount -= amount
 			if slots[i].amount <= 0: # If items is 0 or less(should not be less though), then clear the slot
 				slots[i] = null
+			slot_changed.emit(i)
 			return true
 			
 	return false
