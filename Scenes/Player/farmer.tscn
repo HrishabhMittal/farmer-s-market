@@ -8,6 +8,7 @@ size = Vector2(112, 112)
 [node name="Farmer" type="CharacterBody2D" unique_id=1605516437]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=694930753]
+position = Vector2(1, -3)
 texture = ExtResource("1_axdfi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=913191757]
