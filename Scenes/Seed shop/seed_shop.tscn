@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bc8n8deypyq25"]
+
+[ext_resource type="Script" uid="uid://ce5pk1niyx44k" path="res://Scripts/seed shop/book.gd" id="1_xt6rq"]
+[ext_resource type="Texture2D" uid="uid://d17kuuojcyivf" path="res://Assets/icon.svg" id="2_s4d4o"]
+[ext_resource type="Script" uid="uid://cly2bp882l11s" path="res://Scenes/Seed shop/temporary_seed_pack.gd" id="3_si1ga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fsfx"]
+size = Vector2(337, 528)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yefl1"]
+size = Vector2(68, 65)
+
+[node name="SEED SHOP" type="Node2D" unique_id=1016921145]
+
+[node name="TABLE" type="Area2D" parent="." unique_id=1162647817]
+position = Vector2(563, 422)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TABLE" unique_id=1406607075]
+polygon = PackedVector2Array(-495, 126, 489, 116, 582, 212, -548, 215)
+
+[node name="Book" type="Area2D" parent="." unique_id=736877460]
+position = Vector2(978, 420)
+script = ExtResource("1_xt6rq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book" unique_id=1450428485]
+position = Vector2(-36, 137)
+shape = SubResource("RectangleShape2D_8fsfx")
+
+[node name="temporary" type="Sprite2D" parent="Book" unique_id=161265843]
+visible = false
+position = Vector2(-131.75, 65)
+scale = Vector2(4.5820313, 2.8125005)
+texture = ExtResource("2_s4d4o")
+
+[node name="temporary seed pack" type="Area2D" parent="." unique_id=655404525]
+position = Vector2(397, 274)
+script = ExtResource("3_si1ga")
+
+[node name="Sprite2D" type="Sprite2D" parent="temporary seed pack" unique_id=1654294297]
+scale = Vector2(0.5000003, 0.50781256)
+texture = ExtResource("2_s4d4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temporary seed pack" unique_id=1166880903]
+shape = SubResource("RectangleShape2D_yefl1")
+
+[connection signal="body_entered" from="TABLE" to="temporary seed pack" method="_on_table_body_entered"]
+[connection signal="mouse_entered" from="Book" to="Book" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Book" to="Book" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="temporary seed pack" to="temporary seed pack" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="temporary seed pack" to="temporary seed pack" method="_on_mouse_exited"]
