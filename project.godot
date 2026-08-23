@@ -11,15 +11,14 @@ config_version=5
 [application]
 
 config/name="Farmer's Market"
-run/main_scene="uid://86lyl32ajvov"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
 [autoload]
 
 SignalBus="*uid://7a4km5degwjj"
-InventoryManager="*uid://1twwv6e8n73q"
 ItemManager="*uid://csw2p5uv741q5"
+InventoryManager="*uid://1twwv6e8n73q"
 DialogueManager="*uid://buva5ckup0pn0"
 
 [display]
