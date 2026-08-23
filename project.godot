@@ -13,7 +13,7 @@ config_version=5
 config/name="Farmer's Market"
 run/main_scene="uid://86lyl32ajvov"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://ARTWORK/icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [autoload]
 

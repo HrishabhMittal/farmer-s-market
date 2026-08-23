@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://d26tqhsq330j5"]
 
-[ext_resource type="Script" uid="uid://2hkekrou8o8h" path="res://SCRIPTS/minimap/truck.gd" id="1_iof3s"]
+[ext_resource type="Script" uid="uid://2hkekrou8o8h" path="res://Scripts/minimap/truck.gd" id="1_l656c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
 
 [node name="truck" type="CharacterBody2D" unique_id=1468155965]
 z_index = 5
-script = ExtResource("1_iof3s")
+script = ExtResource("1_l656c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=719080920]
 shape = SubResource("RectangleShape2D_3dp3j")
