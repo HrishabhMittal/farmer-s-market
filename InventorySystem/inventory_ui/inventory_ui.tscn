@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://cujtwi5oe0xpw" path="res://InventorySystem/inventory_ui/slot_ui.tscn" id="2_xha1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5roh6"]
-bg_color = Color(0.73359376, 0.71673596, 0.3020343, 1)
+bg_color = Color(0.30546874, 0.30546874, 0, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0, 0, 0, 1)
+border_color = Color(3.4041784, 3.2556474, 5.313861, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -18,7 +18,7 @@ corner_radius_bottom_left = 8
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhu6q"]
 content_margin_top = 8.0
 content_margin_bottom = 8.0
-bg_color = Color(0.48984373, 0.39343622, 0.23382384, 1)
+bg_color = Color(0.3383898, 0.49296874, 0.33390927, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -48,6 +48,7 @@ theme_override_constants/separation = 15
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1096915992]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 48
