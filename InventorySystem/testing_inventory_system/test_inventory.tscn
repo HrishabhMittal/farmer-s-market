@@ -4,10 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dh60w2yqp3kui" path="res://InventorySystem/inventory_ui/inventory_ui.tscn" id="2_idqxp"]
 [ext_resource type="Script" uid="uid://ccicw2eo5edyl" path="res://InventorySystem/testing_inventory_system/test_buttons.gd" id="3_oyrbs"]
 
-[sub_resource type="Environment" id="Environment_5roh6"]
-background_mode = 3
-glow_enabled = true
-
 [node name="TestInventory" type="Node2D" unique_id=1618761971]
 script = ExtResource("1_cv5qp")
 
@@ -65,6 +61,3 @@ text = "-1 Apple"
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "-1 Orange"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=332650337]
-environment = SubResource("Environment_5roh6")
