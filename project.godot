@@ -19,6 +19,7 @@ config/icon="res://Assets/icon.svg"
 SignalBus="*uid://7a4km5degwjj"
 ItemManager="*uid://csw2p5uv741q5"
 InventoryManager="*uid://1twwv6e8n73q"
+PlayerHeldItem="*uid://dp6cgavfkr6ca"
 DialogueManager="*uid://buva5ckup0pn0"
 
 [display]

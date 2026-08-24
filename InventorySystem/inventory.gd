@@ -17,6 +17,7 @@ func _init(new_slot_count: int) -> void:
 	slots.resize(slot_count)
 	#SignalBus.new_inventory_ready.emit(self)
 
+# Adds item
 func add_item(new_item: Item, amount: int) -> bool:
 	# Check if the item is already there
 	if does_have_item(new_item, amount):
@@ -38,11 +39,19 @@ func add_item(new_item: Item, amount: int) -> bool:
 		return false # No empty slot
 	
 	new_item.amount = amount
+	new_item.update_info(self, empty_slot_index)
 	slots[empty_slot_index] = new_item
 	slot_changed.emit(empty_slot_index)
 	return true
-	
-	
+
+# Removes the item in the given slot_index and puts the new item there 
+func replace_item(new_item: Item, slot_index: int) -> void: # Note: "new_item" can be null, in that cause the slot just becomes empty
+	slots[slot_index] = new_item
+	if new_item: # If new item is null, no need to update info
+		new_item.update_info(self, slot_index)
+	slot_changed.emit(slot_index)
+
+# Removes item	
 func remove_item(new_item: Item, amount: int) -> bool:
 	# Check if enough item is there
 	if not does_have_item(new_item, amount):
@@ -58,12 +67,14 @@ func remove_item(new_item: Item, amount: int) -> bool:
 		if slots[i].item_data == new_item.item_data:
 			slots[i].amount -= amount
 			if slots[i].amount <= 0: # If items is 0 or less(should not be less though), then clear the slot
+				slots[i].clear_info() # Clear all the reference to this inventory in the item
 				slots[i] = null
 			slot_changed.emit(i)
 			return true
 			
 	return false
-	
+
+# Check for existane of item	
 func does_have_item(target_item: Item, amount: int) -> bool:
 	for slot in slots:
 		# If slot is null, move to the next one
@@ -81,6 +92,7 @@ func does_have_item(target_item: Item, amount: int) -> bool:
 	# Item was not in ivnentory, return false
 	return false
 
+# Finds a empty slot in the inventory and returns it's index
 func get_empty_slot() -> int:
 	for i in range(slot_count):
 		if not slots[i]:
@@ -88,5 +100,18 @@ func get_empty_slot() -> int:
 			
 	return -1 # There is no empty slot
 
+# Prints the current inventory info in the console
 func print_inventory() -> void:
 	prints(slots)
+
+# Checks if the inventory is fully empty or not
+func is_empty() -> bool:
+	for slot in slots:
+		if slot: # If there is a item in slot, then it's not empty
+			return false
+	return true
+
+# Remvoe all items from the inventory
+func make_empty() -> void:
+	for i in range(slot_count):
+		slots[i] = null

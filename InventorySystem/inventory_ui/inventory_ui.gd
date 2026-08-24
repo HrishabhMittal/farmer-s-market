@@ -14,10 +14,14 @@ var slots: Array[SlotUI] = []
 func initialize(new_connected_inventory: Inventory) -> void:
 	connected_inventory = new_connected_inventory
 	
-	for slot in connected_inventory.slots:
+	for i in range(connected_inventory.slot_count):
 		var new_slot: Control = slot_ui_scene.instantiate()
 		slots.append(new_slot)
 		slot_anchor.add_child(new_slot)
+		
+		# Update some info data of the slot
+		slots[i].connected_inventory = connected_inventory
+		slots[i].slot_index = i
 		
 	connected_inventory.slot_changed.connect(_on_slot_changed)
 

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dp6cgavfkr6ca"]
+
+[ext_resource type="Script" uid="uid://cjwxvo11wsckw" path="res://GlobalScripts/player_held_item/player_held_item.gd" id="1_s0ran"]
+
+[node name="PlayerHeldItem" type="Node2D" unique_id=664078512 node_paths=PackedStringArray("texture_node", "label_node")]
+script = ExtResource("1_s0ran")
+texture_node = NodePath("CanvasLayer/ItemView/TextureRect")
+label_node = NodePath("CanvasLayer/ItemView/Label")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1483350545]
+layer = 5
+
+[node name="ItemView" type="Control" parent="CanvasLayer" unique_id=499982601]
+z_index = 10
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ItemView" unique_id=205940618]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ItemView" unique_id=2009742217]
+layout_mode = 1
+offset_right = 23.0
+offset_bottom = 28.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
