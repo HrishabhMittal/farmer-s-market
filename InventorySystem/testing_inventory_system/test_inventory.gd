@@ -1,3 +1,5 @@
+# Just for unit testing
+
 extends Node2D
 
 @export var inventory: Inventory

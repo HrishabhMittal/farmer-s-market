@@ -1,3 +1,6 @@
+# This is the scene that displays the invenotry in the game
+# It pulls data from the inventory resource that is connected with it
+
 extends CanvasLayer
 class_name InventoryUI
 
@@ -7,6 +10,7 @@ class_name InventoryUI
 var connected_inventory: Inventory = null
 var slots: Array[SlotUI] = []
 
+# After instanciating, need to initialize it beofre use
 func initialize(new_connected_inventory: Inventory) -> void:
 	connected_inventory = new_connected_inventory
 	

@@ -1,4 +1,8 @@
-# Contains item data of a inventory. The Inventory UI scene will pull data from it to show
+# Contains item data of a inventory.
+# Contains necessary functions to do add, remove and check existance of items to an inventory
+# The global script InventoryManager calls these functions to do provide an easy access to players inventory
+# The Inventory UI scene will pull data from it to show when player inventory is opened
+
 extends Resource
 class_name Inventory
 

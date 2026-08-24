@@ -1,3 +1,5 @@
+# The design of the slot that is used in the InventoryUI
+
 extends Control
 class_name SlotUI
 

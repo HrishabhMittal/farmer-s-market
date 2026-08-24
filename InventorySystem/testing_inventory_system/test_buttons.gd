@@ -1,3 +1,5 @@
+# Just for unit testing
+
 extends CanvasLayer
 
 @export var add_cherry: Button
