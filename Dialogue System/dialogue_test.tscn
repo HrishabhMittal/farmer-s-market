@@ -12,7 +12,7 @@ size = Vector2(148, 156)
 
 [node name="DialogueTest" type="Node2D" unique_id=68459998]
 
-[node name="Farmer" parent="." unique_id=1605516437 groups=["Player"] instance=ExtResource("1_jex5h")]
+[node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("1_jex5h")]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1262188607]
 position = Vector2(683, 268)
