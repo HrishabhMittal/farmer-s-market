@@ -20,7 +20,6 @@ config/icon="res://Assets/icon.svg"
 SignalBus="*uid://7a4km5degwjj"
 InventoryManager="*uid://1twwv6e8n73q"
 ItemManager="*uid://csw2p5uv741q5"
-DialogueManager="*uid://buva5ckup0pn0"
 
 [display]
 
