@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d26tqhsq330j5"]
 
-[ext_resource type="Script" uid="uid://2hkekrou8o8h" path="res://Scripts/minimap/truck.gd" id="1_l656c"]
+[ext_resource type="Script" uid="uid://2hkekrou8o8h" path="res://Scripts/Minimap/truck.gd" id="1_l656c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
 

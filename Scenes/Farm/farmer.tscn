@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://pr5pmgsiw6fd"]
+
+[ext_resource type="Script" uid="uid://cxqadr5itjue1" path="res://Scripts/Farm/farmer.gd" id="1_5p67g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1960403700]
+script = ExtResource("1_5p67g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1890138601]
+shape = SubResource("RectangleShape2D_3dp3j")

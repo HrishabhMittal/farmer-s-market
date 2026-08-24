@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c470jfkv5in21"]
+
+[ext_resource type="Script" uid="uid://b2xr8thci2nw0" path="res://Scripts/Farm/farmland.gd" id="1_4o1n2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nh74i"]
+size = Vector2(127, 118)
+
+[node name="farmland" type="Area2D" unique_id=13052298]
+script = ExtResource("1_4o1n2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=347582586]
+position = Vector2(53.5, 49)
+shape = SubResource("RectangleShape2D_nh74i")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="ready" from="." to="." method="_on_ready"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cwvex88o4ep81"]
+
+[ext_resource type="Texture2D" uid="uid://c4rem6csa13p2" path="res://Assets/some_placeholder_assets/y_apple.png" id="1_vtat5"]
+[ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="2_hx1ns"]
+
+[resource]
+script = ExtResource("2_hx1ns")
+display_name = "Eggplant"
+item_texture = ExtResource("1_vtat5")
+value = 20
+item_type = Array[int]([0])
+metadata/_custom_type_script = "uid://j2yw5ljak0ig"

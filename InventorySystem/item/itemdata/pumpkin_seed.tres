@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cxm3xanrufeub"]
+
+[ext_resource type="Texture2D" uid="uid://nqv25u6s8wo0" path="res://Assets/some_placeholder_assets/orange.png" id="1_ecug5"]
+[ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="1_wdbsg"]
+
+[resource]
+script = ExtResource("1_wdbsg")
+display_name = "Pumpkin Seed"
+item_texture = ExtResource("1_ecug5")
+value = 15
+item_type = Array[int]([1])
+metadata/_custom_type_script = "uid://j2yw5ljak0ig"
