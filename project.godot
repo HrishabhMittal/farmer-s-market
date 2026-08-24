@@ -23,6 +23,7 @@ PlayerHeldItem="*uid://dp6cgavfkr6ca"
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
