@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://d2vjd1b0a0wjx"]
+
+[ext_resource type="Script" uid="uid://d2b7m5wepnomu" path="res://Scenes/Book/book.gd" id="1_r2be8"]
+
+[node name="book" type="Control" unique_id=1606224245]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r2be8")
+
+[node name="RightPage" type="TextureRect" parent="." unique_id=154486660]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 211.0
+mouse_filter = 0
+
+[node name="LeftPage" type="TextureRect" parent="." unique_id=92325627]
+layout_mode = 0
+offset_left = 387.0
+offset_right = 774.0
+offset_bottom = 516.0
+mouse_filter = 0
+
+[node name="FlipContainer" type="Control" parent="." unique_id=1446781712]
+anchors_preset = 0
+offset_left = 129.0
+offset_top = -1.0
+offset_right = 169.0
+offset_bottom = 39.0
+
+[node name="FlipFront" type="TextureRect" parent="FlipContainer" unique_id=1019568404]
+layout_mode = 0
+offset_left = -129.0
+offset_top = 1.0
+offset_right = 257.0
+offset_bottom = 515.0
+
+[node name="FlipBack" type="TextureRect" parent="FlipContainer" unique_id=1009924439]
+layout_mode = 0
+offset_left = -129.0
+offset_top = 1.0
+offset_right = 254.0
+offset_bottom = 516.0
+flip_h = true
