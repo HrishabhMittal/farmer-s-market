@@ -1,11 +1,10 @@
-[gd_scene format=3 uid="uid://dtmk34ckdi2o8"]
+[gd_scene format=3 uid="uid://qerpbd813d80"]
 
 [ext_resource type="PackedScene" uid="uid://86lyl32ajvov" path="res://Scenes/Player/farmer.tscn" id="1_jex5h"]
 [ext_resource type="Texture2D" uid="uid://d17kuuojcyivf" path="res://Assets/icon.svg" id="2_fxrom"]
 [ext_resource type="Script" uid="uid://bj6lvtvmm2otd" path="res://Dialogue System/dialogue_trigger_area.gd" id="3_ooxll"]
 [ext_resource type="Script" uid="uid://dp2xhju7ss4n0" path="res://Dialogue System/dialogue_component.gd" id="4_fxrom"]
-[ext_resource type="Resource" uid="uid://c2poo324avqqv" path="res://Dialogue System/Dialogue Data/test_dialogue_data.tres" id="5_g8bpl"]
-[ext_resource type="PackedScene" uid="uid://cmt8illmk7scx" path="res://Dialogue System/dialogue_manager.tscn" id="6_dsy01"]
+[ext_resource type="Resource" uid="uid://c2poo324avqqv" path="res://Dialogue System/dialogue data/test_dialogue_data.tres" id="5_g8bpl"]
 [ext_resource type="PackedScene" uid="uid://cmt8illmk7scx" path="res://Dialogue System/dialogue_manager.tscn" id="6_dsy01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl1ch"]
@@ -14,6 +13,7 @@ size = Vector2(148, 156)
 [node name="DialogueTest" type="Node2D" unique_id=68459998]
 
 [node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("1_jex5h")]
+
 [node name="Icon" type="Sprite2D" parent="." unique_id=1262188607]
 position = Vector2(683, 268)
 texture = ExtResource("2_fxrom")
