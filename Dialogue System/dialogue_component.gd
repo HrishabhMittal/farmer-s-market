@@ -2,7 +2,7 @@ extends Node
 class_name DialogueComponent
 
 signal dialogue_started
-signal dialogue_ended #for now this signals dont do nothing
+signal dialogue_ended #for now these signals dont do nothing
 
 @export var dialogue_data: DialogueResource
 
