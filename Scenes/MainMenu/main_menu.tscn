@@ -14,10 +14,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=609043684]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.7, 0.7)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_0qgbs")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1845605777]
@@ -44,19 +54,37 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="right_menu_container" unique_id=338550812]
 custom_minimum_size = Vector2(200, 200)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -500.0
+offset_bottom = 500.0
+grow_horizontal = 0
+grow_vertical = 2
 scale = Vector2(0.6, 0.6)
-pivot_offset = Vector2(-750, 100)
+pivot_offset = Vector2(-220, 50)
+pivot_offset_ratio = Vector2(0, 0.5)
 texture = ExtResource("1_uqdog")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="right_menu_container" unique_id=985110023]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1000.0
+offset_top = -754.0
+offset_bottom = 754.0
+grow_horizontal = 0
+grow_vertical = 2
 scale = Vector2(0.3, 0.3)
-pivot_offset = Vector2(-570, 150)
+pivot_offset = Vector2(-125, 50)
+pivot_offset_ratio = Vector2(1, 0.5)
 
 [node name="TextureRect3" type="TextureRect" parent="right_menu_container/VBoxContainer" unique_id=1073375865]
 layout_mode = 2
