@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name DialogueManager
 ##looks for lines to show and close when lines are finished
 
 @onready var label: Label = $Panel/Label
