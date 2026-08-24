@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dc6q5i3ry0kk2"]
 
-[ext_resource type="Script" uid="uid://by5rma2jtp6le" path="res://Scripts/minimap/building.gd" id="1_k2piw"]
+[ext_resource type="Script" uid="uid://by5rma2jtp6le" path="res://Scripts/Minimap/building.gd" id="1_k2piw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
 
