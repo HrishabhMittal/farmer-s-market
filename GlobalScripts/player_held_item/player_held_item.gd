@@ -60,6 +60,7 @@ func _show_item_on_mouse() -> void:
 		return
 	#mouse_inventory.print_inventory()
 	#prints(mouse_inventory.slots[0].item_data.item_texture)
+
 	texture_node.texture = mouse_inventory.slots[0].item_data.item_texture
 	label_node.text = str(mouse_inventory.slots[0].amount)
 	is_currently_showing = true
