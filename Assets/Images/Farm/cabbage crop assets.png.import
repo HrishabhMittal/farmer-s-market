@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp67hsm87i18d"
-path="res://.godot/imported/minimap car.png-cb1504434bf7649e8edf0035e180f6c4.ctex"
+uid="uid://cdyx0mkghyqhm"
+path="res://.godot/imported/cabbage crop assets.png-9f750a31b203f38141e76582fd7f588a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/minimap car.png"
-dest_files=["res://.godot/imported/minimap car.png-cb1504434bf7649e8edf0035e180f6c4.ctex"]
+source_file="res://Assets/Images/Farm/cabbage crop assets.png"
+dest_files=["res://.godot/imported/cabbage crop assets.png-9f750a31b203f38141e76582fd7f588a.ctex"]
 
 [params]
 

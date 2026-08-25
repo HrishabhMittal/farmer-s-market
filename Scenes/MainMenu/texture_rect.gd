@@ -12,5 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
+
 	if target_scene_path != "":
-		get_tree().change_scene_to_file(target_scene_path)
+		TravelTransition.change_scene(target_scene_path)

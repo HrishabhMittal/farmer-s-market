@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdyx0mkghyqhm"
-path="res://.godot/imported/cabbage crop assets.png-cd30586b190ef49ecdb965e5f4fb14f6.ctex"
+uid="uid://bgfwf124oppxk"
+path="res://.godot/imported/gameicon.png-2dd0d42e7cbf7af7235abd5be960a96c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/cabbage crop assets.png"
-dest_files=["res://.godot/imported/cabbage crop assets.png-cd30586b190ef49ecdb965e5f4fb14f6.ctex"]
+source_file="res://Assets/Images/General/gameicon.png"
+dest_files=["res://.godot/imported/gameicon.png-2dd0d42e7cbf7af7235abd5be960a96c.ctex"]
 
 [params]
 

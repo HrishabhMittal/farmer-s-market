@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgfwf124oppxk"
-path="res://.godot/imported/gameicon.png-213263e08e32a2ee83623dcebc206451.ctex"
+uid="uid://d4rlbkfdlviv"
+path="res://.godot/imported/potato crop asset.png-049bd7ccb99dae13517f8be72a1906b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/gameicon.png"
-dest_files=["res://.godot/imported/gameicon.png-213263e08e32a2ee83623dcebc206451.ctex"]
+source_file="res://Assets/Images/Farm/potato crop asset.png"
+dest_files=["res://.godot/imported/potato crop asset.png-049bd7ccb99dae13517f8be72a1906b4.ctex"]
 
 [params]
 

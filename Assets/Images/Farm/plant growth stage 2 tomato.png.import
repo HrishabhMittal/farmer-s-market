@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dumjrekho6g4d"
-path="res://.godot/imported/plant growth stage 3 tomato.png-70be6b629af8cf6e89c1e68cd31c07f4.ctex"
+uid="uid://d2kml85d16pm5"
+path="res://.godot/imported/plant growth stage 2 tomato.png-7df80a1dab1486f03c397f1729802172.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/plant growth stage 3 tomato.png"
-dest_files=["res://.godot/imported/plant growth stage 3 tomato.png-70be6b629af8cf6e89c1e68cd31c07f4.ctex"]
+source_file="res://Assets/Images/Farm/plant growth stage 2 tomato.png"
+dest_files=["res://.godot/imported/plant growth stage 2 tomato.png-7df80a1dab1486f03c397f1729802172.ctex"]
 
 [params]
 

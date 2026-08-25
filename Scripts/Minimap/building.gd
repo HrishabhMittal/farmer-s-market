@@ -17,6 +17,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			if player_node:
 				var distance = global_position.distance_to(player_node.global_position)
 				if distance<INTERACTION_DISTANCE:
-					get_tree().change_scene_to_file(target_scene_path)
+					TravelTransition.change_scene(target_scene_path)
 				else:	
 					player_node.travel_to_building(global_position)

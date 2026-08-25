@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbrlei7l6whro"
-path="res://.godot/imported/stage 1 all growth.png-bd858f41ea658f443f7b46dc5d30e315.ctex"
+uid="uid://cxi6tvtu10ybu"
+path="res://.godot/imported/plant growth stage 2 pumpkin.png-e1bd2fe03adbf6c09925fdc773232062.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/stage 1 all growth.png"
-dest_files=["res://.godot/imported/stage 1 all growth.png-bd858f41ea658f443f7b46dc5d30e315.ctex"]
+source_file="res://Assets/Images/Farm/plant growth stage 2 pumpkin.png"
+dest_files=["res://.godot/imported/plant growth stage 2 pumpkin.png-e1bd2fe03adbf6c09925fdc773232062.ctex"]
 
 [params]
 

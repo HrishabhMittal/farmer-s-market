@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b232re7e0ml38"
-path="res://.godot/imported/pumppkin crop assets.png-7b0f6efcb76314c09bd91900e8d51080.ctex"
+uid="uid://de37jy8hxstfs"
+path="res://.godot/imported/tomato crop asset.png-e713fcb8529d005c6da7875ef432d6a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pumppkin crop assets.png"
-dest_files=["res://.godot/imported/pumppkin crop assets.png-7b0f6efcb76314c09bd91900e8d51080.ctex"]
+source_file="res://Assets/Images/Farm/tomato crop asset.png"
+dest_files=["res://.godot/imported/tomato crop asset.png-e713fcb8529d005c6da7875ef432d6a7.ctex"]
 
 [params]
 
