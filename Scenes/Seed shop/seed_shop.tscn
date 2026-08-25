@@ -64,3 +64,4 @@ position = Vector2(375, 470)
 position = Vector2(500, 485)
 
 [connection signal="area_entered" from="Table/table" to="Table/table" method="_on_area_entered"]
+[connection signal="area_exited" from="Table/table" to="Table/table" method="_on_area_exited"]

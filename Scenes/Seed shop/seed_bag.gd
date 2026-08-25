@@ -23,3 +23,6 @@ func _on_area_2d_mouse_entered() -> void:
 
 func _on_area_2d_mouse_exited() -> void:
 	mouse_in = false
+
+func seed_pack():
+	pass
