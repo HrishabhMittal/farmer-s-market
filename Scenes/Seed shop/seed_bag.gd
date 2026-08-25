@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		drag = false
 
 	if drag == true:
-		$".".global_position = get_global_mouse_position()
+		global_position = get_global_mouse_position()
 	else:
 		pass
 
@@ -23,8 +23,3 @@ func _on_area_2d_mouse_entered() -> void:
 
 func _on_area_2d_mouse_exited() -> void:
 	mouse_in = false
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("hh")
-		

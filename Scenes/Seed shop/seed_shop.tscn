@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d2vjd1b0a0wjx" path="res://Scenes/Book/book.tscn" id="2_s4d4o"]
 [ext_resource type="Texture2D" uid="uid://x4v1rty36u1a" path="res://Assets/Images/page.jpg" id="3_si1ga"]
 [ext_resource type="PackedScene" uid="uid://d004rmn308asi" path="res://Scenes/Seed shop/seed_bag.tscn" id="4_2ghwr"]
+[ext_resource type="Script" uid="uid://j4dtqpismrwp" path="res://Scenes/Seed shop/table.gd" id="4_eau4u"]
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
 metadata/_edit_vertical_guides_ = [-521.0]
@@ -28,6 +29,7 @@ position = Vector2(603, 599)
 
 [node name="table" type="Area2D" parent="Table" unique_id=830019346]
 position = Vector2(0, -15)
+script = ExtResource("4_eau4u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/table" unique_id=1994552751]
 polygon = PackedVector2Array(-502, -49, 423, -58, 549, 58, -628, 54)
@@ -60,3 +62,5 @@ position = Vector2(375, 470)
 
 [node name="seed_bag9" parent="shelf" unique_id=2116806574 instance=ExtResource("4_2ghwr")]
 position = Vector2(500, 485)
+
+[connection signal="area_entered" from="Table/table" to="Table/table" method="_on_area_entered"]
