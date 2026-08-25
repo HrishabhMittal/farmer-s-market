@@ -35,7 +35,13 @@ func remove_item(item_id: String, amount: int = 0) -> bool:
 		_hide_item_on_mouse()
 	
 	return result
-	
+
+# A shortcut version of "remove_item" function to consume given amount from the held item
+func consume_item(amount: int = 1) -> bool:
+	if not is_empty():
+		return remove_item(get_held_item_id(), amount)
+	return false
+
 func has_item(item_id: String, amount: int = 0) -> bool:
 	var new_item: Item = _make_item(item_id, amount)
 	if not new_item:
@@ -52,6 +58,10 @@ func clear_item() -> void:
 
 func is_empty() -> bool:
 	return mouse_inventory.is_empty()
+
+# Returns the item on the mouse cursor
+func get_held_item_id() -> String:
+	return mouse_inventory.slots[0].item_data.item_id
 
 # Shows the current item that player has picked on the mouse pointer
 func _show_item_on_mouse() -> void:

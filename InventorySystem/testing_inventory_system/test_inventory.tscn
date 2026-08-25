@@ -32,17 +32,17 @@ layout_mode = 2
 [node name="AddCherry" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=838320196]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "+1 Cherry"
+text = "+1 Potato"
 
 [node name="AddApple" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=681139286]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "+1 Apple"
+text = "+1 Pumpkin"
 
 [node name="AddOrange" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=2027819158]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "+1 Orange"
+text = "+1 Tomato"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=624913687]
 layout_mode = 2
@@ -50,14 +50,14 @@ layout_mode = 2
 [node name="RemoveCherry" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=430839470]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "-1 Cherry"
+text = "-1 Potato"
 
 [node name="Button3" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=1125827832]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "-1 Apple"
+text = "-1 Pumpkin"
 
 [node name="Button2" type="Button" parent="CanvasLayer/HBoxContainer/VBoxContainer2" unique_id=529353613]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "-1 Orange"
+text = "-1 Tomato"
