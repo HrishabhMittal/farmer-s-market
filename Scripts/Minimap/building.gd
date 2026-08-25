@@ -12,7 +12,6 @@ const INTERACTION_DISTANCE = 5.0
 
 @warning_ignore("unused_parameter")
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	print("input detected")
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if player_node:
