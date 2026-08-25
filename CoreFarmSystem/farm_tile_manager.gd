@@ -33,20 +33,16 @@ func get_mapped_coord(world_coord: Vector2) -> Vector2i:
 	
 func till_ground() -> void:
 	var mapped_coord := get_mapped_coord(get_global_mouse_position())
-	#dirt_tiles.set_cell(mapped_coord, tile_lookup.tilled[0], tile_lookup.tilled[1])
 	main_tiles.set_cells_terrain_connect([mapped_coord], tile_lookup.tilled[0], tile_lookup.tilled[1])
 	
 func dig_ground() -> void:
 	var mapped_coord := get_mapped_coord(get_global_mouse_position())
-	#main_tiles.set_cell(mapped_coord, tile_lookup.dirt[0], tile_lookup.dirt[1])
 	main_tiles.set_cells_terrain_connect([mapped_coord], tile_lookup.dirt[0], tile_lookup.dirt[1])
 	
 func water_ground() -> void:
 	var mapped_coord := get_mapped_coord(get_global_mouse_position())
-	#main_tiles.set_cell(mapped_coord, tile_lookup.watered[0], tile_lookup.watered[1])
 	main_tiles.set_cells_terrain_connect([mapped_coord], tile_lookup.watered[0], tile_lookup.watered[1])
 
 func grow_grass() -> void:
 	var mapped_coord := get_mapped_coord(get_global_mouse_position())
-	#main_tiles.set_cell(mapped_coord, tile_lookup.grass[0], tile_lookup.grass[1])
 	main_tiles.set_cells_terrain_connect([mapped_coord], tile_lookup.grass[0], tile_lookup.grass[1])
