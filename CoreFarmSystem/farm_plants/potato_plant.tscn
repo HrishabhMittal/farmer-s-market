@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d124hl11020e7"]
+
+[ext_resource type="PackedScene" uid="uid://b5maie0020lln" path="res://CoreFarmSystem/farm_plants/farm_plant.tscn" id="1_1w522"]
+
+[node name="Potato" unique_id=1529433205 instance=ExtResource("1_1w522")]
+produced_crop_id = "potato"

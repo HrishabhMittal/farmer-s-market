@@ -27,3 +27,7 @@ func initialize(new_connected_inventory: Inventory) -> void:
 
 func _on_slot_changed(slot_index: int) -> void:
 	slots[slot_index].refresh_slot(connected_inventory.slots[slot_index])
+
+func _unhandled_input(event):
+	if event.is_action_pressed("inventory"):
+		visible = !visible

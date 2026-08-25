@@ -13,8 +13,14 @@ func _ready():
 	$TextureRect.texture = tool_texture
 	gui_input.connect(_handle_gui_input)
 	tool_manager.tool_selected.connect(process_new_tool_selection)
+	
+	if tool_type == FarmToolManager.FarmTools.SEED_PLANTER:
+		PlayerHeldItem.seed_planter = self
 
 func _handle_gui_input(event: InputEvent) -> void:
+	if not PlayerHeldItem.is_empty():
+		return
+	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		tool_manager.tool_selected.emit(self) # Using signal so that other tools can know when a new tool is being selected
 
