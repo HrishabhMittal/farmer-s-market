@@ -1,50 +1,51 @@
 [gd_scene format=3 uid="uid://bc8n8deypyq25"]
 
-[ext_resource type="Script" uid="uid://ce5pk1niyx44k" path="res://Scripts/seed shop/book.gd" id="1_xt6rq"]
-[ext_resource type="Texture2D" uid="uid://d17kuuojcyivf" path="res://Assets/icon.svg" id="2_s4d4o"]
-[ext_resource type="Script" uid="uid://cly2bp882l11s" path="res://Scenes/Seed shop/temporary_seed_pack.gd" id="3_si1ga"]
+[ext_resource type="Texture2D" uid="uid://denoeve6rkkh7" path="res://Assets/Images/SeedShop/shop_back.png" id="1_xt6rq"]
+[ext_resource type="PackedScene" uid="uid://d2vjd1b0a0wjx" path="res://Scenes/Book/book.tscn" id="2_s4d4o"]
+[ext_resource type="Texture2D" uid="uid://x4v1rty36u1a" path="res://Assets/Images/page.jpg" id="3_si1ga"]
+[ext_resource type="PackedScene" uid="uid://d004rmn308asi" path="res://Scenes/Seed shop/seed_bag.tscn" id="4_2ghwr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fsfx"]
-size = Vector2(337, 528)
+[node name="seed_shop" type="Node2D" unique_id=493207101]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yefl1"]
-size = Vector2(68, 65)
+[node name="bg" type="Sprite2D" parent="." unique_id=1550049513]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_xt6rq")
+centered = false
 
-[node name="SEED SHOP" type="Node2D" unique_id=1016921145]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2047204010]
 
-[node name="TABLE" type="Area2D" parent="." unique_id=1162647817]
-position = Vector2(563, 422)
+[node name="book" parent="CanvasLayer" unique_id=1606224245 instance=ExtResource("2_s4d4o")]
+offset_left = 346.0
+offset_top = 105.99994
+offset_bottom = 6.1035156e-05
+scale = Vector2(0.5, 0.5)
+pages = Array[Texture2D]([ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga")])
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TABLE" unique_id=1406607075]
-polygon = PackedVector2Array(-495, 126, 489, 116, 582, 212, -548, 215)
+[node name="shelf" type="Node2D" parent="." unique_id=996168745]
 
-[node name="Book" type="Area2D" parent="." unique_id=736877460]
-position = Vector2(978, 420)
-script = ExtResource("1_xt6rq")
+[node name="seed_bag" parent="shelf" unique_id=1600610449 instance=ExtResource("4_2ghwr")]
+position = Vector2(268, 335)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book" unique_id=1450428485]
-position = Vector2(-36, 137)
-shape = SubResource("RectangleShape2D_8fsfx")
+[node name="seed_bag2" parent="shelf" unique_id=102131219 instance=ExtResource("4_2ghwr")]
+position = Vector2(394, 337)
 
-[node name="temporary" type="Sprite2D" parent="Book" unique_id=161265843]
-visible = false
-position = Vector2(-131.75, 65)
-scale = Vector2(4.5820313, 2.8125005)
-texture = ExtResource("2_s4d4o")
+[node name="seed_bag3" parent="shelf" unique_id=223376932 instance=ExtResource("4_2ghwr")]
+position = Vector2(519, 337)
 
-[node name="temporary seed pack" type="Area2D" parent="." unique_id=655404525]
-position = Vector2(397, 274)
-script = ExtResource("3_si1ga")
+[node name="seed_bag4" parent="shelf" unique_id=1694856496 instance=ExtResource("4_2ghwr")]
+position = Vector2(284, 204)
 
-[node name="Sprite2D" type="Sprite2D" parent="temporary seed pack" unique_id=1654294297]
-scale = Vector2(0.5000003, 0.50781256)
-texture = ExtResource("2_s4d4o")
+[node name="seed_bag5" parent="shelf" unique_id=1269983239 instance=ExtResource("4_2ghwr")]
+position = Vector2(410, 206)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="temporary seed pack" unique_id=1166880903]
-shape = SubResource("RectangleShape2D_yefl1")
+[node name="seed_bag6" parent="shelf" unique_id=905204137 instance=ExtResource("4_2ghwr")]
+position = Vector2(535, 206)
 
-[connection signal="body_entered" from="TABLE" to="temporary seed pack" method="_on_table_body_entered"]
-[connection signal="mouse_entered" from="Book" to="Book" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Book" to="Book" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="temporary seed pack" to="temporary seed pack" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="temporary seed pack" to="temporary seed pack" method="_on_mouse_exited"]
+[node name="seed_bag7" parent="shelf" unique_id=1287308158 instance=ExtResource("4_2ghwr")]
+position = Vector2(249, 468)
+
+[node name="seed_bag8" parent="shelf" unique_id=337540977 instance=ExtResource("4_2ghwr")]
+position = Vector2(375, 470)
+
+[node name="seed_bag9" parent="shelf" unique_id=2116806574 instance=ExtResource("4_2ghwr")]
+position = Vector2(500, 470)

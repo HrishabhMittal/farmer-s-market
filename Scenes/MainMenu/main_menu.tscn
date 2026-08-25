@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://baoj8ki6v6xbt" path="res://Assets/Images/MainMenu/rope.png" id="1_uqdog"]
 [ext_resource type="Texture2D" uid="uid://dhgosk1hgpyt0" path="res://Assets/Images/MainMenu/menu_title.png" id="2_adu2g"]
 [ext_resource type="Texture2D" uid="uid://byuasu4oni8hx" path="res://Assets/Images/MainMenu/wood.png" id="2_v763k"]
+[ext_resource type="Script" uid="uid://bqnlbefp38487" path="res://Scenes/MainMenu/texture_rect.gd" id="5_adu2g"]
 
 [node name="main_menu" type="Control" unique_id=93825119]
 layout_mode = 3
@@ -86,14 +87,38 @@ scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(-125, 50)
 pivot_offset_ratio = Vector2(1, 0.5)
 
-[node name="TextureRect3" type="TextureRect" parent="right_menu_container/VBoxContainer" unique_id=1073375865]
+[node name="TextureRect" type="TextureButton" parent="right_menu_container/VBoxContainer" unique_id=450874778]
 layout_mode = 2
-texture = ExtResource("2_v763k")
+texture_normal = ExtResource("2_v763k")
+texture_pressed = ExtResource("2_v763k")
+texture_hover = ExtResource("2_v763k")
+texture_disabled = ExtResource("2_v763k")
+texture_focused = ExtResource("2_v763k")
+script = ExtResource("5_adu2g")
+target_scene_path = "uid://bykas3tdowgd8"
+
+[node name="Label" type="Label" parent="right_menu_container/VBoxContainer/TextureRect" unique_id=1576181817]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 160
+text = "PLAY"
 
 [node name="TextureRect2" type="TextureRect" parent="right_menu_container/VBoxContainer" unique_id=276938425]
 layout_mode = 2
 texture = ExtResource("2_v763k")
 
-[node name="TextureRect" type="TextureRect" parent="right_menu_container/VBoxContainer" unique_id=2123044355]
+[node name="TextureRect3" type="TextureRect" parent="right_menu_container/VBoxContainer" unique_id=1073375865]
 layout_mode = 2
 texture = ExtResource("2_v763k")
+
+[connection signal="pressed" from="right_menu_container/VBoxContainer/TextureRect" to="right_menu_container/VBoxContainer/TextureRect" method="_on_pressed"]

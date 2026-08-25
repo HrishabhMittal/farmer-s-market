@@ -8,15 +8,9 @@
 script = ExtResource("1_k2piw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=940344624]
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_3dp3j")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2101379772]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-mouse_filter = 2
-color = Color(0.83, 0.28219998, 0.28219998, 1)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="ready" from="." to="." method="_on_ready"]

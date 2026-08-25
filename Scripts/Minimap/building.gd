@@ -7,6 +7,7 @@ extends Area2D
 
 @export_file("*.tscn") var target_scene_path: String 
 @export var player_node: CharacterBody2D
+
 const INTERACTION_DISTANCE = 5.0
 
 @warning_ignore("unused_parameter")

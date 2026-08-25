@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(1, 1)
 script = ExtResource("1_r2be8")
 
 [node name="RightPage" type="TextureRect" parent="." unique_id=154486660]
@@ -16,6 +17,8 @@ layout_mode = 0
 offset_right = 162.0
 offset_bottom = 211.0
 mouse_filter = 0
+expand_mode = 1
+stretch_mode = 4
 
 [node name="LeftPage" type="TextureRect" parent="." unique_id=92325627]
 layout_mode = 0
@@ -23,6 +26,8 @@ offset_left = 387.0
 offset_right = 774.0
 offset_bottom = 516.0
 mouse_filter = 0
+expand_mode = 1
+stretch_mode = 4
 
 [node name="FlipContainer" type="Control" parent="." unique_id=1446781712]
 anchors_preset = 0
@@ -37,6 +42,8 @@ offset_left = -129.0
 offset_top = 1.0
 offset_right = 257.0
 offset_bottom = 515.0
+expand_mode = 1
+stretch_mode = 4
 
 [node name="FlipBack" type="TextureRect" parent="FlipContainer" unique_id=1009924439]
 layout_mode = 0
@@ -44,4 +51,6 @@ offset_left = -129.0
 offset_top = 1.0
 offset_right = 254.0
 offset_bottom = 516.0
+expand_mode = 1
+stretch_mode = 4
 flip_h = true

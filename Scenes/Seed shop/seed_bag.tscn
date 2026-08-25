@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d004rmn308asi"]
+
+[ext_resource type="Script" uid="uid://mnolnsa2p0ru" path="res://Scenes/Seed shop/seed_bag.gd" id="1_xfstm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
+size = Vector2(87.5, 91.5)
+
+[node name="seed_bag" type="Node2D" unique_id=1600610449]
+script = ExtResource("1_xfstm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1733390231]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1700564055]
+shape = SubResource("RectangleShape2D_3dp3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1058653798]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -10,7 +10,7 @@ extends CharacterBody2D
 # find shortest path to selected node, simple graph traversal using dijkstra
 
 
-const SPEED = 300.0
+const SPEED = 150.0
 var target_position: Vector2
 var is_moving = false
 
