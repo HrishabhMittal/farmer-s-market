@@ -9,7 +9,7 @@ func _ready():
 func get_item(item_id: String) -> ItemData:
 	var item: ItemData = all_items.get(item_id, null)
 	if not item:
-		push_error("Could not find", item_id)
+		push_error("Could not find ", item_id)
 		return null
 	return item
 
@@ -34,6 +34,7 @@ func load_items_from_folder(folder_path: String) -> void:
 		if resource:
 			if resource is ItemData:
 				all_items[key] = resource
+				resource.item_id = key
 			else:
 				printerr("Resource is not an ItemData, skipping: ", resource_path)
 		else:

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://de5o7l2cr65wt"]
 
-[ext_resource type="Texture2D" uid="uid://doxuk8fjvfolf" path="res://Assets/some_placeholder_assets/cherry.png" id="1_p0lei"]
+[ext_resource type="Texture2D" uid="uid://b232re7e0ml38" path="res://Assets/pumppkin crop assets.png" id="1_p0lei"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="2_urdo5"]
 
 [resource]

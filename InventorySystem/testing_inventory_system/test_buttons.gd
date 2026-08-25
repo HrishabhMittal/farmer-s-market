@@ -18,19 +18,19 @@ func _ready() -> void:
 	remove_orange.pressed.connect(_on_remove_orange_pressed)
 
 func _on_add_cherry_pressed() -> void:
-	InventoryManager.add_item("pumpkin", 1)
+	InventoryManager.add_item("potato", 1)
 
 func _on_remove_cherry_pressed() -> void:
-	InventoryManager.remove_item("pumpkin", 1)
+	InventoryManager.remove_item("potato", 1)
 	
 func _on_add_apple_pressed() -> void:
-	InventoryManager.add_item("eggplant", 1)
+	InventoryManager.add_item("pumpkin", 1)
 	
 func _on_remove_apple_pressed() -> void:
-	InventoryManager.remove_item("eggplant", 1)
+	InventoryManager.remove_item("pumpkin", 1)
 	
 func _on_add_orange_pressed() -> void:
-	InventoryManager.add_item("carrot", 1)
+	InventoryManager.add_item("tomato", 1)
 	
 func _on_remove_orange_pressed() -> void:
-	InventoryManager.remove_item("carrot", 1)
+	InventoryManager.remove_item("tomato", 1)
