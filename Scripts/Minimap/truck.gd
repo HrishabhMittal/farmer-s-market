@@ -13,15 +13,18 @@ extends CharacterBody2D
 const SPEED = 150.0
 var target_position: Vector2
 var is_moving = false
-
+@onready var truck_sprite = $Sprite2D
 
 func _physics_process(delta: float) -> void:
 	if is_moving:
 		global_position = global_position.move_toward(target_position, SPEED * delta)
-		
 		# check if we have arrived
 		if global_position.distance_to(target_position) < 1.0:
 			is_moving = false
+		elif global_position.x < target_position.x:
+			truck_sprite.flip_h = false
+		else:
+			truck_sprite.flip_h = true
 
 func travel_to_building(target: Vector2):
 	target_position = target
