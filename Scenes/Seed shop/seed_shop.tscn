@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://d004rmn308asi" path="res://Scenes/Seed shop/seed_bag.tscn" id="4_2ghwr"]
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
+metadata/_edit_vertical_guides_ = [-521.0]
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1550049513]
+position = Vector2(0, -1)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_xt6rq")
 centered = false
@@ -16,10 +18,19 @@ centered = false
 
 [node name="book" parent="CanvasLayer" unique_id=1606224245 instance=ExtResource("2_s4d4o")]
 offset_left = 346.0
-offset_top = 105.99994
-offset_bottom = 6.1035156e-05
+offset_top = 103.99994
+offset_bottom = -1.999939
 scale = Vector2(0.5, 0.5)
 pages = Array[Texture2D]([ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga")])
+
+[node name="Table" type="Node2D" parent="." unique_id=1588087587]
+position = Vector2(603, 599)
+
+[node name="table" type="Area2D" parent="Table" unique_id=830019346]
+position = Vector2(0, -15)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/table" unique_id=1994552751]
+polygon = PackedVector2Array(-502, -49, 423, -58, 549, 58, -628, 54)
 
 [node name="shelf" type="Node2D" parent="." unique_id=996168745]
 
@@ -48,4 +59,4 @@ position = Vector2(249, 468)
 position = Vector2(375, 470)
 
 [node name="seed_bag9" parent="shelf" unique_id=2116806574 instance=ExtResource("4_2ghwr")]
-position = Vector2(500, 470)
+position = Vector2(500, 485)

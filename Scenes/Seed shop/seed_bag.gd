@@ -1,17 +1,30 @@
 extends Node2D
-
-
+var mouse_in = false
+var drag = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass # Replace with 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("left click") and mouse_in == true:
+		drag = true
+	if Input.is_action_just_released("left click") and mouse_in == true:
+		drag = false
 
-signal clicked(bag_node)
+	if drag == true:
+		$".".global_position = get_global_mouse_position()
+	else:
+		pass
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		clicked.emit(self)
+func _on_area_2d_mouse_entered() -> void:
+	mouse_in = true
+
+
+func _on_area_2d_mouse_exited() -> void:
+	mouse_in = false
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("hh")
+		
