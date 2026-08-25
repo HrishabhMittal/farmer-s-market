@@ -6,6 +6,7 @@ extends Node2D
 @export var texture_node: TextureRect
 @export var label_node: Label
 @export var show_item_on_mouse: bool = true
+var seed_planter: FarmTool # Will be initialized by the tool itself
 
 var mouse_inventory: Inventory
 var is_currently_showing: bool # If player is holding a item then it will be shown at mouse pointer if this variable is true
@@ -19,6 +20,10 @@ func pick_item(item: Item, source_slot: SlotUI) -> void:
 	else:
 		InventoryManager.swap_item(source_slot.connected_inventory, mouse_inventory, source_slot.slot_index, 0)
 	_show_item_on_mouse()
+	
+	if is_held_item_seed():
+		if seed_planter:
+			seed_planter.tool_manager.tool_selected.emit(seed_planter)
 	
 func remove_item(item_id: String, amount: int = 0) -> bool:
 	var new_item: Item = _make_item(item_id, amount)
@@ -63,6 +68,9 @@ func is_empty() -> bool:
 func get_held_item_id() -> String:
 	return mouse_inventory.slots[0].item_data.item_id
 
+func get_held_item() -> Item:
+	return mouse_inventory.slots[0]
+
 # Shows the current item that player has picked on the mouse pointer
 func _show_item_on_mouse() -> void:
 	if mouse_inventory.is_empty():
@@ -83,3 +91,10 @@ func _hide_item_on_mouse() -> void:
 func _process(_delta):
 	if is_currently_showing:
 		$CanvasLayer/ItemView.position = get_viewport().get_mouse_position()
+
+func is_held_item_seed() -> bool:
+	if is_empty():
+		return false
+	if ItemTypes.ItemType.SEED in mouse_inventory.slots[0].item_data.item_type:
+		return true
+	return false
