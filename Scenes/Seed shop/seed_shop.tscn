@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://bc8n8deypyq25"]
 
+[ext_resource type="Script" uid="uid://gxjfwm8xbift" path="res://Scenes/Seed shop/seed_shop.gd" id="1_5bumm"]
 [ext_resource type="Texture2D" uid="uid://denoeve6rkkh7" path="res://Assets/Images/SeedShop/shop_back.png" id="1_xt6rq"]
+[ext_resource type="Texture2D" uid="uid://big0o0gtn0vvs" path="res://Assets/minimised_seed_bags.png" id="2_75oki"]
 [ext_resource type="PackedScene" uid="uid://d2vjd1b0a0wjx" path="res://Scenes/Book/book.tscn" id="2_s4d4o"]
 [ext_resource type="Texture2D" uid="uid://x4v1rty36u1a" path="res://Assets/Images/page.jpg" id="3_si1ga"]
+[ext_resource type="Texture2D" uid="uid://2yjefu6dh7hs" path="res://Assets/Images/SeedShop/seed_bag.png" id="3_w1l5w"]
 [ext_resource type="PackedScene" uid="uid://d004rmn308asi" path="res://Scenes/Seed shop/seed_bag.tscn" id="4_2ghwr"]
-[ext_resource type="Script" uid="uid://j4dtqpismrwp" path="res://Scenes/Seed shop/table.gd" id="4_eau4u"]
+[ext_resource type="Texture2D" uid="uid://h0l1w45bh6u7" path="res://Assets/button_placeholder.png" id="5_5bumm"]
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
+script = ExtResource("1_5bumm")
+minimised_sheet = ExtResource("2_75oki")
+maximised_sheet = ExtResource("3_w1l5w")
 metadata/_edit_vertical_guides_ = [-521.0]
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1550049513]
@@ -17,6 +23,16 @@ centered = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2047204010]
 
+[node name="InspectOverlay" type="ColorRect" parent="CanvasLayer" unique_id=1455428457]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.68235296)
+
+[node name="InspectSprite" type="Sprite2D" parent="CanvasLayer/InspectOverlay" unique_id=1764594715]
+
 [node name="book" parent="CanvasLayer" unique_id=1606224245 instance=ExtResource("2_s4d4o")]
 offset_left = 346.0
 offset_top = 103.99994
@@ -24,12 +40,35 @@ offset_bottom = -1.999939
 scale = Vector2(0.5, 0.5)
 pages = Array[Texture2D]([ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga")])
 
+[node name="ActionMenu" type="PanelContainer" parent="CanvasLayer" unique_id=1777351356]
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ActionMenu" unique_id=530625625]
+layout_mode = 2
+
+[node name="BuyButton" type="TextureButton" parent="CanvasLayer/ActionMenu/VBoxContainer" unique_id=934007200]
+layout_mode = 2
+texture_normal = ExtResource("5_5bumm")
+texture_pressed = ExtResource("5_5bumm")
+texture_hover = ExtResource("5_5bumm")
+texture_disabled = ExtResource("5_5bumm")
+texture_focused = ExtResource("5_5bumm")
+
+[node name="InspectButton" type="TextureButton" parent="CanvasLayer/ActionMenu/VBoxContainer" unique_id=553330868]
+layout_mode = 2
+texture_normal = ExtResource("5_5bumm")
+texture_pressed = ExtResource("5_5bumm")
+texture_hover = ExtResource("5_5bumm")
+texture_disabled = ExtResource("5_5bumm")
+texture_focused = ExtResource("5_5bumm")
+
 [node name="Table" type="Node2D" parent="." unique_id=1588087587]
 position = Vector2(603, 599)
 
 [node name="table" type="Area2D" parent="Table" unique_id=830019346]
 position = Vector2(0, -15)
-script = ExtResource("4_eau4u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/table" unique_id=1994552751]
 polygon = PackedVector2Array(-502, -49, 423, -58, 549, 58, -628, 54)
@@ -63,5 +102,8 @@ position = Vector2(375, 470)
 [node name="seed_bag9" parent="shelf" unique_id=2116806574 instance=ExtResource("4_2ghwr")]
 position = Vector2(500, 485)
 
+[connection signal="gui_input" from="CanvasLayer/InspectOverlay" to="." method="_on_inspect_overlay_gui_input"]
+[connection signal="pressed" from="CanvasLayer/ActionMenu/VBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ActionMenu/VBoxContainer/InspectButton" to="." method="_on_inspect_button_pressed"]
 [connection signal="area_entered" from="Table/table" to="Table/table" method="_on_area_entered"]
 [connection signal="area_exited" from="Table/table" to="Table/table" method="_on_area_exited"]
