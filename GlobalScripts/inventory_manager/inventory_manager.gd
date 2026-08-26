@@ -54,5 +54,6 @@ func swap_item(from_inventory: Inventory, to_inventory: Inventory, from_slot_ind
 	to_inventory.replace_item(temp_from_item, to_slot_index)
 
 func _ready():
-	add_child(make_new_palyer_inventory(21))
-	player_inventory.visible = false
+	var new_inventory_ui = make_new_palyer_inventory(21)
+	add_child(new_inventory_ui)
+	new_inventory_ui.visible = false
