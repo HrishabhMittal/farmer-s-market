@@ -40,11 +40,11 @@ func handle_bag_click(bag):
 			bag_on_table.return_to_shelf()
 		
 		bag_on_table = bag
-		bag.is_on_table = true
-		bag.global_position = table_marker.global_position + Vector2(0, -30)
-		
+		var destination = table_marker.global_position + Vector2(0, -30)
+		bag.move_to_table(destination)
+
 		action_menu.show()
-		var screen_pos = get_viewport().get_canvas_transform() * bag.global_position
+		var screen_pos = get_viewport().get_canvas_transform() * destination
 		action_menu.global_position = screen_pos + Vector2(60, -30)
 		
 	else:
@@ -73,3 +73,5 @@ func _on_inspect_button_pressed() -> void:
 func _on_inspect_overlay_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		inspect_overlay.hide()
+		if bag_on_table != null:
+			action_menu.show()

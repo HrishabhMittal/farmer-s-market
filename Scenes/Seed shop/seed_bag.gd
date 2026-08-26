@@ -8,6 +8,8 @@ var is_on_table: bool = false
 @onready var click_area = $bag/seed_pack
 
 var shelf_position: Vector2
+var move_tween: Tween
+
 
 func _ready():
 	shelf_position = global_position
@@ -24,9 +26,22 @@ func setup(type: int, real: bool, fake_var: int, minimised_texture: Texture2D):
 	sprite.vframes = 1
 	sprite.frame = seed_type
 
+func move_to_table(target_pos: Vector2):
+	is_on_table = true
+	_animate_to(target_pos)
+
 func return_to_shelf():
 	is_on_table = false
-	global_position = shelf_position
+	_animate_to(shelf_position)
+
+func _animate_to(target_pos: Vector2):
+	if move_tween and move_tween.is_valid():
+		move_tween.kill() 
+		
+	move_tween = create_tween()
+	move_tween.tween_property(self, "global_position", target_pos, 0.25)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_OUT)
 
 func _on_seed_pack_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
