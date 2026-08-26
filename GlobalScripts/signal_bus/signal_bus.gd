@@ -7,6 +7,7 @@ signal game_loaded()
 signal item_added(item: Item)
 signal day_ended()
 signal crop_harvested(farm_plant: FarmPlant)
+signal shop_visited()
 
 # Command Signals
 
