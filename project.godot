@@ -23,6 +23,7 @@ InventoryManager="*uid://1twwv6e8n73q"
 PlayerHeldItem="*uid://dp6cgavfkr6ca"
 TravelTransition="*uid://b1p81i80rf4c3"
 InfocardManager="*uid://btlfcwfcia4sl"
+AudioManager="*uid://dhcynrbnjcmci"
 
 [display]
 
@@ -88,5 +89,6 @@ inventory={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 viewport/hdr_2d=true

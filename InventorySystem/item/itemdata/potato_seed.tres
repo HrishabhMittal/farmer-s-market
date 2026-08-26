@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cxm3xanrufeub"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://keaqpv7hlsdc"]
 
 [ext_resource type="Texture2D" uid="uid://l7sq1rir367n" path="res://Assets/some_placeholder_assets/placeholder_potato_plant.png" id="1_4snnn"]
 [ext_resource type="PackedScene" uid="uid://d124hl11020e7" path="res://CoreFarmSystem/farm_plants/potato_plant.tscn" id="2_qpm5q"]
