@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cltwdgqaoah1s"]
+
+[ext_resource type="PackedScene" uid="uid://dh60w2yqp3kui" path="res://InventorySystem/inventory_ui/inventory_ui.tscn" id="1_sffc8"]
+
+[node name="SellShop" type="Node2D" unique_id=1734394036]
+
+[node name="InventoryUi" parent="." unique_id=1716554813 instance=ExtResource("1_sffc8")]
