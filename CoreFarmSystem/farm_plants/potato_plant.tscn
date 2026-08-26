@@ -18,3 +18,5 @@ region = Rect2(0, 128, 128, 128)
 [node name="Potato" unique_id=1529433205 instance=ExtResource("1_1w522")]
 produced_crop_id = "potato"
 growth_cycle_texture = Array[Texture2D]([SubResource("AtlasTexture_0e3rh"), SubResource("AtlasTexture_ch7o5"), SubResource("AtlasTexture_xps6t")])
+grwoth_chance = null
+growth_tick = null

@@ -43,7 +43,7 @@ func dig_ground() -> void:
 func water_ground() -> void:
 	var mapped_coord := get_mapped_coord(get_global_mouse_position())
 	main_tiles.set_cells_terrain_connect([mapped_coord], tile_lookup.watered[0], tile_lookup.watered[1])
-
+	
 func grow_grass() -> void:
 	var mapped_coord := get_mapped_coord(get_global_mouse_position())
 	main_tiles.set_cells_terrain_connect([mapped_coord], tile_lookup.grass[0], tile_lookup.grass[1])

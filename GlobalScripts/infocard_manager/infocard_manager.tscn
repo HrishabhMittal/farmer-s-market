@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://btlfcwfcia4sl"]
+
+[ext_resource type="Script" uid="uid://cd7ktvaepx2ra" path="res://GlobalScripts/infocard_manager/infocard_manager.gd" id="1_a62d6"]
+[ext_resource type="PackedScene" uid="uid://b3qqj6x1iahh7" path="res://InfoSystem/floating_text/floating_text.tscn" id="2_epfq2"]
+[ext_resource type="PackedScene" uid="uid://ck3pgifdsc348" path="res://InfoSystem/inventory_item_infocard/inventory_item_infocard.tscn" id="2_qlh2l"]
+[ext_resource type="PackedScene" uid="uid://jvuq8w6i08n1" path="res://InfoSystem/farmplant_infocard/farmplant_infocard.tscn" id="3_t4s7s"]
+
+[node name="InfocardManager" type="CanvasLayer" unique_id=1393360784]
+layer = 10
+script = ExtResource("1_a62d6")
+floating_text_scene = ExtResource("2_epfq2")
+
+[node name="InventoryItemInfocard" parent="." unique_id=1860561526 instance=ExtResource("2_qlh2l")]
+unique_name_in_owner = true
+visible = false
+
+[node name="FarmplantInfocard" parent="." unique_id=1805995084 instance=ExtResource("3_t4s7s")]
+unique_name_in_owner = true
+visible = false
