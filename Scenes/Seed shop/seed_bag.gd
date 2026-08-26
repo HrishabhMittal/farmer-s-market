@@ -1,15 +1,18 @@
 extends Node2D
-var good
+var good_seller = true
 var place_holder_common = [2,3,4]
 var place_holder_rare = [5,6]
 var chosen = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if randf() >= 0.70:
-		chosen = place_holder_rare.pick_random()
-	else:
-		chosen = place_holder_common.pick_random() 
+	if good_seller == true:
+		chosen = 1
+	elif good_seller == false:
+		if randf() >= 0.70:
+			chosen = place_holder_rare.pick_random()
+		else:
+			chosen = place_holder_common.pick_random() 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

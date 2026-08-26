@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bc8n8deypyq25"]
 
+[ext_resource type="Script" uid="uid://gxjfwm8xbift" path="res://Scenes/Seed shop/seed_shop.gd" id="1_5bumm"]
 [ext_resource type="Texture2D" uid="uid://denoeve6rkkh7" path="res://Assets/Images/SeedShop/shop_back.png" id="1_xt6rq"]
 [ext_resource type="PackedScene" uid="uid://d2vjd1b0a0wjx" path="res://Scenes/Book/book.tscn" id="2_s4d4o"]
 [ext_resource type="Texture2D" uid="uid://x4v1rty36u1a" path="res://Assets/Images/page.jpg" id="3_si1ga"]
@@ -7,6 +8,7 @@
 [ext_resource type="Script" uid="uid://j4dtqpismrwp" path="res://Scenes/Seed shop/table.gd" id="4_eau4u"]
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
+script = ExtResource("1_5bumm")
 metadata/_edit_vertical_guides_ = [-521.0]
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1550049513]
@@ -62,6 +64,13 @@ position = Vector2(375, 470)
 
 [node name="seed_bag9" parent="shelf" unique_id=2116806574 instance=ExtResource("4_2ghwr")]
 position = Vector2(500, 485)
+
+[node name="buy_button" type="Area2D" parent="." unique_id=1572003750]
+rotation = -2.6179938
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="buy_button" unique_id=1327999306]
+
+[node name="Sprite2D" type="Sprite2D" parent="buy_button" unique_id=400762986]
 
 [connection signal="area_entered" from="Table/table" to="Table/table" method="_on_area_entered"]
 [connection signal="area_exited" from="Table/table" to="Table/table" method="_on_area_exited"]
