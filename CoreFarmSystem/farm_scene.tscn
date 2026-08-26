@@ -3,12 +3,16 @@
 [ext_resource type="Script" uid="uid://cdlbpv8imwr1v" path="res://CoreFarmSystem/farm_scene.gd" id="1_rc0p8"]
 [ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="2_04e0t"]
 [ext_resource type="Script" uid="uid://dcib52to2nhvc" path="res://CoreFarmSystem/farm_tile_manager.gd" id="2_78ksu"]
+[ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="3_61ldv"]
 [ext_resource type="Texture2D" uid="uid://2ascms78ig7x" path="res://Assets/some_placeholder_assets/farm_tiles.png" id="3_qaha4"]
 [ext_resource type="Script" uid="uid://dfjhauarq0fu2" path="res://CoreFarmSystem/farm_tool_manager.gd" id="3_wsyp5"]
 [ext_resource type="PackedScene" uid="uid://im0bih2b67at" path="res://CoreFarmSystem/tool.tscn" id="6_lo7h3"]
 [ext_resource type="Texture2D" uid="uid://vrlyplu8k060" path="res://Assets/some_placeholder_assets/placeholder_tools.png" id="7_a8m23"]
-[ext_resource type="Script" uid="uid://d1iclihfd1wds" path="res://CoreFarmSystem/test_related_scripts/test.gd" id="8_a8m23"]
-[ext_resource type="Script" uid="uid://b2ri031b5ombb" path="res://CoreFarmSystem/test_related_scripts/button.gd" id="9_04e0t"]
+[ext_resource type="PackedScene" uid="uid://86lyl32ajvov" path="res://Scenes/Player/farmer.tscn" id="10_miwjd"]
+[ext_resource type="Script" uid="uid://cir2jjyeljass" path="res://CoreFarmSystem/barn.gd" id="11_0wb5q"]
+[ext_resource type="Script" uid="uid://d2okl80pf2hvw" path="res://CoreFarmSystem/truck.gd" id="11_61ldv"]
+[ext_resource type="Texture2D" uid="uid://cgkd8nnehg6rp" path="res://Assets/Images/Farm/barn.png" id="11_ahdf5"]
+[ext_resource type="Texture2D" uid="uid://cqb4n6n8hloy2" path="res://Assets/Images/MiniMap/truck.png" id="13_wqrya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sf2wa"]
 texture = ExtResource("3_qaha4")
@@ -600,6 +604,12 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("7_a8m23")
 region = Rect2(0, 64, 64, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
+size = Vector2(700, 890.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aql1o"]
+size = Vector2(439, 336)
+
 [node name="FarmScene" type="Node2D" unique_id=1809007817 node_paths=PackedStringArray("farm_tile_manager", "tool_manager")]
 script = ExtResource("1_rc0p8")
 farm_tile_manager = NodePath("FarmTileManager")
@@ -608,6 +618,10 @@ is_test_enabled = true
 
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("2_04e0t")]
 target_scene_path = "uid://bykas3tdowgd8"
+
+[node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("3_61ldv")]
+offset = Vector2(-200, 0)
+transform = Transform2D(1, 0, 0, 1, -200, 0)
 
 [node name="FarmTileManager" type="Node2D" parent="." unique_id=506347715 node_paths=PackedStringArray("background_tiles", "main_tiles")]
 script = ExtResource("2_78ksu")
@@ -627,6 +641,8 @@ tile_set = SubResource("TileSet_fhu6q")
 script = ExtResource("3_wsyp5")
 
 [node name="ToolBar" type="CanvasLayer" parent="." unique_id=1101934720]
+offset = Vector2(-10, 20)
+transform = Transform2D(1, 0, 0, 1, -10, 20)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ToolBar" unique_id=1930206763]
 anchors_preset = 1
@@ -663,18 +679,33 @@ display_name = "Seed Planter"
 tool_type = 3
 tool_manager = NodePath("../../../FarmToolManager")
 
-[node name="test" type="Node2D" parent="." unique_id=2043243812]
-script = ExtResource("8_a8m23")
+[node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("10_miwjd")]
 
-[node name="Camera2D" type="Camera2D" parent="test" unique_id=881410085]
-position = Vector2(497, 527)
-zoom = Vector2(0.575, 0.575)
+[node name="Camera2D" type="Camera2D" parent="Farmer" unique_id=1965492530]
 
-[node name="Button" type="Button" parent="test" unique_id=206730053]
-offset_left = 1271.0
-offset_top = 988.0
-offset_right = 1475.0
-offset_bottom = 1065.0
-theme_override_font_sizes/font_size = 50
-text = "End Day"
-script = ExtResource("9_04e0t")
+[node name="Barn" type="Area2D" parent="." unique_id=2048947652]
+position = Vector2(-558, 751)
+script = ExtResource("11_0wb5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barn" unique_id=239243059]
+position = Vector2(-735, -69.25)
+shape = SubResource("RectangleShape2D_3dp3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Barn" unique_id=515484327]
+position = Vector2(-748, -94)
+scale = Vector2(0.3738269, 0.38017517)
+texture = ExtResource("11_ahdf5")
+
+[node name="Truck" type="Area2D" parent="." unique_id=1110643445]
+script = ExtResource("11_61ldv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truck" unique_id=1091942164]
+position = Vector2(-1400.5, 1391)
+shape = SubResource("RectangleShape2D_aql1o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Truck" unique_id=2052935533]
+position = Vector2(-1402, 1419)
+texture = ExtResource("13_wqrya")
+
+[connection signal="input_event" from="Barn" to="Barn" method="_on_input_event"]
+[connection signal="input_event" from="Truck" to="Truck" method="_on_input_event"]

@@ -16,29 +16,36 @@ func initialize(new_tile_manager: FarmTileManager) -> void:
 	tool_selected.connect(handle_new_tool_selection)
 
 func _unhandled_input(event: InputEvent) -> void:
-	# Replace this input check with a "tool_use" input command
 	if event.is_action_pressed("right click"):
 		selected_tool = FarmTools.NONE
-	
 	if event.is_action_pressed("use_farm_tool"):
+		var mouse_pos = get_global_mouse_position()
+		var player = get_tree().get_first_node_in_group("Player")
+		
+		if player:
+			var interact_area = player.get_node_or_null("InteractRadius")
+			if interact_area:
+				var col_shape = interact_area.get_node_or_null("CollisionShape2D")
+				var max_distance = col_shape.shape.radius
+				var tile_center = tile_manager.get_tile_center(mouse_pos)
+				if player.global_position.distance_to(tile_center) > max_distance:
+					print("too far 4 tool")
+					return
+			
 		match selected_tool:
 			FarmTools.SHOVEL:
-				if tile_manager.get_tile_type(get_global_mouse_position()) == "grass":
+				if tile_manager.get_tile_type(mouse_pos) == "grass":
 					dig_ground()
 			FarmTools.HOE:
-				if tile_manager.get_tile_type(get_global_mouse_position()) == "dirt":
+				if tile_manager.get_tile_type(mouse_pos) == "dirt":
 					till_ground()
 			FarmTools.WATERING_CAN:
-				if tile_manager.get_tile_type(get_global_mouse_position()) == "tilled":
+				if tile_manager.get_tile_type(mouse_pos) == "tilled":
 					water_ground()
 			FarmTools.SEED_PLANTER:
-				var tile_under_mouse: String = tile_manager.get_tile_type(get_global_mouse_position())
-				#prints("\n___________________\ntile_under_mouse ", tile_under_mouse)
-				#prints("tile_manager.is_crop_planted(get_global_mouse_position()): ", tile_manager.is_crop_planted(get_global_mouse_position()))
-				if not tile_manager.is_crop_planted(get_global_mouse_position()):
+				var tile_under_mouse: String = tile_manager.get_tile_type(mouse_pos)
+				if not tile_manager.is_crop_planted(mouse_pos):
 					if tile_under_mouse == "tilled" or tile_under_mouse == "watered":
-						# Add code to check if the tile is alreaady occupied with a plant or not
-						#prints("PlayerHeldItem.is_held_item_seed(): ", PlayerHeldItem.is_held_item_seed())
 						if PlayerHeldItem.is_held_item_seed():
 							plant_seed()
 
@@ -56,7 +63,7 @@ func plant_seed() -> void:
 		tile_manager.crop_planted(get_global_mouse_position())
 		#tile_manager.print_planted_crops()
 	else:
-		prints("Failed to plant")
+		prints("failed to plant")
 	
 func dig_ground() -> void:
 	tile_manager.dig_ground()

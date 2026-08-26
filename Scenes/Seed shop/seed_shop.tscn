@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://h0l1w45bh6u7" path="res://Assets/button_placeholder.png" id="5_5bumm"]
 [ext_resource type="Texture2D" uid="uid://d17kuuojcyivf" path="res://Assets/icon.svg" id="5_w1l5w"]
 [ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="9_6qx44"]
+[ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="10_nqtbe"]
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
 script = ExtResource("1_5bumm")
@@ -82,6 +83,8 @@ text = "INSPECT"
 
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("9_6qx44")]
 target_scene_path = "uid://bykas3tdowgd8"
+
+[node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("10_nqtbe")]
 
 [node name="Table" type="Node2D" parent="." unique_id=1588087587]
 position = Vector2(603, 599)

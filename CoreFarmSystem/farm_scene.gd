@@ -9,3 +9,8 @@ func _ready():
 	if not is_test_enabled:
 		$test.visible = false
 		$test.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func interact():
+	InventoryManager.truck_ui.visible = false
+	InventoryManager.barn_ui.visible = !InventoryManager.barn_ui.visible

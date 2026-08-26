@@ -2,58 +2,72 @@ extends Node
 
 @export var inventory_ui_scene: PackedScene
 
-var player_inventory: Inventory
+var money: int = 500
 
-# Gives item to player
-func add_item(item_id: String, amount: int = 0) -> bool:
-	var new_item: Item = _make_item(item_id, amount)
-	if not new_item:
-		push_error("There is no item named", item_id)
-		return false
-	return player_inventory.add_item(new_item, amount)
+var barn_inventory: Inventory
+var truck_inventory: Inventory
 
-# Removes item from player
-func remove_item(item_id: String, amount: int = 0) -> bool:
-	var new_item: Item = _make_item(item_id, amount)
-	if not new_item:
-		push_error("There is no item named", item_id)
-		return false
-	return player_inventory.remove_item(new_item, amount)
-
-# Check if player has this item
-func does_have_item(item_id: String, amount: int = 0) -> bool:
-	var new_item: Item = _make_item(item_id, amount)
-	if not new_item:
-		push_error("There is no item named", item_id)
-		return false
-	return player_inventory.does_have_item(new_item, amount)
-
-# For internal use, should not be called
-func _make_item(item_id: String, amount: int = 0) -> Item:
-	return Item.new(ItemManager.get_item(item_id), amount)
-
-# Makes a new inventory for the player and returns the InventoryUI node. Attach the returned node to the tree to use
-func make_new_palyer_inventory(slot_count: int = 50) -> InventoryUI:
-	var new_inventory := Inventory.new(slot_count)
-	player_inventory = new_inventory
-	
-	var new_inventory_ui: InventoryUI = inventory_ui_scene.instantiate()
-	new_inventory_ui.initialize(new_inventory)
-	
-	return new_inventory_ui
-
-# Swaps items between two inventories
-func swap_item(from_inventory: Inventory, to_inventory: Inventory, from_slot_index: int, to_slot_index: int) -> void:
-	# Store "from" item temporarily
-	var temp_from_item: Item = from_inventory.slots[from_slot_index]
-	
-	# Now put the item from "to_inventory" to the "from_inventory"
-	from_inventory.replace_item(to_inventory.slots[to_slot_index], from_slot_index)
-	
-	# Now put the temporarily stored item to the "to inventory"
-	to_inventory.replace_item(temp_from_item, to_slot_index)
+var barn_ui: InventoryUI
+var truck_ui: InventoryUI
 
 func _ready():
-	var new_inventory_ui = make_new_palyer_inventory(21)
-	add_child(new_inventory_ui)
-	new_inventory_ui.visible = false
+	barn_inventory = Inventory.new(50) 
+	truck_inventory = Inventory.new(30)
+	
+	barn_ui = inventory_ui_scene.instantiate()
+	barn_ui.initialize(barn_inventory)
+	barn_ui.get_node("PanelContainer/VBoxContainer/Label").text = "Barn"
+	add_child(barn_ui)
+	barn_ui.visible = false
+	
+	truck_ui = inventory_ui_scene.instantiate()
+	truck_ui.initialize(truck_inventory)
+	truck_ui.get_node("PanelContainer/VBoxContainer/Label").text = "Truck"
+	add_child(truck_ui)
+	truck_ui.visible = false
+
+func close_all_uis() -> void:
+	if barn_ui: barn_ui.visible = false
+	if truck_ui: truck_ui.visible = false
+
+func buy_item(item_id: String, cost: int, amount: int = 1) -> bool:
+	if money >= cost:
+		var new_item = _make_item(item_id, amount)
+		if new_item and truck_inventory.add_item(new_item, amount):
+			money -= cost
+			return true
+	return false
+
+func sell_item(item_id: String, price: int, amount: int = 1) -> bool:
+	var item_to_sell = _make_item(item_id, amount)
+	if item_to_sell and truck_inventory.remove_item(item_to_sell, amount):
+		money += (price * amount)
+		return true
+	return false
+
+func add_item_to_barn(item_id: String, amount: int = 0) -> bool:
+	var new_item: Item = _make_item(item_id, amount)
+	if not new_item: return false
+	return barn_inventory.add_item(new_item, amount)
+
+func add_item_to_truck(item_id: String, amount: int = 0) -> bool:
+	var new_item: Item = _make_item(item_id, amount)
+	if not new_item: return false
+	return truck_inventory.add_item(new_item, amount)
+
+func does_have_item_in_truck(item_id: String, amount: int = 0) -> bool:
+	var new_item: Item = _make_item(item_id, amount)
+	if not new_item: return false
+	return truck_inventory.does_have_item(new_item, amount)
+
+func _make_item(item_id: String, amount: int = 0) -> Item:
+	var data = ItemManager.get_item(item_id)
+	if not data:
+		push_error("no item named: ", item_id)
+		return null
+	return Item.new(data, amount)
+
+func swap_item(from_inventory: Inventory, to_inventory: Inventory, from_slot_index: int, to_slot_index: int) -> void:
+	var temp_from_item: Item = from_inventory.slots[from_slot_index]
+	from_inventory.replace_item(to_inventory.slots[to_slot_index], from_slot_index)
+	to_inventory.replace_item(temp_from_item, to_slot_index)

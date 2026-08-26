@@ -11,7 +11,9 @@ extends Node2D
 
 var bag_on_table = null
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+var seed_item_ids = ["pumpkin_seed", "carrot_seed", "cabbage_seed", "potato_seed", "tomato_seed"]
+
 func _process(delta: float) -> void:
 	pass
 
@@ -53,7 +55,16 @@ func handle_bag_click(bag):
 		action_menu.hide()
 
 func _on_buy_button_pressed() -> void:
-	pass # Replace with function body.
+	if bag_on_table:
+		var seed_id = seed_item_ids[bag_on_table.seed_type % seed_item_ids.size()]
+		var success = InventoryManager.buy_item(seed_id, 50, 32)
+		
+		if success:
+			InfocardManager.show_floating_text("-50 Coins", action_menu.global_position, "Red")
+			print("Successfully bought 32 " + seed_id)
+		else:
+			InfocardManager.show_floating_text("Not enough money!", action_menu.global_position, "Red")
+			print("Not enough money!")
 
 
 func _on_inspect_button_pressed() -> void:

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://86lyl32ajvov"]
 
 [ext_resource type="Script" uid="uid://i87gs6n4dpxp" path="res://Scenes/Player/movement_component.gd" id="1_4a1pm"]
+[ext_resource type="Script" uid="uid://cac16r3qsbxan" path="res://Scenes/Player/interact_radius.gd" id="2_wlps1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl1ch"]
 size = Vector2(112, 112)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3dp3j"]
+radius = 472.12817
 
 [node name="Farmer" type="CharacterBody2D" unique_id=1605516437 groups=["Player"]]
 
@@ -24,3 +28,12 @@ right_input = &"right"
 up_input = &"up"
 down_input = &"down"
 metadata/_custom_type_script = "uid://i87gs6n4dpxp"
+
+[node name="InteractRadius" type="Area2D" parent="." unique_id=1015601344]
+script = ExtResource("2_wlps1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRadius" unique_id=345233884]
+shape = SubResource("CircleShape2D_3dp3j")
+
+[connection signal="area_entered" from="InteractRadius" to="InteractRadius" method="_on_area_entered"]
+[connection signal="area_exited" from="InteractRadius" to="InteractRadius" method="_on_area_exited"]
