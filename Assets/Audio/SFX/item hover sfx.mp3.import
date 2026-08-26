@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dylwt0yjwioeu"
+path="res://.godot/imported/item hover sfx.mp3-e3d4bdd074e4d98b9c8e2248c5e1ed0b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/item hover sfx.mp3"
+dest_files=["res://.godot/imported/item hover sfx.mp3-e3d4bdd074e4d98b9c8e2248c5e1ed0b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
