@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crj6vli7xp6os"
-path="res://.godot/imported/placeholderak47 jump .png-6983824eab80006eed6e6ecec0905b18.ctex"
+uid="uid://cusw410c5j2uy"
+path="res://.godot/imported/exit.png-fb7a97e034f9af8e687cfc07e5dbb81a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/some_placeholder_assets/placeholderak47 jump .png"
-dest_files=["res://.godot/imported/placeholderak47 jump .png-6983824eab80006eed6e6ecec0905b18.ctex"]
+source_file="res://Assets/exit.png"
+dest_files=["res://.godot/imported/exit.png-fb7a97e034f9af8e687cfc07e5dbb81a.ctex"]
 
 [params]
 
