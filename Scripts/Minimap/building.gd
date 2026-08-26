@@ -17,14 +17,14 @@ func _process(delta: float) -> void:
 	elif global_position == Vector2(97,-222):
 		target_pos = Vector2(-15,-164)
 	elif global_position == Vector2(390,-55):
-		target_pos = Vector2(267,-29)
+		target_pos = Vector2(287,-29)
 
 @warning_ignore("unused_parameter")
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if player_node:
-				var distance = global_position.distance_to(player_node.global_position)
+				var distance = target_pos.distance_to(player_node.global_position)
 				if distance<INTERACTION_DISTANCE:
 					TravelTransition.change_scene(target_scene_path)
 				else:	
