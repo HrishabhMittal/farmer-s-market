@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbiyna3jgh707"
+path="res://.godot/imported/Farm Day.mp3-738bd708417b7c5cf487b5290e5d4522.mp3str"
+
+[deps]
+
+source_file="res://AudioManager/Music/Farm Day.mp3"
+dest_files=["res://.godot/imported/Farm Day.mp3-738bd708417b7c5cf487b5290e5d4522.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
