@@ -9,17 +9,19 @@ size = Vector2(68, 67)
 [node name="seed_bag" type="Node2D" unique_id=1600610449]
 script = ExtResource("1_xfstm")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1058653798]
+[node name="bag" type="Node2D" parent="." unique_id=1973259450]
+
+[node name="Sprite2D" type="Sprite2D" parent="bag" unique_id=1058653798]
 position = Vector2(1, -1.9073486e-06)
 scale = Vector2(0.5625, 0.578125)
 texture = ExtResource("2_au06c")
 
-[node name="seed_pack" type="Area2D" parent="." unique_id=1733390231]
+[node name="seed_pack" type="Area2D" parent="bag" unique_id=1733390231]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="seed_pack" unique_id=1700564055]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bag/seed_pack" unique_id=1700564055]
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_3dp3j")
 
-[connection signal="body_entered" from="seed_pack" to="." method="_on_area_2d_body_entered"]
-[connection signal="mouse_entered" from="seed_pack" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="seed_pack" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="bag/seed_pack" to="." method="_on_area_2d_body_entered"]
+[connection signal="mouse_entered" from="bag/seed_pack" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="bag/seed_pack" to="." method="_on_area_2d_mouse_exited"]
