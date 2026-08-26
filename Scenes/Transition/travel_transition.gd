@@ -23,8 +23,8 @@ func change_scene(next_scene_path: String):
 	
 	animated_sprite.play("default")
 	anim_player.play("dissolve")
-	get_tree().change_scene_to_file(next_scene_path)
 	await anim_player.animation_finished
+	get_tree().change_scene_to_file(next_scene_path)
 	await get_tree().create_timer(1.0).timeout
 
 	anim_player.play_backwards("dissolve")
