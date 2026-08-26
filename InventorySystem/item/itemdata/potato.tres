@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cwvex88o4ep81"]
 
-[ext_resource type="Texture2D" uid="uid://d4rlbkfdlviv" path="res://Assets/potato crop asset.png" id="1_1i7wv"]
+[ext_resource type="Texture2D" uid="uid://d4rlbkfdlviv" path="res://Assets/Images/Farm/potato crop asset.png" id="1_1i7wv"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="2_hx1ns"]
 
 [resource]
 script = ExtResource("2_hx1ns")
 display_name = "Potato"
 item_texture = ExtResource("1_1i7wv")
+item_description = "The core essence of french fries. Also can throw as a weapon. Not very effective though."
 value = 20
 item_type = Array[int]([0])
 metadata/_custom_type_script = "uid://j2yw5ljak0ig"

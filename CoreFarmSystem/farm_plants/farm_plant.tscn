@@ -1,31 +1,13 @@
 [gd_scene format=3 uid="uid://b5maie0020lln"]
 
 [ext_resource type="Script" uid="uid://cnxlflephylnm" path="res://CoreFarmSystem/farm_plants/farm_plant.gd" id="1_mpp53"]
-[ext_resource type="Texture2D" uid="uid://l7sq1rir367n" path="res://Assets/some_placeholder_assets/placeholder_potato_plant.png" id="2_b2u7j"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mpp53"]
-atlas = ExtResource("2_b2u7j")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b2u7j"]
-atlas = ExtResource("2_b2u7j")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wnjn7"]
-atlas = ExtResource("2_b2u7j")
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_21c4n"]
-atlas = ExtResource("2_b2u7j")
-region = Rect2(128, 128, 128, 128)
 
 [node name="FarmPlant" type="Node2D" unique_id=1529433205 node_paths=PackedStringArray("plant_texture")]
 script = ExtResource("1_mpp53")
-display_name = "Potato Plant"
+display_name = "Default"
 plant_texture = NodePath("TextureRect")
 production_amount = 5
-growth_cycle_day = Array[int]([1, 3, 5])
-growth_cycle_texture = Array[Texture2D]([SubResource("AtlasTexture_mpp53"), SubResource("AtlasTexture_b2u7j"), SubResource("AtlasTexture_wnjn7")])
+growth_cycle_day = Array[int]([1, 3])
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=461720731]
 custom_minimum_size = Vector2(128, 128)
@@ -35,5 +17,4 @@ offset_right = 64.0
 offset_bottom = 24.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("AtlasTexture_21c4n")
 expand_mode = 2

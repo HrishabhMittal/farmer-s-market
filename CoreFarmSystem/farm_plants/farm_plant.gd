@@ -8,7 +8,7 @@ var tile_manager: FarmTileManager
 @export var production_amount: int = 1
 
 # Check potato_lant scene to get better idea how it is being initialized
-@export var growth_cycle_day: Array[int] = [0, 0, 0]
+@export var growth_cycle_day: Array[int] = [0, 0]
 @export var growth_cycle_texture: Array[Texture2D]= [null, null, null]
 
 var current_growht_time: int = 0 # How many days have passed since planting this crop
@@ -20,6 +20,7 @@ func _ready():
 	plant_texture.gui_input.connect(_handle_harvest_attempt)
 	plant_texture.mouse_entered.connect(highlight)
 	plant_texture.mouse_exited.connect(unhighlight)
+	plant_texture.texture = growth_cycle_texture[0] # Set to first cycle sprite
 	
 func _on_day_ended() -> void:
 	#prints(tile_manager.get_tile_type(global_position))
@@ -36,7 +37,7 @@ func _handle_growth() -> void:
 		current_growth_cycle += 1
 		plant_texture.texture = growth_cycle_texture[current_growth_cycle]
 		
-		if current_growth_cycle >= 2:
+		if current_growth_cycle == growth_cycle_day.size():
 			is_fully_grown = true
 
 func _handle_harvest_attempt(event: InputEvent) -> void:

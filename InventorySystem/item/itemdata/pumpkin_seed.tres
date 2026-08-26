@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cw4g56g8eam6u"]
+
+[ext_resource type="Texture2D" uid="uid://bkk02okxv11iy" path="res://Assets/Images/General/coin icon.png" id="1_5fs5t"]
+[ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="1_wdbsg"]
+[ext_resource type="PackedScene" uid="uid://bixt6b2yu10uq" path="res://CoreFarmSystem/farm_plants/pumpkin_plant.tscn" id="2_mfnxw"]
+
+[resource]
+script = ExtResource("1_wdbsg")
+display_name = "Pumpkin Seed"
+item_texture = ExtResource("1_5fs5t")
+item_description = "Dogkin, Ratkin, and.... Pumpkin.."
+value = 25
+item_type = Array[int]([1])
+scene_to_instantiate = ExtResource("2_mfnxw")
+metadata/_custom_type_script = "uid://j2yw5ljak0ig"

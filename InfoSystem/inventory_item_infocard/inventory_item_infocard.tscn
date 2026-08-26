@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://ck3pgifdsc348"]
+
+[ext_resource type="Script" uid="uid://c0unw727rhwb1" path="res://InfoSystem/inventory_item_infocard/inventory_item_infocard.gd" id="1_6xipo"]
+[ext_resource type="Texture2D" uid="uid://d4rlbkfdlviv" path="res://Assets/Images/Farm/potato crop asset.png" id="2_2dgdf"]
+[ext_resource type="Texture2D" uid="uid://bkk02okxv11iy" path="res://Assets/Images/General/coin icon.png" id="2_6r6l8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5roh6"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.52086383, 0.55546874, 0.18009338, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.7415515, 0.14296877, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2850"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.08908229, 0.08984375, 0.08612365, 0.5372549)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="InventoryItemInfocard" type="CanvasLayer" unique_id=1860561526 node_paths=PackedStringArray("name_label", "texture_node", "price_label", "descript_label")]
+layer = 2
+script = ExtResource("1_6xipo")
+name_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2/Name")
+texture_node = NodePath("PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2/TextureRect2")
+price_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/HBoxContainer/MarginContainer/Price")
+descript_label = NodePath("PanelContainer/VBoxContainer/PanelContainer/Description")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1022690139]
+custom_minimum_size = Vector2(400, 0)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5roh6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=940364674]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=49794609]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=2019714006]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=47103299]
+self_modulate = Color(1.4236968, 1.4236968, 1.4236968, 1)
+layout_mode = 2
+texture = ExtResource("2_2dgdf")
+expand_mode = 3
+
+[node name="Name" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=58145652]
+layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Potato"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1750136719]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = -3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=780916508]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=1858962934]
+self_modulate = Color(1.4236968, 1.4236968, 1.4236968, 1)
+layout_mode = 2
+texture = ExtResource("2_6r6l8")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=637647736]
+layout_mode = 2
+theme_override_constants/margin_left = -6
+theme_override_constants/margin_top = -5
+
+[node name="Price" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/HBoxContainer/MarginContainer" unique_id=287989174]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9609375, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=2006597123]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2850")
+
+[node name="Description" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=1936500148]
+custom_minimum_size = Vector2(276, 49)
+layout_mode = 2
+text = "asdasdfsdf sdf sdf sd fsd f"
+autowrap_mode = 3

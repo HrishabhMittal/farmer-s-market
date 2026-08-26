@@ -22,6 +22,7 @@ ItemManager="*uid://csw2p5uv741q5"
 InventoryManager="*uid://1twwv6e8n73q"
 PlayerHeldItem="*uid://dp6cgavfkr6ca"
 TravelTransition="*uid://b1p81i80rf4c3"
+InfocardManager="*uid://btlfcwfcia4sl"
 
 [display]
 

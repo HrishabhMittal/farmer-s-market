@@ -33,7 +33,10 @@ func _handle_gui_input(event: InputEvent) -> void:
 			PlayerHeldItem.pick_item(current_item, self)
 
 func _highlight() -> void:
-	slot_texture_node.scale = Vector2(1.2, 1.2)
+	if current_item:
+		slot_texture_node.scale = Vector2(1.2, 1.2)
+		InfocardManager.show_infocard(current_item)
 	
 func _unhilight() -> void:
 	slot_texture_node.scale = Vector2(1.0, 1.0)
+	InfocardManager.hide_infocard()

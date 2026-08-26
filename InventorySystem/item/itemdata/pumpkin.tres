@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://de5o7l2cr65wt"]
 
-[ext_resource type="Texture2D" uid="uid://b232re7e0ml38" path="res://Assets/pumppkin crop assets.png" id="1_p0lei"]
+[ext_resource type="Texture2D" uid="uid://b232re7e0ml38" path="res://Assets/Images/Farm/pumppkin crop assets.png" id="1_p0lei"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="2_urdo5"]
 
 [resource]
 script = ExtResource("2_urdo5")
 display_name = "Pumpkin"
 item_texture = ExtResource("1_p0lei")
+item_description = "Looks too pretty to eat. But I like pumpkin curry >_<"
 value = 50
 item_type = Array[int]([0])
 metadata/_custom_type_script = "uid://j2yw5ljak0ig"

@@ -13,6 +13,9 @@ func get_item(item_id: String) -> ItemData:
 		return null
 	return item
 
+func make_item(item_id: String, amount: int = 0) -> Item:
+	return Item.new(get_item(item_id), amount)
+
 func load_items_from_folder(folder_path: String) -> void:
 	var files: PackedStringArray = ResourceLoader.list_directory(folder_path)
 

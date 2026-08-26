@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ithi3c0koyh0"]
+
+[ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="1_a8x87"]
+[ext_resource type="Texture2D" uid="uid://bkk02okxv11iy" path="res://Assets/Images/General/coin icon.png" id="1_e0tgk"]
+[ext_resource type="PackedScene" uid="uid://br1620k5bimtc" path="res://CoreFarmSystem/farm_plants/tomato_plant.tscn" id="2_odwvm"]
+
+[resource]
+script = ExtResource("1_a8x87")
+display_name = "Tomato Seed"
+item_texture = ExtResource("1_e0tgk")
+item_description = "Fruit to be or not to be, that is the question."
+value = 15
+item_type = Array[int]([1])
+scene_to_instantiate = ExtResource("2_odwvm")
+metadata/_custom_type_script = "uid://j2yw5ljak0ig"

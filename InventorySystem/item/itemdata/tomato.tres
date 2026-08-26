@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://nq706ryeu8ih"]
 
-[ext_resource type="Texture2D" uid="uid://de37jy8hxstfs" path="res://Assets/tomato crop asset.png" id="1_0e3rh"]
+[ext_resource type="Texture2D" uid="uid://de37jy8hxstfs" path="res://Assets/Images/Farm/tomato crop asset.png" id="1_0e3rh"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="2_bwkq8"]
 
 [resource]
 script = ExtResource("2_bwkq8")
 display_name = "Tomato"
 item_texture = ExtResource("1_0e3rh")
+item_description = "Only time I would eat it is when it's turned into a sauce. Mmmm.. yummmy."
 value = 10
 item_type = Array[int]([0])
 metadata/_custom_type_script = "uid://j2yw5ljak0ig"
