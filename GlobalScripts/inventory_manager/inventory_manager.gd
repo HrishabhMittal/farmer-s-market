@@ -55,3 +55,4 @@ func swap_item(from_inventory: Inventory, to_inventory: Inventory, from_slot_ind
 
 func _ready():
 	add_child(make_new_palyer_inventory(21))
+	player_inventory.visible = false
