@@ -56,7 +56,7 @@ texture = ExtResource("1_12lvx")
 position = Vector2(-286, 125)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="truck" unique_id=832033571]
-scale = Vector2(0.14, 0.14)
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_3dp3j")
 frame_progress = 0.39749503
 
@@ -87,3 +87,6 @@ player_node = NodePath("../truck")
 [node name="Sprite2D" type="Sprite2D" parent="building3" unique_id=315853722]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_8i1fv")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1942483828]
+position = Vector2(267, -29)
