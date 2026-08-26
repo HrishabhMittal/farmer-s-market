@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bpfkb4svhwhi4"]
+
+[ext_resource type="Script" uid="uid://dklymwurh54e6" path="res://AudioManager/audio_manager_test.gd" id="1_kv72u"]
+[ext_resource type="AudioStream" uid="uid://br8syosocg5kd" path="res://AudioManager/SFX/Water.mp3" id="2_ghemk"]
+
+[node name="AudioManagerTest" type="Node2D" unique_id=33106062]
+script = ExtResource("1_kv72u")
+test_one_shot_audio = ExtResource("2_ghemk")
