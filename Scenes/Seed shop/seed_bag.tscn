@@ -1,27 +1,31 @@
 [gd_scene format=3 uid="uid://d004rmn308asi"]
 
 [ext_resource type="Script" uid="uid://mnolnsa2p0ru" path="res://Scenes/Seed shop/seed_bag.gd" id="1_xfstm"]
-[ext_resource type="Texture2D" uid="uid://d17kuuojcyivf" path="res://Assets/icon.svg" id="2_au06c"]
+[ext_resource type="Texture2D" uid="uid://crj6vli7xp6os" path="res://Assets/some_placeholder_assets/placeholderak47 jump .png" id="2_p3mv5"]
+[ext_resource type="Script" uid="uid://c1abbn2ghu1rn" path="res://Scenes/Seed shop/seed_pack.gd" id="2_ryu7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
-size = Vector2(68, 67)
+size = Vector2(45, 65.5)
 
 [node name="seed_bag" type="Node2D" unique_id=1600610449]
 script = ExtResource("1_xfstm")
 
+[node name="spawn point" type="Marker2D" parent="." unique_id=1012523825]
+
 [node name="bag" type="Node2D" parent="." unique_id=1973259450]
 
-[node name="Sprite2D" type="Sprite2D" parent="bag" unique_id=1058653798]
-position = Vector2(1, -1.9073486e-06)
-scale = Vector2(0.5625, 0.578125)
-texture = ExtResource("2_au06c")
+[node name="place holder" type="Sprite2D" parent="bag" unique_id=1058653798]
+scale = Vector2(2.523, 2.598)
+texture = ExtResource("2_p3mv5")
+hframes = 6
+frame = 2
 
 [node name="seed_pack" type="Area2D" parent="bag" unique_id=1733390231]
+script = ExtResource("2_ryu7e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bag/seed_pack" unique_id=1700564055]
-position = Vector2(1, -0.5)
+position = Vector2(0.5, -0.75)
 shape = SubResource("RectangleShape2D_3dp3j")
 
-[connection signal="body_entered" from="bag/seed_pack" to="." method="_on_area_2d_body_entered"]
-[connection signal="mouse_entered" from="bag/seed_pack" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="bag/seed_pack" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="bag/seed_pack" to="bag/seed_pack" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="bag/seed_pack" to="bag/seed_pack" method="_on_mouse_exited"]
