@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://2yjefu6dh7hs" path="res://Assets/Images/SeedShop/seed_bag.png" id="3_w1l5w"]
 [ext_resource type="PackedScene" uid="uid://d004rmn308asi" path="res://Scenes/Seed shop/seed_bag.tscn" id="4_2ghwr"]
 [ext_resource type="Texture2D" uid="uid://h0l1w45bh6u7" path="res://Assets/button_placeholder.png" id="5_5bumm"]
+[ext_resource type="Texture2D" uid="uid://d17kuuojcyivf" path="res://Assets/icon.svg" id="5_w1l5w"]
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
 script = ExtResource("1_5bumm")
@@ -32,6 +33,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.68235296)
 
 [node name="InspectSprite" type="Sprite2D" parent="CanvasLayer/InspectOverlay" unique_id=1764594715]
+position = Vector2(425, 282)
+texture = ExtResource("5_w1l5w")
 
 [node name="book" parent="CanvasLayer" unique_id=1606224245 instance=ExtResource("2_s4d4o")]
 offset_left = 346.0
@@ -56,6 +59,12 @@ texture_hover = ExtResource("5_5bumm")
 texture_disabled = ExtResource("5_5bumm")
 texture_focused = ExtResource("5_5bumm")
 
+[node name="Label" type="Label" parent="CanvasLayer/ActionMenu/VBoxContainer/BuyButton" unique_id=602898886]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "BUY"
+
 [node name="InspectButton" type="TextureButton" parent="CanvasLayer/ActionMenu/VBoxContainer" unique_id=553330868]
 layout_mode = 2
 texture_normal = ExtResource("5_5bumm")
@@ -63,6 +72,12 @@ texture_pressed = ExtResource("5_5bumm")
 texture_hover = ExtResource("5_5bumm")
 texture_disabled = ExtResource("5_5bumm")
 texture_focused = ExtResource("5_5bumm")
+
+[node name="Label" type="Label" parent="CanvasLayer/ActionMenu/VBoxContainer/InspectButton" unique_id=1571175869]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "INSPECT"
 
 [node name="Table" type="Node2D" parent="." unique_id=1588087587]
 position = Vector2(603, 599)

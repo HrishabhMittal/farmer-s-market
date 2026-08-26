@@ -8,8 +8,6 @@ size = Vector2(45, 65.5)
 [node name="seed_bag" type="Node2D" unique_id=1600610449]
 script = ExtResource("1_xfstm")
 
-[node name="spawn point" type="Marker2D" parent="." unique_id=1012523825]
-
 [node name="bag" type="Node2D" parent="." unique_id=1973259450]
 
 [node name="place holder" type="Sprite2D" parent="bag" unique_id=1058653798]

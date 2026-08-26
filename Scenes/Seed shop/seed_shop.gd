@@ -31,7 +31,6 @@ func refresh_shop():
 	bag_on_table = null
 	action_menu.hide()
 	inspect_overlay.hide()
-
 func handle_bag_click(bag):
 	if inspect_overlay.visible:
 		return
@@ -39,14 +38,19 @@ func handle_bag_click(bag):
 	if not bag.is_on_table:
 		if bag_on_table != null:
 			bag_on_table.return_to_shelf()
+		
 		bag_on_table = bag
 		bag.is_on_table = true
-		bag.global_position = table_marker.global_position
+		bag.global_position = table_marker.global_position + Vector2(0, -30)
+		
 		action_menu.show()
 		var screen_pos = get_viewport().get_canvas_transform() * bag.global_position
 		action_menu.global_position = screen_pos + Vector2(60, -30)
+		
 	else:
-		action_menu.visible = !action_menu.visible
+		bag.return_to_shelf()
+		bag_on_table = null
+		action_menu.hide()
 
 func _on_buy_button_pressed() -> void:
 	pass # Replace with function body.
