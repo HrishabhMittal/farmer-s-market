@@ -14,10 +14,11 @@ signal ground_item_picked(ground_item: GroundItem)
 @warning_ignore_restore("unused_signal")
 
 var tick_timer: Timer
+const TICK_TIME = 5.0
 
 func _ready():
 	tick_timer = Timer.new()
-	tick_timer.wait_time = 5.0
+	tick_timer.wait_time = TICK_TIME
 	tick_timer.autostart = true
 	tick_timer.timeout.connect(func(): global_growth_tick.emit())
 	add_child(tick_timer)

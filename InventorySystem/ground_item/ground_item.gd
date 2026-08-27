@@ -19,7 +19,7 @@ var pick_cooldown: float = 3.0 # If it fails to get picked up for any reason, it
 							   # this amount of time before requesting pickup again
 
 var item: Item
-var target_inventory_for_pickup: Inventory = InventoryManager.barn_inventory # Or should it be player inventory?
+var target_inventory_for_pickup: Inventory = StateManager.barn_inventory # Or should it be player inventory?
 
 func initialize(new_item: Item) -> void:
 	item = new_item

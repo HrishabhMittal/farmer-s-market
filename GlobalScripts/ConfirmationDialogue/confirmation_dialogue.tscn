@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccnddi22oh7oj"]
 
 [ext_resource type="Texture2D" uid="uid://h0l1w45bh6u7" path="res://Assets/button_placeholder.png" id="1_jnkxv"]
-[ext_resource type="Script" uid="uid://b5llj6l3bui6s" path="res://Scenes/ConfirmationDialogue/confirmation_dialogue.gd" id="1_u1sf1"]
+[ext_resource type="Script" uid="uid://b5llj6l3bui6s" path="res://GlobalScripts/ConfirmationDialogue/confirmation_dialogue.gd" id="1_u1sf1"]
 
 [node name="ConfirmationDialogue" type="CanvasLayer" unique_id=21617337]
 script = ExtResource("1_u1sf1")

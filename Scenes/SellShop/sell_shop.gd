@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var shop_id: String = "sell_shop_1"
 @export var price_lower_limit: int = 10
 @export var price_upper_limit: int = 60
 
@@ -10,13 +11,24 @@ var player_inventory_ui: InventoryUI
 
 func _ready() -> void:
 	add_to_group("sell_shop")
+	add_to_group("save_state")
 	
 	player_inventory_ui = load("res://InventorySystem/inventory_ui/inventory_ui.tscn").instantiate()
-	player_inventory_ui.initialize(InventoryManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_CENTER)
+	player_inventory_ui.initialize(StateManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_CENTER)
 	player_inventory_ui.set_inventory_name("Player Inventory")
 	add_child(player_inventory_ui)
-	
-	refresh_shop()
+
+	if StateManager.sell_shops.has(shop_id):
+		item_prices = StateManager.sell_shops[shop_id].duplicate()
+		update_price_label()
+	else:
+		refresh_shop()
+
+func _exit_tree() -> void:
+	save_state()
+
+func save_state() -> void:
+	StateManager.sell_shops[shop_id] = item_prices.duplicate()
 
 func refresh_shop() -> void:
 	item_prices.clear()
@@ -55,7 +67,7 @@ func _unhandled_input(event: InputEvent) -> void:
 						var unit_price = item_prices.get(item_id, held_item.item_data.value)
 						var total_sale = unit_price * held_item.amount
 						
-						InventoryManager.money += total_sale
+						StateManager.money += total_sale
 						
 						if InfocardManager:
 							InfocardManager.show_floating_text("+%d Coins" % total_sale, get_global_mouse_position(), "Green")

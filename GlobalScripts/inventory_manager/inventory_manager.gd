@@ -2,12 +2,6 @@ extends Node
 
 @export var inventory_ui_scene: PackedScene
 
-var money: int = 500
-
-var barn_inventory: Inventory
-var truck_inventory: Inventory
-var player_inventory: Inventory
-var active_seed_inventory: Inventory
 
 
 var barn_ui: InventoryUI
@@ -15,25 +9,25 @@ var truck_ui: InventoryUI
 var player_ui: InventoryUI
 
 func _ready():
-	barn_inventory = Inventory.new(50) 
-	truck_inventory = Inventory.new(30)
-	player_inventory = Inventory.new(20)
-	active_seed_inventory = Inventory.new(1)
+	StateManager.barn_inventory = Inventory.new(50) 
+	StateManager.truck_inventory = Inventory.new(30)
+	StateManager.player_inventory = Inventory.new(20)
+	StateManager.active_seed_inventory = Inventory.new(1)
 	
 	barn_ui = inventory_ui_scene.instantiate()
-	barn_ui.initialize(barn_inventory)
+	barn_ui.initialize(StateManager.barn_inventory)
 	barn_ui.set_inventory_name("Barn")
 	add_child(barn_ui)
 	barn_ui.visible = false
 	
 	truck_ui = inventory_ui_scene.instantiate()
-	truck_ui.initialize(truck_inventory)
+	truck_ui.initialize(StateManager.truck_inventory)
 	truck_ui.set_inventory_name("Truck")
 	add_child(truck_ui)
 	truck_ui.visible = false
 	
 	player_ui = inventory_ui_scene.instantiate()
-	player_ui.initialize(player_inventory, InventoryUI.InventoryPosition.BOTTOM_CENTER)
+	player_ui.initialize(StateManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_CENTER)
 	player_ui.set_inventory_name("Backpack")
 	add_child(player_ui)
 	player_ui.visible = false
@@ -56,34 +50,34 @@ func is_same_item(item1: Item, item2: Item) -> bool:
 	return false
 
 func buy_item(item_id: String, cost: int, amount: int = 1) -> bool:
-	if money >= cost:
+	if StateManager.money >= cost:
 		var new_item = _make_item(item_id, amount)
-		if new_item and truck_inventory.add_item(new_item, amount):
-			money -= cost
+		if new_item and StateManager.truck_inventory.add_item(new_item, amount):
+			StateManager.money -= cost
 			return true
 	return false
 
 func sell_item(item_id: String, price: int, amount: int = 1) -> bool:
 	var item_to_sell = _make_item(item_id, amount)
-	if item_to_sell and truck_inventory.remove_item(item_to_sell, amount):
-		money += (price * amount)
+	if item_to_sell and StateManager.truck_inventory.remove_item(item_to_sell, amount):
+		StateManager.money += (price * amount)
 		return true
 	return false
 
 func add_item_to_barn(item_id: String, amount: int = 0) -> bool:
 	var new_item: Item = _make_item(item_id, amount)
 	if not new_item: return false
-	return barn_inventory.add_item(new_item, amount)
+	return StateManager.barn_inventory.add_item(new_item, amount)
 
 func add_item_to_truck(item_id: String, amount: int = 0) -> bool:
 	var new_item: Item = _make_item(item_id, amount)
 	if not new_item: return false
-	return truck_inventory.add_item(new_item, amount)
+	return StateManager.truck_inventory.add_item(new_item, amount)
 
 func does_have_item_in_truck(item_id: String, amount: int = 0) -> bool:
 	var new_item: Item = _make_item(item_id, amount)
 	if not new_item: return false
-	return truck_inventory.does_have_item(new_item, amount)
+	return StateManager.truck_inventory.does_have_item(new_item, amount)
 
 func _make_item(item_id: String, amount: int = 0) -> Item:
 	var data = ItemManager.get_item(item_id)

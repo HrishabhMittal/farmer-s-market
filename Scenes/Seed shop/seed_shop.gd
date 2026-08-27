@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var shop_id: String = "seed_shop_1"
 @export var minimised_sheet: Texture2D
 @export var maximised_sheet: Texture2D
 
@@ -19,7 +20,13 @@ func _process(delta: float) -> void:
 
 func _ready():
 	add_to_group("shop") 
-	refresh_shop()
+	add_to_group("save_state")
+	if StateManager.seed_shops.has(shop_id):
+		load_shop()
+	else:
+		refresh_shop()
+	action_menu.hide()
+	inspect_overlay.hide()
 
 func refresh_shop():
 	for bag in shelf.get_children():
@@ -31,8 +38,28 @@ func refresh_shop():
 		bag.return_to_shelf()
 		
 	bag_on_table = null
-	action_menu.hide()
-	inspect_overlay.hide()
+
+func load_shop():
+	var bags = shelf.get_children()
+	var saved_bags = StateManager.seed_shops[shop_id]
+	for i in range(bags.size()):
+		var data = saved_bags[i]
+		bags[i].setup(data["type"], data["is_real"], data["fake_var"], minimised_sheet)
+		bags[i].return_to_shelf()
+
+func _exit_tree() -> void:
+	save_state()
+
+func save_state():
+	var bag_data = []
+	for bag in shelf.get_children():
+		bag_data.append({
+			"type": bag.seed_type,
+			"is_real": bag.is_real,
+			"fake_var": bag.fake_variant
+		})
+	StateManager.seed_shops[shop_id] = bag_data
+
 func handle_bag_click(bag):
 	if inspect_overlay.visible:
 		return
