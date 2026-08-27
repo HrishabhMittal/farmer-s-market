@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbrlei7l6whro"
-path="res://.godot/imported/stage 1 all growth.png-691688146344b006dad31a82b092435f.ctex"
+uid="uid://teb4xeaij6d"
+path="res://.godot/imported/stage_1.png-43c4171d498f34db9ab5d7751c547b63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Farm/stage 1 all growth.png"
-dest_files=["res://.godot/imported/stage 1 all growth.png-691688146344b006dad31a82b092435f.ctex"]
+source_file="res://Assets/Images/Farm/Potato/stage_1.png"
+dest_files=["res://.godot/imported/stage_1.png-43c4171d498f34db9ab5d7751c547b63.ctex"]
 
 [params]
 

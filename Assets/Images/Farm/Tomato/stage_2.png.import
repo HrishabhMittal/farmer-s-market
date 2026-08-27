@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdaf1ta325b2x"
-path="res://.godot/imported/pumpkinplant growth stage 3 tomato.png-a783418ed64e85f3b0544c087fc57014.ctex"
+uid="uid://c4xfyo5p5rqjn"
+path="res://.godot/imported/stage_2.png-aaa640d7a707edb428030b5cc4f877ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Farm/pumpkinplant growth stage 3 tomato.png"
-dest_files=["res://.godot/imported/pumpkinplant growth stage 3 tomato.png-a783418ed64e85f3b0544c087fc57014.ctex"]
+source_file="res://Assets/Images/Farm/Tomato/stage_2.png"
+dest_files=["res://.godot/imported/stage_2.png-aaa640d7a707edb428030b5cc4f877ea.ctex"]
 
 [params]
 

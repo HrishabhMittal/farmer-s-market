@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4f237iavn3vi"
-path="res://.godot/imported/background.png-f2353371dd0409849f102802cb40deab.ctex"
+uid="uid://chgranomcbwj7"
+path="res://.godot/imported/stage_1.png-d898c6ca19a07aa22fd8f5554fb1a7ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Farm/background.png"
-dest_files=["res://.godot/imported/background.png-f2353371dd0409849f102802cb40deab.ctex"]
+source_file="res://Assets/Images/Farm/Cabbage/stage_1.png"
+dest_files=["res://.godot/imported/stage_1.png-d898c6ca19a07aa22fd8f5554fb1a7ed.ctex"]
 
 [params]
 

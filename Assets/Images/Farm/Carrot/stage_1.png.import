@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdyx0mkghyqhm"
-path="res://.godot/imported/cabbage crop assets.png-9f750a31b203f38141e76582fd7f588a.ctex"
+uid="uid://dnbbb7v8riq7b"
+path="res://.godot/imported/stage_1.png-ae52896729d9fe60ba62bdc6a7b128a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Farm/cabbage crop assets.png"
-dest_files=["res://.godot/imported/cabbage crop assets.png-9f750a31b203f38141e76582fd7f588a.ctex"]
+source_file="res://Assets/Images/Farm/Carrot/stage_1.png"
+dest_files=["res://.godot/imported/stage_1.png-ae52896729d9fe60ba62bdc6a7b128a5.ctex"]
 
 [params]
 

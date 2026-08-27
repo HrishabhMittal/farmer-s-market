@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4f237iavn3vi"
-path="res://.godot/imported/background.png-f2353371dd0409849f102802cb40deab.ctex"
+uid="uid://c4p114omi6thg"
+path="res://.godot/imported/stage_3.png-61f4a312e241b5f8af8a01660c8de87e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Farm/background.png"
-dest_files=["res://.godot/imported/background.png-f2353371dd0409849f102802cb40deab.ctex"]
+source_file="res://Assets/Images/Farm/Pumpkin/stage_3.png"
+dest_files=["res://.godot/imported/stage_3.png-61f4a312e241b5f8af8a01660c8de87e.ctex"]
 
 [params]
 

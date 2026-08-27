@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4f237iavn3vi"
-path="res://.godot/imported/background.png-f2353371dd0409849f102802cb40deab.ctex"
+uid="uid://b45s1jjrvpyp8"
+path="res://.godot/imported/icon.png-c19667142d30b6399754b4d6038d4a38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Farm/background.png"
-dest_files=["res://.godot/imported/background.png-f2353371dd0409849f102802cb40deab.ctex"]
+source_file="res://Assets/Images/Farm/Potato/icon.png"
+dest_files=["res://.godot/imported/icon.png-c19667142d30b6399754b4d6038d4a38.ctex"]
 
 [params]
 

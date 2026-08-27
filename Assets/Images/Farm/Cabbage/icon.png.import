@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de37jy8hxstfs"
-path="res://.godot/imported/tomato crop asset.png-e713fcb8529d005c6da7875ef432d6a7.ctex"
+uid="uid://chkpg7bos02e4"
+path="res://.godot/imported/icon.png-843ca3da249dc40fcd61e02c062eec12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Farm/tomato crop asset.png"
-dest_files=["res://.godot/imported/tomato crop asset.png-e713fcb8529d005c6da7875ef432d6a7.ctex"]
+source_file="res://Assets/Images/Farm/Cabbage/icon.png"
+dest_files=["res://.godot/imported/icon.png-843ca3da249dc40fcd61e02c062eec12.ctex"]
 
 [params]
 
