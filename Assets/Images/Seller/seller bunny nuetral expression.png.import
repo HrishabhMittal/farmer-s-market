@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mi5884uyhi3w"
-path="res://.godot/imported/seller bunny angry expression.png-6674e768dc09b26e10e504e33c9101d1.ctex"
+uid="uid://b1k272twdfo2a"
+path="res://.godot/imported/seller bunny nuetral expression.png-09efe09a47361a0eb927d73aa9d960c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/seller bunny angry expression.png"
-dest_files=["res://.godot/imported/seller bunny angry expression.png-6674e768dc09b26e10e504e33c9101d1.ctex"]
+source_file="res://Assets/Images/Seller/seller bunny nuetral expression.png"
+dest_files=["res://.godot/imported/seller bunny nuetral expression.png-09efe09a47361a0eb927d73aa9d960c6.ctex"]
 
 [params]
 

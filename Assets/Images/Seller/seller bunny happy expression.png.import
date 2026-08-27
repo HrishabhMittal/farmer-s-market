@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvuniuflvhpc1"
-path="res://.godot/imported/seller combo.png-8c9c3ad6b19634bbe9e139a19ba8e8c0.ctex"
+uid="uid://rvb6q5gavth4"
+path="res://.godot/imported/seller bunny happy expression.png-725e3fb828541428f9e0c5f9b9efa346.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/seller combo.png"
-dest_files=["res://.godot/imported/seller combo.png-8c9c3ad6b19634bbe9e139a19ba8e8c0.ctex"]
+source_file="res://Assets/Images/Seller/seller bunny happy expression.png"
+dest_files=["res://.godot/imported/seller bunny happy expression.png-725e3fb828541428f9e0c5f9b9efa346.ctex"]
 
 [params]
 

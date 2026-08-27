@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn6x37nqos4p2"
-path="res://.godot/imported/seller bunny happy expression.png-f152c7409ef37f9accc87c65c9448f12.ctex"
+uid="uid://dpnnhnb3dex1k"
+path="res://.godot/imported/seed shop front.png-3ccf05c1a7cfd639882b81b2958650c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/seller bunny happy expression.png"
-dest_files=["res://.godot/imported/seller bunny happy expression.png-f152c7409ef37f9accc87c65c9448f12.ctex"]
+source_file="res://Assets/Images/SeedShop/seed shop front.png"
+dest_files=["res://.godot/imported/seed shop front.png-3ccf05c1a7cfd639882b81b2958650c4.ctex"]
 
 [params]
 

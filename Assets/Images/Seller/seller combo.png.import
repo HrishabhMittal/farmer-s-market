@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc2btfeiyhn2w"
-path="res://.godot/imported/button_placeholder.png-4a53d8c7b50ae0f2bd7e7556cb0dc4cd.ctex"
+uid="uid://bncf30gfaon0g"
+path="res://.godot/imported/seller combo.png-ad7f2b8a209cf66ebdc3da16a7d27c91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/button_placeholder.png"
-dest_files=["res://.godot/imported/button_placeholder.png-4a53d8c7b50ae0f2bd7e7556cb0dc4cd.ctex"]
+source_file="res://Assets/Images/Seller/seller combo.png"
+dest_files=["res://.godot/imported/seller combo.png-ad7f2b8a209cf66ebdc3da16a7d27c91.ctex"]
 
 [params]
 

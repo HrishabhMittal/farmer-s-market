@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8x4rvbe1sdyp"
-path="res://.godot/imported/seller bunny sunglasses accessory.png-cff1c580cf2ca56cd8169c0c0630b4cb.ctex"
+uid="uid://b7vcwbw571k5w"
+path="res://.godot/imported/seller bunny sunglasses accessory.png-a410460a731d2d653c53ddc2a499b7da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/seller bunny sunglasses accessory.png"
-dest_files=["res://.godot/imported/seller bunny sunglasses accessory.png-cff1c580cf2ca56cd8169c0c0630b4cb.ctex"]
+source_file="res://Assets/Images/Seller/seller bunny sunglasses accessory.png"
+dest_files=["res://.godot/imported/seller bunny sunglasses accessory.png-a410460a731d2d653c53ddc2a499b7da.ctex"]
 
 [params]
 

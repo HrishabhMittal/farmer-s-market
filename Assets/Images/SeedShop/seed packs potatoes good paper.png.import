@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vpbsunhh8jko"
-path="res://.godot/imported/seed packs potatoes good paper.png-25df4440463e1d3c2315cfb706f3a787.ctex"
+uid="uid://7k5il8h6lt1o"
+path="res://.godot/imported/seed packs potatoes good paper.png-48c76adb81728c8a4b54bf94ed6c1147.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/seed packs potatoes good paper.png"
-dest_files=["res://.godot/imported/seed packs potatoes good paper.png-25df4440463e1d3c2315cfb706f3a787.ctex"]
+source_file="res://Assets/Images/SeedShop/seed packs potatoes good paper.png"
+dest_files=["res://.godot/imported/seed packs potatoes good paper.png-48c76adb81728c8a4b54bf94ed6c1147.ctex"]
 
 [params]
 

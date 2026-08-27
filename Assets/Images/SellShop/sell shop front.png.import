@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cul88ik10jdvl"
-path="res://.godot/imported/seed shop front.png-2f561ee15e2b9a40ae77c1f6f3f191bd.ctex"
+uid="uid://vsisqb2u8amv"
+path="res://.godot/imported/sell shop front.png-bbb79c93f4a5b6bba598bc82c3a91144.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/seed shop front.png"
-dest_files=["res://.godot/imported/seed shop front.png-2f561ee15e2b9a40ae77c1f6f3f191bd.ctex"]
+source_file="res://Assets/Images/SellShop/sell shop front.png"
+dest_files=["res://.godot/imported/sell shop front.png-bbb79c93f4a5b6bba598bc82c3a91144.ctex"]
 
 [params]
 

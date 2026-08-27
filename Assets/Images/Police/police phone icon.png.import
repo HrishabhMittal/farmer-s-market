@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmu2g10d6kbhu"
-path="res://.godot/imported/sell shop back.png-b7731588314c65584fc425160d830ec8.ctex"
+uid="uid://b1ru233x22agq"
+path="res://.godot/imported/police phone icon.png-d8c53b4717a1f53f4813778ed26e5681.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sell shop back.png"
-dest_files=["res://.godot/imported/sell shop back.png-b7731588314c65584fc425160d830ec8.ctex"]
+source_file="res://Assets/Images/Police/police phone icon.png"
+dest_files=["res://.godot/imported/police phone icon.png-d8c53b4717a1f53f4813778ed26e5681.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3rhaeiy3u5yw"
-path="res://.godot/imported/seed shop back.png-7329810d490b429502994afa40f6e0d9.ctex"
+uid="uid://dfsrkb7vuokam"
+path="res://.godot/imported/seller bunny sunhat accessory.png-af8ea5953f49b2ee960bcd31ca4750a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/seed shop back.png"
-dest_files=["res://.godot/imported/seed shop back.png-7329810d490b429502994afa40f6e0d9.ctex"]
+source_file="res://Assets/Images/Seller/seller bunny sunhat accessory.png"
+dest_files=["res://.godot/imported/seller bunny sunhat accessory.png-af8ea5953f49b2ee960bcd31ca4750a7.ctex"]
 
 [params]
 
