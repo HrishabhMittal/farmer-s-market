@@ -6,13 +6,19 @@ var money: int = 500
 
 var barn_inventory: Inventory
 var truck_inventory: Inventory
+var player_inventory: Inventory
+var active_seed_inventory: Inventory
+
 
 var barn_ui: InventoryUI
 var truck_ui: InventoryUI
+var player_ui: InventoryUI
 
 func _ready():
 	barn_inventory = Inventory.new(50) 
 	truck_inventory = Inventory.new(30)
+	player_inventory = Inventory.new(20)
+	active_seed_inventory = Inventory.new(1)
 	
 	barn_ui = inventory_ui_scene.instantiate()
 	barn_ui.initialize(barn_inventory)
@@ -25,14 +31,26 @@ func _ready():
 	truck_ui.set_inventory_name("Truck")
 	add_child(truck_ui)
 	truck_ui.visible = false
+	
+	player_ui = inventory_ui_scene.instantiate()
+	player_ui.initialize(player_inventory, InventoryUI.InventoryPosition.BOTTOM_CENTER)
+	player_ui.set_inventory_name("Backpack")
+	add_child(player_ui)
+	player_ui.visible = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("inventory"):
+		if player_ui:
+			player_ui.visible = !player_ui.visible
+
 
 func close_all_uis() -> void:
 	if barn_ui: barn_ui.visible = false
 	if truck_ui: truck_ui.visible = false
+	if player_ui: player_ui.visible = false
 
 func is_same_item(item1: Item, item2: Item) -> bool:
-	#prints(item1, item2)
-	if item1 and item2: # Checking if they are null
+	if item1 and item2:
 		if item1.item_data == item2.item_data:
 			return true
 	return false

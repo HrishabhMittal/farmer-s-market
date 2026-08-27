@@ -604,6 +604,10 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("7_a8m23")
 region = Rect2(0, 64, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahdf5"]
+atlas = ExtResource("7_a8m23")
+region = Rect2(64, 64, 64, 64)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
 size = Vector2(700, 890.5)
 
@@ -673,10 +677,10 @@ tool_texture = SubResource("AtlasTexture_a2850")
 tool_manager = NodePath("../../../FarmToolManager")
 
 [node name="SeedPlanter" parent="ToolBar/HBoxContainer" unique_id=2109462242 node_paths=PackedStringArray("tool_manager") instance=ExtResource("6_lo7h3")]
-visible = false
 layout_mode = 2
 display_name = "Seed Planter"
 tool_type = 3
+tool_texture = SubResource("AtlasTexture_ahdf5")
 tool_manager = NodePath("../../../FarmToolManager")
 
 [node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("10_miwjd")]
