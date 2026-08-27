@@ -1,13 +1,12 @@
 [gd_scene format=3 uid="uid://bixt6b2yu10uq"]
 
 [ext_resource type="PackedScene" uid="uid://b5maie0020lln" path="res://CoreFarmSystem/farm_plants/farm_plant.tscn" id="1_6rs3u"]
-[ext_resource type="Texture2D" uid="uid://bbrlei7l6whro" path="res://Assets/Images/Farm/stage 1 all growth.png" id="2_7n322"]
-[ext_resource type="Texture2D" uid="uid://cxi6tvtu10ybu" path="res://Assets/Images/Farm/plant growth stage 2 pumpkin.png" id="3_ggjsm"]
-[ext_resource type="Texture2D" uid="uid://cdaf1ta325b2x" path="res://Assets/Images/Farm/pumpkinplant growth stage 3 tomato.png" id="4_575v4"]
+[ext_resource type="Texture2D" uid="uid://bspos7qvnsb0u" path="res://Assets/Images/Farm/Pumpkin/stage_1.png" id="2_7n322"]
+[ext_resource type="Texture2D" uid="uid://dm8ys20sbv22k" path="res://Assets/Images/Farm/Pumpkin/stage_2.png" id="3_ggjsm"]
+[ext_resource type="Texture2D" uid="uid://c4p114omi6thg" path="res://Assets/Images/Farm/Pumpkin/stage_3.png" id="4_575v4"]
 
 [node name="PumpkinPlant" unique_id=1529433205 instance=ExtResource("1_6rs3u")]
 display_name = "Pumpkin Plant"
 produced_crop_id = "pumpkin"
 production_amount = 2
-growth_cycle_day = Array[int]([2, 4])
 growth_cycle_texture = Array[Texture2D]([ExtResource("2_7n322"), ExtResource("3_ggjsm"), ExtResource("4_575v4")])

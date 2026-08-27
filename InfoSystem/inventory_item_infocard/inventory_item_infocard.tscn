@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ck3pgifdsc348"]
 
 [ext_resource type="Script" uid="uid://c0unw727rhwb1" path="res://InfoSystem/inventory_item_infocard/inventory_item_infocard.gd" id="1_6xipo"]
-[ext_resource type="Texture2D" uid="uid://d4rlbkfdlviv" path="res://Assets/Images/Farm/potato crop asset.png" id="2_2dgdf"]
+[ext_resource type="Texture2D" uid="uid://b45s1jjrvpyp8" path="res://Assets/Images/Farm/Potato/icon.png" id="2_2dgdf"]
 [ext_resource type="Texture2D" uid="uid://bkk02okxv11iy" path="res://Assets/Images/General/coin icon.png" id="2_6r6l8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5roh6"]

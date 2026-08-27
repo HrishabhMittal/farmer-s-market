@@ -1,17 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://keaqpv7hlsdc"]
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cxm3xanrufeub"]
 
-[ext_resource type="Texture2D" uid="uid://l7sq1rir367n" path="res://Assets/some_placeholder_assets/placeholder_potato_plant.png" id="1_4snnn"]
+[ext_resource type="Texture2D" uid="uid://dkw4ereireumy" path="res://Assets/Images/Farm/Potato/seed_icon.png" id="1_4snnn"]
 [ext_resource type="PackedScene" uid="uid://d124hl11020e7" path="res://CoreFarmSystem/farm_plants/potato_plant.tscn" id="2_qpm5q"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="3_k5prs"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_miwjd"]
-atlas = ExtResource("1_4snnn")
-region = Rect2(128, 128, 128, 128)
 
 [resource]
 script = ExtResource("3_k5prs")
 display_name = "Potato Seed"
-item_texture = SubResource("AtlasTexture_miwjd")
+item_texture = ExtResource("1_4snnn")
 item_description = "A boring but useful potato seed"
 value = 15
 item_type = Array[int]([1])

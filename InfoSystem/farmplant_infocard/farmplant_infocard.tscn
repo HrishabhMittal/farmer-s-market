@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://jvuq8w6i08n1"]
 
 [ext_resource type="Script" uid="uid://d1wtmneo2vjnf" path="res://InfoSystem/farmplant_infocard/farmplant_infocard.gd" id="1_0pxvp"]
-[ext_resource type="Texture2D" uid="uid://dumjrekho6g4d" path="res://Assets/Images/Farm/plant growth stage 3 tomato.png" id="1_k01mr"]
+[ext_resource type="Texture2D" uid="uid://b45s1jjrvpyp8" path="res://Assets/Images/Farm/Potato/icon.png" id="2_0pxvp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qohnc"]
 content_margin_left = 8.0
@@ -55,7 +55,7 @@ layout_mode = 2
 [node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer5" unique_id=1047077633]
 self_modulate = Color(1.4236968, 1.4236968, 1.4236968, 1)
 layout_mode = 2
-texture = ExtResource("1_k01mr")
+texture = ExtResource("2_0pxvp")
 expand_mode = 3
 
 [node name="Name" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer5" unique_id=811851818]

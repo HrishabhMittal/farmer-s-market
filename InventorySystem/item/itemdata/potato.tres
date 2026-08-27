@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cwvex88o4ep81"]
 
-[ext_resource type="Texture2D" uid="uid://d4rlbkfdlviv" path="res://Assets/Images/Farm/potato crop asset.png" id="1_1i7wv"]
+[ext_resource type="Texture2D" uid="uid://b45s1jjrvpyp8" path="res://Assets/Images/Farm/Potato/icon.png" id="1_1i7wv"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="2_hx1ns"]
 
 [resource]

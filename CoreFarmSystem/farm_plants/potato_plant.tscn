@@ -1,22 +1,10 @@
 [gd_scene format=3 uid="uid://d124hl11020e7"]
 
 [ext_resource type="PackedScene" uid="uid://b5maie0020lln" path="res://CoreFarmSystem/farm_plants/farm_plant.tscn" id="1_1w522"]
-[ext_resource type="Texture2D" uid="uid://l7sq1rir367n" path="res://Assets/some_placeholder_assets/placeholder_potato_plant.png" id="2_3hvdq"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0e3rh"]
-atlas = ExtResource("2_3hvdq")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ch7o5"]
-atlas = ExtResource("2_3hvdq")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xps6t"]
-atlas = ExtResource("2_3hvdq")
-region = Rect2(0, 128, 128, 128)
+[ext_resource type="Texture2D" uid="uid://teb4xeaij6d" path="res://Assets/Images/Farm/Potato/stage_1.png" id="2_ep0np"]
+[ext_resource type="Texture2D" uid="uid://cs0xhxoua4655" path="res://Assets/Images/Farm/Potato/stage_2.png" id="3_we5ys"]
+[ext_resource type="Texture2D" uid="uid://dmkkf2g1rj2wf" path="res://Assets/Images/Farm/Potato/stage_3.png" id="4_ssyr8"]
 
 [node name="Potato" unique_id=1529433205 instance=ExtResource("1_1w522")]
 produced_crop_id = "potato"
-growth_cycle_texture = Array[Texture2D]([SubResource("AtlasTexture_0e3rh"), SubResource("AtlasTexture_ch7o5"), SubResource("AtlasTexture_xps6t")])
-grwoth_chance = null
-growth_tick = null
+growth_cycle_texture = Array[Texture2D]([ExtResource("2_ep0np"), ExtResource("3_we5ys"), ExtResource("4_ssyr8")])

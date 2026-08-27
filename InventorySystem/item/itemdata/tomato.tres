@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://nq706ryeu8ih"]
 
-[ext_resource type="Texture2D" uid="uid://de37jy8hxstfs" path="res://Assets/Images/Farm/tomato crop asset.png" id="1_0e3rh"]
+[ext_resource type="Texture2D" uid="uid://rmcno1kdxu13" path="res://Assets/Images/Farm/Tomato/icon.png" id="1_0e3rh"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="2_bwkq8"]
 
 [resource]

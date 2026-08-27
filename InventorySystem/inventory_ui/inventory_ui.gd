@@ -50,5 +50,5 @@ func _handle_position() -> void:
 		InventoryPosition.BOTTOM_CENTER:
 			$PanelContainer.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
 
-func _unhandled_input(event: InputEvent):
+func _unhandled_input(_event: InputEvent):
 	pass
