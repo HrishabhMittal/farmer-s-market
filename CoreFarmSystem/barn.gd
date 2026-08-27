@@ -8,7 +8,7 @@ func interact():
 	InventoryManager.barn_ui.visible = !InventoryManager.barn_ui.visible
 
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var player = get_tree().get_first_node_in_group("Player")
 		if player:

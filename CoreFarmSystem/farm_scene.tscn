@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://86lyl32ajvov" path="res://Scenes/Player/farmer.tscn" id="10_miwjd"]
 [ext_resource type="Script" uid="uid://cir2jjyeljass" path="res://CoreFarmSystem/barn.gd" id="11_0wb5q"]
 [ext_resource type="Script" uid="uid://d2okl80pf2hvw" path="res://CoreFarmSystem/truck.gd" id="11_61ldv"]
-[ext_resource type="Texture2D" uid="uid://cgkd8nnehg6rp" path="res://Assets/Images/Farm/barn.png" id="11_ahdf5"]
+[ext_resource type="Texture2D" uid="uid://bxycdp87mbsmw" path="res://Assets/Images/Farm/barn.png" id="11_ahdf5"]
 [ext_resource type="Texture2D" uid="uid://cqb4n6n8hloy2" path="res://Assets/Images/MiniMap/truck.png" id="13_wqrya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sf2wa"]
@@ -682,7 +682,6 @@ tool_manager = NodePath("../../../FarmToolManager")
 [node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("10_miwjd")]
 
 [node name="Camera2D" type="Camera2D" parent="Farmer" unique_id=1965492530]
-zoom = Vector2(0.32, 0.32)
 
 [node name="Barn" type="Area2D" parent="." unique_id=2048947652]
 position = Vector2(-558, 751)

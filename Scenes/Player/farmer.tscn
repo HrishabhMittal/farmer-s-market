@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://86lyl32ajvov"]
 
 [ext_resource type="Script" uid="uid://i87gs6n4dpxp" path="res://Scenes/Player/movement_component.gd" id="1_4a1pm"]
+[ext_resource type="Texture2D" uid="uid://d17kuuojcyivf" path="res://Assets/icon.svg" id="1_6rkal"]
 [ext_resource type="Script" uid="uid://cac16r3qsbxan" path="res://Scenes/Player/interact_radius.gd" id="2_wlps1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dl1ch"]
@@ -12,6 +13,7 @@ radius = 472.12817
 [node name="Farmer" type="CharacterBody2D" unique_id=1605516437 groups=["Player"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=694930753]
+texture = ExtResource("1_6rkal")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=913191757]
 position = Vector2(1, -2)

@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://csw2p5uv741q5"]
 
 [ext_resource type="Script" uid="uid://by8t5ysefk1ae" path="res://GlobalScripts/item_manager/item_manager.gd" id="1_d07bq"]
+[ext_resource type="PackedScene" uid="uid://c3c52btd8uy0s" path="res://InventorySystem/ground_item/ground_item.tscn" id="2_03f0f"]
 
-[node name="ItemManager" type="Node" unique_id=2114925357]
+[node name="ItemManager" type="Node2D" unique_id=1225992938 node_paths=PackedStringArray("ground_item_root")]
 script = ExtResource("1_d07bq")
+groud_item_scene = ExtResource("2_03f0f")
+ground_item_root = NodePath("GroundItems")
+
+[node name="GroundItems" type="Node2D" parent="." unique_id=509722091]

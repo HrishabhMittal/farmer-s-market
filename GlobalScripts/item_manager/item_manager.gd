@@ -1,6 +1,9 @@
-extends Node
+extends Node2D
 
-@export var all_items: Dictionary [String, ItemData]
+@export var groud_item_scene: PackedScene
+@export var ground_item_root: Node2D
+
+var all_items: Dictionary [String, ItemData]
 var item_folder_path: String = "res://InventorySystem/item/itemdata/"
 
 func _ready():
@@ -42,3 +45,23 @@ func load_items_from_folder(folder_path: String) -> void:
 				printerr("Resource is not an ItemData, skipping: ", resource_path)
 		else:
 			printerr("Failed to load resource: ", resource_path)
+
+func spawn_ground_item_from_id(item_id: String, new_amount: int = 1, spawn_location: Vector2 = get_global_mouse_position()) -> void:
+	var item: Item = make_item(item_id, new_amount)
+	if not item:
+		push_error("There is not item with item_id: ", item_id)
+		return
+	
+	var new_ground_item: GroundItem = groud_item_scene.instantiate()
+	new_ground_item.initialize(item)
+	ground_item_root.add_child(new_ground_item)
+	new_ground_item.global_position = spawn_location
+
+func spawn_ground_item(item: Item, new_amount: int = 0, spawn_location: Vector2 = get_global_mouse_position()) -> void:
+	if new_amount > 0: # If player wants to overried the amout of the item
+		item.amount = new_amount
+	
+	var new_ground_item: GroundItem = groud_item_scene.instantiate()
+	new_ground_item.initialize(item)
+	ground_item_root.add_child(new_ground_item)
+	new_ground_item.global_position = spawn_location

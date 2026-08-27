@@ -26,8 +26,12 @@ func test_stuff() -> void:
 	var new_player_inventory_ui: InventoryUI = load("res://InventorySystem/inventory_ui/inventory_ui.tscn").instantiate()
 	new_player_inventory_ui.initialize(new_player_inventory, InventoryUI.InventoryPosition.BOTTOM_RIGHT)
 	add_child(new_player_inventory_ui)
-	new_player_inventory_ui.visible = true
+	new_player_inventory_ui.visible = false
 	
 	# Give some items to players inventory
 	new_player_inventory.add_item(ItemManager.make_item("tomato_seed"), 123)
+	
+	# Spawn some ground items
+	for i in range(100):
+		ItemManager.spawn_ground_item_from_id("potato", 20, Vector2(randi_range(100, 700), randi_range(100, 700)))
 	

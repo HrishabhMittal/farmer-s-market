@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c3c52btd8uy0s"]
+
+[ext_resource type="Script" uid="uid://ydnoklg66iit" path="res://InventorySystem/ground_item/ground_item.gd" id="1_5nf84"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5roh6"]
+radius = 85.29
+
+[node name="GroundItem" type="Node2D" unique_id=106411721 node_paths=PackedStringArray("texture_node", "label_node", "collision_node")]
+z_index = 100
+z_as_relative = false
+script = ExtResource("1_5nf84")
+texture_node = NodePath("SlotUI/TextureRect")
+label_node = NodePath("SlotUI/Label")
+collision_node = NodePath("Area2D/CollisionShape2D")
+
+[node name="SlotUI" type="Control" parent="." unique_id=1777876351]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="SlotUI" unique_id=1216013097]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(32, 32)
+expand_mode = 2
+
+[node name="Label" type="Label" parent="SlotUI" unique_id=344134900]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1820234330]
+position = Vector2(32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=550566266]
+shape = SubResource("CircleShape2D_5roh6")
