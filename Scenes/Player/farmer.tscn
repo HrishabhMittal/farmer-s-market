@@ -8,15 +8,17 @@
 size = Vector2(112, 112)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3dp3j"]
-radius = 472.12817
+radius = 800.25244
 
 [node name="Farmer" type="CharacterBody2D" unique_id=1605516437 groups=["Player"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=694930753]
+scale = Vector2(2, 2)
 texture = ExtResource("1_6rkal")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=913191757]
 position = Vector2(1, -2)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_dl1ch")
 
 [node name="MovementComponent" type="Node" parent="." unique_id=463980904 node_paths=PackedStringArray("player")]

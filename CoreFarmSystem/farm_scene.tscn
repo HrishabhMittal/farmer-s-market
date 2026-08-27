@@ -614,6 +614,9 @@ size = Vector2(700, 890.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aql1o"]
 size = Vector2(439, 336)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yefl1"]
+size = Vector2(657, 5626)
+
 [node name="FarmScene" type="Node2D" unique_id=1809007817 node_paths=PackedStringArray("farm_tile_manager", "tool_manager")]
 script = ExtResource("1_rc0p8")
 farm_tile_manager = NodePath("FarmTileManager")
@@ -686,6 +689,13 @@ tool_manager = NodePath("../../../FarmToolManager")
 [node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("10_miwjd")]
 
 [node name="Camera2D" type="Camera2D" parent="Farmer" unique_id=1965492530]
+zoom = Vector2(0.5, 0.5)
+limit_left = -1657
+limit_top = -1772
+limit_right = 3448
+limit_bottom = 2552
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="Barn" type="Area2D" parent="." unique_id=2048947652]
 position = Vector2(-558, 751)
@@ -710,6 +720,27 @@ shape = SubResource("RectangleShape2D_aql1o")
 [node name="Sprite2D" type="Sprite2D" parent="Truck" unique_id=2052935533]
 position = Vector2(-1402, 1419)
 texture = ExtResource("13_wqrya")
+
+[node name="player limits" type="StaticBody2D" parent="." unique_id=1849953127]
+visible = false
+
+[node name="left limit" type="CollisionShape2D" parent="player limits" unique_id=113209392]
+position = Vector2(-1983.5, 348)
+shape = SubResource("RectangleShape2D_yefl1")
+
+[node name="right limit" type="CollisionShape2D" parent="player limits" unique_id=693962212]
+position = Vector2(3777, 371)
+shape = SubResource("RectangleShape2D_yefl1")
+
+[node name="top limit" type="CollisionShape2D" parent="player limits" unique_id=1041084134]
+position = Vector2(893, -2118)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_yefl1")
+
+[node name="down limit" type="CollisionShape2D" parent="player limits" unique_id=1551516150]
+position = Vector2(909, 2884)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_yefl1")
 
 [connection signal="input_event" from="Barn" to="Barn" method="_on_input_event"]
 [connection signal="input_event" from="Truck" to="Truck" method="_on_input_event"]
