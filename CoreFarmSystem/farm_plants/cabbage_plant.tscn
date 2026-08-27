@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cp5ggv03yujx3"]
+
+[ext_resource type="PackedScene" uid="uid://b5maie0020lln" path="res://CoreFarmSystem/farm_plants/farm_plant.tscn" id="1_pextk"]
+[ext_resource type="Texture2D" uid="uid://chgranomcbwj7" path="res://Assets/Images/Farm/Cabbage/stage_1.png" id="2_co7rb"]
+[ext_resource type="Texture2D" uid="uid://dq70ivvu6ysmw" path="res://Assets/Images/Farm/Cabbage/stage_2.png" id="3_gjx1g"]
+[ext_resource type="Texture2D" uid="uid://cka3m8vsltxjb" path="res://Assets/Images/Farm/Cabbage/stage_3.png" id="4_gtbh8"]
+
+[node name="CabbagePlant" unique_id=1529433205 instance=ExtResource("1_pextk")]
+display_name = "CabbagePlant"
+produced_crop_id = "cabbage"
+production_amount = 2
+growth_cycle_texture = Array[Texture2D]([ExtResource("2_co7rb"), ExtResource("3_gjx1g"), ExtResource("4_gtbh8")])

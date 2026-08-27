@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ip8l4bid8e4c"]
+
+[ext_resource type="PackedScene" uid="uid://b5maie0020lln" path="res://CoreFarmSystem/farm_plants/farm_plant.tscn" id="1_pl6s4"]
+[ext_resource type="Texture2D" uid="uid://dnbbb7v8riq7b" path="res://Assets/Images/Farm/Carrot/stage_1.png" id="2_htvoc"]
+[ext_resource type="Texture2D" uid="uid://dvjw0t5i13o3u" path="res://Assets/Images/Farm/Carrot/stage_2.png" id="3_rrvty"]
+[ext_resource type="Texture2D" uid="uid://bkf5gboy0acyx" path="res://Assets/Images/Farm/Carrot/stage_3.png" id="4_a0vwh"]
+
+[node name="CarrotPlant" unique_id=1529433205 instance=ExtResource("1_pl6s4")]
+display_name = "Carrot Plant"
+produced_crop_id = "carrot"
+production_amount = 6
+growth_cycle_texture = Array[Texture2D]([ExtResource("2_htvoc"), ExtResource("3_rrvty"), ExtResource("4_a0vwh")])

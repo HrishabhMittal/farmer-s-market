@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dy2u2h8t33w7p"]
+
+[ext_resource type="Texture2D" uid="uid://cqbhkspgep6kc" path="res://Assets/Images/Farm/Carrot/seed_icon.png" id="1_dlo3d"]
+[ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="1_ts03x"]
+[ext_resource type="PackedScene" uid="uid://ip8l4bid8e4c" path="res://CoreFarmSystem/farm_plants/carrot_plant.tscn" id="2_keoy0"]
+
+[resource]
+script = ExtResource("1_ts03x")
+display_name = "Carrot Seed"
+item_texture = ExtResource("1_dlo3d")
+item_description = "Will grow delicious carrots."
+value = 10
+item_type = Array[int]([1])
+scene_to_instantiate = ExtResource("2_keoy0")
+metadata/_custom_type_script = "uid://j2yw5ljak0ig"

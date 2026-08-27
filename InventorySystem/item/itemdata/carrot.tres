@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c8mfx4o5myowf"]
+
+[ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="1_ab70b"]
+[ext_resource type="Texture2D" uid="uid://ydpv4ktv784t" path="res://Assets/Images/Farm/Carrot/icon.png" id="1_he20q"]
+
+[resource]
+script = ExtResource("1_ab70b")
+display_name = "Carrot"
+item_texture = ExtResource("1_he20q")
+item_description = "Hmm.. I think I have seen this before as someone nose."
+value = 20
+item_type = Array[int]([0])
+metadata/_custom_type_script = "uid://j2yw5ljak0ig"

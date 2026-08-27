@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://h02qgqt1dtb6"]
+
+[ext_resource type="Texture2D" uid="uid://chkpg7bos02e4" path="res://Assets/Images/Farm/Cabbage/icon.png" id="1_sse7v"]
+[ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="1_w4dgh"]
+
+[resource]
+script = ExtResource("1_w4dgh")
+display_name = "Cabbage"
+item_texture = ExtResource("1_sse7v")
+item_description = "A green big onion that has leaves as body instead"
+value = 35
+item_type = Array[int]([0])
+metadata/_custom_type_script = "uid://j2yw5ljak0ig"
