@@ -73,7 +73,7 @@ texture = ExtResource("6_7okmr")
 
 [node name="building2" parent="." unique_id=123550651 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
 position = Vector2(97, -222)
-target_scene_path = "uid://bc8n8deypyq25"
+target_scene_path = "uid://cltwdgqaoah1s"
 player_node = NodePath("../truck")
 
 [node name="Sprite2D" type="Sprite2D" parent="building2" unique_id=876569237]

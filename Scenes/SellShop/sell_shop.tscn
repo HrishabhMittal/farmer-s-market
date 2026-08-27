@@ -1,7 +1,21 @@
 [gd_scene format=3 uid="uid://cltwdgqaoah1s"]
 
-[ext_resource type="PackedScene" uid="uid://dh60w2yqp3kui" path="res://InventorySystem/inventory_ui/inventory_ui.tscn" id="1_sffc8"]
+[ext_resource type="Script" uid="uid://dt1rypxudypn6" path="res://Scenes/SellShop/sell_shop.gd" id="1_1lxjk"]
+[ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="1_ucx02"]
+[ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="2_1lxjk"]
 
 [node name="SellShop" type="Node2D" unique_id=1734394036]
+script = ExtResource("1_1lxjk")
 
-[node name="InventoryUi" parent="." unique_id=1716554813 instance=ExtResource("1_sffc8")]
+[node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("2_1lxjk")]
+
+[node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("1_ucx02")]
+target_scene_path = "uid://bykas3tdowgd8"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1730621935]
+
+[node name="PriceLabel" type="Label" parent="CanvasLayer" unique_id=1428054824]
+offset_left = 117.0
+offset_top = 185.0
+offset_right = 157.0
+offset_bottom = 208.0

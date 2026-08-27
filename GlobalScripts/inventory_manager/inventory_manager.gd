@@ -38,7 +38,7 @@ func _ready():
 	add_child(player_ui)
 	player_ui.visible = false
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
 		if player_ui:
 			player_ui.visible = !player_ui.visible
