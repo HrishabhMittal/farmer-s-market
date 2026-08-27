@@ -6,6 +6,9 @@ extends CanvasLayer
 @onready var exit_button: TextureButton = $MarginContainer/TextureButton
 
 func _on_texture_button_pressed() -> void:
+	var is_confirmed = await ConfirmationDialogue.ask_confirmation("Exit this Scene?")
+	if not is_confirmed:
+		return
 	if target_scene_path != "":
 		InventoryManager.close_all_uis()
 		TravelTransition.change_scene(target_scene_path)

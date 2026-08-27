@@ -49,16 +49,18 @@ func _unhandled_input(event: InputEvent) -> void:
 			if held_item and held_item.item_data:
 				
 				if ItemTypes.ItemType.VEGETABLE in held_item.item_data.item_type:
-					var item_id = held_item.item_data.item_id
-					var unit_price = item_prices.get(item_id, held_item.item_data.value)
-					var total_sale = unit_price * held_item.amount
-					
-					InventoryManager.money += total_sale
-					
-					if InfocardManager:
-						InfocardManager.show_floating_text("+%d Coins" % total_sale, get_global_mouse_position(), "Green")
-					
-					PlayerHeldItem.clear_item()
+					var is_confirmed = await ConfirmationDialogue.ask_confirmation("Sell?")
+					if is_confirmed:
+						var item_id = held_item.item_data.item_id
+						var unit_price = item_prices.get(item_id, held_item.item_data.value)
+						var total_sale = unit_price * held_item.amount
+						
+						InventoryManager.money += total_sale
+						
+						if InfocardManager:
+							InfocardManager.show_floating_text("+%d Coins" % total_sale, get_global_mouse_position(), "Green")
+						
+						PlayerHeldItem.clear_item()
 				else:
 					if InfocardManager:
 						InfocardManager.show_floating_text("Can only sell crops!", get_global_mouse_position(), "Red")

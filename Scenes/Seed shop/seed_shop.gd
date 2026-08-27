@@ -55,6 +55,9 @@ func handle_bag_click(bag):
 		action_menu.hide()
 
 func _on_buy_button_pressed() -> void:
+	var is_confirmed = await ConfirmationDialogue.ask_confirmation("Buy 32 seeds for 50 Coins?")
+	if not is_confirmed:
+		return
 	if bag_on_table:
 		var seed_id = seed_item_ids[bag_on_table.seed_type % seed_item_ids.size()]
 		var success = InventoryManager.buy_item(seed_id, 50, 32)

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://ccnddi22oh7oj"]
+
+[ext_resource type="Texture2D" uid="uid://h0l1w45bh6u7" path="res://Assets/button_placeholder.png" id="1_jnkxv"]
+[ext_resource type="Script" uid="uid://b5llj6l3bui6s" path="res://Scenes/ConfirmationDialogue/confirmation_dialogue.gd" id="1_u1sf1"]
+
+[node name="ConfirmationDialogue" type="CanvasLayer" unique_id=21617337]
+script = ExtResource("1_u1sf1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=776238349]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1604439294]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1324470903]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=969308647]
+layout_mode = 2
+
+[node name="MessageLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1751493265]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=629945920]
+layout_mode = 2
+
+[node name="NoButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1448009374]
+layout_mode = 2
+texture_normal = ExtResource("1_jnkxv")
+texture_pressed = ExtResource("1_jnkxv")
+texture_hover = ExtResource("1_jnkxv")
+texture_disabled = ExtResource("1_jnkxv")
+texture_focused = ExtResource("1_jnkxv")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NoButton" unique_id=2088337189]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "NO"
+
+[node name="YesButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1080257466]
+layout_mode = 2
+texture_normal = ExtResource("1_jnkxv")
+texture_pressed = ExtResource("1_jnkxv")
+texture_hover = ExtResource("1_jnkxv")
+texture_disabled = ExtResource("1_jnkxv")
+texture_focused = ExtResource("1_jnkxv")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/YesButton" unique_id=134288609]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "YES"

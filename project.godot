@@ -24,6 +24,7 @@ PlayerHeldItem="*uid://dp6cgavfkr6ca"
 TravelTransition="*uid://b1p81i80rf4c3"
 InfocardManager="*uid://btlfcwfcia4sl"
 AudioManager="*uid://dhcynrbnjcmci"
+ConfirmationDialogue="*uid://ccnddi22oh7oj"
 
 [display]
 
