@@ -7,7 +7,7 @@ script = ExtResource("1_mpp53")
 display_name = "Default"
 plant_texture = NodePath("TextureRect")
 production_amount = 5
-grwoth_chance = 40
+growth_chance = 60
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=461720731]
 custom_minimum_size = Vector2(128, 128)

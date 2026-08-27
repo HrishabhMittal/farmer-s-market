@@ -16,19 +16,26 @@ func _ready():
 	
 	barn_ui = inventory_ui_scene.instantiate()
 	barn_ui.initialize(barn_inventory)
-	barn_ui.get_node("PanelContainer/VBoxContainer/Label").text = "Barn"
+	barn_ui.set_inventory_name("Barn")
 	add_child(barn_ui)
 	barn_ui.visible = false
 	
 	truck_ui = inventory_ui_scene.instantiate()
 	truck_ui.initialize(truck_inventory)
-	truck_ui.get_node("PanelContainer/VBoxContainer/Label").text = "Truck"
+	truck_ui.set_inventory_name("Truck")
 	add_child(truck_ui)
 	truck_ui.visible = false
 
 func close_all_uis() -> void:
 	if barn_ui: barn_ui.visible = false
 	if truck_ui: truck_ui.visible = false
+
+func is_same_item(item1: Item, item2: Item) -> bool:
+	#prints(item1, item2)
+	if item1 and item2: # Checking if they are null
+		if item1.item_data == item2.item_data:
+			return true
+	return false
 
 func buy_item(item_id: String, cost: int, amount: int = 1) -> bool:
 	if money >= cost:

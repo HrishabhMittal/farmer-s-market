@@ -1,5 +1,5 @@
 # When player picks up item from inventory by clicking on it, this scene will manage showing that
-# and also moving it to other slots
+# and also moving it to other slots and inventories
 
 extends Node2D
 
@@ -15,12 +15,22 @@ func _ready():
 	mouse_inventory = Inventory.new(1)
 	
 func pick_item(item: Item, source_slot: SlotUI) -> void:
-	if item:
+	# If picked item and item held are same, that means player is combining stack
+	#prints("is_same_item(item, get_held_item()): ", InventoryManager.is_same_item(item, get_held_item()))
+	if InventoryManager.is_same_item(item, get_held_item()):
+		item.owner_inventory.add_item(get_held_item(), get_held_item().amount)
+		clear_item()
+	# If previous condition failed, that means the items are either different or one of the slots is
+	# empty. In that case swap the items
+	elif item:
 		InventoryManager.swap_item(item.owner_inventory, mouse_inventory, item.inventory_index, 0) # '0' because mouse_inventory has only 1 slot
+	
+	# Special case where player is trying to put item in a empty inventory slot
 	else:
 		InventoryManager.swap_item(source_slot.connected_inventory, mouse_inventory, source_slot.slot_index, 0)
-	_show_item_on_mouse()
+	_show_item_on_mouse() # It can hide items on mouse automatically if it is empty
 	
+	# If player picked up a seed from inventory, automatically selects the SeedPlanter tool
 	if is_held_item_seed():
 		if seed_planter:
 			seed_planter.tool_manager.tool_selected.emit(seed_planter)

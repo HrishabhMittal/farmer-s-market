@@ -28,8 +28,7 @@ func refresh_slot(item: Item) -> void:
 
 func _handle_gui_input(event: InputEvent) -> void:
 	# Check if it was a left click
-	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	if event.is_action_pressed("left click"):
 			PlayerHeldItem.pick_item(current_item, self)
 
 func _highlight() -> void:

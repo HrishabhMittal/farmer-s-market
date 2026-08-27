@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_dl1ch")
 [node name="MovementComponent" type="Node" parent="." unique_id=463980904 node_paths=PackedStringArray("player")]
 script = ExtResource("1_4a1pm")
 player = NodePath("..")
-speed = 300.0
+speed = 600.0
 acceleration = 1.0
 deceleration = 1.0
 left_input = &"left"

@@ -20,7 +20,7 @@ func _init(new_slot_count: int) -> void:
 # Adds item
 func add_item(new_item: Item, amount: int) -> bool:
 	# Check if the item is already there
-	if does_have_item(new_item, amount):
+	if does_have_same_item_in_inventory(new_item):
 		# It is already there, so just add it to the stack
 		for i in range(slot_count):
 			# If slot is null, move to the next one
@@ -88,6 +88,19 @@ func does_have_item(target_item: Item, amount: int) -> bool:
 				return true
 			# Not sufficient amount, so return false
 			return false
+		
+	# Item was not in ivnentory, return false
+	return false
+
+func does_have_same_item_in_inventory(target_item: Item) -> bool:
+	for slot in slots:
+		# If slot is null, move to the next one
+		if not slot:
+			continue
+		
+		# Check if item exist
+		if slot.item_data == target_item.item_data:
+			return true
 		
 	# Item was not in ivnentory, return false
 	return false
