@@ -24,7 +24,7 @@ var hover_amplitude: float = 20.0
 
 
 var item: Item
-var target_inventory_for_pickup: Inventory = StateManager.barn_inventory # Or should it be player inventory?
+var target_inventory_for_pickup: Inventory = StateManager.player_inventory # Or should it be player inventory?
 
 func initialize(new_item: Item) -> void:
 	item = new_item
@@ -39,10 +39,11 @@ func attempt_pickup(_body: Node2D) -> void:
 		if target_inventory_for_pickup.add_item(item, item.amount):
 			SignalBus.ground_item_picked.emit(self)
 			call_deferred("queue_free")
-		# If the previous condion failed, then go on cooldown
-		current_pick_cooldown = pick_cooldown
-		chase_target = null
-		is_chasing_player = false
+		else:
+			# If the previous condion failed, then go on cooldown
+			current_pick_cooldown = pick_cooldown
+			chase_target = null
+			is_chasing_player = false
 
 func chase_player(body: Node2D) -> void:
 	if current_pick_cooldown > 0.0: # If pick cooldown is not over, then return

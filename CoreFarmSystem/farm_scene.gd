@@ -15,7 +15,6 @@ func _ready():
 	seed_slot.slot_index = 0
 	
 	StateManager.active_seed_inventory.slot_changed.connect(_on_seed_slot_changed)
-	
 	$ToolBar/HBoxContainer.add_child(seed_slot)
 	$ToolBar/HBoxContainer/SeedPlanter.visible = true
 
