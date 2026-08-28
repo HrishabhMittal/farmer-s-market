@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bncf30gfaon0g"
-path="res://.godot/imported/seller combo.png-ad7f2b8a209cf66ebdc3da16a7d27c91.ctex"
+uid="uid://bhmk64nxxiwn0"
+path="res://.godot/imported/angry.png-556c0c3f84b71033691e48d49c1d9371.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Seller/seller combo.png"
-dest_files=["res://.godot/imported/seller combo.png-ad7f2b8a209cf66ebdc3da16a7d27c91.ctex"]
+source_file="res://Assets/Images/Seller/base/angry.png"
+dest_files=["res://.godot/imported/angry.png-556c0c3f84b71033691e48d49c1d9371.ctex"]
 
 [params]
 

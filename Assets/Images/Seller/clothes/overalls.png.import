@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1k272twdfo2a"
-path="res://.godot/imported/seller bunny nuetral expression.png-09efe09a47361a0eb927d73aa9d960c6.ctex"
+uid="uid://cni8q34nvov45"
+path="res://.godot/imported/overalls.png-f524a441482f71b377bf8e0d8b4c3556.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Seller/seller bunny nuetral expression.png"
-dest_files=["res://.godot/imported/seller bunny nuetral expression.png-09efe09a47361a0eb927d73aa9d960c6.ctex"]
+source_file="res://Assets/Images/Seller/clothes/overalls.png"
+dest_files=["res://.godot/imported/overalls.png-f524a441482f71b377bf8e0d8b4c3556.ctex"]
 
 [params]
 

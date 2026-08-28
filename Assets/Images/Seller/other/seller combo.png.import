@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bel7soommf328"
-path="res://.godot/imported/seller bunny bow accessory.png-41c297221e5f2586b4c8ec18020744a4.ctex"
+uid="uid://dm0drnoke5i8c"
+path="res://.godot/imported/seller combo.png-aef50d9bbe31de925b03e29dd7490173.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Seller/seller bunny bow accessory.png"
-dest_files=["res://.godot/imported/seller bunny bow accessory.png-41c297221e5f2586b4c8ec18020744a4.ctex"]
+source_file="res://Assets/Images/Seller/other/seller combo.png"
+dest_files=["res://.godot/imported/seller combo.png-aef50d9bbe31de925b03e29dd7490173.ctex"]
 
 [params]
 

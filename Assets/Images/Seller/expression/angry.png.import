@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mss42nsv23ng"
-path="res://.godot/imported/seller bunny sundress outfit.png-6565e8be83764725d6ddb086346b4529.ctex"
+uid="uid://vymiaphr6nmu"
+path="res://.godot/imported/angry.png-f97e371e40509d03567e71e72f8c1c96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Seller/seller bunny sundress outfit.png"
-dest_files=["res://.godot/imported/seller bunny sundress outfit.png-6565e8be83764725d6ddb086346b4529.ctex"]
+source_file="res://Assets/Images/Seller/expression/angry.png"
+dest_files=["res://.godot/imported/angry.png-f97e371e40509d03567e71e72f8c1c96.ctex"]
 
 [params]
 

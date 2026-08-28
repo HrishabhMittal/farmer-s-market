@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpge3ml305ky6"
-path="res://.godot/imported/seller bunny tank top outfit.png-74a30ab2f43832fb4608bfb4dba50106.ctex"
+uid="uid://b7xqniaatoioa"
+path="res://.godot/imported/happy.png-f2eb36494ab2586f2f1caf815eb71693.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Seller/seller bunny tank top outfit.png"
-dest_files=["res://.godot/imported/seller bunny tank top outfit.png-74a30ab2f43832fb4608bfb4dba50106.ctex"]
+source_file="res://Assets/Images/Seller/expression/happy.png"
+dest_files=["res://.godot/imported/happy.png-f2eb36494ab2586f2f1caf815eb71693.ctex"]
 
 [params]
 

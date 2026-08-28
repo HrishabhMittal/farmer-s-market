@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb1c03y6isxvh"
-path="res://.godot/imported/seller bunny sprites.png-9cc6c569a2a9fde88cf3abe51e9546dc.ctex"
+uid="uid://bd1e6u7qmxqua"
+path="res://.godot/imported/neutral.png-60db26f0c2ecbcff3f48558a6c06de7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Seller/seller bunny sprites.png"
-dest_files=["res://.godot/imported/seller bunny sprites.png-9cc6c569a2a9fde88cf3abe51e9546dc.ctex"]
+source_file="res://Assets/Images/Seller/base/neutral.png"
+dest_files=["res://.godot/imported/neutral.png-60db26f0c2ecbcff3f48558a6c06de7d.ctex"]
 
 [params]
 
