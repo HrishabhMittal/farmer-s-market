@@ -24,6 +24,11 @@ func initialize(new_connected_inventory: Inventory, new_anchor_position: Invento
 		
 	connected_inventory.slot_changed.connect(_on_slot_changed)
 	inventory_position = new_anchor_position
+	refresh_inventory()
+
+func refresh_inventory() -> void:
+	for i in range(connected_inventory.slot_count):
+		slots[i].refresh_slot(connected_inventory.slots[i])
 
 func _ready():
 	# This function really needs to be called after _ready is called for proprer size and offset calculation
@@ -52,3 +57,6 @@ func _handle_position() -> void:
 
 func _unhandled_input(_event: InputEvent):
 	pass
+
+#func _process(delta):
+	#refresh_inventory()

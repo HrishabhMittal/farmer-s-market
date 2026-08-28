@@ -21,7 +21,7 @@ anchors_preset = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_jde34")
-slot_texture_node = NodePath("TextureRect")
+slot_texture_node = NodePath("PanelContainer/TextureRect")
 slot_label_node = NodePath("Label")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1451620654]
@@ -32,12 +32,9 @@ offset_bottom = 40.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_5roh6")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1216013097]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1216013097]
 custom_minimum_size = Vector2(64, 64)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-pivot_offset = Vector2(32, 32)
+layout_mode = 2
 expand_mode = 2
 
 [node name="Label" type="Label" parent="." unique_id=344134900]

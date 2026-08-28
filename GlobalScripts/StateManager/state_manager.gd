@@ -25,8 +25,9 @@ var farm_planted_tiles: Dictionary = {}
 var last_farm_save_time: float = 0.0
 
 func _ready() -> void:
-	get_tree().set_auto_accept_quit(false)
-	load_from_file()
+	#get_tree().set_auto_accept_quit(false)
+	#load_from_file()
+	pass
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

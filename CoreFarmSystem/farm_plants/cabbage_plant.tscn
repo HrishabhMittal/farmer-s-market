@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cka3m8vsltxjb" path="res://Assets/Images/Farm/Cabbage/stage_3.png" id="4_gtbh8"]
 
 [node name="CabbagePlant" unique_id=1529433205 instance=ExtResource("1_pextk")]
-display_name = "CabbagePlant"
+display_name = "Cabbage Plant"
 produced_crop_id = "cabbage"
 production_amount = 2
 growth_cycle_texture = Array[Texture2D]([ExtResource("2_co7rb"), ExtResource("3_gjx1g"), ExtResource("4_gtbh8")])

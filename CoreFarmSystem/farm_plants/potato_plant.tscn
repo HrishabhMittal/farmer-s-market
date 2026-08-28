@@ -6,5 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dmkkf2g1rj2wf" path="res://Assets/Images/Farm/Potato/stage_3.png" id="4_ssyr8"]
 
 [node name="Potato" unique_id=1529433205 instance=ExtResource("1_1w522")]
+display_name = "Potato Plant"
 produced_crop_id = "potato"
 growth_cycle_texture = Array[Texture2D]([ExtResource("2_ep0np"), ExtResource("3_we5ys"), ExtResource("4_ssyr8")])
