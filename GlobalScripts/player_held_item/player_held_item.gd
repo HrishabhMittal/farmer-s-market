@@ -117,18 +117,20 @@ func _hide_item_on_mouse() -> void:
 	label_node.text = ""
 	is_currently_showing = false
 	
-
 func _process(_delta):
 	if is_currently_showing:
 		$CanvasLayer/ItemView.position = get_viewport().get_mouse_position()
-
+		
 	if allow_farm_plot_highlight and farm_tilemanager:
 		var mouse_pos := get_global_mouse_position()
 		var tile_under_mouse: String = farm_tilemanager.get_tile_type(mouse_pos)
 		
 		if tile_under_mouse != "none":
 			%TileHighlight.visible = true
-			%TileHighlight.global_position = get_viewport().get_canvas_transform() * farm_tilemanager.get_tile_center_coord(mouse_pos)
+			
+			$CanvasLayer2.transform = get_viewport().get_canvas_transform()
+			
+			%TileHighlight.position = farm_tilemanager.get_tile_center_coord(mouse_pos)
 		else:
 			%TileHighlight.visible = false
 	else:

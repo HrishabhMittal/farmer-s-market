@@ -18,11 +18,17 @@ func handle_direction() -> void:
 	direction = Input.get_vector(left_input, right_input, up_input, down_input)
 
 func handle_movement() -> void:
-	# Directly set velocity to the target speed and direction
+
 	player.velocity = direction * speed
+	
+	if direction != Vector2.ZERO:
+		var sprite = player.get_node_or_null("Sprite2D")
+		if sprite:
+			sprite.rotation = direction.angle() + (PI / 2.0)
 
 func _physics_process(_delta: float) -> void:
-	if not player: return
+	if not player:
+		return
 	handle_direction()
 	handle_movement()
 	player.move_and_slide()

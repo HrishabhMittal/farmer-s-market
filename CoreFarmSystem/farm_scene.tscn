@@ -694,17 +694,16 @@ tool_texture = SubResource("AtlasTexture_ahdf5")
 tool_manager = NodePath("../../../FarmToolManager")
 
 [node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("10_miwjd")]
-position = Vector2(-862, 1538)
+position = Vector2(-454, 1606)
 scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Farmer" unique_id=1965492530]
-position = Vector2(1435, -2563.3333)
 scale = Vector2(2, 2)
+zoom = Vector2(0.5, 0.5)
 limit_left = -1657
 limit_top = -1772
 limit_right = 3448
 limit_bottom = 2552
-position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="Barn" type="Area2D" parent="." unique_id=2048947652]

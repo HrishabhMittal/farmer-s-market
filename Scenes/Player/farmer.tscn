@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://86lyl32ajvov"]
 
 [ext_resource type="Script" uid="uid://i87gs6n4dpxp" path="res://Scenes/Player/movement_component.gd" id="1_4a1pm"]
-[ext_resource type="Texture2D" uid="uid://d17kuuojcyivf" path="res://Assets/icon.svg" id="1_6rkal"]
+[ext_resource type="Texture2D" uid="uid://ddt5t6m0otws5" path="res://Assets/cat sprite top down.png" id="1_6rkal"]
 [ext_resource type="Script" uid="uid://cac16r3qsbxan" path="res://Scenes/Player/interact_radius.gd" id="2_wlps1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl1ch"]
-size = Vector2(112, 112)
+[sub_resource type="CircleShape2D" id="CircleShape2D_aq678"]
+radius = 66.37017
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3dp3j"]
 radius = 800.25244
@@ -13,20 +13,18 @@ radius = 800.25244
 [node name="Farmer" type="CharacterBody2D" unique_id=1605516437 groups=["Player"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=694930753]
-scale = Vector2(2, 2)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_6rkal")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=913191757]
 position = Vector2(1, -2)
 scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_dl1ch")
+shape = SubResource("CircleShape2D_aq678")
 
 [node name="MovementComponent" type="Node" parent="." unique_id=463980904 node_paths=PackedStringArray("player")]
 script = ExtResource("1_4a1pm")
 player = NodePath("..")
 speed = 600.0
-acceleration = 1.0
-deceleration = 1.0
 left_input = &"left"
 right_input = &"right"
 up_input = &"up"
