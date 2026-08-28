@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bywchcu7eoo5c" path="res://Assets/Images/SellShop/sell shop back.png" id="2_vwsex"]
 [ext_resource type="PackedScene" uid="uid://bbvpswxwwqysq" path="res://Scenes/Seller/seller.tscn" id="3_5vr2q"]
 [ext_resource type="Texture2D" uid="uid://vsisqb2u8amv" path="res://Assets/Images/SellShop/sell shop front.png" id="3_w13ky"]
+[ext_resource type="PackedScene" uid="uid://bgymeat2al37i" path="res://Scenes/Phone/phone.tscn" id="7_6rne5"]
 
 [node name="SellShop" type="Node2D" unique_id=1734394036]
 script = ExtResource("1_1lxjk")
@@ -40,3 +41,6 @@ offset_left = 117.0
 offset_top = 185.0
 offset_right = 157.0
 offset_bottom = 208.0
+
+[node name="Phone" parent="." unique_id=1370161008 instance=ExtResource("7_6rne5")]
+position = Vector2(125, 487)

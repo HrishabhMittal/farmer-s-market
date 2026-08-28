@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://d1ob4rg0us01v"
+=======
+uid="uid://bbw1arq5f0pii"
+>>>>>>> 99fb2bf (add rudimentary phone, cleanup)
 path="res://.godot/imported/volume2.PNG-9fc53496aeafae62236d9c45626c34a1.ctex"
 metadata={
 "vram_texture": false

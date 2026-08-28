@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dpnnhnb3dex1k" path="res://Assets/Images/SeedShop/seed shop front.png" id="5_lsou8"]
 [ext_resource type="Texture2D" uid="uid://dsw07n2j6tktm" path="res://Assets/icon.svg" id="5_w1l5w"]
 [ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="9_6qx44"]
+[ext_resource type="PackedScene" uid="uid://bgymeat2al37i" path="res://Scenes/Phone/phone.tscn" id="10_7hwl2"]
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="10_nqtbe"]
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
@@ -54,6 +55,9 @@ offset_top = 103.99994
 offset_bottom = -1.999939
 scale = Vector2(0.5, 0.5)
 pages = Array[Texture2D]([ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga")])
+
+[node name="Phone" parent="CanvasLayer" unique_id=1370161008 instance=ExtResource("10_7hwl2")]
+position = Vector2(101, 478)
 
 [node name="ActionMenu" type="PanelContainer" parent="CanvasLayer" unique_id=1777351356]
 offset_top = 8.0

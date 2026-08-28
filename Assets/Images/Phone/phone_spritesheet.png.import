@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://drdvm8ytegqjq"
-=======
-uid="uid://bdmpbfabywy1b"
->>>>>>> 99fb2bf (add rudimentary phone, cleanup)
-path="res://.godot/imported/volume mute.PNG-5afaaa91d72992fc88d58a106ace2d4e.ctex"
+uid="uid://bs18mwc48aw0u"
+path="res://.godot/imported/phone_spritesheet.png-737d8797018a60ba773c49b0ce17cb78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/volume mute.PNG"
-dest_files=["res://.godot/imported/volume mute.PNG-5afaaa91d72992fc88d58a106ace2d4e.ctex"]
+source_file="res://Assets/Images/Phone/phone_spritesheet.png"
+dest_files=["res://.godot/imported/phone_spritesheet.png-737d8797018a60ba773c49b0ce17cb78.ctex"]
 
 [params]
 

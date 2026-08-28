@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bgymeat2al37i"]
+
+[ext_resource type="Texture2D" uid="uid://bs18mwc48aw0u" path="res://Assets/Images/Phone/phone_spritesheet.png" id="1_w0vie"]
+[ext_resource type="Script" uid="uid://djr715jyo8uk5" path="res://Scenes/Phone/phone.gd" id="1_ynqvl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
+size = Vector2(341.6667, 360)
+
+[node name="Phone" type="Node2D" unique_id=1370161008]
+script = ExtResource("1_ynqvl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=138888517]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_w0vie")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=275592437]
+scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=455652950]
+position = Vector2(10, -149.99998)
+shape = SubResource("RectangleShape2D_3dp3j")
