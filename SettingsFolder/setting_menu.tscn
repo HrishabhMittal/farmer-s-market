@@ -76,6 +76,10 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1320986211]
+layout_mode = 2
+text = "Volume"
+
 [node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer" unique_id=1671985079]
 layout_mode = 2
 script = ExtResource("1_4lq7d")
