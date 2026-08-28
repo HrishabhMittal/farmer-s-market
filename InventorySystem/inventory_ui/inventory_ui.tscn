@@ -16,7 +16,9 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhu6q"]
+content_margin_left = 8.0
 content_margin_top = 8.0
+content_margin_right = 8.0
 content_margin_bottom = 8.0
 bg_color = Color(0.972549, 0.90588236, 0.8039216, 1)
 corner_radius_top_left = 4
@@ -33,16 +35,18 @@ slot_anchor = NodePath("PanelContainer/VBoxContainer/PanelContainer/ScrollContai
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -153.0
+offset_top = -154.0
 offset_right = 500.0
-offset_bottom = 153.0
+offset_bottom = 154.0
 grow_vertical = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_5roh6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1702590499]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1096915992]
@@ -63,12 +67,39 @@ size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_fhu6q")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=476925966]
-custom_minimum_size = Vector2(490, 200)
+custom_minimum_size = Vector2(510, 200)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer" unique_id=1949215001]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 2
 size_flags_vertical = 4
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 9
 columns = 7
+
+[node name="SlotUI" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=1777876351 instance=ExtResource("2_xha1v")]
+layout_mode = 2
+
+[node name="SlotUI2" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=1322368754 instance=ExtResource("2_xha1v")]
+layout_mode = 2
+
+[node name="SlotUI3" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=2020646495 instance=ExtResource("2_xha1v")]
+layout_mode = 2
+
+[node name="SlotUI4" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=779711191 instance=ExtResource("2_xha1v")]
+layout_mode = 2
+
+[node name="SlotUI5" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=814197213 instance=ExtResource("2_xha1v")]
+layout_mode = 2
+
+[node name="SlotUI6" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=1981222404 instance=ExtResource("2_xha1v")]
+layout_mode = 2
+
+[node name="SlotUI7" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=1080477288 instance=ExtResource("2_xha1v")]
+layout_mode = 2
+
+[node name="SlotUI8" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=2031650633 instance=ExtResource("2_xha1v")]
+layout_mode = 2
