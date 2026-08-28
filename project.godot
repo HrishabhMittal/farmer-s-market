@@ -28,10 +28,10 @@ ConfirmationDialogue="*uid://ccnddi22oh7oj"
 StateManager="*uid://ck6asiwv8aa0"
 SettingManager="*uid://dxo7durkwwu2l"
 DialogueManager="*uid://cmt8illmk7scx"
+CutsceneManager="*uid://c5s157xv8f1cj"
 
 [display]
 
-window/size/mode=4
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"

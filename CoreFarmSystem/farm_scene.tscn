@@ -698,6 +698,7 @@ position = Vector2(-862, 1538)
 scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Farmer" unique_id=1965492530]
+position = Vector2(1435, -2563.3333)
 scale = Vector2(2, 2)
 limit_left = -1657
 limit_top = -1772

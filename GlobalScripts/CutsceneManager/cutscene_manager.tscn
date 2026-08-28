@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c5s157xv8f1cj"]
+
+[ext_resource type="Script" uid="uid://bmx31am1uf4le" path="res://GlobalScripts/CutsceneManager/cutscene_manager.gd" id="1_jkp4y"]
+
+[node name="CutsceneManager" type="CanvasLayer" unique_id=1199779872]
+script = ExtResource("1_jkp4y")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2010264518]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="ColorRect" unique_id=290126054]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

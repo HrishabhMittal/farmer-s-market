@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ddvowkvp2ys3m" path="res://Assets/Images/MiniMap/farm_placeholder.png" id="6_7okmr"]
 [ext_resource type="Texture2D" uid="uid://w6fbuevf0nid" path="res://Assets/Images/MiniMap/buy_seeds.png" id="7_8i1fv"]
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="8_12lvx"]
+[ext_resource type="Texture2D" uid="uid://cxm3ymuychdjh" path="res://Assets/Images/MiniMap/house_placeholder.png" id="10_j8dva"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8dva"]
 atlas = ExtResource("4_7okmr")
@@ -95,3 +96,12 @@ texture = ExtResource("7_8i1fv")
 position = Vector2(267, -29)
 
 [node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("8_12lvx")]
+
+[node name="building4" parent="." unique_id=1418183414 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
+position = Vector2(108, 176)
+player_node = NodePath("../truck")
+is_home = true
+
+[node name="Sprite2D" type="Sprite2D" parent="building4" unique_id=1676936395]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_j8dva")

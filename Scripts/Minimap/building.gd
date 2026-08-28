@@ -6,15 +6,17 @@ extends Area2D
 @onready var target_pos = global_position
 var hover_tween: Tween
 
+# would love to add a more elegant solution but gotta work with this
+@export var is_home: bool = false
+
 func _ready() -> void:
 	pass
-
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if player_node:
-				player_node.travel_to_building(target_pos, target_scene_path)
+				player_node.travel_to_building(target_pos, target_scene_path, is_home)
 
 func _on_mouse_entered() -> void:
 
