@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cytvigropofjb"]
+
+[ext_resource type="Script" uid="uid://dxo7durkwwu2l" path="res://SettingsFolder/setting_manager.gd" id="1_d6rkf"]
+
+[node name="SettingManager" type="Node" unique_id=387183936]
+script = ExtResource("1_d6rkf")

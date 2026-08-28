@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cykk1hilklhjv"]
+
+[ext_resource type="Script" uid="uid://b6ccnph7ybr47" path="res://SettingsFolder/volume_slider.gd" id="1_18sxw"]
+
+[node name="VolumeSlider" type="HSlider" unique_id=70292061]
+offset_right = 138.0
+offset_bottom = 16.0
+script = ExtResource("1_18sxw")
