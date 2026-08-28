@@ -634,6 +634,8 @@ offset = Vector2(-300, 0)
 transform = Transform2D(1, 0, 0, 1, -300, 0)
 
 [node name="FarmTileManager" type="Node2D" parent="." unique_id=506347715 node_paths=PackedStringArray("background_tiles", "main_tiles")]
+z_index = -100
+z_as_relative = false
 script = ExtResource("2_78ksu")
 background_tiles = NodePath("BackgroundTiles")
 main_tiles = NodePath("MainTiles")
@@ -651,6 +653,7 @@ tile_set = SubResource("TileSet_fhu6q")
 script = ExtResource("3_wsyp5")
 
 [node name="ToolBar" type="CanvasLayer" parent="." unique_id=1101934720]
+layer = 4
 offset = Vector2(-10, 20)
 transform = Transform2D(1, 0, 0, 1, -10, 20)
 

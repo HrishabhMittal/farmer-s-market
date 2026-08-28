@@ -6,14 +6,23 @@ extends Node2D
 @export var texture_node: TextureRect
 @export var label_node: Label
 @export var show_item_on_mouse: bool = true
+@export var allow_farm_plot_highlight: bool = true
+
 var seed_planter: FarmTool # Will be initialized by the tool itself
+var farm_tilemanager: FarmTileManager
 
 var mouse_inventory: Inventory
 var is_currently_showing: bool # If player is holding a item then it will be shown at mouse pointer if this variable is true
 
 func _ready():
 	mouse_inventory = Inventory.new(1, false)
-	
+	SignalBus.farm_tilemanager_ready.connect(_on_farmtilemanager_ready)
+	if allow_farm_plot_highlight:
+		%TileHighlight.visible = true
+
+func _on_farmtilemanager_ready(new_tilemanager: FarmTileManager) -> void:
+	farm_tilemanager = new_tilemanager
+
 func pick_item(item: Item, source_slot: SlotUI) -> void:
 	# If picked item and item held are same, that means player is combining stack
 	#prints("is_same_item(item, get_held_item()): ", InventoryManager.is_same_item(item, get_held_item()))
@@ -101,7 +110,12 @@ func _hide_item_on_mouse() -> void:
 func _process(_delta):
 	if is_currently_showing:
 		$CanvasLayer/ItemView.position = get_viewport().get_mouse_position()
-
+	
+	if allow_farm_plot_highlight and farm_tilemanager:
+		var mouse_pos := get_global_mouse_position()
+		var tile_under_mouse: String = farm_tilemanager.get_tile_type(mouse_pos)
+		if tile_under_mouse != "none":
+			%TileHighlight.global_position = get_viewport().get_canvas_transform() * farm_tilemanager.get_tile_center_coord(mouse_pos)
 func is_held_item_seed() -> bool:
 	if is_empty():
 		return false

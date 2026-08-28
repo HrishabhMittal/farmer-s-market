@@ -31,6 +31,17 @@ func get_mapped_coord(world_coord: Vector2) -> Vector2i:
 	
 	# Get the tile at that coordinate and return
 	return main_tiles.local_to_map(local_coord)
+
+func get_tile_center_coord(world_coord: Vector2) -> Vector2:
+	# Convert world coordinate to the local coordinate of the tilemaplayer
+	var local_coord: Vector2 = main_tiles.to_local(world_coord)
+	
+	# Get the tile at that coordinate and return
+	var mapped_coord = main_tiles.local_to_map(local_coord)
+	
+	# Return the local coord
+	return main_tiles.map_to_local(mapped_coord)
+	
 	
 func till_ground() -> void:
 	var mapped_coord := get_mapped_coord(get_global_mouse_position())
@@ -107,6 +118,7 @@ func print_planted_crops() -> void:
 
 func _ready():
 	SignalBus.crop_harvested.connect(_on_crop_harvested)
+	SignalBus.farm_tilemanager_ready.emit(self)
 	#SignalBus.day_ended.connect(unwater_all_tiles)
 	
 func _on_crop_harvested(farm_plant: FarmPlant) -> void:
