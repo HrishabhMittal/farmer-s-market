@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://cir2jjyeljass" path="res://CoreFarmSystem/barn.gd" id="11_0wb5q"]
 [ext_resource type="Script" uid="uid://d2okl80pf2hvw" path="res://CoreFarmSystem/truck.gd" id="11_61ldv"]
 [ext_resource type="Texture2D" uid="uid://bxycdp87mbsmw" path="res://Assets/Images/Farm/barn.png" id="11_ahdf5"]
-[ext_resource type="Texture2D" uid="uid://cqb4n6n8hloy2" path="res://Assets/Images/MiniMap/truck.png" id="13_wqrya"]
+[ext_resource type="Texture2D" uid="uid://doleknb4h73rs" path="res://Assets/car_spritesheet.png" id="13_ahdf5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sf2wa"]
 texture = ExtResource("3_qaha4")
@@ -614,6 +614,10 @@ size = Vector2(700, 890.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aql1o"]
 size = Vector2(439, 336)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqrya"]
+atlas = ExtResource("13_ahdf5")
+region = Rect2(0, 1221.1425, 1079.9551, 938.85754)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yefl1"]
 size = Vector2(657, 5626)
 
@@ -687,6 +691,7 @@ tool_texture = SubResource("AtlasTexture_ahdf5")
 tool_manager = NodePath("../../../FarmToolManager")
 
 [node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("10_miwjd")]
+scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Farmer" unique_id=1965492530]
 limit_left = -1657
@@ -713,12 +718,13 @@ texture = ExtResource("11_ahdf5")
 script = ExtResource("11_61ldv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Truck" unique_id=1091942164]
-position = Vector2(-1400.5, 1391)
+position = Vector2(-1312.75, 1498.5)
 shape = SubResource("RectangleShape2D_aql1o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Truck" unique_id=2052935533]
-position = Vector2(-1402, 1419)
-texture = ExtResource("13_wqrya")
+position = Vector2(-1311.25, 1526.5)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_wqrya")
 
 [node name="player limits" type="StaticBody2D" parent="." unique_id=1849953127]
 visible = false
