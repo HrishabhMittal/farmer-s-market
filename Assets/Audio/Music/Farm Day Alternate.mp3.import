@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqeqhfr1sejon"
+path="res://.godot/imported/Farm Day Alternate.mp3-4e20c5391c86ba2ff3e8b23ae2aa43b1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Farm Day Alternate.mp3"
+dest_files=["res://.godot/imported/Farm Day Alternate.mp3-4e20c5391c86ba2ff3e8b23ae2aa43b1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

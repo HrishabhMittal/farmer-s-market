@@ -40,6 +40,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if get_tree().current_scene and get_tree().current_scene.name == "FarmScene":
 			if player_ui:
 				player_ui.visible = !player_ui.visible
+				player_ui.refresh_inventory()
 
 # Helps in quick transferring items between inventories with shift+click
 func register_open_inventory(new_inventory: Inventory) -> void:

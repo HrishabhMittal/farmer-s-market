@@ -22,6 +22,8 @@ func _ready():
 	load_state() 
 	if is_test_enabled:
 		test_stuff()
+	
+	AudioManager.play_music("Farm Day")
 
 func _exit_tree() -> void:
 	save_state()

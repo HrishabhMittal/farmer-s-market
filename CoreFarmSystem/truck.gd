@@ -6,7 +6,7 @@ func _ready():
 func interact():
 	InventoryManager.barn_ui.visible = false
 	InventoryManager.truck_ui.visible = !InventoryManager.truck_ui.visible
-
+	InventoryManager.truck_ui.refresh_inventory()
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

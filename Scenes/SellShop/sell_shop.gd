@@ -17,12 +17,15 @@ func _ready() -> void:
 	player_inventory_ui.initialize(StateManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_RIGHT)
 	player_inventory_ui.set_inventory_name("Player Inventory")
 	add_child(player_inventory_ui)
+	player_inventory_ui.refresh_inventory()
 
 	if StateManager.sell_shops.has(shop_id):
 		item_prices = StateManager.sell_shops[shop_id].duplicate()
 		update_price_label()
 	else:
 		refresh_shop()
+	
+	AudioManager.play_music("shop music")
 
 func _exit_tree() -> void:
 	save_state()
