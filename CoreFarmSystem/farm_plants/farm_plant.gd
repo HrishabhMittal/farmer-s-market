@@ -71,7 +71,12 @@ func _handle_harvest_attempt(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 func harvest() -> void:
-	InventoryManager.add_item_to_barn(produced_crop_id, production_amount)
+	## Method 1: Add item directly to players inventory, But that will fail if player has full inventory
+	#InventoryManager.add_item_to_barn(produced_crop_id, production_amount)
+	
+	## Method 2: Drop harvested crop on the ground. He can pick it up later if inventory is full so item is not lost
+	ItemManager.spawn_ground_item_from_id(produced_crop_id, production_amount, global_position)
+	
 	SignalBus.crop_harvested.emit(self)
 	tile_manager.untill_tile(global_position)
 	call_deferred("queue_free")
