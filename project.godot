@@ -26,14 +26,10 @@ InfocardManager="*uid://btlfcwfcia4sl"
 AudioManager="*uid://dhcynrbnjcmci"
 ConfirmationDialogue="*uid://ccnddi22oh7oj"
 StateManager="*uid://ck6asiwv8aa0"
-<<<<<<< HEAD
 SettingManager="*uid://dxo7durkwwu2l"
 SettingMenu="*uid://dipv23qijupeh"
 ScreenshakeManager="*uid://cmc8s35krm6i3"
-<<<<<<<UpdatedupstreamDialogueManager="*uid://cmt8illmk7scx"
-=======
 DialogueManager="*uid://cmt8illmk7scx"
->>>>>>> 99fb2bf (add rudimentary phone, cleanup)
 CutsceneManager="*uid://c5s157xv8f1cj"
 
 [display]
