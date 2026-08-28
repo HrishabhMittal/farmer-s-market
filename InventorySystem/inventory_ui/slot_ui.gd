@@ -52,6 +52,7 @@ func _handle_gui_input(event: InputEvent) -> void:
 
 func _highlight() -> void:
 	if current_item:
+		AudioManager.play_sfx("item hover sfx")
 		slot_texture_node.scale = Vector2(1.2, 1.2)
 		InfocardManager.show_infocard(current_item)
 	

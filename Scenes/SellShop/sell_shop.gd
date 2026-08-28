@@ -85,6 +85,7 @@ func _unhandled_input(event: InputEvent) -> void:
 						var unit_price = item_prices.get(item_id, held_item.item_data.value)
 						var total_sale = unit_price * held_item.amount
 						StateManager.money += total_sale
+						AudioManager.play_sfx("Sell")
 						if InfocardManager:
 							InfocardManager.show_floating_text("+%d Coins" % total_sale, get_global_mouse_position(), "Green")
 						PlayerHeldItem.clear_item()

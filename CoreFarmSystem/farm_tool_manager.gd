@@ -92,4 +92,5 @@ func till_ground() -> void:
 	tile_manager.till_ground()
 
 func water_ground() -> void:
+	AudioManager.play_sfx_random_pitch("Water")
 	tile_manager.water_ground()

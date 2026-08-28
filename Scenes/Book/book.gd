@@ -72,6 +72,7 @@ func update_static_pages():
 # PAGE TURNING STUFF
 
 func turn_next():
+	AudioManager.play_sfx("Book Switching Pages")
 	if is_flipping or current_left_index + 2 >= pages.size():
 		return
 	is_flipping = true
@@ -98,6 +99,7 @@ func turn_next():
 	)
 
 func turn_prev():
+	AudioManager.play_sfx("Book Switching Pages")
 	if is_flipping or current_left_index < 0:
 		return
 	is_flipping = true

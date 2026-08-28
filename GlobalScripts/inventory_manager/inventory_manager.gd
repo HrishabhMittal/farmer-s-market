@@ -30,6 +30,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
 		if get_tree().current_scene and get_tree().current_scene.name == "FarmScene":
 			if player_ui:
+				if player_ui.visible:
+					AudioManager.play_sfx("close menu sfx")
+				else:
+					AudioManager.play_sfx("open menu sfx")
 				player_ui.visible = !player_ui.visible
 				player_ui.refresh_inventory()
 				

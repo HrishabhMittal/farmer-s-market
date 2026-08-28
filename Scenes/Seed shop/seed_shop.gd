@@ -168,6 +168,7 @@ func _on_buy_button_pressed() -> void:
 			
 		var success = InventoryManager.buy_item(seed_id, 50, 32)
 		if success:
+			AudioManager.play_sfx("Buy")
 			InfocardManager.show_floating_text("-50 Coins", action_menu.global_position, "Red")
 			bag_on_table.hide()
 			bag_on_table = null
