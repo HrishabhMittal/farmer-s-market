@@ -10,6 +10,13 @@ var tile_manager: FarmTileManager
 
 var is_using_tool: bool = false
 
+func handle_new_tool_selection(new_tool: FarmTool) -> void:
+	selected_tool = new_tool.tool_type
+	
+	var farm_scene = get_parent()
+	if farm_scene and "seed_slot" in farm_scene and farm_scene.seed_slot:
+		farm_scene.seed_slot.get_node("PanelContainer").add_theme_stylebox_override("panel", load("res://CoreFarmSystem/tool_unselected_theme.tres"))
+
 func initialize(new_tile_manager: FarmTileManager) -> void:
 	tile_manager = new_tile_manager
 	tool_selected.connect(handle_new_tool_selection)
@@ -18,13 +25,16 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("right click"):
 		selected_tool = FarmTools.NONE
 		is_using_tool = false
-
+		var farm_scene = get_parent()
+		if farm_scene and "seed_slot" in farm_scene and farm_scene.seed_slot:
+			farm_scene.seed_slot.get_node("PanelContainer").add_theme_stylebox_override("panel", load("res://CoreFarmSystem/tool_unselected_theme.tres"))
+			
 	if event.is_action_pressed("use_farm_tool"):
+		if not PlayerHeldItem.is_empty(): return
 		is_using_tool = true
 		_apply_tool()
 	elif event.is_action_released("use_farm_tool"):
 		is_using_tool = false
-
 
 func _process(_delta: float) -> void:
 	if is_using_tool:
@@ -74,9 +84,6 @@ func plant_seed() -> void:
 		StateManager.active_seed_inventory.remove_item(seed_item, 1)
 	else:
 		prints("failed to plant")
-
-func handle_new_tool_selection(new_tool: FarmTool) -> void:
-	selected_tool = new_tool.tool_type
 
 func dig_ground() -> void:
 	tile_manager.dig_ground()

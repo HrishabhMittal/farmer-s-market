@@ -5,7 +5,6 @@ extends Node2D
 var is_test_enabled: bool = false
 
 var seed_slot: SlotUI
-
 func _ready():
 	add_to_group("save_state") 
 	tool_manager.initialize(farm_tile_manager)
@@ -13,16 +12,26 @@ func _ready():
 	seed_slot = load("res://InventorySystem/inventory_ui/slot_ui.tscn").instantiate()
 	seed_slot.connected_inventory = StateManager.active_seed_inventory
 	seed_slot.slot_index = 0
-	
+	seed_slot.tooltip_text = "Seed Slot\nLeft-Click: Select to Plant\nRight-Click: Pick Up Seed"
 	StateManager.active_seed_inventory.slot_changed.connect(_on_seed_slot_changed)
 	$ToolBar/HBoxContainer.add_child(seed_slot)
-	$ToolBar/HBoxContainer/SeedPlanter.visible = true
-
+	
+	if $ToolBar/HBoxContainer.has_node("SeedPlanter"):
+		$ToolBar/HBoxContainer/SeedPlanter.queue_free()
+	
 	load_state() 
 	if is_test_enabled:
 		test_stuff()
-	
 	AudioManager.play_music("Farm Day")
+
+func select_seed_slot() -> void:
+	tool_manager.selected_tool = FarmToolManager.FarmTools.SEED_PLANTER
+	
+	for child in $ToolBar/HBoxContainer.get_children():
+		if child is FarmTool:
+			child.unselect_tool()
+			
+	seed_slot.get_node("PanelContainer").add_theme_stylebox_override("panel", load("res://CoreFarmSystem/tool_selected_theme.tres"))
 
 func _exit_tree() -> void:
 	save_state()

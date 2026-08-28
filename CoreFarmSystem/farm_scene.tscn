@@ -611,12 +611,18 @@ region = Rect2(64, 64, 64, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
 size = Vector2(700, 890.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvxba"]
+size = Vector2(614.5, 791)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aql1o"]
 size = Vector2(439, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqrya"]
 atlas = ExtResource("13_ahdf5")
 region = Rect2(0, 1221.1425, 1079.9551, 938.85754)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt4qr"]
+size = Vector2(440.125, 251.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yefl1"]
 size = Vector2(657, 5626)
@@ -694,6 +700,7 @@ tool_texture = SubResource("AtlasTexture_ahdf5")
 tool_manager = NodePath("../../../FarmToolManager")
 
 [node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("10_miwjd")]
+position = Vector2(-862, 1538)
 scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Farmer" unique_id=1965492530]
@@ -717,8 +724,16 @@ position = Vector2(-748, -94)
 scale = Vector2(0.3738269, 0.38017517)
 texture = ExtResource("11_ahdf5")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Barn" unique_id=432247528]
+position = Vector2(790, 289)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barn/StaticBody2D" unique_id=557678856]
+position = Vector2(-1542, -327)
+shape = SubResource("RectangleShape2D_uvxba")
+
 [node name="Truck" type="Area2D" parent="." unique_id=1110643445]
 script = ExtResource("11_61ldv")
+target_scene_path = "uid://bykas3tdowgd8"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Truck" unique_id=1091942164]
 position = Vector2(-1312.75, 1498.5)
@@ -728,6 +743,13 @@ shape = SubResource("RectangleShape2D_aql1o")
 position = Vector2(-1311.25, 1526.5)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_wqrya")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Truck" unique_id=1015235271]
+position = Vector2(-444, 1549)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Truck/StaticBody2D" unique_id=619648350]
+position = Vector2(-886.9375, -55)
+shape = SubResource("RectangleShape2D_mt4qr")
 
 [node name="player limits" type="StaticBody2D" parent="." unique_id=1849953127]
 visible = false
