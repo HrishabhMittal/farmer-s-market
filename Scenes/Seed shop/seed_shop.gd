@@ -27,6 +27,8 @@ func _ready():
 		refresh_shop()
 	action_menu.hide()
 	inspect_overlay.hide()
+	
+	AudioManager.play_music("shop music")
 
 func refresh_shop():
 	for bag in shelf.get_children():

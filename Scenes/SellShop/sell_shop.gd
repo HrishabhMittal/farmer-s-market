@@ -24,6 +24,8 @@ func _ready() -> void:
 		update_price_label()
 	else:
 		refresh_shop()
+	
+	AudioManager.play_music("shop music")
 
 func _exit_tree() -> void:
 	save_state()
