@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="9_6qx44"]
 [ext_resource type="PackedScene" uid="uid://bgymeat2al37i" path="res://Scenes/Phone/phone.tscn" id="10_7hwl2"]
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="10_nqtbe"]
+[ext_resource type="Texture2D" uid="uid://ccoh7nhvumrn8" path="res://Assets/book.png" id="12_qqsxb"]
+[ext_resource type="Texture2D" uid="uid://djus05fykesam" path="res://Assets/phone.png" id="12_sbyfj"]
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
 script = ExtResource("1_5bumm")
@@ -37,6 +39,13 @@ texture = ExtResource("5_lsou8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2047204010]
 
+[node name="book" parent="CanvasLayer" unique_id=1606224245 instance=ExtResource("2_s4d4o")]
+offset_left = 346.0
+offset_top = 103.99994
+offset_bottom = -1.999939
+scale = Vector2(0.5, 0.5)
+pages = Array[Texture2D]([ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga")])
+
 [node name="InspectOverlay" type="ColorRect" parent="CanvasLayer" unique_id=1455428457]
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,13 +57,6 @@ color = Color(0, 0, 0, 0.68235296)
 [node name="InspectSprite" type="Sprite2D" parent="CanvasLayer/InspectOverlay" unique_id=1764594715]
 position = Vector2(425, 282)
 texture = ExtResource("5_w1l5w")
-
-[node name="book" parent="CanvasLayer" unique_id=1606224245 instance=ExtResource("2_s4d4o")]
-offset_left = 346.0
-offset_top = 103.99994
-offset_bottom = -1.999939
-scale = Vector2(0.5, 0.5)
-pages = Array[Texture2D]([ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga"), ExtResource("3_si1ga")])
 
 [node name="Phone" parent="CanvasLayer" unique_id=1370161008 instance=ExtResource("10_7hwl2")]
 position = Vector2(101, 478)
@@ -95,8 +97,44 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "INSPECT"
 
+[node name="PhoneIcon" type="TextureButton" parent="CanvasLayer" unique_id=1959379226]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_right = 128.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(10, -10)
+pivot_offset_ratio = Vector2(0, 1)
+texture_normal = ExtResource("12_sbyfj")
+texture_pressed = ExtResource("12_sbyfj")
+texture_hover = ExtResource("12_sbyfj")
+texture_disabled = ExtResource("12_sbyfj")
+texture_focused = ExtResource("12_sbyfj")
+
+[node name="BookIcon" type="TextureButton" parent="CanvasLayer" unique_id=139514709]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(-10, -10)
+pivot_offset_ratio = Vector2(1, 1)
+texture_normal = ExtResource("12_qqsxb")
+texture_pressed = ExtResource("12_qqsxb")
+texture_hover = ExtResource("12_qqsxb")
+texture_disabled = ExtResource("12_qqsxb")
+texture_focused = ExtResource("12_qqsxb")
+
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("9_6qx44")]
 target_scene_path = "uid://bykas3tdowgd8"
+exit_msg = "Haed back to town?"
 
 [node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("10_nqtbe")]
 

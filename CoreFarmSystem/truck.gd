@@ -7,7 +7,7 @@ func _ready():
 
 
 func interact():
-	var is_confirmed = await ConfirmationDialogue.ask_confirmation("Return to the Minimap?")
+	var is_confirmed = await ConfirmationDialogue.ask_confirmation("Return to town?")
 	if not is_confirmed:
 		return
 		

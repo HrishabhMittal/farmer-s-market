@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://djr715jyo8uk5" path="res://Scenes/Phone/phone.gd" id="1_ynqvl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
-size = Vector2(341.6667, 360)
+size = Vector2(550, 906.6666)
 
 [node name="Phone" type="Node2D" unique_id=1370161008]
 script = ExtResource("1_ynqvl")
@@ -17,5 +17,5 @@ texture = ExtResource("1_w0vie")
 scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=455652950]
-position = Vector2(10, -149.99998)
+position = Vector2(-1.6666698, 3.333322)
 shape = SubResource("RectangleShape2D_3dp3j")

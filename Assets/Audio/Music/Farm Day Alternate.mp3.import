@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Farm Day Alternate.mp3-4e20c5391c86ba2ff3e8b2
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

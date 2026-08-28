@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b22me6041ndvg"]
 
-[ext_resource type="Texture2D" uid="uid://cusw410c5j2uy" path="res://Assets/exit.png" id="1_2enwo"]
+[ext_resource type="Texture2D" uid="uid://bwjr8doy0827" path="res://Assets/exit.png" id="1_2enwo"]
 [ext_resource type="Script" uid="uid://crhpx1bvdigof" path="res://Scenes/ExitIcon/exit_icon.gd" id="1_u2lpu"]
 
 [node name="ExitButtonUI" type="CanvasLayer" unique_id=203447004]
