@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bv16fgug31wcv"]
 
+[ext_resource type="Script" uid="uid://bi2r1syy8prwl" path="res://Scenes/MainMenu/main_menu.gd" id="1_0l8wx"]
 [ext_resource type="Texture2D" uid="uid://didmb0vq0qobw" path="res://Assets/Images/MainMenu/menu_background.png" id="1_0qgbs"]
 [ext_resource type="Texture2D" uid="uid://baoj8ki6v6xbt" path="res://Assets/Images/MainMenu/rope.png" id="1_uqdog"]
 [ext_resource type="Texture2D" uid="uid://dhgosk1hgpyt0" path="res://Assets/Images/MainMenu/menu_title.png" id="2_adu2g"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0l8wx")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=609043684]
 layout_mode = 1

@@ -151,3 +151,18 @@ func load_state() -> void:
 		
 	for g_data in StateManager.farm_ground_items:
 		ItemManager.spawn_ground_item_from_id(g_data["id"], g_data["amount"], Vector2(g_data["x"], g_data["y"]))
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		match event.keycode:
+			KEY_1:
+				if $ToolBar/HBoxContainer.has_node("Shovel"):
+					tool_manager.tool_selected.emit($ToolBar/HBoxContainer/Shovel)
+			KEY_2:
+				if $ToolBar/HBoxContainer.has_node("Hoe"):
+					tool_manager.tool_selected.emit($ToolBar/HBoxContainer/Hoe)
+			KEY_3:
+				if $ToolBar/HBoxContainer.has_node("WateringCan"):
+					tool_manager.tool_selected.emit($ToolBar/HBoxContainer/WateringCan)
+			KEY_4:
+				select_seed_slot()
