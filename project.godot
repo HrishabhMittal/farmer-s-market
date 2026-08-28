@@ -26,10 +26,11 @@ InfocardManager="*uid://btlfcwfcia4sl"
 AudioManager="*uid://dhcynrbnjcmci"
 ConfirmationDialogue="*uid://ccnddi22oh7oj"
 StateManager="*uid://ck6asiwv8aa0"
+SettingManager="*uid://dxo7durkwwu2l"
 
 [display]
 
-window/size/resizable=false
+window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -87,6 +88,11 @@ inventory={
 quick_inventory_transfer={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(199, 22),"global_position":Vector2(205, 69),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+esc={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

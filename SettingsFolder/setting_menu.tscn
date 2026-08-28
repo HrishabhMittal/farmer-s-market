@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dipv23qijupeh"]
+
+[ext_resource type="Script" uid="uid://b6ccnph7ybr47" path="res://SettingsFolder/volume_slider.gd" id="1_4lq7d"]
+[ext_resource type="Script" uid="uid://dgs7bfnb6adff" path="res://SettingsFolder/setting_menu.gd" id="1_b5v16"]
+[ext_resource type="Script" uid="uid://dk50dxlg1b88w" path="res://full_screen_toggle.gd" id="2_b5v16"]
+
+[sub_resource type="Animation" id="Animation_4lq7d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-166, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b5v16"]
+resource_name = "close"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-166, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jfc16"]
+resource_name = "open"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-166, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kurl3"]
+_data = {
+&"RESET": SubResource("Animation_4lq7d"),
+&"close": SubResource("Animation_b5v16"),
+&"open": SubResource("Animation_jfc16")
+}
+
+[node name="SettingMenu" type="CanvasLayer" unique_id=570373305]
+script = ExtResource("1_b5v16")
+
+[node name="Panel" type="Panel" parent="." unique_id=1382044695]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -166.0
+offset_right = -18.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=966252380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer" unique_id=1671985079]
+layout_mode = 2
+script = ExtResource("1_4lq7d")
+metadata/_custom_type_script = "uid://b6ccnph7ybr47"
+
+[node name="FullScreenToggle" type="OptionButton" parent="Panel/VBoxContainer" unique_id=191639044]
+layout_mode = 2
+script = ExtResource("2_b5v16")
+metadata/_custom_type_script = "uid://dk50dxlg1b88w"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=128142539]
+libraries/ = SubResource("AnimationLibrary_kurl3")
