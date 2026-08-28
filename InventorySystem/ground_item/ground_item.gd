@@ -29,7 +29,7 @@ func initialize(new_item: Item) -> void:
 	
 	$Area2D.body_entered.connect(chase_player)
 	
-func attempt_pickup(body: Node2D) -> void:
+func attempt_pickup(_body: Node2D) -> void:
 	if target_inventory_for_pickup: # Not sure where it goes fo now
 		if target_inventory_for_pickup.add_item(item, item.amount):
 			SignalBus.ground_item_picked.emit(self)

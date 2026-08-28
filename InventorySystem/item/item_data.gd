@@ -8,3 +8,4 @@ var item_id: String # It will be set by ItemManager when it loads all the items.
 @export var value: int = 0
 @export var item_type: Array[ItemTypes.ItemType] = []
 @export var scene_to_instantiate: PackedScene
+@export var stack_limit: int = 32
