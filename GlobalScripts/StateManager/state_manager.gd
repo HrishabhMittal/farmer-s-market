@@ -15,6 +15,7 @@ var target_position: Vector2
 # shop
 var sell_shops: Dictionary = {}
 var seed_shops: Dictionary = {}
+var seller_appearances: Dictionary = {}
 
 # farm
 var farm_tiles: Dictionary = {}
@@ -43,6 +44,7 @@ func save_to_file() -> void:
 		"target_position_y": target_position.y,
 		"sell_shops": sell_shops,
 		"seed_shops": seed_shops,
+		"seller_appearances": seller_appearances,
 		"farm_tiles": farm_tiles,
 		"farm_plants": farm_plants,
 		"farm_ground_items": farm_ground_items,
@@ -72,6 +74,7 @@ func load_from_file() -> void:
 	target_position = Vector2(save_dict.get("target_position_x", 0), save_dict.get("target_position_y", 0))
 	sell_shops = save_dict.get("sell_shops", {})
 	seed_shops = save_dict.get("seed_shops", {})
+	seller_appearances = save_dict.get("seller_appearances", {})
 	farm_tiles = save_dict.get("farm_tiles", {})
 	farm_plants = save_dict.get("farm_plants", [])
 	farm_ground_items = save_dict.get("farm_ground_items", [])

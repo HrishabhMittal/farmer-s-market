@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bbvpswxwwqysq"]
+
+[ext_resource type="Texture2D" uid="uid://jjm2hvpa7gep" path="res://Assets/Images/Seller/base/base.png" id="1_1n3s5"]
+[ext_resource type="Script" uid="uid://cypkft41au6f0" path="res://Scenes/Seller/seller.gd" id="1_xskmm"]
+[ext_resource type="Texture2D" uid="uid://c5cys4rb6vng2" path="res://Assets/Images/Seller/spritesheets/clothes_spritesheet.png" id="2_xskmm"]
+[ext_resource type="Texture2D" uid="uid://bbnhin8phdcpo" path="res://Assets/Images/Seller/spritesheets/expression_spritesheet.png" id="3_rowy3"]
+[ext_resource type="Texture2D" uid="uid://d12miuu5vpbh2" path="res://Assets/Images/Seller/spritesheets/accessory_spritesheet.png" id="4_m0owf"]
+
+[node name="Seller" type="Node2D" unique_id=1051544910]
+script = ExtResource("1_xskmm")
+
+[node name="base" type="Sprite2D" parent="." unique_id=918958182]
+texture = ExtResource("1_1n3s5")
+
+[node name="clothes" type="Sprite2D" parent="." unique_id=1805128448]
+texture = ExtResource("2_xskmm")
+
+[node name="expression" type="Sprite2D" parent="." unique_id=786614944]
+texture = ExtResource("3_rowy3")
+
+[node name="accessory" type="Sprite2D" parent="." unique_id=2099688698]
+texture = ExtResource("4_m0owf")

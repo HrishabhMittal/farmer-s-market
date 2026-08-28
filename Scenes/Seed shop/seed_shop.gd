@@ -21,6 +21,9 @@ func _process(delta: float) -> void:
 func _ready():
 	add_to_group("shop") 
 	add_to_group("save_state")
+	if has_node("Seller"):
+		$Seller.setup(shop_id)
+	
 	if StateManager.seed_shops.has(shop_id):
 		load_shop()
 	else:

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d004rmn308asi" path="res://Scenes/Seed shop/seed_bag.tscn" id="4_2ghwr"]
 [ext_resource type="Texture2D" uid="uid://dtat6fwe3w2cj" path="res://Assets/Images/SeedShop/seed shop back.png" id="4_nqtbe"]
 [ext_resource type="Texture2D" uid="uid://cc2btfeiyhn2w" path="res://Assets/button_placeholder.png" id="5_5bumm"]
+[ext_resource type="PackedScene" uid="uid://bbvpswxwwqysq" path="res://Scenes/Seller/seller.tscn" id="5_6ysyn"]
 [ext_resource type="Texture2D" uid="uid://dpnnhnb3dex1k" path="res://Assets/Images/SeedShop/seed shop front.png" id="5_lsou8"]
 [ext_resource type="Texture2D" uid="uid://dsw07n2j6tktm" path="res://Assets/icon.svg" id="5_w1l5w"]
 [ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="9_6qx44"]
@@ -23,6 +24,10 @@ metadata/_edit_vertical_guides_ = [-521.0]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_nqtbe")
 centered = false
+
+[node name="Seller" parent="." unique_id=1051544910 instance=ExtResource("5_6ysyn")]
+position = Vector2(728.99994, 393.99997)
+scale = Vector2(0.2, 0.2)
 
 [node name="fg" type="Sprite2D" parent="." unique_id=699400894]
 position = Vector2(576, 324)
