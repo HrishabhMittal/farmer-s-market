@@ -37,6 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if get_tree().current_scene and get_tree().current_scene.name == "FarmScene":
 			if player_ui:
 				player_ui.visible = !player_ui.visible
+				player_ui.refresh_inventory()
 
 
 func close_all_uis() -> void:

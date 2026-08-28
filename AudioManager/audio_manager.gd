@@ -1,21 +1,89 @@
 extends Node
 
-var active_music_stream: AudioStreamPlayer
 
-@export var clips: Node
-@export var one_shots: Node
-@export var one_shot_audio_scene: PackedScene
+var music_volume: float = 1.0 : set = set_music_volume
+var sfx_volume: float = 1.0
+
+@export var sfx_players: Node
+@export var sfx_player_scene: PackedScene
+
+# Internal state
+var active_music_player: AudioStreamPlayer
+var music_player_1: AudioStreamPlayer
+var music_player_2: AudioStreamPlayer
+
+var sfx_cache: Dictionary = {}
+var music_cache: Dictionary = {}
+
+const MUSIC_PATH = "res://Assets/Audio/Music/"
+const SFX_PATH = "res://Assets/Audio/SFX/"
+
+func _ready() -> void:
+	music_player_1 = AudioStreamPlayer.new()
+	music_player_2 = AudioStreamPlayer.new()
+	add_child(music_player_1)
+	add_child(music_player_2)
+	active_music_player = music_player_1
+
+func set_music_volume(value: float) -> void:
+	music_volume = clamp(value, 0.0, 1.0)
+	if active_music_player and active_music_player.playing:
+		active_music_player.volume_db = linear_to_db(music_volume)
 
 
-func play_audio(audio_name: String, from_position: float = 0.0) -> void:
-	active_music_stream = clips.get_node(audio_name)
-	active_music_stream.play(from_position)
+func _get_audio_stream(track_name: String, is_music: bool) -> AudioStream:
+	var cache = music_cache if is_music else sfx_cache
+	var folder_path = MUSIC_PATH if is_music else SFX_PATH
+	
+	if cache.has(track_name):
+		return cache[track_name]
+		
+	var extensions = [".mp3"]
+	for ext in extensions:
+		var file_path = folder_path + track_name + ext
+		if ResourceLoader.exists(file_path):
+			var stream = load(file_path)
+			cache[track_name] = stream
+			return stream
+			
+	push_error("Audio file not found for: " + track_name)
+	return null
 
-func play_one_shot_audio(audio_stream: AudioStream, volume_db: float = 0.0, from_position: float = 0.0) -> OneShotAudio:
-	var one_shot_audio: OneShotAudio = one_shot_audio_scene.instantiate()
-	one_shot_audio.stream = audio_stream
-	one_shot_audio.volume_db = volume_db
-	one_shot_audio.from_position = from_position
+func play_music(track_name: String, transition_duration: float = 1.0, from_position: float = 0.0) -> void:
+	var stream = _get_audio_stream(track_name, true)
+	if not stream:
+		return
+		
+	if active_music_player.stream == stream and active_music_player.playing:
+		return
 
-	one_shots.add_child(one_shot_audio)
-	return one_shot_audio
+	var next_player = music_player_2 if active_music_player == music_player_1 else music_player_1
+	var tween = create_tween().set_parallel(true)
+
+	if active_music_player.playing:
+		var prev_player = active_music_player
+		tween.tween_property(prev_player, "volume_db", -80.0, transition_duration)
+		tween.tween_callback(prev_player.stop).set_delay(transition_duration)
+
+	# Start and fade in the new track
+	active_music_player = next_player
+	active_music_player.stream = stream
+	active_music_player.volume_db = -80.0
+	active_music_player.play(from_position)
+	tween.tween_property(active_music_player, "volume_db", linear_to_db(music_volume), transition_duration)
+
+
+func play_sfx(sfx_name: String, volume_multiplier: float = 1.0, from_position: float = 0.0) -> SFXPlayer:
+	var stream = _get_audio_stream(sfx_name, false)
+	if not stream:
+		return null
+		
+	var sfx_player: SFXPlayer = sfx_player_scene.instantiate()
+	sfx_player.stream = stream
+	
+	var final_volume = clamp(sfx_volume * volume_multiplier, 0.0, 1.0)
+	sfx_player.volume_db = linear_to_db(final_volume)
+	sfx_player.from_position = from_position
+	
+	sfx_players.add_child(sfx_player)
+	return sfx_player

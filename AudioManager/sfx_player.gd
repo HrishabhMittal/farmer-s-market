@@ -1,5 +1,5 @@
 extends AudioStreamPlayer
-class_name OneShotAudio
+class_name SFXPlayer
 
 var from_position: float = 0.0
 
