@@ -10,6 +10,14 @@ radius = 66.37017
 [sub_resource type="CircleShape2D" id="CircleShape2D_3dp3j"]
 radius = 800.25244
 
+[sub_resource type="Curve" id="Curve_dl1ch"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.112915404, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_yge0w"]
+offsets = PackedFloat32Array(0.6103188, 1)
+colors = PackedColorArray(0.3764706, 0.30588236, 0.14117648, 0.67058825, 0.5084974, 0.5084975, 0.50849724, 0)
+
 [node name="Farmer" type="CharacterBody2D" unique_id=1605516437 groups=["Player"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=694930753]
@@ -21,9 +29,10 @@ position = Vector2(1, -2)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_aq678")
 
-[node name="MovementComponent" type="Node" parent="." unique_id=463980904 node_paths=PackedStringArray("player")]
+[node name="MovementComponent" type="Node" parent="." unique_id=463980904 node_paths=PackedStringArray("player", "walking_particles")]
 script = ExtResource("1_4a1pm")
 player = NodePath("..")
+walking_particles = NodePath("../WalkingParticles")
 speed = 600.0
 left_input = &"left"
 right_input = &"right"
@@ -36,6 +45,26 @@ script = ExtResource("2_wlps1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRadius" unique_id=345233884]
 shape = SubResource("CircleShape2D_3dp3j")
+
+[node name="WalkingParticles" type="CPUParticles2D" parent="." unique_id=1726340480]
+z_index = -1
+emitting = false
+amount = 20
+lifetime = 0.5
+randomness = 0.1
+lifetime_randomness = 0.03
+emission_shape = 1
+emission_sphere_radius = 80.0
+particle_flag_align_y = true
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 20.0
+radial_accel_max = 30.0
+scale_amount_min = 20.0
+scale_amount_max = 100.0
+scale_amount_curve = SubResource("Curve_dl1ch")
+color_ramp = SubResource("Gradient_yge0w")
 
 [connection signal="area_entered" from="InteractRadius" to="InteractRadius" method="_on_area_entered"]
 [connection signal="area_exited" from="InteractRadius" to="InteractRadius" method="_on_area_exited"]

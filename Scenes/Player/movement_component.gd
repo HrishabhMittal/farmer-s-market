@@ -2,6 +2,7 @@ extends Node
 class_name MovementComponent
 
 @export var player: CharacterBody2D
+@export var walking_particles: CPUParticles2D
 
 @export_group("movement options")
 @export var speed: float
@@ -16,6 +17,10 @@ var direction: Vector2
 
 func handle_direction() -> void:
 	direction = Input.get_vector(left_input, right_input, up_input, down_input)
+	if direction:
+		walking_particles.emitting = true
+	else:
+		walking_particles.emitting = false
 
 func handle_movement() -> void:
 
