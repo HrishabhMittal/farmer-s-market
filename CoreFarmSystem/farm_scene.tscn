@@ -621,6 +621,7 @@ size = Vector2(657, 5626)
 script = ExtResource("1_rc0p8")
 farm_tile_manager = NodePath("FarmTileManager")
 tool_manager = NodePath("FarmToolManager")
+is_test_enabled = true
 
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("2_04e0t")]
 target_scene_path = "uid://bykas3tdowgd8"
@@ -689,7 +690,7 @@ tool_manager = NodePath("../../../FarmToolManager")
 [node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("10_miwjd")]
 
 [node name="Camera2D" type="Camera2D" parent="Farmer" unique_id=1965492530]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.335, 0.335)
 limit_left = -1657
 limit_top = -1772
 limit_right = 3448

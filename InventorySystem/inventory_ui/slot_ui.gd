@@ -25,11 +25,13 @@ func refresh_slot(item: Item) -> void:
 		current_item = null
 		slot_texture_node.texture = null
 		slot_label_node.text = ""
+	#prints("current_item = ", current_item)
 
 func _handle_gui_input(event: InputEvent) -> void:
 	# Check if it was a left click
 	if event.is_action_pressed("left click"):
-			PlayerHeldItem.pick_item(current_item, self)
+		#prints("current_item = ", current_item)
+		PlayerHeldItem.pick_item(current_item, self)
 
 func _highlight() -> void:
 	if current_item:
