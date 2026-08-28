@@ -42,8 +42,8 @@ func test_stuff() -> void:
 	StateManager.player_inventory.add_item(ItemManager.make_item("carrot_seed"), 35)
 	#StateManager.player_inventory.remove_item(ItemManager.make_item("carrot_seed"), 34)
 	#StateManager.player_inventory.add_item(ItemManager.make_item("potato_seed"), 10)
-	#for i in range(100):
-		#ItemManager.spawn_ground_item_from_id("potato", 20, Vector2(randi_range(100, 700), randi_range(100, 700)))
+	for i in range(100):
+		ItemManager.spawn_ground_item_from_id("potato", 20, Vector2(randi_range(100, 700), randi_range(100, 700)))
 
 func save_state() -> void:
 	var tile_data = {}

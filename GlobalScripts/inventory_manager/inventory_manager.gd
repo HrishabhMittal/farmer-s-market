@@ -2,13 +2,16 @@ extends Node
 
 @export var inventory_ui_scene: PackedScene
 
-
+var open_inventories: Array[Inventory] # List of currently visible invenoties that wiil be used for quick transfer items
 
 var barn_ui: InventoryUI
 var truck_ui: InventoryUI
 var player_ui: InventoryUI
 
 func _ready():
+	SignalBus.inventory_opned.connect(register_open_inventory)
+	SignalBus.inventory_closed.connect(unregister_closed_inventory)
+	
 	StateManager.barn_inventory = Inventory.new(50) 
 	StateManager.truck_inventory = Inventory.new(30)
 	StateManager.player_inventory = Inventory.new(20)
@@ -38,6 +41,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			if player_ui:
 				player_ui.visible = !player_ui.visible
 
+# Helps in quick transferring items between inventories with shift+click
+func register_open_inventory(new_inventory: Inventory) -> void:
+	open_inventories.append(new_inventory)
+	#prints(open_inventories)
+	
+func unregister_closed_inventory(new_inventory: Inventory) -> void:
+	open_inventories.erase(new_inventory)
 
 func close_all_uis() -> void:
 	if barn_ui: barn_ui.visible = false
@@ -91,3 +101,28 @@ func swap_item(from_inventory: Inventory, to_inventory: Inventory, from_slot_ind
 	var temp_from_item: Item = from_inventory.slots[from_slot_index]
 	from_inventory.replace_item(to_inventory.slots[to_slot_index], from_slot_index)
 	to_inventory.replace_item(temp_from_item, to_slot_index)
+
+# Used for shift+click
+func quick_transfer_item(slot_ui: SlotUI) -> bool:
+	#prints(open_inventories)
+	if not slot_ui.current_item or not slot_ui.connected_inventory:
+		return false
+
+	# Find the last opened eligible inventorry
+	var to_inventory: Inventory = null
+	for i in range(open_inventories.size()-1, -1, -1):
+		if open_inventories[i] != slot_ui.connected_inventory:
+			to_inventory = open_inventories[i]
+			
+	if not to_inventory: # There was no other open inventory
+		return false
+	
+	#prints("to_inventory = ", to_inventory)
+	return transfer_item(slot_ui.connected_inventory, to_inventory, slot_ui.slot_index)
+
+func transfer_item(from_inventory: Inventory, to_inventory: Inventory, from_slot_index: int) -> bool:
+	var transfer_success: bool = to_inventory.add_item(from_inventory.slots[from_slot_index], from_inventory.slots[from_slot_index].amount) # Adding the item to 
+	if not transfer_success:
+		return false
+	from_inventory.replace_item(null, from_slot_index) # Making it empty
+	return true

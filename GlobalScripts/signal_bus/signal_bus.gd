@@ -10,6 +10,8 @@ signal day_ended()
 signal crop_harvested(farm_plant: FarmPlant)
 signal item_added(item: Item)
 signal ground_item_picked(ground_item: GroundItem)
+signal inventory_opned(inventory: Inventory)
+signal inventory_closed(inventory: Inventory)
 
 @warning_ignore_restore("unused_signal")
 

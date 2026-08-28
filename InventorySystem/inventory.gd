@@ -10,11 +10,13 @@ signal slot_changed(slot_index: int)
 
 var slot_count: int
 var slots: Array[Item] = []
+var is_quick_transfer_allowed: bool = true # Allows quick transfer of items by shift+click
 
 # Needs to be called when a new inventory is made
-func _init(new_slot_count: int) -> void:
+func _init(new_slot_count: int, quick_transfer_allowed: bool = true) -> void:
 	slot_count = new_slot_count
 	slots.resize(slot_count)
+	is_quick_transfer_allowed = quick_transfer_allowed
 	#SignalBus.new_inventory_ready.emit(self)
 
 # Adds item

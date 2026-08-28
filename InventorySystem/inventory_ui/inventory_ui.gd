@@ -33,6 +33,9 @@ func refresh_inventory() -> void:
 func _ready():
 	# This function really needs to be called after _ready is called for proprer size and offset calculation
 	call_deferred("_handle_position")
+	
+	if connected_inventory.is_quick_transfer_allowed: # Should this inventory use shift+click to transfer items
+		visibility_changed.connect(_handle_visiblity_change)
 
 func _on_slot_changed(slot_index: int) -> void:
 	slots[slot_index].refresh_slot(connected_inventory.slots[slot_index])
@@ -57,6 +60,12 @@ func _handle_position() -> void:
 
 func _unhandled_input(_event: InputEvent):
 	pass
+
+func _handle_visiblity_change() -> void:
+	if visible:
+		SignalBus.inventory_opned.emit(connected_inventory)
+	else:
+		SignalBus.inventory_closed.emit(connected_inventory)
 
 #func _process(delta):
 	#refresh_inventory()

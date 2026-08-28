@@ -28,8 +28,13 @@ func refresh_slot(item: Item) -> void:
 	#prints("current_item = ", current_item)
 
 func _handle_gui_input(event: InputEvent) -> void:
+	# Check if player is trying to quick transfer item between inventories
+	if event.is_action_pressed("quick_inventory_transfer"):
+		if connected_inventory.is_quick_transfer_allowed:
+			InventoryManager.quick_transfer_item(self)
+	
 	# Check if it was a left click
-	if event.is_action_pressed("left click"):
+	if event.is_action_pressed("left click", false, true): # Should not register shift+click
 		#prints("current_item = ", current_item)
 		PlayerHeldItem.pick_item(current_item, self)
 

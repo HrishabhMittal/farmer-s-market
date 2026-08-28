@@ -12,7 +12,7 @@ var mouse_inventory: Inventory
 var is_currently_showing: bool # If player is holding a item then it will be shown at mouse pointer if this variable is true
 
 func _ready():
-	mouse_inventory = Inventory.new(1)
+	mouse_inventory = Inventory.new(1, false)
 	
 func pick_item(item: Item, source_slot: SlotUI) -> void:
 	# If picked item and item held are same, that means player is combining stack
