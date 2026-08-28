@@ -18,6 +18,11 @@ var current_pick_cooldown: float = 0.0
 var pick_cooldown: float = 3.0 # If it fails to get picked up for any reason, it will wait
 							   # this amount of time before requesting pickup again
 
+var hover_time: float = 0.0
+var hover_speed: float = 2.0
+var hover_amplitude: float = 20.0
+
+
 var item: Item
 var target_inventory_for_pickup: Inventory = StateManager.barn_inventory # Or should it be player inventory?
 
@@ -52,6 +57,9 @@ func _process(delta):
 		global_position = global_position.move_toward(chase_target.global_position, chase_speed*delta)
 		if global_position.distance_to(chase_target.global_position) <= pick_trigger_radius:
 			attempt_pickup(chase_target)
+	else:
+		hover_time += delta
+		$SlotUI.position.y = sin(hover_time*hover_speed) * hover_amplitude
 	
 	if current_pick_cooldown > 0.0:
 		current_pick_cooldown -= delta
