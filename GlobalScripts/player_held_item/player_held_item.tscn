@@ -51,7 +51,7 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 2
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1945318325]
-layer = 2
+layer = 0
 
 [node name="TileHighlight" type="PanelContainer" parent="CanvasLayer2" unique_id=1728059681]
 unique_name_in_owner = true
