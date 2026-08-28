@@ -14,7 +14,7 @@ func _ready() -> void:
 	add_to_group("save_state")
 	
 	player_inventory_ui = load("res://InventorySystem/inventory_ui/inventory_ui.tscn").instantiate()
-	player_inventory_ui.initialize(StateManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_CENTER)
+	player_inventory_ui.initialize(StateManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_RIGHT)
 	player_inventory_ui.set_inventory_name("Player Inventory")
 	add_child(player_inventory_ui)
 

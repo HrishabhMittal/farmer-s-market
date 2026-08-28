@@ -626,8 +626,8 @@ tool_manager = NodePath("FarmToolManager")
 target_scene_path = "uid://bykas3tdowgd8"
 
 [node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("3_61ldv")]
-offset = Vector2(-200, 0)
-transform = Transform2D(1, 0, 0, 1, -200, 0)
+offset = Vector2(-300, 0)
+transform = Transform2D(1, 0, 0, 1, -300, 0)
 
 [node name="FarmTileManager" type="Node2D" parent="." unique_id=506347715 node_paths=PackedStringArray("background_tiles", "main_tiles")]
 script = ExtResource("2_78ksu")

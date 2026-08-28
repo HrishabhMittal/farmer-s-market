@@ -48,12 +48,12 @@ func _unhandled_input(event: InputEvent) -> void:
 						if not tile_manager.is_crop_planted(mouse_pos):
 							if tile_under_mouse == "tilled" or tile_under_mouse == "watered":
 								# Check the new dedicated seed slot instead of PlayerHeldItem
-								var active_seed = InventoryManager.active_seed_inventory.slots[0]
+								var active_seed = StateManager.active_seed_inventory.slots[0]
 								if active_seed and ItemTypes.ItemType.SEED in active_seed.item_data.item_type:
 									plant_seed()
 
 func plant_seed() -> void:
-	var seed_item: Item = InventoryManager.active_seed_inventory.slots[0]
+	var seed_item: Item = StateManager.active_seed_inventory.slots[0]
 
 	if seed_item:
 		var new_plant: FarmPlant = seed_item.item_data.scene_to_instantiate.instantiate()
@@ -62,7 +62,7 @@ func plant_seed() -> void:
 		new_plant.global_position = tile_manager.get_tile_center(get_global_mouse_position())
 		tile_manager.crop_planted(get_global_mouse_position())
 		
-		InventoryManager.active_seed_inventory.remove_item(seed_item, 1)
+		StateManager.active_seed_inventory.remove_item(seed_item, 1)
 	else:
 		prints("failed to plant")
 

@@ -2,7 +2,7 @@ extends Node2D
 
 @export var farm_tile_manager: FarmTileManager
 @export var tool_manager: FarmToolManager
-@export var is_test_enabled: bool = false
+var is_test_enabled: bool = false
 
 var seed_slot: SlotUI
 
