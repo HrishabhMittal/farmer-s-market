@@ -79,27 +79,3 @@ size_flags_vertical = 4
 theme_override_constants/h_separation = 9
 theme_override_constants/v_separation = 9
 columns = 7
-
-[node name="SlotUI" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=1777876351 instance=ExtResource("2_xha1v")]
-layout_mode = 2
-
-[node name="SlotUI2" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=1322368754 instance=ExtResource("2_xha1v")]
-layout_mode = 2
-
-[node name="SlotUI3" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=2020646495 instance=ExtResource("2_xha1v")]
-layout_mode = 2
-
-[node name="SlotUI4" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=779711191 instance=ExtResource("2_xha1v")]
-layout_mode = 2
-
-[node name="SlotUI5" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=814197213 instance=ExtResource("2_xha1v")]
-layout_mode = 2
-
-[node name="SlotUI6" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=1981222404 instance=ExtResource("2_xha1v")]
-layout_mode = 2
-
-[node name="SlotUI7" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=1080477288 instance=ExtResource("2_xha1v")]
-layout_mode = 2
-
-[node name="SlotUI8" parent="PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer" unique_id=2031650633 instance=ExtResource("2_xha1v")]
-layout_mode = 2
