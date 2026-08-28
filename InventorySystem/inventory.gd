@@ -25,65 +25,67 @@ func _init(new_slot_count: int, quick_transfer_allowed: bool = true) -> void:
 ## Probably should change return type from bool to int with different return codes,
 ## since this function can now add items partially with stack_limit. But that might
 ## breack current codes/make no difference at differnt places, so skipping it.
+
 func add_item(new_item: Item, amount: int) -> bool:
-	#prints("amount: ", amount) 
 	# Check if the item is already there
 	if does_have_same_item_in_inventory(new_item):
-		# It is already there, so just add it to the stack
 		for i in range(slot_count):
 			# If slot is null, move to the next one
 			if not slots[i]:
 				continue
-			
 			# Find the item stack
 			if slots[i].item_data == new_item.item_data:
 				# If the stack is full, then skip to the next slot
-				#prints("slots[i].amount = ", slots[i].amount)
 				if slots[i].amount == slots[i].item_data.stack_limit:
 					continue
 				
 				# How many more items can the current stack hold before becoming full
 				var space_in_current_stack: int = slots[i].item_data.stack_limit - slots[i].amount
+				
 				# If space is bigger than the amount need to be added, then simply add them to stack
 				if space_in_current_stack >= amount:
 					slots[i].amount += amount
+					new_item.amount -= amount # ADDED: deduct the consumed amount
 					slot_changed.emit(i)
 					return true
-					
+				
 				# If the previous condition failed that means 'amount' is bigger than the current stack can hold
 				# In that case, add as much that can be added to the current stack and then recursively try to add rest of the amount
 				var remaining_amount: int = amount - space_in_current_stack
 				slots[i].amount += space_in_current_stack
+				new_item.amount -= space_in_current_stack # ADDED: deduct the consumed amount
 				slot_changed.emit(i)
 				return add_item(new_item, remaining_amount)
-				
+
 	# If it does not already exist or existing stacks of the item are full in the inventory, 
 	# then find a new slot and add there
 	var empty_slot_index: int = get_empty_slot()
 	if empty_slot_index == -1:
 		return false # No empty slot
-	
+
 	# If amount is bigger than a stack can hold, then make a stack and then add the rest recursively
-	#prints("amount: ", amount)
 	if amount > new_item.item_data.stack_limit:
 		var remaining_amount: int = amount - new_item.item_data.stack_limit
-		#prints("remaining_amount: ", remaining_amount)
-		
-		# Need to make a new item from the split stack
 		var stack_split_new_item: Item = ItemManager.make_item(new_item.item_data.item_id, new_item.item_data.stack_limit)
 		stack_split_new_item.update_info(self, empty_slot_index)
 		slots[empty_slot_index] = stack_split_new_item
 		slot_changed.emit(empty_slot_index)
-		
-		new_item.amount = remaining_amount
+		new_item.amount -= new_item.item_data.stack_limit
 		return add_item(new_item, remaining_amount)
-	
+
 	# If the previous condition failed, then item can hold in a single stack
 	new_item.amount = amount
 	new_item.update_info(self, empty_slot_index)
 	slots[empty_slot_index] = new_item
 	slot_changed.emit(empty_slot_index)
 	return true
+
+
+
+
+
+
+
 
 # Removes the item in the given slot_index and puts the new item there 
 func replace_item(new_item: Item, slot_index: int) -> void: # Note: "new_item" can be null, in that cause the slot just becomes empty

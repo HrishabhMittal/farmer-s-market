@@ -19,18 +19,30 @@ var is_hovered: bool = false
 func _ready():
 	SignalBus.global_growth_tick.connect(_on_growth_tick)
 	
-	plant_texture.gui_input.connect(_handle_harvest_attempt)
-	plant_texture.mouse_entered.connect(highlight)
-	plant_texture.mouse_exited.connect(unhighlight)
+	plant_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	if not is_fully_grown and growth_cycle_texture.size() > current_growth_cycle:
 		plant_texture.texture = growth_cycle_texture[current_growth_cycle]
 
 func _process(_delta: float) -> void:
+	var mouse_pos = get_global_mouse_position()
+	var rect = Rect2(global_position + plant_texture.position, plant_texture.size)
+	var currently_hovered = rect.has_point(mouse_pos)
+	
+	if currently_hovered and not is_hovered:
+		highlight()
+	elif not currently_hovered and is_hovered:
+		unhighlight()
+
 	if is_hovered and is_fully_grown:
-		# If the player is holding the button down while hovering, attempt to harvest
 		if Input.is_action_pressed("left click") or Input.is_action_pressed("interact"):
 			harvest()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if is_hovered and is_fully_grown:
+		if event.is_action_pressed("interact") or event.is_action_pressed("left click"):
+			harvest()
+			get_viewport().set_input_as_handled()
 
 func _on_growth_tick() -> void:
 	if is_fully_grown:
@@ -46,7 +58,7 @@ func _on_growth_tick() -> void:
 		tile_manager.unwater_tile(global_position)
 		current_growth_time += 1
 		_handle_growth()
-		
+
 func process_missed_ticks(ticks: int) -> void:
 	for i in range(ticks):
 		if is_fully_grown:
@@ -72,12 +84,6 @@ func _handle_growth() -> void:
 		is_fully_grown = true
 
 
-func _handle_harvest_attempt(event: InputEvent) -> void:
-	if event.is_action_pressed("interact") or event.is_action_pressed("left click"):
-		if is_fully_grown:
-			harvest()
-		get_viewport().set_input_as_handled()
-		
 func harvest() -> void:
 	var player = get_tree().get_first_node_in_group("Player")
 	if player:
@@ -97,12 +103,10 @@ func harvest() -> void:
 func is_watered() -> bool:
 	return tile_manager.get_tile_type(global_position) == "watered"
 
-
 func highlight() -> void:
 	modulate = Color(1.2, 1.2, 1.2, 1)
 	InfocardManager.show_farmplant_infocard(self)
 	is_hovered = true
-
 
 func unhighlight() -> void:
 	modulate = Color(1.0, 1.0, 1.0, 1)

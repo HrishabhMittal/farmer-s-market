@@ -1,19 +1,7 @@
 [gd_scene format=3 uid="uid://dhcynrbnjcmci"]
 
 [ext_resource type="Script" uid="uid://dhspy464jalbm" path="res://AudioManager/audio_manager.gd" id="1_eufxx"]
-[ext_resource type="PackedScene" uid="uid://nur16mufa070" path="res://AudioManager/one_shot_audio.tscn" id="2_2ksul"]
-[ext_resource type="AudioStream" uid="uid://cbiyna3jgh707" path="res://AudioManager/Music/Farm Day.mp3" id="2_0452j"]
 
-[node name="AudioManager" type="Node" unique_id=1515432357 node_paths=PackedStringArray("clips", "one_shots")]
+[node name="AudioManager" type="Node" unique_id=1515432357]
 process_mode = 3
 script = ExtResource("1_eufxx")
-clips = NodePath("Clips")
-one_shots = NodePath("OneShots")
-one_shot_audio_scene = ExtResource("2_2ksul")
-
-[node name="Clips" type="Node" parent="." unique_id=1600120435]
-
-[node name="FarmDay" type="AudioStreamPlayer" parent="Clips" unique_id=1860230938]
-stream = ExtResource("2_0452j")
-
-[node name="OneShots" type="Node" parent="." unique_id=1298587725]

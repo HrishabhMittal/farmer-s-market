@@ -18,32 +18,42 @@ func _ready():
 	mouse_inventory = Inventory.new(1, false)
 	SignalBus.farm_tilemanager_ready.connect(_on_farmtilemanager_ready)
 	if allow_farm_plot_highlight:
-		%TileHighlight.visible = true
+		%TileHighlight.visible = false
 
 func _on_farmtilemanager_ready(new_tilemanager: FarmTileManager) -> void:
 	farm_tilemanager = new_tilemanager
 
 func pick_item(item: Item, source_slot: SlotUI) -> void:
 	# If picked item and item held are same, that means player is combining stack
-	#prints("is_same_item(item, get_held_item()): ", InventoryManager.is_same_item(item, get_held_item()))
 	if InventoryManager.is_same_item(item, get_held_item()):
-		item.owner_inventory.add_item(get_held_item(), get_held_item().amount)
-		clear_item()
+		var held = get_held_item()
+		var success = item.owner_inventory.add_item(held, held.amount)
+		
+		# only clear the mouse if the entire stack transferred, 
+		# otherwise just refresh the mouse UI to show the leftovers.
+		if success or held.amount <= 0:
+			clear_item()
+		else:
+			_show_item_on_mouse()
+			
 	# If previous condition failed, that means the items are either different or one of the slots is
 	# empty. In that case swap the items
 	elif item:
 		InventoryManager.swap_item(item.owner_inventory, mouse_inventory, item.inventory_index, 0) # '0' because mouse_inventory has only 1 slot
-	
 	# Special case where player is trying to put item in a empty inventory slot
 	else:
 		InventoryManager.swap_item(source_slot.connected_inventory, mouse_inventory, source_slot.slot_index, 0)
-	_show_item_on_mouse() # It can hide items on mouse automatically if it is empty
+		
+	_show_item_on_mouse()
 	
 	# If player picked up a seed from inventory, automatically selects the SeedPlanter tool
 	if is_held_item_seed():
 		if seed_planter:
 			seed_planter.tool_manager.tool_selected.emit(seed_planter)
-	
+
+
+
+
 func remove_item(item_id: String, amount: int = 0) -> bool:
 	var new_item: Item = _make_item(item_id, amount)
 	
@@ -106,16 +116,25 @@ func _hide_item_on_mouse() -> void:
 	texture_node.texture = null
 	label_node.text = ""
 	is_currently_showing = false
+	
 
 func _process(_delta):
 	if is_currently_showing:
 		$CanvasLayer/ItemView.position = get_viewport().get_mouse_position()
-	
+
 	if allow_farm_plot_highlight and farm_tilemanager:
 		var mouse_pos := get_global_mouse_position()
 		var tile_under_mouse: String = farm_tilemanager.get_tile_type(mouse_pos)
+		
 		if tile_under_mouse != "none":
+			%TileHighlight.visible = true
 			%TileHighlight.global_position = get_viewport().get_canvas_transform() * farm_tilemanager.get_tile_center_coord(mouse_pos)
+		else:
+			%TileHighlight.visible = false
+	else:
+		if %TileHighlight:
+			%TileHighlight.visible = false
+
 func is_held_item_seed() -> bool:
 	if is_empty():
 		return false

@@ -122,8 +122,12 @@ func quick_transfer_item(slot_ui: SlotUI) -> bool:
 	return transfer_item(slot_ui.connected_inventory, to_inventory, slot_ui.slot_index)
 
 func transfer_item(from_inventory: Inventory, to_inventory: Inventory, from_slot_index: int) -> bool:
-	var transfer_success: bool = to_inventory.add_item(from_inventory.slots[from_slot_index], from_inventory.slots[from_slot_index].amount) # Adding the item to 
+	var item_to_transfer = from_inventory.slots[from_slot_index]
+	var transfer_success: bool = to_inventory.add_item(item_to_transfer, item_to_transfer.amount) 
+	
 	if not transfer_success:
+		from_inventory.slot_changed.emit(from_slot_index)
 		return false
+		
 	from_inventory.replace_item(null, from_slot_index) # Making it empty
 	return true
