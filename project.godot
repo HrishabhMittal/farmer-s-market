@@ -27,27 +27,19 @@ AudioManager="*uid://dhcynrbnjcmci"
 ConfirmationDialogue="*uid://ccnddi22oh7oj"
 StateManager="*uid://ck6asiwv8aa0"
 SettingManager="*uid://dxo7durkwwu2l"
-<<<<<<< Updated upstream
-DialogueManager="*uid://cmt8illmk7scx"
-CutsceneManager="*uid://c5s157xv8f1cj"
-=======
 SettingMenu="*uid://dipv23qijupeh"
 ScreenshakeManager="*uid://cmc8s35krm6i3"
->>>>>>> Stashed changes
+<<<<<<<UpdatedupstreamDialogueManager="*uid://cmt8illmk7scx"
+CutsceneManager="*uid://c5s157xv8f1cj"
 
 [display]
 
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [global_group]
 
 Player=""
-
-[gui]
-
-theme/custom="uid://70e0xhytqnif"
 
 [input]
 

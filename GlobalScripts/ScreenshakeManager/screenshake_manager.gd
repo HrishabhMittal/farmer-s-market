@@ -29,4 +29,4 @@ func _ready() -> void:
 			camera = child
 			break
 
-	print(camera.name)
+			print(camera.name)

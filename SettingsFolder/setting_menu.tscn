@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b6ccnph7ybr47" path="res://SettingsFolder/volume_slider.gd" id="1_4lq7d"]
 [ext_resource type="Script" uid="uid://dgs7bfnb6adff" path="res://SettingsFolder/setting_menu.gd" id="1_b5v16"]
-[ext_resource type="Script" uid="uid://dk50dxlg1b88w" path="res://full_screen_toggle.gd" id="2_b5v16"]
 
 [sub_resource type="Animation" id="Animation_4lq7d"]
 length = 0.001
@@ -81,11 +80,6 @@ alignment = 1
 layout_mode = 2
 script = ExtResource("1_4lq7d")
 metadata/_custom_type_script = "uid://b6ccnph7ybr47"
-
-[node name="FullScreenToggle" type="OptionButton" parent="Panel/VBoxContainer" unique_id=191639044]
-layout_mode = 2
-script = ExtResource("2_b5v16")
-metadata/_custom_type_script = "uid://dk50dxlg1b88w"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=128142539]
 libraries/ = SubResource("AnimationLibrary_kurl3")
