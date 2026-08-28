@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://bc8n8deypyq25"]
 
 [ext_resource type="Script" uid="uid://gxjfwm8xbift" path="res://Scenes/Seed shop/seed_shop.gd" id="1_5bumm"]
-[ext_resource type="Texture2D" uid="uid://denoeve6rkkh7" path="res://Assets/Images/SeedShop/shop_back.png" id="1_xt6rq"]
-[ext_resource type="Texture2D" uid="uid://big0o0gtn0vvs" path="res://Assets/minimised_seed_bags.png" id="2_75oki"]
+[ext_resource type="Texture2D" uid="uid://1balhkvg8o0r" path="res://Assets/minimised_seed_bags.png" id="2_75oki"]
 [ext_resource type="PackedScene" uid="uid://d2vjd1b0a0wjx" path="res://Scenes/Book/book.tscn" id="2_s4d4o"]
 [ext_resource type="Texture2D" uid="uid://x4v1rty36u1a" path="res://Assets/Images/page.jpg" id="3_si1ga"]
 [ext_resource type="Texture2D" uid="uid://2yjefu6dh7hs" path="res://Assets/Images/SeedShop/seed_bag.png" id="3_w1l5w"]
 [ext_resource type="PackedScene" uid="uid://d004rmn308asi" path="res://Scenes/Seed shop/seed_bag.tscn" id="4_2ghwr"]
-[ext_resource type="Texture2D" uid="uid://h0l1w45bh6u7" path="res://Assets/button_placeholder.png" id="5_5bumm"]
-[ext_resource type="Texture2D" uid="uid://d17kuuojcyivf" path="res://Assets/icon.svg" id="5_w1l5w"]
+[ext_resource type="Texture2D" uid="uid://dtat6fwe3w2cj" path="res://Assets/Images/SeedShop/seed shop back.png" id="4_nqtbe"]
+[ext_resource type="Texture2D" uid="uid://cc2btfeiyhn2w" path="res://Assets/button_placeholder.png" id="5_5bumm"]
+[ext_resource type="Texture2D" uid="uid://dpnnhnb3dex1k" path="res://Assets/Images/SeedShop/seed shop front.png" id="5_lsou8"]
+[ext_resource type="Texture2D" uid="uid://dsw07n2j6tktm" path="res://Assets/icon.svg" id="5_w1l5w"]
 [ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="9_6qx44"]
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="10_nqtbe"]
 
@@ -19,10 +20,14 @@ maximised_sheet = ExtResource("3_w1l5w")
 metadata/_edit_vertical_guides_ = [-521.0]
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1550049513]
-position = Vector2(0, -1)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_xt6rq")
+texture = ExtResource("4_nqtbe")
 centered = false
+
+[node name="fg" type="Sprite2D" parent="." unique_id=699400894]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_lsou8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2047204010]
 
@@ -98,31 +103,31 @@ polygon = PackedVector2Array(-502, -49, 423, -58, 549, 58, -628, 54)
 [node name="shelf" type="Node2D" parent="." unique_id=996168745]
 
 [node name="seed_bag" parent="shelf" unique_id=1600610449 instance=ExtResource("4_2ghwr")]
-position = Vector2(268, 335)
+position = Vector2(169, 445)
 
 [node name="seed_bag2" parent="shelf" unique_id=102131219 instance=ExtResource("4_2ghwr")]
-position = Vector2(394, 337)
+position = Vector2(287, 448)
 
 [node name="seed_bag3" parent="shelf" unique_id=223376932 instance=ExtResource("4_2ghwr")]
-position = Vector2(519, 337)
+position = Vector2(406, 447)
 
 [node name="seed_bag4" parent="shelf" unique_id=1694856496 instance=ExtResource("4_2ghwr")]
-position = Vector2(284, 204)
+position = Vector2(171, 313)
 
 [node name="seed_bag5" parent="shelf" unique_id=1269983239 instance=ExtResource("4_2ghwr")]
-position = Vector2(410, 206)
+position = Vector2(288, 316)
 
 [node name="seed_bag6" parent="shelf" unique_id=905204137 instance=ExtResource("4_2ghwr")]
-position = Vector2(535, 206)
+position = Vector2(407, 316)
 
 [node name="seed_bag7" parent="shelf" unique_id=1287308158 instance=ExtResource("4_2ghwr")]
-position = Vector2(249, 468)
+position = Vector2(166, 573)
 
 [node name="seed_bag8" parent="shelf" unique_id=337540977 instance=ExtResource("4_2ghwr")]
-position = Vector2(375, 470)
+position = Vector2(283, 578)
 
 [node name="seed_bag9" parent="shelf" unique_id=2116806574 instance=ExtResource("4_2ghwr")]
-position = Vector2(500, 485)
+position = Vector2(407, 580)
 
 [connection signal="gui_input" from="CanvasLayer/InspectOverlay" to="." method="_on_inspect_overlay_gui_input"]
 [connection signal="pressed" from="CanvasLayer/ActionMenu/VBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]

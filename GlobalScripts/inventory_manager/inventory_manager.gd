@@ -27,15 +27,16 @@ func _ready():
 	truck_ui.visible = false
 	
 	player_ui = inventory_ui_scene.instantiate()
-	player_ui.initialize(StateManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_CENTER)
+	player_ui.initialize(StateManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_RIGHT)
 	player_ui.set_inventory_name("Backpack")
 	add_child(player_ui)
 	player_ui.visible = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
-		if player_ui:
-			player_ui.visible = !player_ui.visible
+		if get_tree().current_scene and get_tree().current_scene.name == "FarmScene":
+			if player_ui:
+				player_ui.visible = !player_ui.visible
 
 
 func close_all_uis() -> void:
