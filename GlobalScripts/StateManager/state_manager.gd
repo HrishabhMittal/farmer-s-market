@@ -27,6 +27,9 @@ var farm_ground_items: Array = []
 var farm_planted_tiles: Dictionary = {}
 var last_farm_save_time: float = 0.0
 
+var police_trust_score: int = 0
+var shop_is_scammer: Dictionary = {}
+
 func _ready() -> void:
 	pass
 
@@ -54,7 +57,9 @@ func save_to_file() -> void:
 		"farm_plants": farm_plants,
 		"farm_ground_items": farm_ground_items,
 		"farm_planted_tiles": _serialize_vector_dict(farm_planted_tiles),
-		"last_farm_save_time": last_farm_save_time
+		"last_farm_save_time": last_farm_save_time,
+		"police_trust_score": police_trust_score,
+		"shop_is_scammer": shop_is_scammer
 	}
 	var json_string = JSON.stringify(save_dict)
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -71,7 +76,8 @@ func load_from_file() -> void:
 		
 	money = save_dict.get("money", 500)
 	bank_balance = save_dict.get("bank_balance", 0)
-	
+	police_trust_score = save_dict.get("police_trust_score", 0)
+	shop_is_scammer = save_dict.get("shop_is_scammer", {})
 	_deserialize_inventory(barn_inventory, save_dict.get("barn_inventory", []))
 	_deserialize_inventory(player_inventory, save_dict.get("player_inventory", []))
 	_deserialize_inventory(active_seed_inventory, save_dict.get("active_seed_inventory", []))
@@ -120,10 +126,17 @@ func _deserialize_vector_dict(dict: Dictionary) -> Dictionary:
 		result[Vector2i(int(parts[0]), int(parts[1]))] = dict[key]
 	return result
 
+
 func reset_shops() -> void:
+	for arrested_shop_id in police_called_shops:
+		if shop_is_scammer.has(arrested_shop_id) and shop_is_scammer[arrested_shop_id]:
+			police_trust_score += 1
+		else:
+			police_trust_score -= 1
+			
+		seller_appearances.erase(arrested_shop_id)
+		
 	sell_shops.clear()
 	seed_shops.clear()
-	
-	for arrested_shop_id in police_called_shops:
-		seller_appearances.erase(arrested_shop_id)
+	shop_is_scammer.clear()
 	police_called_shops.clear()

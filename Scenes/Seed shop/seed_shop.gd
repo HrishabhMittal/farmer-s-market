@@ -106,15 +106,33 @@ func _unhandled_input(event: InputEvent) -> void:
 			close_book()
 			get_viewport().set_input_as_handled()
 
+
 func refresh_shop():
+	# Roll to see if THIS seller is a scammer
+	var is_scammer = randf() <= GameConfig.scammer_chance
+	StateManager.shop_is_scammer[shop_id] = is_scammer
+
 	for bag in shelf.get_children():
 		bag.show()
 		var type = randi() % 5
-		var is_real = randf() > 0.5
+		
+		# Determine if bag is real based on seller alignment
+		var is_real = true
+		if is_scammer:
+			is_real = randf() > GameConfig.scammer_defective_ratio
+			
 		var fake_var = (randi() % 5) + 1
-		bag.setup(type, is_real, fake_var, minimised_sheet)
+		
+		# Calculate price variation
+		var seed_id = seed_item_ids[type % seed_item_ids.size()]
+		var honest_price = GameConfig.seed_prices.get(seed_id, 50)
+		var varied_price = int(honest_price * randf_range(GameConfig.minimum_price_ratio, 1.0))
+		
+		bag.setup(type, is_real, fake_var, varied_price, minimised_sheet)
 		bag.return_to_shelf()
+		
 	bag_on_table = null
+
 
 func load_shop():
 	var bags = shelf.get_children()
@@ -122,11 +140,12 @@ func load_shop():
 	for i in range(bags.size()):
 		if i < saved_bags.size():
 			var data = saved_bags[i]
-			bags[i].setup(data["type"], data["is_real"], data["fake_var"], minimised_sheet)
+			bags[i].setup(data["type"], data["is_real"], data["fake_var"], data.get("price", 50), minimised_sheet)
 			bags[i].show()
 			bags[i].return_to_shelf()
 		else:
 			bags[i].hide()
+
 
 func save_state():
 	var bag_data = []
@@ -135,9 +154,11 @@ func save_state():
 			bag_data.append({
 				"type": bag.seed_type,
 				"is_real": bag.is_real,
-				"fake_var": bag.fake_variant
+				"fake_var": bag.fake_variant,
+				"price": bag.bag_price
 			})
 	StateManager.seed_shops[shop_id] = bag_data
+
 
 func handle_bag_click(bag):
 	if not bag.visible: return
@@ -164,12 +185,11 @@ func _on_buy_button_pressed() -> void:
 		return
 		
 	var seed_id = seed_item_ids[bag_on_table.seed_type % seed_item_ids.size()]
+	var price = bag_on_table.bag_price
+	var honest_amount = GameConfig.seeds_per_bag.get(seed_id, 32)
 	
-	# Fetch values from config, with fallbacks just in case
-	var price = GameConfig.seed_prices.get(seed_id, 50)
-	var amount = GameConfig.seeds_per_bag.get(seed_id, 32)
-	
-	var is_confirmed = await ConfirmationDialogue.ask_confirmation("Buy %d seeds for %d Coins?" % [amount, price])
+	# The dialog LIES to the player and displays the honest amount, regardless of if it's defective
+	var is_confirmed = await ConfirmationDialogue.ask_confirmation("Buy %d seeds for %d Coins?" % [honest_amount, price])
 	if not is_confirmed:
 		return
 		
@@ -177,7 +197,13 @@ func _on_buy_button_pressed() -> void:
 		InfocardManager.show_floating_text("Not enough money!", action_menu.global_position, "Red")
 		return
 		
-	var success = InventoryManager.buy_item(seed_id, price, amount)
+	# Calculate actual amount based on if bag is defective
+	var actual_amount = honest_amount
+	if not bag_on_table.is_real:
+		actual_amount = int(honest_amount * GameConfig.defective_seed_multiplier)
+		
+	# Process purchase using actual amount
+	var success = InventoryManager.buy_item(seed_id, price, actual_amount)
 	if success:
 		AudioManager.play_sfx("Buy")
 		InfocardManager.show_floating_text("-%d Coins" % price, action_menu.global_position, "Red")

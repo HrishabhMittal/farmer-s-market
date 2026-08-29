@@ -3,7 +3,7 @@ var seed_type: int = 0
 var is_real: bool = true
 var fake_variant: int = 1
 var is_on_table: bool = false
-
+var bag_price: int = 50
 @onready var sprite = $"bag/place holder"
 @onready var click_area = $bag/seed_pack
 
@@ -16,15 +16,17 @@ func _ready():
 	if not click_area.input_event.is_connected(_on_seed_pack_input_event):
 		click_area.input_event.connect(_on_seed_pack_input_event)
 
-func setup(type: int, real: bool, fake_var: int, minimised_texture: Texture2D):
+func setup(type: int, real: bool, fake_var: int, price: int, minimised_texture: Texture2D):
 	seed_type = type
 	is_real = real
 	fake_variant = fake_var
+	bag_price = price # Save the generated price
 	
 	sprite.texture = minimised_texture
 	sprite.hframes = 5
 	sprite.vframes = 1
 	sprite.frame = seed_type
+
 
 func move_to_table(target_pos: Vector2):
 	is_on_table = true

@@ -1,10 +1,9 @@
 extends Node
 
 # --- TIME ---
-var TICK_SPEED: float = 5.0
+var TICK_SPEED: float = 5.0 # Seconds per tick
 
-# --- SEED SHOP ---
-# Honest buy prices for seeds
+# --- SEED SHOP (HONEST VALUES) ---
 var seed_prices: Dictionary = {
 	"pumpkin_seed": 50,
 	"carrot_seed": 20,
@@ -13,7 +12,6 @@ var seed_prices: Dictionary = {
 	"tomato_seed": 30
 }
 
-# Number of seeds given per bag
 var seeds_per_bag: Dictionary = {
 	"pumpkin_seed": 32,
 	"carrot_seed": 32,
@@ -22,8 +20,7 @@ var seeds_per_bag: Dictionary = {
 	"tomato_seed": 32
 }
 
-# --- SELL SHOP ---
-# Honest base sell prices for grown crops
+# --- SELL SHOP (HONEST VALUES) ---
 var crop_prices: Dictionary = {
 	"pumpkin": 50,
 	"carrot": 20,
@@ -33,7 +30,6 @@ var crop_prices: Dictionary = {
 }
 
 # --- FARMING ---
-# Growth chance per tick (0 to 100)
 var crop_growth_chances: Dictionary = {
 	"pumpkin": 60,
 	"carrot": 60,
@@ -42,6 +38,13 @@ var crop_growth_chances: Dictionary = {
 	"tomato": 60
 }
 
-# --- SCAMMER SETTINGS ---
-# Chance of the seller being a scammer (0.0 to 1.0)
-var scammer_chance: float = 0.3
+# --- SCAMMER / MARKET SETTINGS ---
+var minimum_price_ratio: float = 0.7 # Market variance: Honest prices fluctuate down to 70%
+var scammer_chance: float = 0.3 # 30% chance a generated shopkeeper is a scammer
+
+# Seed Shop Scams
+var scammer_defective_ratio: float = 0.5 # 50% chance an individual bag from a scammer is defective
+var defective_seed_multiplier: float = 0.5 # Defective bags yield 50% less seeds
+
+# Sell Shop Scams
+var scam_seller_lowball: float = 0.4 # Scammers in the sell shop multiply their buying price by this (e.g., offering 40% of the value)
