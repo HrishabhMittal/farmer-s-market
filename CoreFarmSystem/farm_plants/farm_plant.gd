@@ -21,6 +21,9 @@ func _ready():
 		growth_chance = GameConfig.crop_growth_chances[produced_crop_id]
 	SignalBus.global_growth_tick.connect(_on_growth_tick)
 	
+	if GameConfig.crop_yields.has(produced_crop_id):
+		production_amount = GameConfig.crop_yields[produced_crop_id]
+	
 	plant_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	if not is_fully_grown and growth_cycle_texture.size() > current_growth_cycle:

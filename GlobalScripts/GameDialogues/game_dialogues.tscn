@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dik20y4v3rdrx"]
+
+[ext_resource type="Script" uid="uid://csi10mq820oc1" path="res://GlobalScripts/GameDialogues/game_dialogues.gd" id="1_0swnc"]
+
+[node name="GameDialogues" type="Node" unique_id=58323530]
+script = ExtResource("1_0swnc")

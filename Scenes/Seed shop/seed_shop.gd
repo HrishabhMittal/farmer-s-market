@@ -57,6 +57,9 @@ func _ready():
 
 	phone.close_requested.connect(close_phone)
 
+	if not StateManager.visited_scenes.get("seed_shop", false):
+		StateManager.visited_scenes["seed_shop"] = true
+		DialogueManager.show_dialog([GameDialogues.MOM_SEED_SHOP], "Mom")
 
 func _on_phone_icon_clicked():
 	if is_phone_open: return

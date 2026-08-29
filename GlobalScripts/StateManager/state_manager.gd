@@ -3,7 +3,8 @@ extends Node
 const SAVE_PATH = "user://farm_save.json"
 
 var police_called_shops: Array = []
-
+var visited_scenes: Dictionary = {}
+var replaced_shops: Dictionary = {}
 var bank_balance: int = 0
 # money and inventory
 var money: int = 500
@@ -27,7 +28,7 @@ var farm_ground_items: Array = []
 var farm_planted_tiles: Dictionary = {}
 var last_farm_save_time: float = 0.0
 
-var police_trust_score: int = 0
+var police_trust_score: int = 1
 var shop_is_scammer: Dictionary = {}
 
 func _ready() -> void:
@@ -59,7 +60,9 @@ func save_to_file() -> void:
 		"farm_planted_tiles": _serialize_vector_dict(farm_planted_tiles),
 		"last_farm_save_time": last_farm_save_time,
 		"police_trust_score": police_trust_score,
-		"shop_is_scammer": shop_is_scammer
+		"shop_is_scammer": shop_is_scammer,
+		"visited_scenes": visited_scenes,
+		"replaced_shops": replaced_shops
 	}
 	var json_string = JSON.stringify(save_dict)
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -73,10 +76,11 @@ func load_from_file() -> void:
 	
 	if save_dict.is_empty():
 		return
-		
+	visited_scenes = save_dict.get("visited_scenes", {})
+	replaced_shops = save_dict.get("replaced_shops", {})
 	money = save_dict.get("money", 500)
 	bank_balance = save_dict.get("bank_balance", 0)
-	police_trust_score = save_dict.get("police_trust_score", 0)
+	police_trust_score = save_dict.get("police_trust_score", 1)
 	shop_is_scammer = save_dict.get("shop_is_scammer", {})
 	_deserialize_inventory(barn_inventory, save_dict.get("barn_inventory", []))
 	_deserialize_inventory(player_inventory, save_dict.get("player_inventory", []))
@@ -140,3 +144,48 @@ func reset_shops() -> void:
 	seed_shops.clear()
 	shop_is_scammer.clear()
 	police_called_shops.clear()
+
+func reset_shops_and_get_feedback() -> Array[String]:
+	var feedback: Array[String] = []
+	if police_called_shops.size() > 0:
+		var scams = 0
+		var innocents = 0
+		for id in police_called_shops:
+			if shop_is_scammer.has(id) and shop_is_scammer[id]:
+				scams += 1
+				replaced_shops[id] = "scammer"
+			else:
+				innocents += 1
+				replaced_shops[id] = "innocent"
+			seller_appearances.erase(id)
+			
+		if scams > 0 and innocents == 0:
+			feedback.append(GameDialogues.POLICE_REPORT_ONLY_SCAMMERS)
+		elif innocents > 0 and scams == 0:
+			feedback.append(GameDialogues.POLICE_REPORT_ONLY_INNOCENT)
+		else:
+			feedback.append(GameDialogues.POLICE_REPORT_MIXED)
+			
+		var net_change = clamp(scams - innocents, -1, 1)
+		police_trust_score += net_change
+		
+		if police_trust_score < 0:
+			# Deduct the fine
+			money -= GameConfig.fine_amount
+			if money < 0:
+				money = 0
+			feedback.append(GameDialogues.POLICE_TRUST_NEGATIVE)
+		elif police_trust_score == 0: 
+			feedback.append(GameDialogues.POLICE_TRUST_ZERO)
+		elif police_trust_score == 1: 
+			feedback.append(GameDialogues.POLICE_TRUST_LOW)
+		elif police_trust_score == 2: 
+			feedback.append(GameDialogues.POLICE_TRUST_MODERATE)
+		else: 
+			feedback.append(GameDialogues.POLICE_TRUST_HIGH)
+		
+	sell_shops.clear()
+	seed_shops.clear()
+	shop_is_scammer.clear()
+	police_called_shops.clear()
+	return feedback

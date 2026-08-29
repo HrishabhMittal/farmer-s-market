@@ -33,6 +33,7 @@ DialogueManager="*uid://cmt8illmk7scx"
 CutsceneManager="*uid://c5s157xv8f1cj"
 UIAnimationManager="*uid://b77s1e50804jx"
 GameConfig="*uid://b6alc4duty8dk"
+GameDialogues="*uid://dik20y4v3rdrx"
 
 [display]
 

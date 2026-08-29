@@ -27,9 +27,12 @@ func _physics_process(delta: float) -> void:
 				var confirm = await ConfirmationDialogue.ask_confirmation("Call it a day?")
 				if confirm:
 					await CutsceneManager.play()
-					StateManager.reset_shops()
+					var feedback = StateManager.reset_shops_and_get_feedback()
+					is_busy = false
+					if feedback.size() > 0:
+						DialogueManager.show_dialog(feedback, "Police")
 				is_busy = false
-				
+
 			# Standard scene transition logic
 			elif pending_scene_path != "":
 				TravelTransition.change_scene(pending_scene_path)

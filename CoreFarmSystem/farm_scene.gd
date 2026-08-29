@@ -23,6 +23,9 @@ func _ready():
 	if is_test_enabled:
 		test_stuff()
 	AudioManager.play_music("Farm Day")
+	if not StateManager.visited_scenes.get("farm", false):
+		StateManager.visited_scenes["farm"] = true
+		DialogueManager.show_dialog(GameDialogues.MOM_FARM, "Mom")
 
 func select_seed_slot() -> void:
 	tool_manager.selected_tool = FarmToolManager.FarmTools.SEED_PLANTER

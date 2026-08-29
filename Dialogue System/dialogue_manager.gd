@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var name_label: Label = $Panel/NameLabel
 @export var char_speed: float = 0.03
 
+signal dialogue_finished
+
 var current_lines: Array[String] = []
 var current_index: int = 0
 var tween: Tween
@@ -26,6 +28,7 @@ func show_dialogue(data: DialogueResource) -> void:
 func _display_current_line() -> void:
 	if current_index >= current_lines.size():
 		hide()
+		dialogue_finished.emit()
 		return
 		
 	var full_text: String = current_lines[current_index]
@@ -44,7 +47,8 @@ func _display_current_line() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
 		return
-	if event.is_action_pressed("interact") or event.is_action_pressed("left click"):
+	var is_enter = event is InputEventKey and event.keycode == KEY_ENTER and event.pressed and not event.echo
+	if event.is_action_pressed("interact") or event.is_action_pressed("left click") or is_enter:
 		get_viewport().set_input_as_handled()
 		if is_typing:
 			tween.kill()
