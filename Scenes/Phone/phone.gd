@@ -121,18 +121,34 @@ func _on_btn_deposit_pressed() -> void:
 		StateManager.money -= amount
 		StateManager.bank_balance += amount
 		amount_input.text = ""
+		
 		if bank_balance_label:
 			bank_balance_label.text = "Balance: %d Coins" % StateManager.bank_balance
+			
 		AudioManager.play_sfx("Buy")
 		
 		var dialog_line = ""
+		var is_ending = false
+		
 		if StateManager.bank_balance >= GameConfig.target_money:
 			dialog_line = GameDialogues.BANK_ENDING
+			is_ending = true
 		else:
 			dialog_line = GameDialogues.BANK_DEPOSIT
 			
 		close_requested.emit()
 		DialogueManager.show_dialog([dialog_line], "Bank Call")
+		
+		if is_ending:
+			await DialogueManager.dialogue_finished
+			
+			await CutsceneManager.play()
+			
+			get_tree().call_group("save_state", "save_state")
+			StateManager.save_to_file()
+			
+			TravelTransition.change_scene("res://Scenes/MainMenu/main_menu.tscn")
+			
 	else:
 		if InfocardManager:
 			InfocardManager.show_floating_text("Invalid funds!", get_global_mouse_position(), "Red")

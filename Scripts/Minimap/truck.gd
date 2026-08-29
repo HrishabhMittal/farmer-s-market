@@ -5,7 +5,7 @@ var is_moving = false
 var is_busy = false
 var pending_scene_path: String = ""
 var heading_home: bool = false
-
+var pending_shop_id: String = ""
 @onready var truck_sprite = $AnimatedSprite2D
 
 func _ready() -> void:
@@ -35,8 +35,10 @@ func _physics_process(delta: float) -> void:
 
 			# Standard scene transition logic
 			elif pending_scene_path != "":
+				StateManager.next_shop_id = pending_shop_id
 				TravelTransition.change_scene(pending_scene_path)
 				pending_scene_path = ""
+				pending_shop_id = ""
 		else:
 			truck_sprite.play("default")
 			if global_position.x < StateManager.target_position.x:
@@ -44,12 +46,13 @@ func _physics_process(delta: float) -> void:
 			else:
 				truck_sprite.flip_h = true
 
-func travel_to_building(target: Vector2, scene_path: String = "", is_home: bool = false):
+func travel_to_building(target: Vector2, scene_path: String = "", target_shop_id: String = "", is_home: bool = false):
 	if is_busy:
 		return
-		
+	
 	StateManager.position_set_once = true
 	StateManager.target_position = target
 	pending_scene_path = scene_path
+	pending_shop_id = target_shop_id
 	heading_home = is_home
 	is_moving = true

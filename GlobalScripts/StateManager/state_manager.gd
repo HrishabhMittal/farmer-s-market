@@ -11,7 +11,7 @@ var money: int = 500
 var barn_inventory: Inventory
 var player_inventory: Inventory
 var active_seed_inventory: Inventory
-
+var next_shop_id: String = ""
 # minimap
 var position_set_once: bool = false
 var target_position: Vector2
@@ -32,7 +32,9 @@ var police_trust_score: int = 1
 var shop_is_scammer: Dictionary = {}
 
 func _ready() -> void:
-	pass
+	get_tree().set_auto_accept_quit(false)
+	load_from_file()
+
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -73,8 +75,7 @@ func load_from_file() -> void:
 		return
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	var save_dict = JSON.parse_string(file.get_as_text())
-	
-	if save_dict.is_empty():
+	if typeof(save_dict) != TYPE_DICTIONARY or save_dict.is_empty():
 		return
 	visited_scenes = save_dict.get("visited_scenes", {})
 	replaced_shops = save_dict.get("replaced_shops", {})

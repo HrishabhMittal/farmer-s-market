@@ -2,6 +2,7 @@ extends Area2D
 
 @export_file("*.tscn") var target_scene_path: String 
 @export var player_node: CharacterBody2D
+@export var target_shop_id: String = ""
 
 var hover_tween: Tween
 var shake_tween: Tween

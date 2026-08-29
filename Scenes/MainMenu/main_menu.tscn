@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://iv45lm04nxv1" path="res://Assets/logo title.png" id="3_0l8wx"]
 [ext_resource type="Texture2D" uid="uid://cn6owgqnrl0ki" path="res://Assets/start board buttona.png" id="4_adu2g"]
 [ext_resource type="Script" uid="uid://bqnlbefp38487" path="res://Scenes/MainMenu/texture_rect.gd" id="5_adu2g"]
+[ext_resource type="Script" uid="uid://b453vo5j6qvce" path="res://Scenes/MainMenu/texture_rect_2.gd" id="6_0l8wx"]
 
-[node name="main_menu" type="Control" unique_id=93825119 node_paths=PackedStringArray("play_button")]
+[node name="main_menu" type="Control" unique_id=93825119 node_paths=PackedStringArray("play_button", "exit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +15,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0l8wx")
-play_button = NodePath("right_menu_container/VBoxContainer/TextureRect")
+play_button = NodePath("right_menu_container/VBoxContainer/Play")
+exit_button = NodePath("right_menu_container/VBoxContainer/Exit")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=609043684]
 layout_mode = 1
@@ -71,7 +73,7 @@ scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(-125, 50)
 pivot_offset_ratio = Vector2(1, 0.5)
 
-[node name="TextureRect" type="TextureButton" parent="right_menu_container/VBoxContainer" unique_id=450874778]
+[node name="Play" type="TextureButton" parent="right_menu_container/VBoxContainer" unique_id=450874778]
 layout_mode = 2
 texture_normal = ExtResource("4_adu2g")
 texture_pressed = ExtResource("4_adu2g")
@@ -81,7 +83,7 @@ texture_focused = ExtResource("4_adu2g")
 script = ExtResource("5_adu2g")
 target_scene_path = "uid://bykas3tdowgd8"
 
-[node name="Label" type="Label" parent="right_menu_container/VBoxContainer/TextureRect" unique_id=1576181817]
+[node name="Label" type="Label" parent="right_menu_container/VBoxContainer/Play" unique_id=1576181817]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -97,8 +99,26 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 160
 text = "PLAY"
 
-[node name="TextureRect2" type="TextureRect" parent="right_menu_container/VBoxContainer" unique_id=276938425]
+[node name="Exit" type="TextureButton" parent="right_menu_container/VBoxContainer" unique_id=1522467655]
 layout_mode = 2
-texture = ExtResource("4_adu2g")
+texture_normal = ExtResource("4_adu2g")
+script = ExtResource("6_0l8wx")
 
-[connection signal="pressed" from="right_menu_container/VBoxContainer/TextureRect" to="right_menu_container/VBoxContainer/TextureRect" method="_on_pressed"]
+[node name="Label" type="Label" parent="right_menu_container/VBoxContainer/Exit" unique_id=1243286724]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -11.0
+offset_right = 39.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 160
+text = "SAVE & QUIT"
+
+[connection signal="pressed" from="right_menu_container/VBoxContainer/Play" to="right_menu_container/VBoxContainer/Play" method="_on_pressed"]
+[connection signal="pressed" from="right_menu_container/VBoxContainer/Exit" to="right_menu_container/VBoxContainer/Exit" method="_on_pressed"]

@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bgymeat2al37i" path="res://Scenes/Phone/phone.tscn" id="11_rjbcc"]
 [ext_resource type="Texture2D" uid="uid://b1e5w1pw4ifa4" path="res://Assets/Images/Buttons/phone_unpressed.png" id="12_sxj1a"]
 [ext_resource type="Texture2D" uid="uid://bdda6qqk88itr" path="res://Assets/Images/Buttons/phone_pressed.png" id="13_2t02g"]
+[ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="14_sxj1a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8dva"]
 atlas = ExtResource("4_7okmr")
@@ -60,7 +61,7 @@ texture = ExtResource("2_j8dva")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1043354683]
 
 [node name="truck" parent="." unique_id=1468155965 instance=ExtResource("2_k2x7d")]
-position = Vector2(-259, 68)
+position = Vector2(-215, 38)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="truck" unique_id=832033571]
 scale = Vector2(0.15, 0.15)
@@ -68,7 +69,7 @@ sprite_frames = SubResource("SpriteFrames_3dp3j")
 frame_progress = 0.39749503
 
 [node name="building" parent="." unique_id=1659768210 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
-position = Vector2(-401, 98)
+position = Vector2(-370, 69)
 target_scene_path = "uid://dovquuowkggeg"
 player_node = NodePath("../truck")
 target = NodePath("Marker2D")
@@ -79,12 +80,13 @@ scale = Vector2(0.2, 0.208)
 texture = ExtResource("6_7okmr")
 
 [node name="Marker2D" type="Marker2D" parent="building" unique_id=841589645]
-position = Vector2(141, -30)
+position = Vector2(154, -30)
 
 [node name="building2" parent="." unique_id=123550651 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
-position = Vector2(97, -222)
+position = Vector2(214, -220)
 target_scene_path = "uid://cltwdgqaoah1s"
 player_node = NodePath("../truck")
+target_shop_id = "sell_shop_1"
 target = NodePath("Marker2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="building2" unique_id=876569237]
@@ -95,13 +97,14 @@ texture = ExtResource("5_12lvx")
 position = Vector2(-60, 88)
 
 [node name="building3" parent="." unique_id=500348569 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
-position = Vector2(390, -55)
+position = Vector2(327, 189)
 target_scene_path = "uid://bc8n8deypyq25"
 player_node = NodePath("../truck")
+target_shop_id = "seed_shop_1"
 target = NodePath("Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="building3" unique_id=2027002155]
-position = Vector2(-89, 30.999998)
+position = Vector2(-99, -86.99999)
 scale = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="building3" unique_id=315853722]
@@ -111,7 +114,7 @@ texture = ExtResource("7_8i1fv")
 [node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("8_12lvx")]
 
 [node name="building4" parent="." unique_id=1418183414 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
-position = Vector2(57, 230)
+position = Vector2(429, -17)
 player_node = NodePath("../truck")
 target = NodePath("Marker2D")
 is_home = true
@@ -122,7 +125,35 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("10_j8dva")
 
 [node name="Marker2D" type="Marker2D" parent="building4" unique_id=716315915]
-position = Vector2(-33, -124)
+position = Vector2(-132, 2)
+
+[node name="building5" parent="." unique_id=47446284 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
+position = Vector2(-333, -178)
+target_scene_path = "uid://bc8n8deypyq25"
+player_node = NodePath("../truck")
+target_shop_id = "seed_shop_2"
+target = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="building5" unique_id=1680043818]
+position = Vector2(113, 57)
+
+[node name="Sprite2D" type="Sprite2D" parent="building5" unique_id=2015037794]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_8i1fv")
+
+[node name="building6" parent="." unique_id=127206050 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
+position = Vector2(9, 241)
+target_scene_path = "uid://cltwdgqaoah1s"
+player_node = NodePath("../truck")
+target_shop_id = "sell_shop_2"
+target = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="building6" unique_id=1261805082]
+position = Vector2(0, -132)
+
+[node name="Sprite2D" type="Sprite2D" parent="building6" unique_id=479682083]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_12lvx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=461528832]
 
@@ -144,3 +175,7 @@ texture_pressed = ExtResource("13_2t02g")
 texture_hover = ExtResource("12_sxj1a")
 texture_disabled = ExtResource("12_sxj1a")
 texture_focused = ExtResource("12_sxj1a")
+
+[node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("14_sxj1a")]
+target_scene_path = "uid://bv16fgug31wcv"
+exit_msg = "Exit to Main Menu?"

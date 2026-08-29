@@ -15,12 +15,15 @@ var phone_original_pos: Vector2
 var phone_icon_pos: Vector2
 
 func _ready() -> void:
+	if StateManager.next_shop_id != "":
+		shop_id = StateManager.next_shop_id
+		StateManager.next_shop_id = ""
 	add_to_group("sell_shop")
 	add_to_group("save_state")
 	if has_node("Seller"):
 		$Seller.setup(shop_id)
 	if InventoryManager.player_ui:
-		# InventoryManager.player_ui.visible = true # this is kinda annoying ngl
+		InventoryManager.player_ui.visible = true # this is kinda annoying ngl
 		InventoryManager.player_ui.refresh_inventory()
 	if StateManager.sell_shops.has(shop_id):
 		item_prices = StateManager.sell_shops[shop_id].duplicate()
