@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ofdq28u8dmpp"]
 
-[ext_resource type="Texture2D" uid="uid://df5ca088p77bp" path="res://Assets/Images/Farm/Cabbage/seed_icon.png" id="1_ku4o0"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="1_nsolw"]
+[ext_resource type="Texture2D" uid="uid://6x2bnp6425tn" path="res://Assets/cabbage good seed.png" id="1_ywnaq"]
 [ext_resource type="PackedScene" uid="uid://cp5ggv03yujx3" path="res://CoreFarmSystem/farm_plants/cabbage_plant.tscn" id="2_ywnaq"]
 
 [resource]
 script = ExtResource("1_nsolw")
 display_name = "Cabbage Seed"
-item_texture = ExtResource("1_ku4o0")
+item_texture = ExtResource("1_ywnaq")
 item_description = "Seeds of organic cloth vegetable"
 value = 15
 item_type = Array[int]([1])

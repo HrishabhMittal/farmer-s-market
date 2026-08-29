@@ -48,6 +48,37 @@ var crop_yields: Dictionary = {
 	"tomato": 5
 }
 
+var crop_seed_yields: Dictionary = {
+	"pumpkin_seed": 5,
+	"pumpkin_seed_barcode": 4,
+	"pumpkin_seed_chomped": 3,
+	"pumpkin_seed_spot": 2,
+	"pumpkin_seed_tear": 1,
+	
+	"carrot_seed": 10,
+	"carrot_seed_barcode": 9,
+	"carrot_seed_chomped": 7,
+	"carrot_seed_spot": 5,
+	"carrot_seed_tear": 2,
+
+	"cabbage_seed": 4,
+	"cabbage_seed_barcode": 3,
+	"cabbage_seed_chomped": 3,
+	"cabbage_seed_spot": 2,
+	"cabbage_seed_tear": 1,
+
+	"potato_seed": 12,
+	"potato_seed_barcode": 9,
+	"potato_seed_chomped": 8,
+	"potato_seed_spot": 6,
+	"potato_seed_tear": 3,
+
+	"tomato_seed": 10,
+	"tomato_seed_barcode": 8,
+	"tomato_seed_chomped": 6,
+	"tomato_seed_spot": 4,
+	"tomato_seed_tear": 2
+}
 
 # --- SCAMMER / MARKET SETTINGS ---
 var minimum_price_ratio: float = 0.7 # Market variance: Honest prices fluctuate down to 70%

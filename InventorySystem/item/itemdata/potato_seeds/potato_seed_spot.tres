@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dr1b2hlp3k606"]
+
+[ext_resource type="Texture2D" uid="uid://wlhvrd2e1ood" path="res://Assets/potato good seed.png" id="1_vk6b3"]
+[ext_resource type="PackedScene" uid="uid://d124hl11020e7" path="res://CoreFarmSystem/farm_plants/potato_plant.tscn" id="2_sg1p8"]
+[ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="3_afq16"]
+
+[resource]
+script = ExtResource("3_afq16")
+display_name = "Potato Seed"
+item_texture = ExtResource("1_vk6b3")
+item_description = "A boring but useful potato seed"
+value = 15
+item_type = Array[int]([1])
+scene_to_instantiate = ExtResource("2_sg1p8")
+metadata/_custom_type_script = "uid://j2yw5ljak0ig"

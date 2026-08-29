@@ -2,8 +2,8 @@
 
 [ext_resource type="StyleBox" uid="uid://d01dicilcaoo" path="res://CoreFarmSystem/tool_selected_theme.tres" id="1_6jh8w"]
 [ext_resource type="Script" uid="uid://dyxdyht534jyc" path="res://CoreFarmSystem/tool.gd" id="2_tfyi4"]
-[ext_resource type="Texture2D" uid="uid://nqv25u6s8wo0" path="res://Assets/some_placeholder_assets/orange.png" id="3_de63r"]
 [ext_resource type="StyleBox" uid="uid://bg43upsig1wll" path="res://CoreFarmSystem/tool_unselected_theme.tres" id="3_tfyi4"]
+[ext_resource type="Texture2D" uid="uid://cwedxtbat66gd" path="res://Assets/tool watering can.PNG" id="4_tfyi4"]
 
 [node name="Tool" type="PanelContainer" unique_id=852487930]
 custom_minimum_size = Vector2(64, 64)
@@ -18,4 +18,5 @@ unselected_stylebox = ExtResource("3_tfyi4")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1637324487]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("3_de63r")
+texture = ExtResource("4_tfyi4")
+expand_mode = 3

@@ -6,27 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="3_61ldv"]
 [ext_resource type="Texture2D" uid="uid://2ascms78ig7x" path="res://Assets/farm_tiles.png" id="3_qaha4"]
 [ext_resource type="Script" uid="uid://dfjhauarq0fu2" path="res://CoreFarmSystem/farm_tool_manager.gd" id="3_wsyp5"]
+[ext_resource type="Texture2D" uid="uid://cs4m3v6fk0o0a" path="res://Assets/tool shovel.PNG" id="5_feuot"]
+[ext_resource type="Texture2D" uid="uid://4yyvti621w8w" path="res://Assets/tool hoe.PNG" id="6_8dhv6"]
 [ext_resource type="PackedScene" uid="uid://im0bih2b67at" path="res://CoreFarmSystem/tool.tscn" id="6_lo7h3"]
 [ext_resource type="Texture2D" uid="uid://ckaxkgwjajexv" path="res://Assets/tile map.png" id="6_wqrya"]
 [ext_resource type="Texture2D" uid="uid://vrlyplu8k060" path="res://Assets/some_placeholder_assets/placeholder_tools.png" id="7_a8m23"]
+[ext_resource type="Texture2D" uid="uid://cwedxtbat66gd" path="res://Assets/tool watering can.PNG" id="7_lpwnd"]
 [ext_resource type="PackedScene" uid="uid://86lyl32ajvov" path="res://Scenes/Player/farmer.tscn" id="10_miwjd"]
 [ext_resource type="Script" uid="uid://cir2jjyeljass" path="res://CoreFarmSystem/barn.gd" id="11_0wb5q"]
 [ext_resource type="Script" uid="uid://d2okl80pf2hvw" path="res://CoreFarmSystem/truck.gd" id="11_61ldv"]
 [ext_resource type="Texture2D" uid="uid://bxycdp87mbsmw" path="res://Assets/Images/Farm/barn.png" id="11_ahdf5"]
 [ext_resource type="Shader" uid="uid://da6i12dibd34d" path="res://shaders/outline_shader.gdshader" id="12_53lir"]
 [ext_resource type="Texture2D" uid="uid://doleknb4h73rs" path="res://Assets/car_spritesheet.png" id="13_ahdf5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5roh6"]
-atlas = ExtResource("7_a8m23")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fhu6q"]
-atlas = ExtResource("7_a8m23")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a2850"]
-atlas = ExtResource("7_a8m23")
-region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ahdf5"]
 atlas = ExtResource("7_a8m23")
@@ -730,21 +721,21 @@ alignment = 2
 [node name="Shovel" parent="ToolBar/HBoxContainer" unique_id=852487930 node_paths=PackedStringArray("tool_manager") instance=ExtResource("6_lo7h3")]
 layout_mode = 2
 tooltip_text = "Shovel"
-tool_texture = SubResource("AtlasTexture_5roh6")
+tool_texture = ExtResource("5_feuot")
 tool_manager = NodePath("../../../FarmToolManager")
 
 [node name="Hoe" parent="ToolBar/HBoxContainer" unique_id=209932519 node_paths=PackedStringArray("tool_manager") instance=ExtResource("6_lo7h3")]
 layout_mode = 2
 tooltip_text = "Hoe"
 tool_type = 1
-tool_texture = SubResource("AtlasTexture_fhu6q")
+tool_texture = ExtResource("6_8dhv6")
 tool_manager = NodePath("../../../FarmToolManager")
 
 [node name="WateringCan" parent="ToolBar/HBoxContainer" unique_id=109157047 node_paths=PackedStringArray("tool_manager") instance=ExtResource("6_lo7h3")]
 layout_mode = 2
 tooltip_text = "Watering Can"
 tool_type = 2
-tool_texture = SubResource("AtlasTexture_a2850")
+tool_texture = ExtResource("7_lpwnd")
 tool_manager = NodePath("../../../FarmToolManager")
 
 [node name="SeedPlanter" parent="ToolBar/HBoxContainer" unique_id=2109462242 node_paths=PackedStringArray("tool_manager") instance=ExtResource("6_lo7h3")]

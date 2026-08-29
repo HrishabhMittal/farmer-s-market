@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ithi3c0koyh0"]
 
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="1_a8x87"]
-[ext_resource type="Texture2D" uid="uid://balv008fal1gk" path="res://Assets/Images/Farm/Tomato/seed_icon.png" id="1_e0tgk"]
+[ext_resource type="Texture2D" uid="uid://wukm4utf5hoy" path="res://Assets/tomato good seed.png" id="1_e0tgk"]
 [ext_resource type="PackedScene" uid="uid://br1620k5bimtc" path="res://CoreFarmSystem/farm_plants/tomato_plant.tscn" id="2_odwvm"]
 
 [resource]
