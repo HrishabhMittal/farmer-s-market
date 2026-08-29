@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bubok7l7s5iyi"]
 
-[ext_resource type="Texture2D" uid="uid://bet3t0kj6y23g" path="res://Assets/pumpkin good seed.png" id="1_qdcq7"]
+[ext_resource type="Texture2D" uid="uid://xvj6jorvkc1l" path="res://Assets/pumpkin bad seed barcode.png" id="1_qdcq7"]
 [ext_resource type="PackedScene" uid="uid://bixt6b2yu10uq" path="res://CoreFarmSystem/farm_plants/pumpkin_plant.tscn" id="2_6fket"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="3_er8sq"]
 

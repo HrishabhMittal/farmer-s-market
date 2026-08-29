@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bm28uk6eg55ii"]
 
-[ext_resource type="Texture2D" uid="uid://wukm4utf5hoy" path="res://Assets/tomato good seed.png" id="1_wk4gd"]
+[ext_resource type="Texture2D" uid="uid://dv6yv4dl6kdqu" path="res://Assets/tomato bad seed tear.png" id="1_wk4gd"]
 [ext_resource type="PackedScene" uid="uid://br1620k5bimtc" path="res://CoreFarmSystem/farm_plants/tomato_plant.tscn" id="2_bapj8"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="3_ska07"]
 

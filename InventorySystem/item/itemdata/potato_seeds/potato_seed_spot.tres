@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dr1b2hlp3k606"]
 
-[ext_resource type="Texture2D" uid="uid://wlhvrd2e1ood" path="res://Assets/potato good seed.png" id="1_vk6b3"]
+[ext_resource type="Texture2D" uid="uid://dxrhkx2rmwmox" path="res://Assets/potato bad seed spot.png" id="1_vk6b3"]
 [ext_resource type="PackedScene" uid="uid://d124hl11020e7" path="res://CoreFarmSystem/farm_plants/potato_plant.tscn" id="2_sg1p8"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="3_afq16"]
 

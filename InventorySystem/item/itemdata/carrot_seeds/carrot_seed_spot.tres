@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://byeimel7pmk5n"]
 
-[ext_resource type="Texture2D" uid="uid://bc1agqmof0ee6" path="res://Assets/carrot good seed.png" id="1_mwn3v"]
+[ext_resource type="Texture2D" uid="uid://bebr0ouo58isf" path="res://Assets/carrot bad seed spot.png" id="1_mwn3v"]
 [ext_resource type="PackedScene" uid="uid://ip8l4bid8e4c" path="res://CoreFarmSystem/farm_plants/carrot_plant.tscn" id="2_dca3s"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="3_ahk05"]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b7ddxl5po567f"]
 
-[ext_resource type="Texture2D" uid="uid://6x2bnp6425tn" path="res://Assets/cabbage good seed.png" id="1_xcrt0"]
+[ext_resource type="Texture2D" uid="uid://dq6k0ioveqe87" path="res://Assets/cabbage bad seed nom.png" id="1_xcrt0"]
 [ext_resource type="PackedScene" uid="uid://cp5ggv03yujx3" path="res://CoreFarmSystem/farm_plants/cabbage_plant.tscn" id="2_76lej"]
 [ext_resource type="Script" uid="uid://j2yw5ljak0ig" path="res://InventorySystem/item/item_data.gd" id="3_3ypxc"]
 
