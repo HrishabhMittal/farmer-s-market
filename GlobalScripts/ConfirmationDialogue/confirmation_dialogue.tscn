@@ -102,6 +102,3 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "YES"
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=2049678926]
-layout_mode = 2

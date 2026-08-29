@@ -60,7 +60,7 @@ texture = ExtResource("2_j8dva")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1043354683]
 
 [node name="truck" parent="." unique_id=1468155965 instance=ExtResource("2_k2x7d")]
-position = Vector2(-286, 125)
+position = Vector2(-259, 68)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="truck" unique_id=832033571]
 scale = Vector2(0.15, 0.15)

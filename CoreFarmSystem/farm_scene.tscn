@@ -13,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://im0bih2b67at" path="res://CoreFarmSystem/tool.tscn" id="6_lo7h3"]
 [ext_resource type="Texture2D" uid="uid://b27mot8on6vg1" path="res://Assets/Images/Buttons/inventory_pressed.png" id="6_tuwn8"]
 [ext_resource type="Texture2D" uid="uid://ckaxkgwjajexv" path="res://Assets/tile map.png" id="6_wqrya"]
-[ext_resource type="Texture2D" uid="uid://dqwcesv06qeg1" path="res://Assets/control.png" id="6_xbd7s"]
 [ext_resource type="Texture2D" uid="uid://dws3ueoq2qko1" path="res://Assets/Images/Buttons/info_unpressed.png" id="7_7w6jo"]
 [ext_resource type="Texture2D" uid="uid://vrlyplu8k060" path="res://Assets/some_placeholder_assets/placeholder_tools.png" id="7_a8m23"]
 [ext_resource type="Texture2D" uid="uid://cwedxtbat66gd" path="res://Assets/tool watering can.PNG" id="7_lpwnd"]
 [ext_resource type="Texture2D" uid="uid://dnbijokxwr4ms" path="res://Assets/Images/Buttons/info_pressed.png" id="8_tuwn8"]
+[ext_resource type="Texture2D" uid="uid://de6ra11vopyn7" path="res://Assets/Images/infocard.png" id="9_7w6jo"]
 [ext_resource type="PackedScene" uid="uid://86lyl32ajvov" path="res://Scenes/Player/farmer.tscn" id="10_miwjd"]
 [ext_resource type="Script" uid="uid://cir2jjyeljass" path="res://CoreFarmSystem/barn.gd" id="11_0wb5q"]
 [ext_resource type="Script" uid="uid://d2okl80pf2hvw" path="res://CoreFarmSystem/truck.gd" id="11_61ldv"]
@@ -759,7 +759,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("6_xbd7s")
+texture = ExtResource("9_7w6jo")
 expand_mode = 3
 stretch_mode = 5
 
