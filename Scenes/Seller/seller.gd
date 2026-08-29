@@ -9,6 +9,24 @@ class_name SellerNPC
 var current_shop_id: String = ""
 const CELL_SIZE = 2000
 
+func _ready():
+	var area = Area2D.new()
+	var coll = CollisionShape2D.new()
+	var rect = RectangleShape2D.new()
+	rect.size = Vector2(2000, 2000)
+	coll.shape = rect
+	area.add_child(coll)
+	add_child(area)
+	area.input_event.connect(_on_input_event)
+
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var diag = GameDialogues.SHOPKEEPER_GENERIC
+		if StateManager.replaced_shops.has(current_shop_id):
+			if StateManager.replaced_shops[current_shop_id] == "scammer": diag = GameDialogues.SHOPKEEPER_REPLACED_SCAMMER
+			else: diag = GameDialogues.SHOPKEEPER_REPLACED_INNOCENT
+		DialogueManager.show_dialog([diag], "Seller")
+
 func setup(shop_id: String) -> void:
 	current_shop_id = shop_id
 	

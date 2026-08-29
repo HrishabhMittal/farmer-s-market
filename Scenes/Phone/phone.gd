@@ -7,7 +7,7 @@ signal close_requested
 @onready var browser_screen = $UI_Root/BrowserScreen
 @onready var bank_screen = $UI_Root/BankScreen
 @onready var dialog_screen = $UI_Root/DialogScreen
-
+@onready var dialog_text = $UI_Root/DialogScreen/DialogText
 @onready var amount_input = $UI_Root/BankScreen/AmountInput
 @onready var bank_balance_label = $UI_Root/BankScreen/BankBalance
 
@@ -69,39 +69,34 @@ func _on_app_power_pressed() -> void:
 	AudioManager.play_sfx("Click SFX")
 	close_requested.emit()
 
-
 func _on_btn_mom_pressed() -> void:
-	print("mom")
-	show_main_screen()
-	DialogueManager.show_dialog(["I'm busy right now, honey! Call back later."], "Mom")
+	show_screen(dialog_screen)
+	dialog_text.text = GameDialogues.CALL_MOM_BUSY
+	dialog_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 
 func _on_btn_police_pressed() -> void:
-	print("police")
 	AudioManager.play_sfx("Farm Police")
-	show_main_screen()
-	
+	show_screen(dialog_screen)
+	dialog_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	if current_shop_id != "" and not StateManager.police_called_shops.has(current_shop_id):
 		StateManager.police_called_shops.append(current_shop_id)
-		DialogueManager.show_dialog(["Report received. We will investigate this seller at the end of the day."], "Police")
+		dialog_text.text = GameDialogues.CALL_POLICE
 	else:
-		DialogueManager.show_dialog(["We already have an active investigation for this location."], "Police")
-
+		dialog_text.text = "We already have an active investigation for this location."
 
 func _on_btn_deposit_pressed() -> void:
-	print("dep")
 	var amount = amount_input.text.to_int()
-	
 	if amount > 0 and StateManager.money >= amount:
 		StateManager.money -= amount
 		StateManager.bank_balance += amount
-		
 		amount_input.text = ""
-		if bank_balance_label:
-			bank_balance_label.text = "Balance: %d Coins" % StateManager.bank_balance
-			
+		if bank_balance_label: bank_balance_label.text = "Balance: %d Coins" % StateManager.bank_balance
 		AudioManager.play_sfx("Buy")
-		if InfocardManager:
-			InfocardManager.show_floating_text("- %d Coins" % amount, get_global_mouse_position(), "Red")
+		show_screen(dialog_screen)
+		dialog_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		if StateManager.bank_balance >= GameConfig.target_money:
+			dialog_text.text = GameDialogues.BANK_ENDING
+		else:
+			dialog_text.text = GameDialogues.BANK_DEPOSIT
 	else:
-		if InfocardManager:
-			InfocardManager.show_floating_text("Invalid funds!", get_global_mouse_position(), "Red")
+		if InfocardManager: InfocardManager.show_floating_text("Invalid funds!", get_global_mouse_position(), "Red")

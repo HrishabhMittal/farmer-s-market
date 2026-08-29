@@ -38,6 +38,10 @@ func _ready() -> void:
 	phone_icon.pressed.connect(_on_phone_icon_clicked)
 	
 	phone.close_requested.connect(close_phone)
+	
+	if not StateManager.visited_scenes.get("sell_shop", false):
+		StateManager.visited_scenes["sell_shop"] = true
+		DialogueManager.show_dialog([GameDialogues.MOM_SELL_SHOP], "Mom")
 
 func _on_phone_icon_clicked():
 	if is_phone_open: return
