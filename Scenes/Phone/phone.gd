@@ -98,9 +98,9 @@ func _on_btn_mom_pressed() -> void:
 		return
 	is_calling = true
 
-	#var sfx = AudioManager.play_sfx("need sfx", 2.5)
-	#if sfx:
-		#await sfx.finished
+	var sfx = AudioManager.play_sfx("Farm Phone Mom", 2.5)
+	if sfx:
+		await sfx.finished
 
 	close_requested.emit()
 	DialogueManager.show_dialog([GameDialogues.CALL_MOM_BUSY], "Mom")
