@@ -6,10 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="3_61ldv"]
 [ext_resource type="Texture2D" uid="uid://2ascms78ig7x" path="res://Assets/farm_tiles.png" id="3_qaha4"]
 [ext_resource type="Script" uid="uid://dfjhauarq0fu2" path="res://CoreFarmSystem/farm_tool_manager.gd" id="3_wsyp5"]
+[ext_resource type="Texture2D" uid="uid://ccoh7nhvumrn8" path="res://Assets/book.png" id="4_lpwnd"]
+[ext_resource type="Script" uid="uid://c4r41nj14jbhw" path="res://CoreFarmSystem/side_bar.gd" id="4_xbd7s"]
 [ext_resource type="Texture2D" uid="uid://cs4m3v6fk0o0a" path="res://Assets/tool shovel.PNG" id="5_feuot"]
 [ext_resource type="Texture2D" uid="uid://4yyvti621w8w" path="res://Assets/tool hoe.PNG" id="6_8dhv6"]
 [ext_resource type="PackedScene" uid="uid://im0bih2b67at" path="res://CoreFarmSystem/tool.tscn" id="6_lo7h3"]
 [ext_resource type="Texture2D" uid="uid://ckaxkgwjajexv" path="res://Assets/tile map.png" id="6_wqrya"]
+[ext_resource type="Texture2D" uid="uid://dqwcesv06qeg1" path="res://Assets/control.png" id="6_xbd7s"]
 [ext_resource type="Texture2D" uid="uid://vrlyplu8k060" path="res://Assets/some_placeholder_assets/placeholder_tools.png" id="7_a8m23"]
 [ext_resource type="Texture2D" uid="uid://cwedxtbat66gd" path="res://Assets/tool watering can.PNG" id="7_lpwnd"]
 [ext_resource type="PackedScene" uid="uid://86lyl32ajvov" path="res://Scenes/Player/farmer.tscn" id="10_miwjd"]
@@ -703,6 +706,51 @@ exit_msg = "Go visit the town?"
 [node name="MoneyUI" parent="MainUI" unique_id=1593339953 instance=ExtResource("3_61ldv")]
 offset = Vector2(-300, 0)
 transform = Transform2D(1, 0, 0, 1, -300, 0)
+
+[node name="SideBar" type="VBoxContainer" parent="MainUI" unique_id=2045405792 node_paths=PackedStringArray("inventory_button", "control_info_button")]
+z_index = -5
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+script = ExtResource("4_xbd7s")
+inventory_button = NodePath("InventoryButton")
+control_info_button = NodePath("ControlInfoButton")
+
+[node name="InventoryButton" type="TextureButton" parent="MainUI/SideBar" unique_id=1428166160]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("4_lpwnd")
+stretch_mode = 0
+
+[node name="ControlInfoButton" type="TextureButton" parent="MainUI/SideBar" unique_id=1787100619]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("4_lpwnd")
+stretch_mode = 0
+
+[node name="ControlInfoImage" type="TextureRect" parent="MainUI" unique_id=1396990897]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_xbd7s")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="ToolBar" type="CanvasLayer" parent="." unique_id=1101934720]
 layer = 4

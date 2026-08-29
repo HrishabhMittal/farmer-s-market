@@ -16,8 +16,10 @@ seed_inspection_ui_scene = ExtResource("4_jrrue")
 
 [node name="InventoryItemInfocard" parent="." unique_id=1860561526 instance=ExtResource("2_qlh2l")]
 unique_name_in_owner = true
+layer = 5
 visible = false
 
 [node name="FarmplantInfocard" parent="." unique_id=1805995084 instance=ExtResource("3_t4s7s")]
 unique_name_in_owner = true
+layer = 4
 visible = false

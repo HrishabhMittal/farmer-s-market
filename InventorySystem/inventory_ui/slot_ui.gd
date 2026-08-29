@@ -53,7 +53,10 @@ func _handle_gui_input(event: InputEvent) -> void:
 		InfocardManager.show_stack_split_ui(self)
 	
 	# Actually it can be used to inspect any item
-	if event.is_action_pressed("inspec_item_inventory"):
+	if event.is_action_pressed("inspect_item_inventory"):
+		if current_inspection_ui:
+			current_inspection_ui.end_inspection() # Remvoe previously open inspection window is it was there
+		
 		if current_item:
 			current_inspection_ui = InfocardManager.show_seed_inspection_ui(current_item)
 	
