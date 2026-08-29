@@ -30,3 +30,10 @@ func show_stack_split_ui(slot_ui: SlotUI) -> void:
 	add_child(new_stack_split_ui)
 	new_stack_split_ui.initialize(slot_ui)
 	new_stack_split_ui.global_position = get_viewport().get_mouse_position()
+	
+@export var seed_inspection_ui_scene: PackedScene
+func show_seed_inspection_ui(seed: Item) -> SeedInspectionUI:
+	var new_ui: SeedInspectionUI = seed_inspection_ui_scene.instantiate()
+	add_child(new_ui)
+	new_ui.inspect_item(seed)
+	return new_ui # Returning because the caller needs to disable it

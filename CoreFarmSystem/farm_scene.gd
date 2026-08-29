@@ -54,8 +54,10 @@ func test_stuff() -> void:
 	#InventoryManager.add_item_to_barn("pumpkin_seed", 20)
 	#InventoryManager.add_item_to_barn("carrot_seed", 220)
 	StateManager.player_inventory.add_item(ItemManager.make_item("potato_seed"), 15)
-	StateManager.player_inventory.add_item(ItemManager.make_item("potato_seed_chomped"), 15)
-	StateManager.player_inventory.add_item(ItemManager.make_item("potato_seed_tear"), 15)
+	StateManager.player_inventory.add_item(ItemManager.make_item("cabbage_seed_chomped"), 15)
+	StateManager.player_inventory.add_item(ItemManager.make_item("pumpkin_seed_barcode"), 15)
+	StateManager.player_inventory.add_item(ItemManager.make_item("carrot_seed_spot"), 15)
+	StateManager.player_inventory.add_item(ItemManager.make_item("tomato_seed_tear"), 15)
 	#StateManager.player_inventory.remove_item(ItemManager.make_item("carrot_seed"), 34)
 	#StateManager.player_inventory.add_item(ItemManager.make_item("potato_seed"), 10)
 	for i in range(100):

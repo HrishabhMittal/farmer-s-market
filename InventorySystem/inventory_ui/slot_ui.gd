@@ -10,6 +10,7 @@ var connected_inventory: Inventory
 var slot_index: int
 var current_item: Item
 var marked_as_seed_slot: bool = false
+var current_inspection_ui: SeedInspectionUI
 
 func _ready():
 	gui_input.connect(_handle_gui_input)
@@ -50,7 +51,12 @@ func _handle_gui_input(event: InputEvent) -> void:
 		
 		# Show stack split prompt
 		InfocardManager.show_stack_split_ui(self)
-		
+	
+	# Actually it can be used to inspect any item
+	if event.is_action_pressed("inspec_item_inventory"):
+		if current_item:
+			current_inspection_ui = InfocardManager.show_seed_inspection_ui(current_item)
+	
 	if event.is_action_pressed("left click"):
 		accept_event()
 		if connected_inventory == StateManager.active_seed_inventory and PlayerHeldItem.is_empty():
@@ -93,6 +99,9 @@ func _unhilight() -> void:
 	tween.tween_property(slot_texture_node, "offset_transform_scale", Vector2(1.0, 1.0), 0.1)
 	
 	InfocardManager.hide_infocard()
+	if current_inspection_ui:
+		current_inspection_ui.end_inspection()
+		current_inspection_ui = null
 
 # Glow - Just for seed slot for now
 @export var glow_color: Color = Color(2.0, 0.7, 0.4, 1.0)
