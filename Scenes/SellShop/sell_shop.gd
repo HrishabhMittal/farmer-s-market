@@ -1,8 +1,6 @@
 extends Node2D
 
 @export var shop_id: String = "sell_shop_1"
-@export var price_lower_limit: int = 10
-@export var price_upper_limit: int = 60
 @onready var price_label: Label = $CanvasLayer/PriceLabel
 
 # UI Nodes
@@ -103,7 +101,8 @@ func refresh_shop() -> void:
 		for item_id in ItemManager.all_items.keys():
 			var item_data = ItemManager.get_item(item_id)
 			if item_data and ItemTypes.ItemType.VEGETABLE in item_data.item_type:
-				item_prices[item_id] = randi_range(price_lower_limit, price_upper_limit)
+				# Uses the honest price from config, falling back to ItemData value if missing
+				item_prices[item_id] = GameConfig.crop_prices.get(item_id, item_data.value)
 	update_price_label()
 
 func update_price_label() -> void:

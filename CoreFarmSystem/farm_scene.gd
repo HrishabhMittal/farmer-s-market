@@ -112,7 +112,7 @@ func load_state() -> void:
 	var missed_ticks = 0
 	if StateManager.last_farm_save_time > 0:
 		var time_away = Time.get_unix_time_from_system() - StateManager.last_farm_save_time
-		missed_ticks = int(time_away / SignalBus.TICK_TIME)
+		missed_ticks = int(time_away / GameConfig.TICK_SPEED)
 
 	for child in get_children():
 		if child is FarmPlant:

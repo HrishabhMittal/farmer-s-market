@@ -17,6 +17,8 @@ var is_fully_grown: bool = false
 var is_hovered: bool = false
 
 func _ready():
+	if GameConfig.crop_growth_chances.has(produced_crop_id):
+		growth_chance = GameConfig.crop_growth_chances[produced_crop_id]
 	SignalBus.global_growth_tick.connect(_on_growth_tick)
 	
 	plant_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE

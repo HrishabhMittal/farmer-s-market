@@ -158,26 +158,34 @@ func handle_bag_click(bag):
 
 func _exit_tree() -> void:
 	save_state()
-
-func _on_buy_button_pressed() -> void:
-	var is_confirmed = await ConfirmationDialogue.ask_confirmation("Buy 32 seeds for 50 Coins?")
-	if not is_confirmed: return
 	
-	if bag_on_table:
-		var seed_id = seed_item_ids[bag_on_table.seed_type % seed_item_ids.size()]
-		if StateManager.money < 50:
-			InfocardManager.show_floating_text("Not enough money!", action_menu.global_position, "Red")
-			return
-			
-		var success = InventoryManager.buy_item(seed_id, 50, 32)
-		if success:
-			AudioManager.play_sfx("Buy")
-			InfocardManager.show_floating_text("-50 Coins", action_menu.global_position, "Red")
-			bag_on_table.hide()
-			bag_on_table = null
-			action_menu.hide()
-		else:
-			InfocardManager.show_floating_text("Inventory Full!", action_menu.global_position, "Red")
+func _on_buy_button_pressed() -> void:
+	if not bag_on_table:
+		return
+		
+	var seed_id = seed_item_ids[bag_on_table.seed_type % seed_item_ids.size()]
+	
+	# Fetch values from config, with fallbacks just in case
+	var price = GameConfig.seed_prices.get(seed_id, 50)
+	var amount = GameConfig.seeds_per_bag.get(seed_id, 32)
+	
+	var is_confirmed = await ConfirmationDialogue.ask_confirmation("Buy %d seeds for %d Coins?" % [amount, price])
+	if not is_confirmed:
+		return
+		
+	if StateManager.money < price:
+		InfocardManager.show_floating_text("Not enough money!", action_menu.global_position, "Red")
+		return
+		
+	var success = InventoryManager.buy_item(seed_id, price, amount)
+	if success:
+		AudioManager.play_sfx("Buy")
+		InfocardManager.show_floating_text("-%d Coins" % price, action_menu.global_position, "Red")
+		bag_on_table.hide()
+		bag_on_table = null
+		action_menu.hide()
+	else:
+		InfocardManager.show_floating_text("Inventory Full!", action_menu.global_position, "Red")
 
 func _on_inspect_button_pressed() -> void:
 	action_menu.hide()
