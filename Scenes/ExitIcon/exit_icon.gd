@@ -6,6 +6,10 @@ extends CanvasLayer
 @onready var exit_button: TextureButton = $MarginContainer/TextureButton
 
 func _on_texture_button_pressed() -> void:
+	# Not allowing to leave farm if he is carrying something on the mouse cursor
+	if not PlayerHeldItem.is_empty():
+		return
+	
 	var is_confirmed = await ConfirmationDialogue.ask_confirmation(exit_msg)
 	if not is_confirmed:
 		return
