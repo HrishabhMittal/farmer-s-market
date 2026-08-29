@@ -9,6 +9,7 @@
 custom_minimum_size = Vector2(64, 64)
 offset_right = 40.0
 offset_bottom = 40.0
+pivot_offset = Vector2(36, 36)
 theme_override_styles/panel = ExtResource("3_tfyi4")
 script = ExtResource("2_tfyi4")
 selected_stylebox = ExtResource("1_6jh8w")
