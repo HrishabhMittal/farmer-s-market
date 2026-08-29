@@ -26,6 +26,8 @@ func _on_farmtilemanager_ready(new_tilemanager: FarmTileManager) -> void:
 func pick_item(item: Item, source_slot: SlotUI, is_stack_splitting: bool = false) -> void:
 	if is_stack_splitting: # When mouse is picking item from a stack spliting operation
 		mouse_inventory.add_item(item, item.amount)
+		#if source_slot.current_item.amount <= 0:
+			#source_slot.refresh_slot(null)
 		_show_item_on_mouse()
 		return
 	

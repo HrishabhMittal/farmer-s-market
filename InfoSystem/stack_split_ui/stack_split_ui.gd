@@ -21,11 +21,15 @@ func accept_split(slot_ui: SlotUI) -> void:
 		var amount_to_take: int = slider_node.value
 		var amount_to_keep: int = slot_ui.current_item.amount - amount_to_take
 		
-		var kept_item: Item = ItemManager.make_item(slot_ui.current_item.item_data.item_id, amount_to_keep)
-		slot_ui.connected_inventory.replace_item(kept_item, slot_ui.slot_index)
-		
 		var picked_item: Item = ItemManager.make_item(slot_ui.current_item.item_data.item_id, amount_to_take)
 		PlayerHeldItem.pick_item(picked_item, slot_ui, true)
+		
+		if amount_to_keep > 0:
+			var kept_item: Item = ItemManager.make_item(slot_ui.current_item.item_data.item_id, amount_to_keep)
+			slot_ui.connected_inventory.replace_item(kept_item, slot_ui.slot_index)
+		else:
+			slot_ui.connected_inventory.replace_item(null, slot_ui.slot_index)
+		
 	call_deferred("queue_free")
 	
 func _unhandled_input(event):
