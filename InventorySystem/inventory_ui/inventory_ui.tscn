@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dphmttlmt107e" path="res://InventorySystem/inventory_ui/inventory_ui.gd" id="1_7hq4x"]
 [ext_resource type="PackedScene" uid="uid://cujtwi5oe0xpw" path="res://InventorySystem/inventory_ui/slot_ui.tscn" id="2_xha1v"]
+[ext_resource type="Texture2D" uid="uid://bwjr8doy0827" path="res://Assets/exit.png" id="3_xha1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5roh6"]
 bg_color = Color(0.972549, 0.90588236, 0.8039216, 1)
@@ -26,10 +27,11 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="InventoryUi" type="CanvasLayer" unique_id=1716554813 node_paths=PackedStringArray("slot_anchor")]
+[node name="InventoryUi" type="CanvasLayer" unique_id=1716554813 node_paths=PackedStringArray("slot_anchor", "close_button")]
 script = ExtResource("1_7hq4x")
 slot_ui_scene = ExtResource("2_xha1v")
 slot_anchor = NodePath("PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer")
+close_button = NodePath("PanelContainer/MarginContainer/CloseButton")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1860820065]
 anchors_preset = 4
@@ -79,3 +81,19 @@ size_flags_vertical = 4
 theme_override_constants/h_separation = 9
 theme_override_constants/v_separation = 9
 columns = 7
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=605199096]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="CloseButton" type="TextureButton" parent="PanelContainer/MarginContainer" unique_id=791004962]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 8
+offset_transform_enabled = true
+texture_normal = ExtResource("3_xha1v")
+stretch_mode = 0

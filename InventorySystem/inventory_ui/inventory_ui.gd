@@ -8,6 +8,7 @@ var inventory_position: InventoryPosition
 
 @export var slot_ui_scene: PackedScene
 @export var slot_anchor: GridContainer 
+@export var close_button: TextureButton
 
 var connected_inventory: Inventory = null
 var slots: Array[SlotUI] = []
@@ -36,6 +37,11 @@ func _ready():
 	
 	if connected_inventory.is_quick_transfer_allowed: # Should this inventory use shift+click to transfer items
 		visibility_changed.connect(_handle_visiblity_change)
+		
+	close_button.pressed.connect(close_button_pressed)
+	# For a slight scale expansion highlight
+	close_button.mouse_entered.connect(UIAnimationManager.scale_expand_highlight.bind(close_button))
+	close_button.mouse_exited.connect(UIAnimationManager.scale_expand_unhighlight.bind(close_button))
 
 func _on_slot_changed(slot_index: int) -> void:
 	slots[slot_index].refresh_slot(connected_inventory.slots[slot_index])
@@ -67,5 +73,5 @@ func _handle_visiblity_change() -> void:
 	else:
 		SignalBus.inventory_closed.emit(connected_inventory)
 
-#func _process(delta):
-	#refresh_inventory()
+func close_button_pressed() -> void:
+	visible = false

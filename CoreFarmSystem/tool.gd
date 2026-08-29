@@ -17,8 +17,8 @@ func _ready():
 	if tool_type == FarmToolManager.FarmTools.SEED_PLANTER:
 		PlayerHeldItem.seed_planter = self
 		
-	mouse_entered.connect(highlight)
-	mouse_exited.connect(unhighlight)
+	mouse_entered.connect(UIAnimationManager.scale_expand_highlight.bind(self))
+	mouse_exited.connect(UIAnimationManager.scale_expand_unhighlight.bind(self))
 
 func _handle_gui_input(event: InputEvent) -> void:
 	if not PlayerHeldItem.is_empty():
@@ -38,15 +38,3 @@ func select_tool() -> void:
 	
 func unselect_tool() -> void:
 	add_theme_stylebox_override("panel", unselected_stylebox)
-
-func highlight() -> void:
-	var tween = create_tween()
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_BACK)
-	tween.tween_property(self, "scale", Vector2(1.2, 1.2), 0.15)
-
-func unhighlight() -> void:
-	var tween = create_tween()
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_BACK)
-	tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.15)
