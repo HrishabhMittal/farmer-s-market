@@ -10,11 +10,16 @@ transform = Transform2D(1, 0, 0, 1, 5, 5)
 script = ExtResource("1_u2lpu")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1291870748]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.15, 0.15)
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer" unique_id=450916294]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 offset_transform_enabled = true
 texture_normal = ExtResource("2_6nujg")
@@ -22,6 +27,7 @@ texture_pressed = ExtResource("3_kehli")
 texture_hover = ExtResource("2_6nujg")
 texture_disabled = ExtResource("2_6nujg")
 texture_focused = ExtResource("2_6nujg")
-stretch_mode = 0
+ignore_texture_size = true
+stretch_mode = 5
 
 [connection signal="pressed" from="MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]
