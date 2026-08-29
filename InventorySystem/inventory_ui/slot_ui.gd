@@ -34,6 +34,14 @@ func _handle_gui_input(event: InputEvent) -> void:
 		if connected_inventory.is_quick_transfer_allowed:
 			InventoryManager.quick_transfer_item(self)
 		accept_event()
+	
+	if event.is_action_pressed("right click"):
+		# Only allowed when there is no item on mouse pointer
+		if not current_item or not PlayerHeldItem.is_empty():
+			return
+		
+		# Show stack split prompt
+		InfocardManager.show_stack_split_ui(self)
 		
 	if event.is_action_pressed("left click"):
 		accept_event()

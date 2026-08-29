@@ -23,7 +23,12 @@ func _ready():
 func _on_farmtilemanager_ready(new_tilemanager: FarmTileManager) -> void:
 	farm_tilemanager = new_tilemanager
 
-func pick_item(item: Item, source_slot: SlotUI) -> void:
+func pick_item(item: Item, source_slot: SlotUI, is_stack_splitting: bool = false) -> void:
+	if is_stack_splitting: # When mouse is picking item from a stack spliting operation
+		mouse_inventory.add_item(item, item.amount)
+		_show_item_on_mouse()
+		return
+	
 	if InventoryManager.is_same_item(item, get_held_item()):
 		var held = get_held_item()
 		var success = source_slot.connected_inventory.add_item(held, held.amount)

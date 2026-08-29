@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dran8e2t7kjag"]
+
+[ext_resource type="Script" uid="uid://cbigfxgkpsb4d" path="res://InfoSystem/stack_split_ui/stack_split_ui.gd" id="1_3y6el"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcny2"]
+bg_color = Color(0.84296876, 0.764599, 0.6447394, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.7764706, 0.4117647, 0.20392157, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="StackSplitUi" type="PanelContainer" unique_id=9081145 node_paths=PackedStringArray("label_node", "slider_node", "accept_button")]
+theme_override_styles/panel = SubResource("StyleBoxFlat_mcny2")
+script = ExtResource("1_3y6el")
+label_node = NodePath("VBoxContainer/Label")
+slider_node = NodePath("VBoxContainer/HSlider")
+accept_button = NodePath("VBoxContainer/Button")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1806558739]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=84664578]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+text = "123"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=1026164326]
+custom_minimum_size = Vector2(120, 10)
+layout_mode = 2
+min_value = 1.0
+max_value = 32.0
+value = 1.0
+rounded = true
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1306845846]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Take"
