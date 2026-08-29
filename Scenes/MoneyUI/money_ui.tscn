@@ -13,25 +13,29 @@ anchor_right = 1.0
 offset_left = -211.0
 offset_bottom = 52.0
 grow_horizontal = 0
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 120
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 40
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=16879108]
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1007869934]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=946118902]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 size_flags_vertical = 0
 texture = ExtResource("2_v42vv")
-expand_mode = 1
+expand_mode = 3
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer" unique_id=1770807154]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 20
+text = "0"
