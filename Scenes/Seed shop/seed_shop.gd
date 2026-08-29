@@ -128,7 +128,7 @@ func refresh_shop():
 		
 		# Calculate price variation
 		var seed_id = seed_item_ids[type % seed_item_ids.size()]
-		var honest_price = GameConfig.seed_prices.get(seed_id, 50)
+		var honest_price = GameConfig.all_item_original_prices.get(seed_id, 50)
 		var varied_price = int(honest_price * randf_range(GameConfig.minimum_price_ratio, 1.0))
 		
 		bag.setup(type, is_real, fake_var, varied_price, minimised_sheet)

@@ -9,7 +9,7 @@ class_name InventoryItemInfocard
 func show_infocard(item: Item) -> void:
 	name_label.text = item.item_data.display_name
 	texture_node.texture = item.item_data.item_texture
-	price_label.text = str(item.item_data.value)
+	price_label.text = str(GameConfig.all_item_original_prices.get(item.item_data.item_id, -1))
 	descript_label.text = item.item_data.item_description
 	visible = true
 	reposition()
