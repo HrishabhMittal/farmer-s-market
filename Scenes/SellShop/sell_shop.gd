@@ -108,8 +108,7 @@ func refresh_shop() -> void:
 		for item_id in ItemManager.all_items.keys():
 			var item_data = ItemManager.get_item(item_id)
 			if item_data and ItemTypes.ItemType.VEGETABLE in item_data.item_type:
-				var honest_price = GameConfig.crop_prices.get(item_id, item_data.value)
-				
+				var honest_price = GameConfig.all_item_original_prices.get(item_id, item_data.value)
 				var varied_price = honest_price * randf_range(GameConfig.minimum_price_ratio, 1.0)
 				
 				if is_scammer:

@@ -21,14 +21,13 @@ func _ready():
 		growth_chance = GameConfig.crop_growth_chances[produced_crop_id]
 	SignalBus.global_growth_tick.connect(_on_growth_tick)
 	
-	if GameConfig.crop_seed_yields.has(produced_crop_id):
-		production_amount = GameConfig.crop_seed_yields[produced_crop_id]
-	
+	var base_seed_id = produced_crop_id + "_seed"
+	if production_amount <= 1 and GameConfig.crop_seed_yields.has(base_seed_id):
+		production_amount = GameConfig.crop_seed_yields[base_seed_id]
+		
 	plant_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	
 	if not is_fully_grown and growth_cycle_texture.size() > current_growth_cycle:
 		plant_texture.texture = growth_cycle_texture[current_growth_cycle]
-
 func _process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	var rect = Rect2(global_position + plant_texture.position, plant_texture.size)

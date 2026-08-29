@@ -182,31 +182,33 @@ func handle_bag_click(bag):
 
 func _exit_tree() -> void:
 	save_state()
-	
+
 func _on_buy_button_pressed() -> void:
 	if not bag_on_table:
 		return
-		
-	var seed_id = seed_item_ids[bag_on_table.seed_type % seed_item_ids.size()]
-	var price = bag_on_table.bag_price
-	var honest_amount = GameConfig.seeds_per_bag.get(seed_id, 32)
 	
-	# The dialog LIES to the player and displays the honest amount, regardless of if it's defective
+	var base_seed_id = seed_item_ids[bag_on_table.seed_type % seed_item_ids.size()]
+	var price = bag_on_table.bag_price
+	var honest_amount = GameConfig.seeds_per_bag.get(base_seed_id, 32)
+	
 	var is_confirmed = await ConfirmationDialogue.ask_confirmation("Buy %d seeds for %d Coins?" % [honest_amount, price])
 	if not is_confirmed:
 		return
-		
 	if StateManager.money < price:
 		InfocardManager.show_floating_text("Not enough money!", action_menu.global_position, "Red")
 		return
-		
-	# Calculate actual amount based on if bag is defective
+	
+	var final_seed_id = base_seed_id
+	if not bag_on_table.is_real:
+		var variant_suffixes = ["", "_barcode", "_chomped", "_spot", "_tear"]
+		var suffix = variant_suffixes[clampi(bag_on_table.fake_variant, 1, 4)]
+		final_seed_id = base_seed_id + suffix
+
 	var actual_amount = honest_amount
 	if not bag_on_table.is_real:
 		actual_amount = int(honest_amount * GameConfig.defective_seed_multiplier)
 		
-	# Process purchase using actual amount
-	var success = InventoryManager.buy_item(seed_id, price, actual_amount)
+	var success = InventoryManager.buy_item(final_seed_id, price, actual_amount)
 	if success:
 		AudioManager.play_sfx("Buy")
 		InfocardManager.show_floating_text("-%d Coins" % price, action_menu.global_position, "Red")

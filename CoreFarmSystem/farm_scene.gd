@@ -137,10 +137,8 @@ func load_state() -> void:
 			new_plant.global_position = Vector2(p_data["pos_x"], p_data["pos_y"])
 			new_plant.current_growth_time = p_data["growth_time"]
 			new_plant.current_growth_cycle = p_data["cycle"]
-			new_plant.production_amount = p_data["amount"]
-			
 			add_child(new_plant)
-			
+			new_plant.production_amount = p_data["amount"]
 			if new_plant.growth_cycle_texture.size() > new_plant.current_growth_cycle:
 				new_plant.plant_texture.texture = new_plant.growth_cycle_texture[new_plant.current_growth_cycle]
 			if new_plant.current_growth_cycle >= new_plant.growth_cycle_day.size():
