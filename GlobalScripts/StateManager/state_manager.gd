@@ -4,6 +4,7 @@ const SAVE_PATH = "user://farm_save.json"
 
 var police_called_shops: Array = []
 
+var bank_balance: int = 0
 # money and inventory
 var money: int = 500
 var barn_inventory: Inventory
@@ -38,6 +39,7 @@ func _notification(what: int) -> void:
 func save_to_file() -> void:
 	var save_dict = {
 		"money": money,
+		"bank_balance": bank_balance,
 		"barn_inventory": _serialize_inventory(barn_inventory),
 		"player_inventory": _serialize_inventory(player_inventory),
 		"active_seed_inventory": _serialize_inventory(active_seed_inventory),
@@ -68,6 +70,7 @@ func load_from_file() -> void:
 		return
 		
 	money = save_dict.get("money", 500)
+	bank_balance = save_dict.get("bank_balance", 0)
 	
 	_deserialize_inventory(barn_inventory, save_dict.get("barn_inventory", []))
 	_deserialize_inventory(player_inventory, save_dict.get("player_inventory", []))

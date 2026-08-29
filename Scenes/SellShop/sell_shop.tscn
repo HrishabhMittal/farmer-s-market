@@ -40,7 +40,7 @@ exit_msg = "Head back to town?"
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1730621935]
 
 [node name="Phone" parent="CanvasLayer" unique_id=1370161008 instance=ExtResource("7_6rne5")]
-position = Vector2(125, 487)
+position = Vector2(9, 313)
 
 [node name="PriceLabel" type="Label" parent="CanvasLayer" unique_id=1428054824]
 offset_left = 117.0

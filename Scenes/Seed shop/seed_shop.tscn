@@ -62,7 +62,7 @@ position = Vector2(425, 282)
 texture = ExtResource("5_w1l5w")
 
 [node name="Phone" parent="CanvasLayer" unique_id=1370161008 instance=ExtResource("10_7hwl2")]
-position = Vector2(101, 478)
+position = Vector2(10, 306)
 
 [node name="ActionMenu" type="PanelContainer" parent="CanvasLayer" unique_id=1777351356]
 offset_top = 8.0
