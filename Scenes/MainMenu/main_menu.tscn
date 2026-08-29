@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bi2r1syy8prwl" path="res://Scenes/MainMenu/main_menu.gd" id="1_0l8wx"]
 [ext_resource type="Texture2D" uid="uid://didmb0vq0qobw" path="res://Assets/Images/MainMenu/menu_background.png" id="1_0qgbs"]
 [ext_resource type="Texture2D" uid="uid://baoj8ki6v6xbt" path="res://Assets/Images/MainMenu/rope.png" id="1_uqdog"]
-[ext_resource type="Texture2D" uid="uid://dhgosk1hgpyt0" path="res://Assets/Images/MainMenu/menu_title.png" id="2_adu2g"]
 [ext_resource type="Texture2D" uid="uid://byuasu4oni8hx" path="res://Assets/Images/MainMenu/wood.png" id="2_v763k"]
+[ext_resource type="Texture2D" uid="uid://iv45lm04nxv1" path="res://Assets/logo title.png" id="3_0l8wx"]
 [ext_resource type="Script" uid="uid://bqnlbefp38487" path="res://Scenes/MainMenu/texture_rect.gd" id="5_adu2g"]
 
 [node name="main_menu" type="Control" unique_id=93825119]
@@ -42,9 +42,9 @@ offset_top = -250.0
 offset_right = 1000.0
 offset_bottom = 250.0
 grow_vertical = 2
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.3, 0.3)
 pivot_offset_ratio = Vector2(0, 0.5)
-texture = ExtResource("2_adu2g")
+texture = ExtResource("3_0l8wx")
 
 [node name="right_menu_container" type="Control" parent="." unique_id=1834187910]
 layout_mode = 1

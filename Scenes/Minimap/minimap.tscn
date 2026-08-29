@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://bykas3tdowgd8"]
 
 [ext_resource type="Script" uid="uid://pi4naxu5pks7" path="res://Scenes/Minimap/minimap.gd" id="1_7okmr"]
-[ext_resource type="Texture2D" uid="uid://186eu01o5hbr" path="res://Assets/Images/MiniMap/minimap_bg.png" id="1_12lvx"]
 [ext_resource type="PackedScene" uid="uid://dc6q5i3ry0kk2" path="res://Scenes/Minimap/building.tscn" id="1_ll08c"]
+[ext_resource type="Texture2D" uid="uid://b1oaoc1pu0873" path="res://Assets/minimap bg.png" id="2_j8dva"]
 [ext_resource type="PackedScene" uid="uid://d26tqhsq330j5" path="res://Scenes/Minimap/truck.tscn" id="2_k2x7d"]
 [ext_resource type="Texture2D" uid="uid://doleknb4h73rs" path="res://Assets/car_spritesheet.png" id="4_7okmr"]
 [ext_resource type="Texture2D" uid="uid://cec047n4cdsmm" path="res://Assets/Images/MiniMap/sell_shop.png" id="5_12lvx"]
 [ext_resource type="Texture2D" uid="uid://ddvowkvp2ys3m" path="res://Assets/Images/MiniMap/farm_placeholder.png" id="6_7okmr"]
 [ext_resource type="Texture2D" uid="uid://w6fbuevf0nid" path="res://Assets/Images/MiniMap/buy_seeds.png" id="7_8i1fv"]
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="8_12lvx"]
-[ext_resource type="Texture2D" uid="uid://cxm3ymuychdjh" path="res://Assets/Images/MiniMap/house_placeholder.png" id="10_j8dva"]
+[ext_resource type="Texture2D" uid="uid://n35ydabbrdlw" path="res://Assets/minimap house.png" id="10_j8dva"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8dva"]
 atlas = ExtResource("4_7okmr")
@@ -52,7 +52,7 @@ script = ExtResource("1_7okmr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=773367631]
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_12lvx")
+texture = ExtResource("2_j8dva")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1043354683]
 
@@ -103,5 +103,6 @@ player_node = NodePath("../truck")
 is_home = true
 
 [node name="Sprite2D" type="Sprite2D" parent="building4" unique_id=1676936395]
-scale = Vector2(0.3, 0.3)
+position = Vector2(12, -1)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("10_j8dva")
