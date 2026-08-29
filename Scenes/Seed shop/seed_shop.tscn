@@ -16,8 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://bgymeat2al37i" path="res://Scenes/Phone/phone.tscn" id="10_7hwl2"]
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="10_nqtbe"]
 [ext_resource type="Texture2D" uid="uid://lr6jlo8vfknd" path="res://Assets/Images/Book/book back.png" id="10_voxf5"]
-[ext_resource type="Texture2D" uid="uid://ccoh7nhvumrn8" path="res://Assets/book.png" id="12_qqsxb"]
-[ext_resource type="Texture2D" uid="uid://djus05fykesam" path="res://Assets/phone.png" id="12_sbyfj"]
+[ext_resource type="Texture2D" uid="uid://dc4e1uufvflth" path="res://Assets/phone_normal.png" id="14_voxf5"]
+[ext_resource type="Texture2D" uid="uid://whe0hmk5h8gg" path="res://Assets/book_normal.png" id="15_10cv3"]
+[ext_resource type="Texture2D" uid="uid://blhg87aloi1fm" path="res://Assets/phone_pressed.png" id="15_hvoms"]
+[ext_resource type="Texture2D" uid="uid://ctf481313w1og" path="res://Assets/book_pressed.png" id="16_voxf5"]
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
 script = ExtResource("1_5bumm")
@@ -105,14 +107,14 @@ anchor_bottom = 1.0
 offset_top = -128.0
 offset_right = 128.0
 grow_vertical = 0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(10, -10)
 pivot_offset_ratio = Vector2(0, 1)
-texture_normal = ExtResource("12_sbyfj")
-texture_pressed = ExtResource("12_sbyfj")
-texture_hover = ExtResource("12_sbyfj")
-texture_disabled = ExtResource("12_sbyfj")
-texture_focused = ExtResource("12_sbyfj")
+texture_normal = ExtResource("14_voxf5")
+texture_pressed = ExtResource("15_hvoms")
+texture_hover = ExtResource("14_voxf5")
+texture_disabled = ExtResource("14_voxf5")
+texture_focused = ExtResource("14_voxf5")
 
 [node name="BookIcon" type="TextureButton" parent="CanvasLayer" unique_id=139514709]
 anchors_preset = 3
@@ -124,14 +126,14 @@ offset_left = -128.0
 offset_top = -128.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(-10, -10)
 pivot_offset_ratio = Vector2(1, 1)
-texture_normal = ExtResource("12_qqsxb")
-texture_pressed = ExtResource("12_qqsxb")
-texture_hover = ExtResource("12_qqsxb")
-texture_disabled = ExtResource("12_qqsxb")
-texture_focused = ExtResource("12_qqsxb")
+texture_normal = ExtResource("15_10cv3")
+texture_pressed = ExtResource("16_voxf5")
+texture_hover = ExtResource("15_10cv3")
+texture_disabled = ExtResource("15_10cv3")
+texture_focused = ExtResource("15_10cv3")
 
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("9_6qx44")]
 target_scene_path = "uid://bykas3tdowgd8"

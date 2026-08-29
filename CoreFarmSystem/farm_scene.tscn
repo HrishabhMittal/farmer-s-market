@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://2ascms78ig7x" path="res://Assets/farm_tiles.png" id="3_qaha4"]
 [ext_resource type="Script" uid="uid://dfjhauarq0fu2" path="res://CoreFarmSystem/farm_tool_manager.gd" id="3_wsyp5"]
 [ext_resource type="PackedScene" uid="uid://im0bih2b67at" path="res://CoreFarmSystem/tool.tscn" id="6_lo7h3"]
+[ext_resource type="Texture2D" uid="uid://ckaxkgwjajexv" path="res://Assets/tile map.png" id="6_wqrya"]
 [ext_resource type="Texture2D" uid="uid://vrlyplu8k060" path="res://Assets/some_placeholder_assets/placeholder_tools.png" id="7_a8m23"]
 [ext_resource type="PackedScene" uid="uid://86lyl32ajvov" path="res://Scenes/Player/farmer.tscn" id="10_miwjd"]
 [ext_resource type="Script" uid="uid://cir2jjyeljass" path="res://CoreFarmSystem/barn.gd" id="11_0wb5q"]
@@ -186,6 +187,74 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 terrain_set_0/terrain_1/name = "Dirt"
 terrain_set_0/terrain_1/color = Color(0, 0.6203127, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_sf2wa")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53lir"]
+texture = ExtResource("6_wqrya")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lo7h3"]
 texture = ExtResource("3_qaha4")
@@ -591,6 +660,7 @@ custom_data_layer_0/type = 4
 custom_data_layer_1/name = "is_crop_planted"
 custom_data_layer_1/type = 1
 sources/1 = SubResource("TileSetAtlasSource_lo7h3")
+sources/0 = SubResource("TileSetAtlasSource_53lir")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5roh6"]
 atlas = ExtResource("7_a8m23")

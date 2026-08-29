@@ -24,34 +24,20 @@ func _on_farmtilemanager_ready(new_tilemanager: FarmTileManager) -> void:
 	farm_tilemanager = new_tilemanager
 
 func pick_item(item: Item, source_slot: SlotUI) -> void:
-	# If picked item and item held are same, that means player is combining stack
 	if InventoryManager.is_same_item(item, get_held_item()):
 		var held = get_held_item()
-		var success = item.owner_inventory.add_item(held, held.amount)
-		
-		# only clear the mouse if the entire stack transferred, 
-		# otherwise just refresh the mouse UI to show the leftovers.
+		var success = source_slot.connected_inventory.add_item(held, held.amount)
 		if success or held.amount <= 0:
 			clear_item()
-		else:
-			_show_item_on_mouse()
 			
-	# If previous condition failed, that means the items are either different or one of the slots is
-	# empty. In that case swap the items
-	elif item:
-		InventoryManager.swap_item(item.owner_inventory, mouse_inventory, item.inventory_index, 0) # '0' because mouse_inventory has only 1 slot
-	# Special case where player is trying to put item in a empty inventory slot
 	else:
 		InventoryManager.swap_item(source_slot.connected_inventory, mouse_inventory, source_slot.slot_index, 0)
 		
 	_show_item_on_mouse()
 	
-	# If player picked up a seed from inventory, automatically selects the SeedPlanter tool
 	if is_held_item_seed():
-		if seed_planter:
+		if is_instance_valid(seed_planter):
 			seed_planter.tool_manager.tool_selected.emit(seed_planter)
-
-
 
 
 func remove_item(item_id: String, amount: int = 0) -> bool:

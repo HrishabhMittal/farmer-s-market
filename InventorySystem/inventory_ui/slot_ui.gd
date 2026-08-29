@@ -28,23 +28,26 @@ func refresh_slot(item: Item) -> void:
 	#prints("current_item = ", current_item)
 
 func _handle_gui_input(event: InputEvent) -> void:
-
 	if event.is_action_pressed("quick_inventory_transfer"):
 		if connected_inventory.is_quick_transfer_allowed:
 			InventoryManager.quick_transfer_item(self)
-			accept_event()
-			
-	if event.is_action_pressed("left click"):
 		accept_event()
 		
+	if event.is_action_pressed("left click"):
+		accept_event()
 		if connected_inventory == StateManager.active_seed_inventory and PlayerHeldItem.is_empty():
 			var current_scene = get_tree().current_scene
 			if current_scene and current_scene.has_method("select_seed_slot"):
+				
+				if current_scene.tool_manager.selected_tool == 3:
+					if current_item != null:
+						PlayerHeldItem.pick_item(current_item, self)
+						return
+						
 				current_scene.select_seed_slot()
 			return
-			
 		PlayerHeldItem.pick_item(current_item, self)
-
+		
 	if event.is_action_pressed("right click"):
 		accept_event()
 		if connected_inventory == StateManager.active_seed_inventory and PlayerHeldItem.is_empty():
