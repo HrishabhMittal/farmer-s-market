@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://w6fbuevf0nid" path="res://Assets/Images/MiniMap/buy_seeds.png" id="7_8i1fv"]
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="8_12lvx"]
 [ext_resource type="Texture2D" uid="uid://n35ydabbrdlw" path="res://Assets/minimap house.png" id="10_j8dva"]
+[ext_resource type="PackedScene" uid="uid://bgymeat2al37i" path="res://Scenes/Phone/phone.tscn" id="11_rjbcc"]
+[ext_resource type="Texture2D" uid="uid://b1e5w1pw4ifa4" path="res://Assets/Images/Buttons/phone_unpressed.png" id="12_sxj1a"]
+[ext_resource type="Texture2D" uid="uid://bdda6qqk88itr" path="res://Assets/Images/Buttons/phone_pressed.png" id="13_2t02g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8dva"]
 atlas = ExtResource("4_7okmr")
@@ -120,3 +123,24 @@ texture = ExtResource("10_j8dva")
 
 [node name="Marker2D" type="Marker2D" parent="building4" unique_id=716315915]
 position = Vector2(-33, -124)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=461528832]
+
+[node name="Phone" parent="CanvasLayer" unique_id=1370161008 instance=ExtResource("11_rjbcc")]
+position = Vector2(9, 313)
+
+[node name="PhoneIcon" type="TextureButton" parent="CanvasLayer" unique_id=1752881504]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_right = 128.0
+grow_vertical = 0
+scale = Vector2(0.15, 0.15)
+pivot_offset = Vector2(10, -10)
+pivot_offset_ratio = Vector2(0, 1)
+texture_normal = ExtResource("12_sxj1a")
+texture_pressed = ExtResource("13_2t02g")
+texture_hover = ExtResource("12_sxj1a")
+texture_disabled = ExtResource("12_sxj1a")
+texture_focused = ExtResource("12_sxj1a")

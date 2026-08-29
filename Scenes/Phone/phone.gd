@@ -78,7 +78,10 @@ func _on_btn_police_pressed() -> void:
 	AudioManager.play_sfx("Farm Police")
 	show_screen(dialog_screen)
 	dialog_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	if current_shop_id != "" and not StateManager.police_called_shops.has(current_shop_id):
+	
+	if current_shop_id == "":
+		dialog_text.text = GameDialogues.CALL_POLICE_NO_TARGET
+	elif not StateManager.police_called_shops.has(current_shop_id):
 		StateManager.police_called_shops.append(current_shop_id)
 		dialog_text.text = GameDialogues.CALL_POLICE
 	else:
