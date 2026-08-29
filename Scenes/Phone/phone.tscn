@@ -19,6 +19,7 @@ scale = Vector2(0.3, 0.3)
 metadata/_edit_use_anchors_ = true
 
 [node name="MainScreen" type="Control" parent="UI_Root" unique_id=1030673942]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -58,6 +59,7 @@ offset_right = 180.0
 offset_bottom = 233.33333
 
 [node name="ContactsScreen" type="Control" parent="UI_Root" unique_id=2091893230]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -84,12 +86,13 @@ offset_bottom = 499.99997
 
 [node name="BtnBack" type="Button" parent="UI_Root/ContactsScreen" unique_id=993493030]
 layout_mode = 0
-offset_left = 313.3333
-offset_top = 1000.0
-offset_right = 386.66666
-offset_bottom = 1070.0
+offset_left = 280.0
+offset_top = 969.99994
+offset_right = 396.66666
+offset_bottom = 1066.667
 
 [node name="DialogScreen" type="Control" parent="UI_Root" unique_id=80968856]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -109,12 +112,13 @@ offset_bottom = 346.66666
 
 [node name="BtnEndCall" type="Button" parent="UI_Root/DialogScreen" unique_id=890201537]
 layout_mode = 0
-offset_left = 273.3333
-offset_top = 813.3333
-offset_right = 409.99997
-offset_bottom = 916.6666
+offset_left = 253.33333
+offset_top = 786.6666
+offset_right = 420.0
+offset_bottom = 946.6666
 
 [node name="BrowserScreen" type="Control" parent="UI_Root" unique_id=2110462446]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -134,10 +138,10 @@ offset_bottom = 370.0
 
 [node name="BtnBack" type="Button" parent="UI_Root/BrowserScreen" unique_id=188643922]
 layout_mode = 0
-offset_left = 316.66666
-offset_top = 989.99994
-offset_right = 403.33334
-offset_bottom = 1076.6665
+offset_left = 266.66666
+offset_top = 970.0
+offset_right = 403.3333
+offset_bottom = 1066.6665
 
 [node name="BankScreen" type="Control" parent="UI_Root" unique_id=788167410]
 anchors_preset = 0
@@ -173,7 +177,7 @@ offset_bottom = 926.6666
 
 [node name="BtnBack" type="Button" parent="UI_Root/BankScreen" unique_id=23034784]
 layout_mode = 0
-offset_left = 296.66666
-offset_top = 986.6666
-offset_right = 393.3333
-offset_bottom = 1080.0
+offset_left = 276.66666
+offset_top = 960.0
+offset_right = 400.00006
+offset_bottom = 1073.3333

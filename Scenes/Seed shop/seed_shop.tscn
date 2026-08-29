@@ -44,9 +44,12 @@ texture = ExtResource("5_lsou8")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2047204010]
 
 [node name="book" parent="CanvasLayer" unique_id=1606224245 instance=ExtResource("2_s4d4o")]
-offset_left = 346.0
+offset_left = 310.0
 offset_top = 103.99994
 offset_bottom = -1.999939
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(-40, -20)
+book_scale = 0.5
 pages = Array[Texture2D]([ExtResource("8_mf1lo"), ExtResource("9_10cv3"), ExtResource("9_10cv3"), ExtResource("10_voxf5")])
 
 [node name="InspectOverlay" type="ColorRect" parent="CanvasLayer" unique_id=1455428457]

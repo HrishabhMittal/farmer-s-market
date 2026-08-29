@@ -4,7 +4,7 @@ extends Control
 # uses tweens to give an illusion of a book,
 # might need to make this 3d later
 # for now this is fine ig
-
+@export var book_scale: float = 1.0
 
 # this needs to also contain front and back covers
 @export var pages: Array[Texture2D] = []
@@ -20,21 +20,30 @@ var is_flipping = false
 
 # right now it sets up the book size according to the size of texture
 # this function might need to be changed later
+
 func _setup_geometry():
 	if pages.size() == 0 or pages[0] == null:
 		return
-	var page_size: Vector2 = pages[0].get_size()
+
+	# Apply the scale multiplier here
+	var page_size: Vector2 = pages[0].get_size() * book_scale 
+
 	custom_minimum_size = Vector2(page_size.x * 2, page_size.y)
-	size = custom_minimum_size
+	set_deferred("size", custom_minimum_size)
+
 	left_page.size = page_size
 	left_page.position = Vector2(0, 0)
+
 	right_page.size = page_size
 	right_page.position = Vector2(page_size.x, 0)
+
 	flip_container.size = page_size
 	flip_container.position = Vector2(page_size.x, 0)
 	flip_container.pivot_offset = Vector2(0, 0)
+
 	flip_front.size = page_size
 	flip_front.position = Vector2(0, 0)
+
 	flip_back.size = page_size
 	flip_back.position = Vector2(0, 0)
 	flip_back.flip_h = true
