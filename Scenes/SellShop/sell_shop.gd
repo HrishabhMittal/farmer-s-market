@@ -10,7 +10,6 @@ extends Node2D
 @onready var phone_icon = $CanvasLayer/PhoneIcon
 
 var item_prices: Dictionary = {}
-var player_inventory_ui: InventoryUI
 
 # Animation Variables
 var is_phone_open = false
@@ -22,13 +21,9 @@ func _ready() -> void:
 	add_to_group("save_state")
 	if has_node("Seller"):
 		$Seller.setup(shop_id)
-		
-	player_inventory_ui = load("res://InventorySystem/inventory_ui/inventory_ui.tscn").instantiate()
-	player_inventory_ui.initialize(StateManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_RIGHT)
-	player_inventory_ui.set_inventory_name("Player Inventory")
-	add_child(player_inventory_ui)
-	player_inventory_ui.refresh_inventory()
-	
+	if InventoryManager.player_ui:
+		InventoryManager.player_ui.visible = true
+		InventoryManager.player_ui.refresh_inventory()
 	if StateManager.sell_shops.has(shop_id):
 		item_prices = StateManager.sell_shops[shop_id].duplicate()
 		update_price_label()
