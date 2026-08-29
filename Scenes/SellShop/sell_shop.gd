@@ -20,7 +20,7 @@ func _ready() -> void:
 	if has_node("Seller"):
 		$Seller.setup(shop_id)
 	if InventoryManager.player_ui:
-		InventoryManager.player_ui.visible = true
+		# InventoryManager.player_ui.visible = true # this is kinda annoying ngl
 		InventoryManager.player_ui.refresh_inventory()
 	if StateManager.sell_shops.has(shop_id):
 		item_prices = StateManager.sell_shops[shop_id].duplicate()

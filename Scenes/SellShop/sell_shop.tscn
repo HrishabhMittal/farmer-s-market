@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="1_ucx02"]
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="2_1lxjk"]
 [ext_resource type="Texture2D" uid="uid://do1yxwvqyl0mv" path="res://Assets/shop bg.PNG" id="2_2hb4f"]
-[ext_resource type="Texture2D" uid="uid://bywchcu7eoo5c" path="res://Assets/Images/SellShop/sell shop back.png" id="2_vwsex"]
+[ext_resource type="Texture2D" uid="uid://csj8cs6flv8dk" path="res://Assets/sell shop back v2.png" id="3_2hb4f"]
 [ext_resource type="PackedScene" uid="uid://bbvpswxwwqysq" path="res://Scenes/Seller/seller.tscn" id="3_5vr2q"]
-[ext_resource type="Texture2D" uid="uid://vsisqb2u8amv" path="res://Assets/Images/SellShop/sell shop front.png" id="3_w13ky"]
+[ext_resource type="Texture2D" uid="uid://bha1hunajg6mo" path="res://Assets/sell shop front v2.png" id="5_6uq2t"]
 [ext_resource type="PackedScene" uid="uid://bgymeat2al37i" path="res://Scenes/Phone/phone.tscn" id="7_6rne5"]
 [ext_resource type="Texture2D" uid="uid://dc4e1uufvflth" path="res://Assets/phone_normal.png" id="8_nljb3"]
 [ext_resource type="Texture2D" uid="uid://blhg87aloi1fm" path="res://Assets/phone_pressed.png" id="9_2hb4f"]
@@ -25,7 +25,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 scale = Vector2(0.6, 0.6)
 mouse_filter = 2
-texture = ExtResource("2_vwsex")
+texture = ExtResource("3_2hb4f")
 
 [node name="Seller" parent="." unique_id=1051544910 instance=ExtResource("3_5vr2q")]
 position = Vector2(750.99994, 401.99997)
@@ -36,7 +36,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.6, 0.6)
 mouse_filter = 2
-texture = ExtResource("3_w13ky")
+texture = ExtResource("5_6uq2t")
 
 [node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("2_1lxjk")]
 
@@ -50,10 +50,10 @@ exit_msg = "Head back to town?"
 position = Vector2(9, 313)
 
 [node name="PriceLabel" type="Label" parent="CanvasLayer" unique_id=1428054824]
-offset_left = 117.0
-offset_top = 185.0
-offset_right = 157.0
-offset_bottom = 208.0
+offset_left = 423.0
+offset_top = 191.0
+offset_right = 463.0
+offset_bottom = 214.0
 
 [node name="PhoneIcon" type="TextureButton" parent="CanvasLayer" unique_id=905234072]
 anchors_preset = 2
