@@ -78,6 +78,7 @@ func plant_seed() -> void:
 	if seed_item:
 		var new_plant: FarmPlant = seed_item.item_data.scene_to_instantiate.instantiate()
 		add_child(new_plant)
+		new_plant.generate_display_name(seed_item)
 		new_plant.production_amount = GameConfig.crop_seed_yields.get(seed_item.item_data.item_id, 1) # Tries to get the seeds production amount from config , if fails to find id, sets it to 1
 		new_plant.tile_manager = tile_manager
 		new_plant.global_position = tile_manager.get_tile_center(get_global_mouse_position())

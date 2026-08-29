@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://wah4owfgbppn"]
+
+[ext_resource type="Shader" uid="uid://0p8ktx1pejqe" path="res://shaders/glow_shader.gdshader" id="1_vo371"]
+
+[resource]
+shader = ExtResource("1_vo371")
+shader_parameter/glow_color = Color(1, 0.8, 0.2, 1)
+shader_parameter/pulse_speed = 0.10000000149012
+shader_parameter/min_intensity = 0.0
+shader_parameter/max_intensity = 0.0

@@ -739,6 +739,7 @@ tool_texture = ExtResource("7_lpwnd")
 tool_manager = NodePath("../../../FarmToolManager")
 
 [node name="SeedPlanter" parent="ToolBar/HBoxContainer" unique_id=2109462242 node_paths=PackedStringArray("tool_manager") instance=ExtResource("6_lo7h3")]
+visible = false
 layout_mode = 2
 display_name = "Seed Planter"
 tool_type = 3

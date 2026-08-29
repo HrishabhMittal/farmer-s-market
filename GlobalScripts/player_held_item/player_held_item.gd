@@ -40,9 +40,13 @@ func pick_item(item: Item, source_slot: SlotUI, is_stack_splitting: bool = false
 		
 	_show_item_on_mouse()
 	
+	#prints(is_held_item_seed())
 	if is_held_item_seed():
 		if is_instance_valid(seed_planter):
 			seed_planter.tool_manager.tool_selected.emit(seed_planter)
+		SignalBus.player_picked_seed.emit()
+	else:
+		SignalBus.player_dropped_seed.emit()
 
 
 func remove_item(item_id: String, amount: int = 0) -> bool:

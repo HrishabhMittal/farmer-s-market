@@ -20,6 +20,7 @@ func _ready():
 	mouse_entered.connect(UIAnimationManager.scale_expand_highlight.bind(self))
 	mouse_exited.connect(UIAnimationManager.scale_expand_unhighlight.bind(self))
 
+
 func _handle_gui_input(event: InputEvent) -> void:
 	if not PlayerHeldItem.is_empty():
 		return

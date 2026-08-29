@@ -11,6 +11,7 @@ func _ready():
 	
 	seed_slot = load("res://InventorySystem/inventory_ui/slot_ui.tscn").instantiate()
 	seed_slot.connected_inventory = StateManager.active_seed_inventory
+	seed_slot.marked_as_seed_slot = true 
 	seed_slot.slot_index = 0
 	seed_slot.tooltip_text = "Seed Slot\nLeft-Click: Select to Plant\nRight-Click: Pick Up Seed"
 	StateManager.active_seed_inventory.slot_changed.connect(_on_seed_slot_changed)

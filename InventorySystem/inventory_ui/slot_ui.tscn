@@ -23,6 +23,7 @@ size_flags_vertical = 3
 script = ExtResource("1_jde34")
 slot_texture_node = NodePath("PanelContainer/TextureRect")
 slot_label_node = NodePath("Label")
+glow_color = Color(1.9984782, 1.5940032, 0, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1451620654]
 custom_minimum_size = Vector2(64, 64)

@@ -117,3 +117,21 @@ func unhighlight() -> void:
 	modulate = Color(1.0, 1.0, 1.0, 1)
 	InfocardManager.hide_farmplant_infocard()
 	is_hovered = false
+
+# Generates a display name based on the seed quality
+func generate_display_name(seed_item: Item) -> void:
+	var seed_name: String = seed_item.item_data.item_id
+	var name_prefix: String = ""
+	
+	if "barcode" in seed_name:
+		name_prefix = "Healthy "
+	elif "chomped" in seed_name:
+		name_prefix = "Sad "
+	elif "spot" in seed_name:
+		name_prefix = "Sickly "
+	elif "tear" in seed_name:
+		name_prefix = "Malnourished "
+	else:
+		name_prefix = "Glowing "
+		
+	display_name = name_prefix + display_name

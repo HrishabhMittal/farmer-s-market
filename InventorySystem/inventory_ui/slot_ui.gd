@@ -9,6 +9,7 @@ class_name SlotUI
 var connected_inventory: Inventory
 var slot_index: int
 var current_item: Item
+var marked_as_seed_slot: bool = false
 
 func _ready():
 	gui_input.connect(_handle_gui_input)
@@ -17,6 +18,13 @@ func _ready():
 	slot_texture_node.offset_transform_enabled = true # Needed for proper highlighting
 	mouse_entered.connect(_highlight)
 	mouse_exited.connect(_unhilight)
+	
+	if marked_as_seed_slot:
+		SignalBus.player_picked_seed.connect(start_glow)
+		SignalBus.player_dropped_seed.connect(stop_glow)
+		
+		pivot_offset = size / 2.0
+		offset_transform_enabled = true
 
 func refresh_slot(item: Item) -> void:
 	if item:
@@ -85,3 +93,32 @@ func _unhilight() -> void:
 	tween.tween_property(slot_texture_node, "offset_transform_scale", Vector2(1.0, 1.0), 0.1)
 	
 	InfocardManager.hide_infocard()
+
+# Glow - Just for seed slot for now
+@export var glow_color: Color = Color(2.0, 0.7, 0.4, 1.0)
+var min_color: Color = Color(1.0, 1.0, 1.0, 1.0)
+var glow_scale := Vector2(1.3, 1.3)
+var duration: float = 0.5
+
+var glow_tween: Tween
+
+func start_glow() -> void:
+	if glow_tween and glow_tween.is_running():
+		glow_tween.kill()
+
+	glow_tween = create_tween()
+	glow_tween.set_loops()
+	glow_tween.set_trans(Tween.TRANS_SINE)
+	glow_tween.set_ease(Tween.EASE_IN_OUT)
+
+	glow_tween.tween_property(self, "modulate", glow_color, duration)
+	glow_tween.parallel().tween_property(self, "offset_transform_scale", glow_scale, duration)
+	
+	glow_tween.tween_property(self, "modulate", min_color, duration)
+	glow_tween.parallel().tween_property(self, "offset_transform_scale", Vector2.ONE, duration)
+
+func stop_glow() -> void:
+	if glow_tween and glow_tween.is_running():
+		glow_tween.kill()
+	modulate = min_color
+	offset_transform_scale = Vector2.ONE
