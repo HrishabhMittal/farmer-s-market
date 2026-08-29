@@ -17,11 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="10_nqtbe"]
 [ext_resource type="Texture2D" uid="uid://lr6jlo8vfknd" path="res://Assets/Images/Book/book back.png" id="10_voxf5"]
 [ext_resource type="Texture2D" uid="uid://d1nrwgflicbu" path="res://Assets/button_unpressed.png" id="14_m2dk3"]
-[ext_resource type="Texture2D" uid="uid://dc4e1uufvflth" path="res://Assets/phone_normal.png" id="14_voxf5"]
-[ext_resource type="Texture2D" uid="uid://whe0hmk5h8gg" path="res://Assets/book_normal.png" id="15_10cv3"]
-[ext_resource type="Texture2D" uid="uid://blhg87aloi1fm" path="res://Assets/phone_pressed.png" id="15_hvoms"]
 [ext_resource type="Texture2D" uid="uid://caajek1chxefn" path="res://Assets/button_pressed.png" id="15_txshc"]
-[ext_resource type="Texture2D" uid="uid://ctf481313w1og" path="res://Assets/book_pressed.png" id="16_voxf5"]
+[ext_resource type="Texture2D" uid="uid://b1e5w1pw4ifa4" path="res://Assets/Images/Buttons/phone_unpressed.png" id="16_fwdn7"]
+[ext_resource type="Texture2D" uid="uid://bdda6qqk88itr" path="res://Assets/Images/Buttons/phone_pressed.png" id="17_m2dk3"]
+[ext_resource type="Texture2D" uid="uid://iov8kbojiiar" path="res://Assets/Images/Buttons/book_unpressed.png" id="18_fwdn7"]
+[ext_resource type="Texture2D" uid="uid://itf56v4lentt" path="res://Assets/Images/Buttons/book_pressed.png" id="19_m2dk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
 size = Vector2(870, 57)
@@ -145,11 +145,11 @@ grow_vertical = 0
 scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(10, -10)
 pivot_offset_ratio = Vector2(0, 1)
-texture_normal = ExtResource("14_voxf5")
-texture_pressed = ExtResource("15_hvoms")
-texture_hover = ExtResource("14_voxf5")
-texture_disabled = ExtResource("14_voxf5")
-texture_focused = ExtResource("14_voxf5")
+texture_normal = ExtResource("16_fwdn7")
+texture_pressed = ExtResource("17_m2dk3")
+texture_hover = ExtResource("16_fwdn7")
+texture_disabled = ExtResource("16_fwdn7")
+texture_focused = ExtResource("16_fwdn7")
 
 [node name="BookIcon" type="TextureButton" parent="CanvasLayer" unique_id=139514709]
 anchors_preset = 3
@@ -164,11 +164,11 @@ grow_vertical = 0
 scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(-10, -10)
 pivot_offset_ratio = Vector2(1, 1)
-texture_normal = ExtResource("15_10cv3")
-texture_pressed = ExtResource("16_voxf5")
-texture_hover = ExtResource("15_10cv3")
-texture_disabled = ExtResource("15_10cv3")
-texture_focused = ExtResource("15_10cv3")
+texture_normal = ExtResource("18_fwdn7")
+texture_pressed = ExtResource("19_m2dk3")
+texture_hover = ExtResource("18_fwdn7")
+texture_disabled = ExtResource("18_fwdn7")
+texture_focused = ExtResource("18_fwdn7")
 
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("9_6qx44")]
 target_scene_path = "uid://bykas3tdowgd8"

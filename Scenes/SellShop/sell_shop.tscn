@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bbvpswxwwqysq" path="res://Scenes/Seller/seller.tscn" id="3_5vr2q"]
 [ext_resource type="Texture2D" uid="uid://bha1hunajg6mo" path="res://Assets/sell shop front v2.png" id="5_6uq2t"]
 [ext_resource type="PackedScene" uid="uid://bgymeat2al37i" path="res://Scenes/Phone/phone.tscn" id="7_6rne5"]
-[ext_resource type="Texture2D" uid="uid://dc4e1uufvflth" path="res://Assets/phone_normal.png" id="8_nljb3"]
-[ext_resource type="Texture2D" uid="uid://blhg87aloi1fm" path="res://Assets/phone_pressed.png" id="9_2hb4f"]
+[ext_resource type="Texture2D" uid="uid://b1e5w1pw4ifa4" path="res://Assets/Images/Buttons/phone_unpressed.png" id="9_2hb4f"]
+[ext_resource type="Texture2D" uid="uid://bdda6qqk88itr" path="res://Assets/Images/Buttons/phone_pressed.png" id="10_6uq2t"]
 
 [node name="SellShop" type="Node2D" unique_id=1734394036]
 script = ExtResource("1_1lxjk")
@@ -65,8 +65,8 @@ grow_vertical = 0
 scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(10, -10)
 pivot_offset_ratio = Vector2(0, 1)
-texture_normal = ExtResource("8_nljb3")
-texture_pressed = ExtResource("9_2hb4f")
-texture_hover = ExtResource("8_nljb3")
-texture_disabled = ExtResource("8_nljb3")
-texture_focused = ExtResource("8_nljb3")
+texture_normal = ExtResource("9_2hb4f")
+texture_pressed = ExtResource("10_6uq2t")
+texture_hover = ExtResource("9_2hb4f")
+texture_disabled = ExtResource("9_2hb4f")
+texture_focused = ExtResource("9_2hb4f")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Farmer's Market"
-run/main_scene="uid://cltwdgqaoah1s"
+run/main_scene="uid://bv16fgug31wcv"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 

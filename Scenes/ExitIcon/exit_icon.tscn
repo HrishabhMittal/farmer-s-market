@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b22me6041ndvg"]
 
 [ext_resource type="Script" uid="uid://crhpx1bvdigof" path="res://Scenes/ExitIcon/exit_icon.gd" id="1_u2lpu"]
-[ext_resource type="Texture2D" uid="uid://bu6w6eselajkv" path="res://Assets/exit_normal.png" id="2_6nujg"]
-[ext_resource type="Texture2D" uid="uid://bqe50sf78sk3i" path="res://Assets/exit_pressed.png" id="3_kehli"]
+[ext_resource type="Texture2D" uid="uid://dwdb17d4y5n3v" path="res://Assets/Images/Buttons/exit_unpressed.png" id="2_6nujg"]
+[ext_resource type="Texture2D" uid="uid://bpjmc22xj0gdm" path="res://Assets/Images/Buttons/exit_pressed.png" id="3_kehli"]
 
 [node name="ExitButtonUI" type="CanvasLayer" unique_id=203447004]
 offset = Vector2(5, 5)
