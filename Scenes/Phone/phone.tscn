@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bgymeat2al37i"]
 
 [ext_resource type="Script" uid="uid://djr715jyo8uk5" path="res://Scenes/Phone/phone.gd" id="1_ynqvl"]
-[ext_resource type="Texture2D" uid="uid://bj7eb3nunrr1c" path="res://Assets/Images/Phone/placeholders/phone_base.png" id="2_2rb1k"]
-[ext_resource type="Texture2D" uid="uid://cnvj4ca8xev13" path="res://Assets/Images/Phone/placeholders/phone_call_list.png" id="3_4b8e6"]
-[ext_resource type="Texture2D" uid="uid://c6is22s65fn7o" path="res://Assets/Images/Phone/placeholders/phone_call_mom.png" id="4_5hanu"]
-[ext_resource type="Texture2D" uid="uid://d3bn3ailvwo8m" path="res://Assets/Images/Phone/placeholders/phone_no_internet.png" id="5_ihdxy"]
-[ext_resource type="Texture2D" uid="uid://bmt24vxd16asq" path="res://Assets/Images/Phone/placeholders/phone_deposit.png" id="6_x2jvv"]
+[ext_resource type="Texture2D" uid="uid://b4lbktdub2rs3" path="res://Assets/Images/Phone/phone icon.png" id="2_2rb1k"]
+[ext_resource type="Texture2D" uid="uid://bxjamg2yf76na" path="res://Assets/Images/Phone/phone call list.png" id="3_4b8e6"]
+[ext_resource type="Texture2D" uid="uid://cg0lbls0j6xh6" path="res://Assets/call screen.png" id="4_51th7"]
+[ext_resource type="Texture2D" uid="uid://d3enrr0qneajr" path="res://Assets/Images/Phone/phone browser.png" id="5_2rb1k"]
+[ext_resource type="Texture2D" uid="uid://plxnwnmyxv23" path="res://Assets/Images/Phone/phone bank.png" id="6_2rb1k"]
 
 [node name="Phone" type="Node2D" unique_id=1370161008]
 script = ExtResource("1_ynqvl")
@@ -19,7 +19,6 @@ scale = Vector2(0.3, 0.3)
 metadata/_edit_use_anchors_ = true
 
 [node name="MainScreen" type="Control" parent="UI_Root" unique_id=1030673942]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -32,34 +31,34 @@ texture = ExtResource("2_2rb1k")
 
 [node name="AppBrowser" type="Button" parent="UI_Root/MainScreen" unique_id=682456213]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 163.33333
-offset_right = 366.6667
-offset_bottom = 246.66666
+offset_left = 290.0
+offset_top = 203.33333
+offset_right = 416.66666
+offset_bottom = 326.66666
 focus_mode = 0
 
 [node name="AppPower" type="Button" parent="UI_Root/MainScreen" unique_id=1730480459]
 layout_mode = 0
-offset_left = 83.33332
-offset_top = 306.66666
-offset_right = 176.66666
-offset_bottom = 390.0
+offset_left = 99.99999
+offset_top = 373.3333
+offset_right = 223.33333
+offset_bottom = 496.66666
 focus_mode = 0
 
 [node name="AppBank" type="Button" parent="UI_Root/MainScreen" unique_id=250065690]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 160.0
-offset_right = 573.3333
-offset_bottom = 253.33333
+offset_left = 470.0
+offset_top = 206.66666
+offset_right = 593.3333
+offset_bottom = 330.0
 focus_mode = 0
 
 [node name="AppPhone" type="Button" parent="UI_Root/MainScreen" unique_id=74001896]
 layout_mode = 0
-offset_left = 106.666664
-offset_top = 163.33333
-offset_right = 180.0
-offset_bottom = 233.33333
+offset_left = 96.666664
+offset_top = 203.33333
+offset_right = 220.0
+offset_bottom = 323.3333
 focus_mode = 0
 
 [node name="ContactsScreen" type="Control" parent="UI_Root" unique_id=2091893230]
@@ -76,26 +75,26 @@ texture = ExtResource("3_4b8e6")
 
 [node name="BtnMom" type="Button" parent="UI_Root/ContactsScreen" unique_id=118592933]
 layout_mode = 0
-offset_left = 56.666664
-offset_top = 256.66666
-offset_right = 663.3334
-offset_bottom = 340.0
+offset_left = 83.333336
+offset_top = 380.0
+offset_right = 583.3333
+offset_bottom = 503.33328
 focus_mode = 0
 
 [node name="BtnPolice" type="Button" parent="UI_Root/ContactsScreen" unique_id=1248933055]
 layout_mode = 0
-offset_left = 53.333332
-offset_top = 423.3333
-offset_right = 663.3333
-offset_bottom = 499.99997
+offset_left = 80.0
+offset_top = 526.6666
+offset_right = 586.6666
+offset_bottom = 643.3334
 focus_mode = 0
 
 [node name="BtnBack" type="Button" parent="UI_Root/ContactsScreen" unique_id=993493030]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 969.99994
-offset_right = 396.66666
-offset_bottom = 1066.667
+offset_left = 269.99997
+offset_top = 853.3333
+offset_right = 429.99997
+offset_bottom = 986.6667
 focus_mode = 0
 
 [node name="DialogScreen" type="Control" parent="UI_Root" unique_id=80968856]
@@ -108,21 +107,24 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("4_5hanu")
+texture = ExtResource("4_51th7")
 
 [node name="DialogText" type="Label" parent="UI_Root/DialogScreen" unique_id=1830279117]
 layout_mode = 0
-offset_left = 153.33333
-offset_top = 250.0
-offset_right = 526.6666
-offset_bottom = 346.66666
+offset_left = 120.0
+offset_top = 280.0
+offset_right = 576.6666
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BtnEndCall" type="Button" parent="UI_Root/DialogScreen" unique_id=890201537]
 layout_mode = 0
-offset_left = 253.33333
-offset_top = 786.6666
-offset_right = 420.0
-offset_bottom = 946.6666
+offset_left = 270.0
+offset_top = 783.3333
+offset_right = 436.66666
+offset_bottom = 943.3333
 focus_mode = 0
 
 [node name="BrowserScreen" type="Control" parent="UI_Root" unique_id=2110462446]
@@ -135,24 +137,18 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("5_ihdxy")
-
-[node name="NoInternetText" type="Label" parent="UI_Root/BrowserScreen" unique_id=1944123463]
-layout_mode = 0
-offset_left = 200.0
-offset_top = 260.0
-offset_right = 513.3333
-offset_bottom = 370.0
+texture = ExtResource("5_2rb1k")
 
 [node name="BtnBack" type="Button" parent="UI_Root/BrowserScreen" unique_id=188643922]
 layout_mode = 0
-offset_left = 266.66666
-offset_top = 970.0
-offset_right = 403.3333
-offset_bottom = 1066.6665
+offset_left = 263.3333
+offset_top = 846.6667
+offset_right = 416.66666
+offset_bottom = 980.0
 focus_mode = 0
 
 [node name="BankScreen" type="Control" parent="UI_Root" unique_id=788167410]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -161,34 +157,67 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("6_x2jvv")
+texture = ExtResource("6_2rb1k")
+
+[node name="Label" type="Label" parent="UI_Root/BankScreen" unique_id=1406301486]
+layout_mode = 0
+offset_left = 103.33333
+offset_top = 143.33331
+offset_right = 283.3333
+offset_bottom = 212.33331
+theme_override_font_sizes/font_size = 50
+text = "BALANCE:"
 
 [node name="BankBalance" type="Label" parent="UI_Root/BankScreen" unique_id=1190636283]
 layout_mode = 0
-offset_left = 356.66663
-offset_top = 66.666664
-offset_right = 583.3333
-offset_bottom = 133.33333
+offset_left = 296.66663
+offset_top = 143.33344
+offset_right = 523.33325
+offset_bottom = 212.33344
+theme_override_font_sizes/font_size = 50
 
 [node name="AmountInput" type="LineEdit" parent="UI_Root/BankScreen" unique_id=196463134]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 263.3333
+offset_left = 86.666664
+offset_top = 320.0
 offset_right = 576.6666
-offset_bottom = 379.99997
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 70
+placeholder_text = "0"
+alignment = 1
 
 [node name="BtnDeposit" type="Button" parent="UI_Root/BankScreen" unique_id=752128233]
 layout_mode = 0
-offset_left = 196.66666
-offset_top = 796.6666
-offset_right = 483.3333
-offset_bottom = 926.6666
+offset_left = 210.0
+offset_top = 673.3333
+offset_right = 446.66663
+offset_bottom = 786.6666
 focus_mode = 0
 
 [node name="BtnBack" type="Button" parent="UI_Root/BankScreen" unique_id=23034784]
 layout_mode = 0
-offset_left = 276.66666
-offset_top = 960.0
-offset_right = 400.00006
-offset_bottom = 1073.3333
+offset_left = 273.3333
+offset_top = 863.33325
+offset_right = 396.66675
+offset_bottom = 976.66656
 focus_mode = 0
+
+[node name="Label3" type="Label" parent="UI_Root/BankScreen" unique_id=196928689]
+layout_mode = 0
+offset_left = 96.666664
+offset_top = 250.0
+offset_right = 353.66666
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 50
+text = "ENTER MONEY:"
+
+[node name="Label2" type="Label" parent="UI_Root/BankScreen" unique_id=1825284208]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 93.33333
+offset_top = 503.33334
+offset_right = 596.66675
+offset_bottom = 644.3334
+theme_override_font_sizes/font_size = 50
+text = "DEPOSIT MONEY! WIN BIG PRIZE AT 10000 DOLLARS"
+autowrap_mode = 3

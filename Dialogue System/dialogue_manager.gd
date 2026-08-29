@@ -13,6 +13,9 @@ var is_typing: bool = false
 
 
 func show_dialog(lines: Array, speaker: String = "NPC") -> void:
+	var focus_owner = get_viewport().gui_get_focus_owner()
+	if focus_owner:
+		focus_owner.release_focus()
 	current_lines.clear()
 	for line in lines:
 		current_lines.append(str(line))
@@ -60,3 +63,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	hide()
+	$Panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$Panel/Label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$Panel/NameLabel.mouse_filter = Control.MOUSE_FILTER_IGNORE

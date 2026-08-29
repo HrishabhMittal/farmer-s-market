@@ -35,6 +35,19 @@ func _ready() -> void:
 	$UI_Root/DialogScreen/BtnEndCall.pressed.connect(show_main_screen)
 	
 	show_main_screen()
+	_remove_boxes_recursive(self)
+
+# i aint gonna sit there and remove from each component manually
+func _remove_boxes_recursive(node: Node) -> void:
+	for child in node.get_children():
+		if child is Button:
+			child.flat = true
+		elif child is LineEdit:
+			child.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
+			child.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+		
+		if child.get_child_count() > 0:
+			_remove_boxes_recursive(child)
 
 
 func show_screen(screen_node: Control) -> void:
@@ -46,27 +59,22 @@ func show_screen(screen_node: Control) -> void:
 	screen_node.show()
 
 func show_main_screen() -> void:
-	print("main screen")
 	show_screen(main_screen)
 
 
 func _on_app_phone_pressed() -> void:
-	print("phone app")
 	show_screen(contacts_screen)
 
 func _on_app_bank_pressed() -> void:
-	print("bankapp")
 	amount_input.text = ""
 	if bank_balance_label:
 		bank_balance_label.text = "Balance: %d Coins" % StateManager.bank_balance
 	show_screen(bank_screen)
 
 func _on_app_browser_pressed() -> void:
-	print("browser")
 	show_screen(browser_screen)
 
 func _on_app_power_pressed() -> void:
-	print("power")
 	AudioManager.play_sfx("Click SFX")
 	close_requested.emit()
 func _on_btn_police_pressed() -> void:
@@ -74,7 +82,7 @@ func _on_btn_police_pressed() -> void:
 		return
 	is_calling = true
 	
-	var sfx = AudioManager.play_sfx("Farm Police")
+	var sfx = AudioManager.play_ringtone("Farm Police", 2)
 	if sfx:
 		await sfx.finished
 		
@@ -98,7 +106,7 @@ func _on_btn_mom_pressed() -> void:
 		return
 	is_calling = true
 
-	var sfx = AudioManager.play_sfx("Farm Phone Mom", 2.5)
+	var sfx = AudioManager.play_ringtone("Farm Phone Mom", 1.5)
 	if sfx:
 		await sfx.finished
 
@@ -124,7 +132,7 @@ func _on_btn_deposit_pressed() -> void:
 			dialog_line = GameDialogues.BANK_DEPOSIT
 			
 		close_requested.emit()
-		DialogueManager.show_dialog([dialog_line], "Bank")
+		DialogueManager.show_dialog([dialog_line], "Bank Call")
 	else:
 		if InfocardManager:
 			InfocardManager.show_floating_text("Invalid funds!", get_global_mouse_position(), "Red")

@@ -101,8 +101,4 @@ text = "PLAY"
 layout_mode = 2
 texture = ExtResource("4_adu2g")
 
-[node name="TextureRect3" type="TextureRect" parent="right_menu_container/VBoxContainer" unique_id=1073375865]
-layout_mode = 2
-texture = ExtResource("4_adu2g")
-
 [connection signal="pressed" from="right_menu_container/VBoxContainer/TextureRect" to="right_menu_container/VBoxContainer/TextureRect" method="_on_pressed"]

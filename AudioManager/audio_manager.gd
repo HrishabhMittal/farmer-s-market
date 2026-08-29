@@ -5,7 +5,7 @@ var sfx_volume: float = 1.0
 
 var sfx_player_scene: PackedScene = preload("res://AudioManager/sfx_player.tscn")
 var sfx_players: Node
-
+var duck_tween: Tween
 # Internal state
 var active_music_player: AudioStreamPlayer
 var music_player_1: AudioStreamPlayer
@@ -94,3 +94,33 @@ func play_sfx_random_pitch(sfx_name: String, min_pitch: float = 0.8, max_pitch: 
 	if sfx_player:
 		sfx_player.pitch_scale = randf_range(min_pitch, max_pitch)
 	return sfx_player
+
+func play_ringtone(sfx_name: String, volume_multiplier: float = 1.0) -> SFXPlayer:
+	var sfx_player = play_sfx(sfx_name, volume_multiplier)
+	if sfx_player:
+		_duck_music_for_sfx(sfx_player)
+	return sfx_player
+
+func _duck_music_for_sfx(sfx_player: SFXPlayer) -> void:
+	if not active_music_player or not active_music_player.playing:
+		return
+		
+	if duck_tween and duck_tween.is_valid():
+		duck_tween.kill()
+		
+	duck_tween = create_tween()
+	var target_db = linear_to_db(music_volume * 0.1) 
+	duck_tween.tween_property(active_music_player, "volume_db", target_db, 0.4) # Fades out over 0.4s
+	
+	sfx_player.finished.connect(_unduck_music)
+
+func _unduck_music() -> void:
+	if not active_music_player or not active_music_player.playing:
+		return
+		
+	if duck_tween and duck_tween.is_valid():
+		duck_tween.kill()
+		
+	duck_tween = create_tween()
+	var target_db = linear_to_db(music_volume) 
+	duck_tween.tween_property(active_music_player, "volume_db", target_db, 1.0)
