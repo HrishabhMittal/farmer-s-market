@@ -12,7 +12,7 @@ signal close_requested
 @onready var bank_balance_label = $UI_Root/BankScreen/BankBalance
 
 var current_shop_id: String = ""
-
+var is_calling: bool = false
 func _ready() -> void:
 	
 	var current_scene = get_tree().current_scene
@@ -35,6 +35,7 @@ func _ready() -> void:
 	$UI_Root/DialogScreen/BtnEndCall.pressed.connect(show_main_screen)
 	
 	show_main_screen()
+
 
 func show_screen(screen_node: Control) -> void:
 	main_screen.hide()
@@ -68,38 +69,62 @@ func _on_app_power_pressed() -> void:
 	print("power")
 	AudioManager.play_sfx("Click SFX")
 	close_requested.emit()
-
-func _on_btn_mom_pressed() -> void:
-	show_screen(dialog_screen)
-	dialog_text.text = GameDialogues.CALL_MOM_BUSY
-	dialog_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-
 func _on_btn_police_pressed() -> void:
-	AudioManager.play_sfx("Farm Police")
-	show_screen(dialog_screen)
-	dialog_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	if is_calling: 
+		return
+	is_calling = true
+	
+	var sfx = AudioManager.play_sfx("Farm Police")
+	if sfx:
+		await sfx.finished
+		
+	var dialog_line = ""
 	
 	if current_shop_id == "":
-		dialog_text.text = GameDialogues.CALL_POLICE_NO_TARGET
+		dialog_line = GameDialogues.CALL_POLICE_NO_TARGET
 	elif not StateManager.police_called_shops.has(current_shop_id):
 		StateManager.police_called_shops.append(current_shop_id)
-		dialog_text.text = GameDialogues.CALL_POLICE
+		dialog_line = GameDialogues.CALL_POLICE
 	else:
-		dialog_text.text = "We already have an active investigation for this location."
+		dialog_line = "We already have an active investigation for this location."
+		
+	close_requested.emit()
+	DialogueManager.show_dialog([dialog_line], "Police Dispatch")
+	
+	is_calling = false
 
+func _on_btn_mom_pressed() -> void:
+	if is_calling: 
+		return
+	is_calling = true
+
+	#var sfx = AudioManager.play_sfx("need sfx", 2.5)
+	#if sfx:
+		#await sfx.finished
+
+	close_requested.emit()
+	DialogueManager.show_dialog([GameDialogues.CALL_MOM_BUSY], "Mom")
+	
+	is_calling = false
+	
 func _on_btn_deposit_pressed() -> void:
 	var amount = amount_input.text.to_int()
 	if amount > 0 and StateManager.money >= amount:
 		StateManager.money -= amount
 		StateManager.bank_balance += amount
 		amount_input.text = ""
-		if bank_balance_label: bank_balance_label.text = "Balance: %d Coins" % StateManager.bank_balance
+		if bank_balance_label:
+			bank_balance_label.text = "Balance: %d Coins" % StateManager.bank_balance
 		AudioManager.play_sfx("Buy")
-		show_screen(dialog_screen)
-		dialog_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		
+		var dialog_line = ""
 		if StateManager.bank_balance >= GameConfig.target_money:
-			dialog_text.text = GameDialogues.BANK_ENDING
+			dialog_line = GameDialogues.BANK_ENDING
 		else:
-			dialog_text.text = GameDialogues.BANK_DEPOSIT
+			dialog_line = GameDialogues.BANK_DEPOSIT
+			
+		close_requested.emit()
+		DialogueManager.show_dialog([dialog_line], "Bank")
 	else:
-		if InfocardManager: InfocardManager.show_floating_text("Invalid funds!", get_global_mouse_position(), "Red")
+		if InfocardManager:
+			InfocardManager.show_floating_text("Invalid funds!", get_global_mouse_position(), "Red")

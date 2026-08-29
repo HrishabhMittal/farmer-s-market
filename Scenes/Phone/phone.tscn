@@ -36,6 +36,7 @@ offset_left = 280.0
 offset_top = 163.33333
 offset_right = 366.6667
 offset_bottom = 246.66666
+focus_mode = 0
 
 [node name="AppPower" type="Button" parent="UI_Root/MainScreen" unique_id=1730480459]
 layout_mode = 0
@@ -43,6 +44,7 @@ offset_left = 83.33332
 offset_top = 306.66666
 offset_right = 176.66666
 offset_bottom = 390.0
+focus_mode = 0
 
 [node name="AppBank" type="Button" parent="UI_Root/MainScreen" unique_id=250065690]
 layout_mode = 0
@@ -50,6 +52,7 @@ offset_left = 490.0
 offset_top = 160.0
 offset_right = 573.3333
 offset_bottom = 253.33333
+focus_mode = 0
 
 [node name="AppPhone" type="Button" parent="UI_Root/MainScreen" unique_id=74001896]
 layout_mode = 0
@@ -57,6 +60,7 @@ offset_left = 106.666664
 offset_top = 163.33333
 offset_right = 180.0
 offset_bottom = 233.33333
+focus_mode = 0
 
 [node name="ContactsScreen" type="Control" parent="UI_Root" unique_id=2091893230]
 visible = false
@@ -76,6 +80,7 @@ offset_left = 56.666664
 offset_top = 256.66666
 offset_right = 663.3334
 offset_bottom = 340.0
+focus_mode = 0
 
 [node name="BtnPolice" type="Button" parent="UI_Root/ContactsScreen" unique_id=1248933055]
 layout_mode = 0
@@ -83,6 +88,7 @@ offset_left = 53.333332
 offset_top = 423.3333
 offset_right = 663.3333
 offset_bottom = 499.99997
+focus_mode = 0
 
 [node name="BtnBack" type="Button" parent="UI_Root/ContactsScreen" unique_id=993493030]
 layout_mode = 0
@@ -90,6 +96,7 @@ offset_left = 280.0
 offset_top = 969.99994
 offset_right = 396.66666
 offset_bottom = 1066.667
+focus_mode = 0
 
 [node name="DialogScreen" type="Control" parent="UI_Root" unique_id=80968856]
 visible = false
@@ -116,6 +123,7 @@ offset_left = 253.33333
 offset_top = 786.6666
 offset_right = 420.0
 offset_bottom = 946.6666
+focus_mode = 0
 
 [node name="BrowserScreen" type="Control" parent="UI_Root" unique_id=2110462446]
 visible = false
@@ -142,6 +150,7 @@ offset_left = 266.66666
 offset_top = 970.0
 offset_right = 403.3333
 offset_bottom = 1066.6665
+focus_mode = 0
 
 [node name="BankScreen" type="Control" parent="UI_Root" unique_id=788167410]
 anchors_preset = 0
@@ -174,6 +183,7 @@ offset_left = 196.66666
 offset_top = 796.6666
 offset_right = 483.3333
 offset_bottom = 926.6666
+focus_mode = 0
 
 [node name="BtnBack" type="Button" parent="UI_Root/BankScreen" unique_id=23034784]
 layout_mode = 0
@@ -181,3 +191,4 @@ offset_left = 276.66666
 offset_top = 960.0
 offset_right = 400.00006
 offset_bottom = 1073.3333
+focus_mode = 0

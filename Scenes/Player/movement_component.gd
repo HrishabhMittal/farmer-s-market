@@ -33,7 +33,7 @@ func handle_movement() -> void:
 		if sprite:
 			sprite.rotation = direction.angle() + (PI / 2.0)
 		if footstep_timer.is_stopped():
-			AudioManager.play_sfx_random_pitch("walk", 0.9, 1.1)
+			AudioManager.play_sfx_random_pitch("walk", 0.9, 1.1, 0.1)
 			footstep_timer.start()
 
 func _physics_process(_delta: float) -> void:
