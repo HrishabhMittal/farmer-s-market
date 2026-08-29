@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://d004rmn308asi" path="res://Scenes/Seed shop/seed_bag.tscn" id="4_2ghwr"]
 [ext_resource type="Texture2D" uid="uid://do1yxwvqyl0mv" path="res://Assets/shop bg.PNG" id="4_hvoms"]
 [ext_resource type="Texture2D" uid="uid://dtat6fwe3w2cj" path="res://Assets/Images/SeedShop/seed shop back.png" id="4_nqtbe"]
-[ext_resource type="Texture2D" uid="uid://cc2btfeiyhn2w" path="res://Assets/button_placeholder.png" id="5_5bumm"]
 [ext_resource type="PackedScene" uid="uid://bbvpswxwwqysq" path="res://Scenes/Seller/seller.tscn" id="5_6ysyn"]
 [ext_resource type="Texture2D" uid="uid://dpnnhnb3dex1k" path="res://Assets/Images/SeedShop/seed shop front.png" id="5_lsou8"]
 [ext_resource type="Texture2D" uid="uid://dsw07n2j6tktm" path="res://Assets/icon.svg" id="5_w1l5w"]
@@ -17,10 +16,15 @@
 [ext_resource type="PackedScene" uid="uid://bgymeat2al37i" path="res://Scenes/Phone/phone.tscn" id="10_7hwl2"]
 [ext_resource type="PackedScene" uid="uid://bf5mr3k6ljube" path="res://Scenes/MoneyUI/money_ui.tscn" id="10_nqtbe"]
 [ext_resource type="Texture2D" uid="uid://lr6jlo8vfknd" path="res://Assets/Images/Book/book back.png" id="10_voxf5"]
+[ext_resource type="Texture2D" uid="uid://d1nrwgflicbu" path="res://Assets/button_unpressed.png" id="14_m2dk3"]
 [ext_resource type="Texture2D" uid="uid://dc4e1uufvflth" path="res://Assets/phone_normal.png" id="14_voxf5"]
 [ext_resource type="Texture2D" uid="uid://whe0hmk5h8gg" path="res://Assets/book_normal.png" id="15_10cv3"]
 [ext_resource type="Texture2D" uid="uid://blhg87aloi1fm" path="res://Assets/phone_pressed.png" id="15_hvoms"]
+[ext_resource type="Texture2D" uid="uid://caajek1chxefn" path="res://Assets/button_pressed.png" id="15_txshc"]
 [ext_resource type="Texture2D" uid="uid://ctf481313w1og" path="res://Assets/book_pressed.png" id="16_voxf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
+size = Vector2(870, 57)
 
 [node name="seed_shop" type="Node2D" unique_id=493207101]
 script = ExtResource("1_5bumm")
@@ -39,7 +43,7 @@ texture = ExtResource("4_nqtbe")
 centered = false
 
 [node name="Seller" parent="." unique_id=1051544910 instance=ExtResource("5_6ysyn")]
-position = Vector2(728.99994, 393.99997)
+position = Vector2(798.99994, 393.99997)
 scale = Vector2(0.2, 0.2)
 
 [node name="fg" type="Sprite2D" parent="." unique_id=699400894]
@@ -78,36 +82,57 @@ position = Vector2(10, 306)
 offset_top = 8.0
 offset_right = 40.0
 offset_bottom = 8.0
+scale = Vector2(0.2, 0.2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ActionMenu" unique_id=530625625]
 layout_mode = 2
 
 [node name="BuyButton" type="TextureButton" parent="CanvasLayer/ActionMenu/VBoxContainer" unique_id=934007200]
 layout_mode = 2
-texture_normal = ExtResource("5_5bumm")
-texture_pressed = ExtResource("5_5bumm")
-texture_hover = ExtResource("5_5bumm")
-texture_disabled = ExtResource("5_5bumm")
-texture_focused = ExtResource("5_5bumm")
+texture_normal = ExtResource("14_m2dk3")
+texture_pressed = ExtResource("15_txshc")
+texture_hover = ExtResource("14_m2dk3")
+texture_disabled = ExtResource("14_m2dk3")
+texture_focused = ExtResource("14_m2dk3")
 
 [node name="Label" type="Label" parent="CanvasLayer/ActionMenu/VBoxContainer/BuyButton" unique_id=602898886]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -48.0
+offset_right = 70.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
 text = "BUY"
 
 [node name="InspectButton" type="TextureButton" parent="CanvasLayer/ActionMenu/VBoxContainer" unique_id=553330868]
 layout_mode = 2
-texture_normal = ExtResource("5_5bumm")
-texture_pressed = ExtResource("5_5bumm")
-texture_hover = ExtResource("5_5bumm")
-texture_disabled = ExtResource("5_5bumm")
-texture_focused = ExtResource("5_5bumm")
+texture_normal = ExtResource("14_m2dk3")
+texture_pressed = ExtResource("15_txshc")
+texture_hover = ExtResource("14_m2dk3")
+texture_disabled = ExtResource("14_m2dk3")
+texture_focused = ExtResource("14_m2dk3")
 
 [node name="Label" type="Label" parent="CanvasLayer/ActionMenu/VBoxContainer/InspectButton" unique_id=1571175869]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.5
+offset_top = -48.0
+offset_right = 140.5
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 70
 text = "INSPECT"
 
 [node name="PhoneIcon" type="TextureButton" parent="CanvasLayer" unique_id=1959379226]
@@ -155,10 +180,11 @@ exit_msg = "Haed back to town?"
 position = Vector2(603, 599)
 
 [node name="table" type="Area2D" parent="Table" unique_id=830019346]
-position = Vector2(0, -15)
+position = Vector2(-40, -15)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table/table" unique_id=1994552751]
-polygon = PackedVector2Array(-502, -49, 423, -58, 549, 58, -628, 54)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/table" unique_id=1955571646]
+position = Vector2(-1, 15)
+shape = SubResource("RectangleShape2D_3dp3j")
 
 [node name="shelf" type="Node2D" parent="." unique_id=996168745]
 
