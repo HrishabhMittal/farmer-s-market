@@ -55,6 +55,9 @@ func _ready():
 	phone_icon.pressed.connect(_on_phone_icon_clicked)
 	book_icon.pressed.connect(_on_book_icon_clicked)
 
+	phone.close_requested.connect(close_phone)
+
+
 func _on_phone_icon_clicked():
 	if is_phone_open: return
 	is_phone_open = true
