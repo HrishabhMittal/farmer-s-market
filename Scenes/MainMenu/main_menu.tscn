@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://iv45lm04nxv1" path="res://Assets/logo title.png" id="3_0l8wx"]
 [ext_resource type="Script" uid="uid://bqnlbefp38487" path="res://Scenes/MainMenu/texture_rect.gd" id="5_adu2g"]
 
-[node name="main_menu" type="Control" unique_id=93825119]
+[node name="main_menu" type="Control" unique_id=93825119 node_paths=PackedStringArray("play_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0l8wx")
+play_button = NodePath("right_menu_container/VBoxContainer/TextureRect")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=609043684]
 layout_mode = 1

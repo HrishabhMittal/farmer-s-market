@@ -1,11 +1,11 @@
 extends Control
 
+@export var play_button: TextureButton
+@export var settings_button: TextureButton
+@export var exit_button: TextureButton
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AudioManager.play_music("Farm Day Alternate")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
+	play_button.mouse_entered.connect(UIAnimationManager.scale_expand_shake_highlight.bind(play_button))
+	play_button.mouse_exited.connect(UIAnimationManager.scale_expand_shake_unhighlight.bind(play_button))
