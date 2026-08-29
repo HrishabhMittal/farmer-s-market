@@ -10,11 +10,11 @@ script = ExtResource("1_xc4ob")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -211.0
-offset_bottom = 52.0
+offset_left = -118.0
+offset_bottom = 89.0
 grow_horizontal = 0
 theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 40
+theme_override_constants/margin_right = 25
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=16879108]
 layout_mode = 2

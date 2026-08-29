@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cir2jjyeljass" path="res://CoreFarmSystem/barn.gd" id="11_0wb5q"]
 [ext_resource type="Script" uid="uid://d2okl80pf2hvw" path="res://CoreFarmSystem/truck.gd" id="11_61ldv"]
 [ext_resource type="Texture2D" uid="uid://bxycdp87mbsmw" path="res://Assets/Images/Farm/barn.png" id="11_ahdf5"]
+[ext_resource type="Shader" uid="uid://da6i12dibd34d" path="res://shaders/outline_shader.gdshader" id="12_53lir"]
 [ext_resource type="Texture2D" uid="uid://doleknb4h73rs" path="res://Assets/car_spritesheet.png" id="13_ahdf5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5roh6"]
@@ -684,6 +685,12 @@ size = Vector2(700, 890.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aql1o"]
 size = Vector2(439, 336)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wqrya"]
+shader = ExtResource("12_53lir")
+shader_parameter/enable_outline = true
+shader_parameter/line_color = Color(0.026562572, 1, 0, 1)
+shader_parameter/line_scale = 10.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqrya"]
 atlas = ExtResource("13_ahdf5")
 region = Rect2(0, 1221.1425, 1079.9551, 938.85754)
@@ -793,6 +800,7 @@ texture = ExtResource("11_ahdf5")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Barn" unique_id=432247528]
 position = Vector2(790, 289)
+input_pickable = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barn/StaticBody2D" unique_id=742907709]
 polygon = PackedVector2Array(-1860, -503, -1854, 65, -1234, 71, -1226, -507, -1288, -662, -1534, -840, -1787, -664)
@@ -806,12 +814,14 @@ position = Vector2(-1312.75, 1498.5)
 shape = SubResource("RectangleShape2D_aql1o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Truck" unique_id=2052935533]
+material = SubResource("ShaderMaterial_wqrya")
 position = Vector2(-1311.25, 1526.5)
 scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_wqrya")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Truck" unique_id=1015235271]
 position = Vector2(-444, 1549)
+input_pickable = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Truck/StaticBody2D" unique_id=1882604849]
 polygon = PackedVector2Array(-996, -164, -893, -219, -747, -215, -719, -178, -717, -99, -646, -97, -635, 67, -686, 87, -697, 150, -793, 161, -816, 102, -929, 98, -945, 155, -1044, 160, -1071, 113, -1128, 103, -1125, -51, -1003, -71)

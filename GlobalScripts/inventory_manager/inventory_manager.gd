@@ -61,7 +61,11 @@ func register_open_inventory(new_inventory: Inventory) -> void:
 	
 func unregister_closed_inventory(new_inventory: Inventory) -> void:
 	open_inventories.erase(new_inventory)
-	
+
+func toggle_inventory_ui(toggle_value: bool) -> void:
+	player_ui.visible = toggle_value
+	barn_ui.visible = toggle_value
+
 func close_all_uis() -> void:
 	if barn_ui:
 		barn_ui.visible = false
