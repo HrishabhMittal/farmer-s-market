@@ -45,6 +45,10 @@ window/stretch/aspect="expand"
 
 Player=""
 
+[gui]
+
+theme/custom="uid://b8c72qlb6iuj0"
+
 [input]
 
 left={
