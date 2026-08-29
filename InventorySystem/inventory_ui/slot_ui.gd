@@ -8,7 +8,6 @@ class_name SlotUI
 
 var connected_inventory: Inventory
 var slot_index: int
-
 var current_item: Item
 
 func _ready():

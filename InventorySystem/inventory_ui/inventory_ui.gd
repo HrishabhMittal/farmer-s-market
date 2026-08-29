@@ -13,7 +13,9 @@ var inventory_position: InventoryPosition
 var connected_inventory: Inventory = null
 var slots: Array[SlotUI] = []
 
-func initialize(new_connected_inventory: Inventory, new_anchor_position: InventoryPosition = InventoryPosition.LEFT) -> void:
+func initialize(new_connected_inventory: Inventory,
+				new_anchor_position: InventoryPosition = InventoryPosition.LEFT,
+				slide_direction: UIAnimationManager.SlideDirection = UIAnimationManager.SlideDirection.RIGHT) -> void:
 	connected_inventory = new_connected_inventory
 	for i in range(connected_inventory.slot_count):
 		var new_slot: Control = slot_ui_scene.instantiate()
@@ -26,6 +28,8 @@ func initialize(new_connected_inventory: Inventory, new_anchor_position: Invento
 	connected_inventory.slot_changed.connect(_on_slot_changed)
 	inventory_position = new_anchor_position
 	refresh_inventory()
+	
+	visibility_changed.connect(UIAnimationManager.slide_in.bind(self, $PanelContainer, slide_direction))
 
 func refresh_inventory() -> void:
 	for i in range(connected_inventory.slot_count):

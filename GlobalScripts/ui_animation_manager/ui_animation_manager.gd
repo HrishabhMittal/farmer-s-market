@@ -48,3 +48,45 @@ func scale_expand_shake_unhighlight(target_control_node: Control) -> void:
 	tween.tween_property(target_control_node, "rotation_degrees", 0.0, 0.15)\
 		.set_ease(Tween.EASE_OUT)\
 		.set_trans(Tween.TRANS_SINE)
+
+enum SlideDirection {LEFT, RIGHT, TOP, BOTTOM}
+func slide_in(
+	visibility_monitor_node: Node, # Which nodes visibility to monitor to trigger this (This is needed because base node of a InventoryUI is a canvaslayer)
+	target_control_node: Control,  # Which node will actually be moved for the animation
+	direction: SlideDirection = SlideDirection.LEFT, # Left means it will go from right to left direction and so on
+	duration: float = 0.30, 
+	distance_offset: float = 300.0
+) -> void:
+	if not target_control_node:
+		return
+		
+	if not visibility_monitor_node.visible:
+		return
+	
+	target_control_node.offset_transform_enabled = true
+	
+	var start_pos := Vector2.ZERO
+	var target_pos := Vector2.ZERO
+	
+	match direction:
+		SlideDirection.LEFT:
+			start_pos.x += distance_offset
+		SlideDirection.RIGHT:
+			start_pos.x -= distance_offset
+		SlideDirection.TOP:
+			start_pos.y += distance_offset
+		SlideDirection.BOTTOM:
+			start_pos.y -= distance_offset
+	
+	target_control_node.offset_transform_position = start_pos
+	target_control_node.modulate.a = 0.5
+
+	var tween := create_tween().set_parallel(true)
+	
+	tween.tween_property(target_control_node, "offset_transform_position", target_pos, duration)\
+		.set_ease(Tween.EASE_OUT)\
+		.set_trans(Tween.TRANS_CUBIC)
+		
+	tween.tween_property(target_control_node, "modulate:a", 1.0, duration * 0.60)\
+		.set_ease(Tween.EASE_OUT)\
+		.set_trans(Tween.TRANS_SINE)

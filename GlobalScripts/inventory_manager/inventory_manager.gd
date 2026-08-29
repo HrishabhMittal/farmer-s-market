@@ -15,13 +15,17 @@ func _ready():
 	StateManager.active_seed_inventory = Inventory.new(1)
 	
 	barn_ui = inventory_ui_scene.instantiate()
-	barn_ui.initialize(StateManager.barn_inventory)
+	barn_ui.initialize(StateManager.barn_inventory,
+						InventoryUI.InventoryPosition.LEFT,
+						UIAnimationManager.SlideDirection.RIGHT)
 	barn_ui.set_inventory_name("Barn")
 	add_child(barn_ui)
 	barn_ui.visible = false
 	
 	player_ui = inventory_ui_scene.instantiate()
-	player_ui.initialize(StateManager.player_inventory, InventoryUI.InventoryPosition.BOTTOM_RIGHT)
+	player_ui.initialize(StateManager.player_inventory,
+						InventoryUI.InventoryPosition.BOTTOM_RIGHT,
+						UIAnimationManager.SlideDirection.LEFT)
 	player_ui.set_inventory_name("Backpack")
 	add_child(player_ui)
 	player_ui.visible = false
