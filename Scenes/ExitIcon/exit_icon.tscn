@@ -15,13 +15,13 @@ offset_bottom = 40.0
 scale = Vector2(0.15, 0.15)
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer" unique_id=450916294]
-custom_minimum_size = Vector2(64, 64)
-custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
+offset_transform_enabled = true
 texture_normal = ExtResource("2_6nujg")
 texture_pressed = ExtResource("3_kehli")
 texture_hover = ExtResource("2_6nujg")
 texture_disabled = ExtResource("2_6nujg")
 texture_focused = ExtResource("2_6nujg")
+stretch_mode = 0
 
 [connection signal="pressed" from="MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]
