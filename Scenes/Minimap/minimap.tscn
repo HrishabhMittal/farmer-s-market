@@ -64,45 +64,59 @@ scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_3dp3j")
 frame_progress = 0.39749503
 
-[node name="building" parent="." unique_id=1659768210 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
+[node name="building" parent="." unique_id=1659768210 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
 position = Vector2(-401, 98)
 target_scene_path = "uid://dovquuowkggeg"
 player_node = NodePath("../truck")
+target = NodePath("Marker2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="building" unique_id=1562682775]
 position = Vector2(2.0000029, 0)
 scale = Vector2(0.2, 0.208)
 texture = ExtResource("6_7okmr")
 
-[node name="building2" parent="." unique_id=123550651 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
+[node name="Marker2D" type="Marker2D" parent="building" unique_id=841589645]
+position = Vector2(141, -30)
+
+[node name="building2" parent="." unique_id=123550651 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
 position = Vector2(97, -222)
 target_scene_path = "uid://cltwdgqaoah1s"
 player_node = NodePath("../truck")
+target = NodePath("Marker2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="building2" unique_id=876569237]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_12lvx")
 
-[node name="building3" parent="." unique_id=500348569 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
+[node name="Marker2D" type="Marker2D" parent="building2" unique_id=399209784]
+position = Vector2(-60, 88)
+
+[node name="building3" parent="." unique_id=500348569 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
 position = Vector2(390, -55)
 target_scene_path = "uid://bc8n8deypyq25"
 player_node = NodePath("../truck")
+target = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="building3" unique_id=2027002155]
+position = Vector2(-89, 30.999998)
+scale = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="building3" unique_id=315853722]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_8i1fv")
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1942483828]
-position = Vector2(267, -29)
-
 [node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("8_12lvx")]
 
-[node name="building4" parent="." unique_id=1418183414 node_paths=PackedStringArray("player_node") instance=ExtResource("1_ll08c")]
-position = Vector2(108, 176)
+[node name="building4" parent="." unique_id=1418183414 node_paths=PackedStringArray("player_node", "target") instance=ExtResource("1_ll08c")]
+position = Vector2(57, 230)
 player_node = NodePath("../truck")
+target = NodePath("Marker2D")
 is_home = true
 
 [node name="Sprite2D" type="Sprite2D" parent="building4" unique_id=1676936395]
 position = Vector2(12, -1)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("10_j8dva")
+
+[node name="Marker2D" type="Marker2D" parent="building4" unique_id=716315915]
+position = Vector2(-33, -124)
