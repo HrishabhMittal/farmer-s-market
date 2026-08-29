@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://ccnddi22oh7oj"]
 
-[ext_resource type="Texture2D" uid="uid://h0l1w45bh6u7" path="res://Assets/button_placeholder.png" id="1_jnkxv"]
 [ext_resource type="Script" uid="uid://b5llj6l3bui6s" path="res://GlobalScripts/ConfirmationDialogue/confirmation_dialogue.gd" id="1_u1sf1"]
+[ext_resource type="Texture2D" uid="uid://bxg7ohebrrqq7" path="res://Assets/Images/red_button.png" id="2_xxjnr"]
+[ext_resource type="Texture2D" uid="uid://c7giwdfi3atru" path="res://Assets/Images/red_button_pressed.png" id="3_2h7hn"]
+[ext_resource type="Texture2D" uid="uid://31xc7j0yqvcc" path="res://Assets/Images/red_button_highlight.png" id="4_vv868"]
+[ext_resource type="Texture2D" uid="uid://dufq0ltdpfoa1" path="res://Assets/Images/green_button.png" id="5_vv868"]
+[ext_resource type="Texture2D" uid="uid://w3clnn2dfhei" path="res://Assets/Images/green_button_pressed.png" id="6_hmjfc"]
+[ext_resource type="Texture2D" uid="uid://c165kl3vebjb4" path="res://Assets/Images/green_button_highlight.png" id="7_xn7wv"]
 
 [node name="ConfirmationDialogue" type="CanvasLayer" unique_id=21617337]
 script = ExtResource("1_u1sf1")
@@ -26,6 +31,10 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1324470903]
 layout_mode = 2
@@ -40,17 +49,18 @@ layout_mode = 2
 [node name="MessageLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1751493265]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=629945920]
 layout_mode = 2
 
 [node name="NoButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1448009374]
 layout_mode = 2
-texture_normal = ExtResource("1_jnkxv")
-texture_pressed = ExtResource("1_jnkxv")
-texture_hover = ExtResource("1_jnkxv")
-texture_disabled = ExtResource("1_jnkxv")
-texture_focused = ExtResource("1_jnkxv")
+texture_normal = ExtResource("2_xxjnr")
+texture_pressed = ExtResource("3_2h7hn")
+texture_hover = ExtResource("4_vv868")
+texture_disabled = ExtResource("2_xxjnr")
+texture_focused = ExtResource("2_xxjnr")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NoButton" unique_id=2088337189]
 layout_mode = 1
@@ -65,15 +75,16 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
 text = "NO"
 
 [node name="YesButton" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1080257466]
 layout_mode = 2
-texture_normal = ExtResource("1_jnkxv")
-texture_pressed = ExtResource("1_jnkxv")
-texture_hover = ExtResource("1_jnkxv")
-texture_disabled = ExtResource("1_jnkxv")
-texture_focused = ExtResource("1_jnkxv")
+texture_normal = ExtResource("5_vv868")
+texture_pressed = ExtResource("6_hmjfc")
+texture_hover = ExtResource("7_xn7wv")
+texture_disabled = ExtResource("5_vv868")
+texture_focused = ExtResource("5_vv868")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/YesButton" unique_id=134288609]
 layout_mode = 1
@@ -88,4 +99,8 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 32
 text = "YES"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=2049678926]
+layout_mode = 2
