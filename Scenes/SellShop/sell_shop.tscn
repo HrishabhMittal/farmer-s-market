@@ -54,6 +54,7 @@ offset_left = 423.0
 offset_top = 191.0
 offset_right = 463.0
 offset_bottom = 214.0
+theme_override_font_sizes/font_size = 30
 
 [node name="PhoneIcon" type="TextureButton" parent="CanvasLayer" unique_id=905234072]
 anchors_preset = 2

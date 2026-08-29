@@ -119,7 +119,7 @@ func refresh_shop() -> void:
 	update_price_label()
 func update_price_label() -> void:
 	if not price_label: return
-	var text = "=== Current Market Prices ===\n\n"
+	var text = "Current Market Prices\n"
 	for item_id in item_prices.keys():
 		var display_name = ItemManager.get_item(item_id).display_name
 		text += "%s: %d Coins\n" % [display_name, item_prices[item_id]]
