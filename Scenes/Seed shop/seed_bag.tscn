@@ -11,7 +11,7 @@ script = ExtResource("1_xfstm")
 [node name="bag" type="Node2D" parent="." unique_id=1973259450]
 
 [node name="place holder" type="Sprite2D" parent="bag" unique_id=1058653798]
-scale = Vector2(0.5, 0.515)
+scale = Vector2(0.1, 0.103)
 hframes = 6
 frame = 2
 

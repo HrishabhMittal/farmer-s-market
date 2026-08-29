@@ -124,7 +124,7 @@ func refresh_shop():
 		if is_scammer:
 			is_real = randf() > GameConfig.scammer_defective_ratio
 			
-		var fake_var = (randi() % 5) + 1
+		var fake_var = (randi() % 4) + 1
 		
 		# Calculate price variation
 		var seed_id = seed_item_ids[type % seed_item_ids.size()]
@@ -222,12 +222,12 @@ func _on_inspect_button_pressed() -> void:
 	action_menu.hide()
 	inspect_overlay.show()
 	inspect_sprite.texture = maximised_sheet
-	inspect_sprite.hframes = 6
+	inspect_sprite.hframes = 5
 	inspect_sprite.vframes = 5
 	if bag_on_table.is_real:
-		inspect_sprite.frame = bag_on_table.seed_type * 6 
+		inspect_sprite.frame = bag_on_table.seed_type * 5
 	else:
-		inspect_sprite.frame = (bag_on_table.seed_type * 6) + bag_on_table.fake_variant
+		inspect_sprite.frame = (bag_on_table.seed_type * 5) + bag_on_table.fake_variant
 
 func _on_inspect_overlay_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
