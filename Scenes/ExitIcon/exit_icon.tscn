@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b22me6041ndvg"]
 
-[ext_resource type="Texture2D" uid="uid://bwjr8doy0827" path="res://Assets/exit.png" id="1_2enwo"]
 [ext_resource type="Script" uid="uid://crhpx1bvdigof" path="res://Scenes/ExitIcon/exit_icon.gd" id="1_u2lpu"]
+[ext_resource type="Texture2D" uid="uid://bu6w6eselajkv" path="res://Assets/exit_normal.png" id="2_6nujg"]
+[ext_resource type="Texture2D" uid="uid://bqe50sf78sk3i" path="res://Assets/exit_pressed.png" id="3_kehli"]
 
 [node name="ExitButtonUI" type="CanvasLayer" unique_id=203447004]
 offset = Vector2(5, 5)
@@ -9,24 +10,18 @@ transform = Transform2D(1, 0, 0, 1, 5, 5)
 script = ExtResource("1_u2lpu")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1291870748]
-offset_right = 89.0
-offset_bottom = 89.0
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.15, 0.15)
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer" unique_id=450916294]
 custom_minimum_size = Vector2(64, 64)
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
-offset_transform_enabled = true
-offset_transform_visual_only = false
-texture_normal = ExtResource("1_2enwo")
-texture_pressed = ExtResource("1_2enwo")
-texture_hover = ExtResource("1_2enwo")
-texture_disabled = ExtResource("1_2enwo")
-texture_focused = ExtResource("1_2enwo")
-stretch_mode = 5
+texture_normal = ExtResource("2_6nujg")
+texture_pressed = ExtResource("3_kehli")
+texture_hover = ExtResource("2_6nujg")
+texture_disabled = ExtResource("2_6nujg")
+texture_focused = ExtResource("2_6nujg")
 
 [connection signal="pressed" from="MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]

@@ -18,6 +18,12 @@ func _process(_delta: float) -> void:
 func change_scene(next_scene_path: String):
 	if is_transitioning:
 		return
+
+	if PlayerHeldItem and not PlayerHeldItem.is_empty():
+		var held_item = PlayerHeldItem.get_held_item()
+		StateManager.player_inventory.add_item(held_item, held_item.amount)
+		PlayerHeldItem.clear_item()
+
 	is_transitioning = true
 	container.show()
 	

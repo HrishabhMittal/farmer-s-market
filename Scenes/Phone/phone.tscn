@@ -1,21 +1,179 @@
 [gd_scene format=3 uid="uid://bgymeat2al37i"]
 
-[ext_resource type="Texture2D" uid="uid://bs18mwc48aw0u" path="res://Assets/Images/Phone/phone_spritesheet.png" id="1_w0vie"]
 [ext_resource type="Script" uid="uid://djr715jyo8uk5" path="res://Scenes/Phone/phone.gd" id="1_ynqvl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dp3j"]
-size = Vector2(550, 906.6666)
+[ext_resource type="Texture2D" uid="uid://bj7eb3nunrr1c" path="res://Assets/Images/Phone/placeholders/phone_base.png" id="2_2rb1k"]
+[ext_resource type="Texture2D" uid="uid://cnvj4ca8xev13" path="res://Assets/Images/Phone/placeholders/phone_call_list.png" id="3_4b8e6"]
+[ext_resource type="Texture2D" uid="uid://c6is22s65fn7o" path="res://Assets/Images/Phone/placeholders/phone_call_mom.png" id="4_5hanu"]
+[ext_resource type="Texture2D" uid="uid://d3bn3ailvwo8m" path="res://Assets/Images/Phone/placeholders/phone_no_internet.png" id="5_ihdxy"]
+[ext_resource type="Texture2D" uid="uid://bmt24vxd16asq" path="res://Assets/Images/Phone/placeholders/phone_deposit.png" id="6_x2jvv"]
 
 [node name="Phone" type="Node2D" unique_id=1370161008]
 script = ExtResource("1_ynqvl")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=138888517]
+[node name="UI_Root" type="Control" parent="." unique_id=927736535]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_w0vie")
+metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=275592437]
-scale = Vector2(0.3, 0.3)
+[node name="MainScreen" type="Control" parent="UI_Root" unique_id=1030673942]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=455652950]
-position = Vector2(-1.6666698, 3.333322)
-shape = SubResource("RectangleShape2D_3dp3j")
+[node name="Background" type="TextureRect" parent="UI_Root/MainScreen" unique_id=740230558]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2rb1k")
+
+[node name="AppBrowser" type="Button" parent="UI_Root/MainScreen" unique_id=682456213]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 163.33333
+offset_right = 366.6667
+offset_bottom = 246.66666
+
+[node name="AppPower" type="Button" parent="UI_Root/MainScreen" unique_id=1730480459]
+layout_mode = 0
+offset_left = 83.33332
+offset_top = 306.66666
+offset_right = 176.66666
+offset_bottom = 390.0
+
+[node name="AppBank" type="Button" parent="UI_Root/MainScreen" unique_id=250065690]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 160.0
+offset_right = 573.3333
+offset_bottom = 253.33333
+
+[node name="AppPhone" type="Button" parent="UI_Root/MainScreen" unique_id=74001896]
+layout_mode = 0
+offset_left = 106.666664
+offset_top = 163.33333
+offset_right = 180.0
+offset_bottom = 233.33333
+
+[node name="ContactsScreen" type="Control" parent="UI_Root" unique_id=2091893230]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="UI_Root/ContactsScreen" unique_id=120397433]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_4b8e6")
+
+[node name="BtnMom" type="Button" parent="UI_Root/ContactsScreen" unique_id=118592933]
+layout_mode = 0
+offset_left = 56.666664
+offset_top = 256.66666
+offset_right = 663.3334
+offset_bottom = 340.0
+
+[node name="BtnPolice" type="Button" parent="UI_Root/ContactsScreen" unique_id=1248933055]
+layout_mode = 0
+offset_left = 53.333332
+offset_top = 423.3333
+offset_right = 663.3333
+offset_bottom = 499.99997
+
+[node name="BtnBack" type="Button" parent="UI_Root/ContactsScreen" unique_id=993493030]
+layout_mode = 0
+offset_left = 313.3333
+offset_top = 1000.0
+offset_right = 386.66666
+offset_bottom = 1070.0
+
+[node name="DialogScreen" type="Control" parent="UI_Root" unique_id=80968856]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="UI_Root/DialogScreen" unique_id=1602372075]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_5hanu")
+
+[node name="DialogText" type="Label" parent="UI_Root/DialogScreen" unique_id=1830279117]
+layout_mode = 0
+offset_left = 153.33333
+offset_top = 250.0
+offset_right = 526.6666
+offset_bottom = 346.66666
+
+[node name="BtnEndCall" type="Button" parent="UI_Root/DialogScreen" unique_id=890201537]
+layout_mode = 0
+offset_left = 273.3333
+offset_top = 813.3333
+offset_right = 409.99997
+offset_bottom = 916.6666
+
+[node name="BrowserScreen" type="Control" parent="UI_Root" unique_id=2110462446]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="UI_Root/BrowserScreen" unique_id=59776965]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_ihdxy")
+
+[node name="NoInternetText" type="Label" parent="UI_Root/BrowserScreen" unique_id=1944123463]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 260.0
+offset_right = 513.3333
+offset_bottom = 370.0
+
+[node name="BtnBack" type="Button" parent="UI_Root/BrowserScreen" unique_id=188643922]
+layout_mode = 0
+offset_left = 316.66666
+offset_top = 989.99994
+offset_right = 403.33334
+offset_bottom = 1076.6665
+
+[node name="BankScreen" type="Control" parent="UI_Root" unique_id=788167410]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="UI_Root/BankScreen" unique_id=1831342638]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_x2jvv")
+
+[node name="BankBalance" type="Label" parent="UI_Root/BankScreen" unique_id=1190636283]
+layout_mode = 0
+offset_left = 356.66663
+offset_top = 66.666664
+offset_right = 583.3333
+offset_bottom = 133.33333
+
+[node name="AmountInput" type="LineEdit" parent="UI_Root/BankScreen" unique_id=196463134]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 263.3333
+offset_right = 576.6666
+offset_bottom = 379.99997
+
+[node name="BtnDeposit" type="Button" parent="UI_Root/BankScreen" unique_id=752128233]
+layout_mode = 0
+offset_left = 196.66666
+offset_top = 796.6666
+offset_right = 483.3333
+offset_bottom = 926.6666
+
+[node name="BtnBack" type="Button" parent="UI_Root/BankScreen" unique_id=23034784]
+layout_mode = 0
+offset_left = 296.66666
+offset_top = 986.6666
+offset_right = 393.3333
+offset_bottom = 1080.0

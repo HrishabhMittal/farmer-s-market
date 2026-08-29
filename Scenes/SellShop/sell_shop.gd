@@ -43,6 +43,8 @@ func _ready() -> void:
 	# Hide the phone offscreen at the bottom
 	phone.position.y = 1200 
 	phone_icon.pressed.connect(_on_phone_icon_clicked)
+	
+	phone.close_requested.connect(close_phone)
 
 func _on_phone_icon_clicked():
 	if is_phone_open: return
