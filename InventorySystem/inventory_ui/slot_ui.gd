@@ -13,6 +13,9 @@ var current_item: Item
 
 func _ready():
 	gui_input.connect(_handle_gui_input)
+	
+	slot_texture_node.pivot_offset = size / 2.0 # Needed for proper highlighting
+	slot_texture_node.offset_transform_enabled = true # Needed for proper highlighting
 	mouse_entered.connect(_highlight)
 	mouse_exited.connect(_unhilight)
 
@@ -54,11 +57,24 @@ func _handle_gui_input(event: InputEvent) -> void:
 			PlayerHeldItem.pick_item(current_item, self)
 
 func _highlight() -> void:
-	if current_item:
-		AudioManager.play_sfx("item hover sfx")
-		slot_texture_node.scale = Vector2(1.2, 1.2)
-		InfocardManager.show_infocard(current_item)
+	if not current_item:
+		return
+		
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.tween_property(slot_texture_node, "offset_transform_scale", Vector2(1.2, 1.2), 0.1)
+
+	AudioManager.play_sfx("item hover sfx")
+	InfocardManager.show_infocard(current_item)
 	
 func _unhilight() -> void:
-	slot_texture_node.scale = Vector2(1.0, 1.0)
+	if not current_item:
+		return
+	
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.tween_property(slot_texture_node, "offset_transform_scale", Vector2(1.0, 1.0), 0.1)
+	
 	InfocardManager.hide_infocard()
