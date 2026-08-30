@@ -46,16 +46,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_5roh6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=940364674]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=49794609]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=2019714006]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=47103299]
 self_modulate = Color(1.4236968, 1.4236968, 1.4236968, 1)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_2dgdf")
 expand_mode = 3
 
@@ -68,21 +72,25 @@ text = "Potato"
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1750136719]
 layout_mode = 2
 size_flags_horizontal = 10
+mouse_filter = 2
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = -3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=780916508]
 layout_mode = 2
 size_flags_horizontal = 10
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=1858962934]
 self_modulate = Color(1.4236968, 1.4236968, 1.4236968, 1)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_6r6l8")
 expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=637647736]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = -6
 theme_override_constants/margin_top = -5
 

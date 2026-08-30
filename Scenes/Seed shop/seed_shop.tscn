@@ -209,10 +209,14 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 10
 script = ExtResource("24_04boa")
-inventory_button = NodePath("InventoryButton")
-control_info_button = NodePath("ControlInfoButton")
+inventory_button = NodePath("MarginContainer/InventoryButton")
+control_info_button = NodePath("MarginContainer2/ControlInfoButton")
 
-[node name="InventoryButton" type="TextureButton" parent="CanvasLayer/SideBar" unique_id=452597827]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/SideBar" unique_id=1022532343]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="InventoryButton" type="TextureButton" parent="CanvasLayer/SideBar/MarginContainer" unique_id=452597827]
 custom_minimum_size = Vector2(64, 64)
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
@@ -223,7 +227,11 @@ texture_disabled = ExtResource("25_ar7y6")
 texture_focused = ExtResource("25_ar7y6")
 stretch_mode = 0
 
-[node name="ControlInfoButton" type="TextureButton" parent="CanvasLayer/SideBar" unique_id=985397042]
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/SideBar" unique_id=1138657479]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="ControlInfoButton" type="TextureButton" parent="CanvasLayer/SideBar/MarginContainer2" unique_id=1503648803]
 custom_minimum_size = Vector2(64, 64)
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2

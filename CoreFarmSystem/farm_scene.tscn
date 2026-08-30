@@ -710,25 +710,29 @@ exit_msg = "Go visit the town?"
 offset = Vector2(-300, 0)
 transform = Transform2D(1, 0, 0, 1, -300, 0)
 
-[node name="SideBar" type="VBoxContainer" parent="MainUI" unique_id=2045405792 node_paths=PackedStringArray("inventory_button", "control_info_button")]
+[node name="SideBar" type="VBoxContainer" parent="MainUI" unique_id=440004787 node_paths=PackedStringArray("inventory_button", "control_info_button")]
 z_index = -5
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -20.0
-offset_bottom = 20.0
+offset_left = -64.0
+offset_top = -69.0
+offset_bottom = 69.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 10
 script = ExtResource("4_xbd7s")
-inventory_button = NodePath("InventoryButton")
-control_info_button = NodePath("ControlInfoButton")
+inventory_button = NodePath("MarginContainer/InventoryButton")
+control_info_button = NodePath("MarginContainer2/ControlInfoButton")
 
-[node name="InventoryButton" type="TextureButton" parent="MainUI/SideBar" unique_id=1428166160]
+[node name="MarginContainer" type="MarginContainer" parent="MainUI/SideBar" unique_id=67863139]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="InventoryButton" type="TextureButton" parent="MainUI/SideBar/MarginContainer" unique_id=415395014]
 custom_minimum_size = Vector2(64, 64)
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
@@ -739,7 +743,11 @@ texture_disabled = ExtResource("5_7w6jo")
 texture_focused = ExtResource("5_7w6jo")
 stretch_mode = 0
 
-[node name="ControlInfoButton" type="TextureButton" parent="MainUI/SideBar" unique_id=1787100619]
+[node name="MarginContainer2" type="MarginContainer" parent="MainUI/SideBar" unique_id=35006599]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="ControlInfoButton" type="TextureButton" parent="MainUI/SideBar/MarginContainer2" unique_id=1856816844]
 custom_minimum_size = Vector2(64, 64)
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
