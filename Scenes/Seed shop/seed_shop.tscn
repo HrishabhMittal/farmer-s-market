@@ -236,7 +236,7 @@ stretch_mode = 0
 
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("9_6qx44")]
 target_scene_path = "uid://bykas3tdowgd8"
-exit_msg = "Haed back to town?"
+exit_msg = "Head back to town?"
 
 [node name="MoneyUI" parent="." unique_id=1593339953 instance=ExtResource("10_nqtbe")]
 

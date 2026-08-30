@@ -3,6 +3,7 @@ extends Node
 # --- TIME ---
 var TICK_SPEED: float = 30.0
 
+
 # --- CROPS ---
 var seeds_per_bag: Dictionary = {
 	"pumpkin_seed": 10,
@@ -73,9 +74,11 @@ var crop_seed_yields: Dictionary = {
 }
 
 # --- SCAMMER / MARKET ---
+var fine_amount: int = 300
 var minimum_price_ratio: float = 0.75 
 var scammer_chance: float = 0.25
 var scammer_defective_ratio: float = 0.6 
 var scam_seller_lowball: float = 0.4 
 var target_money: int = 10000 
 var mom_ask_money_chance: float = 0.15
+var defective_seed_multiplier: float = 0.5

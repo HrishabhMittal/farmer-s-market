@@ -146,10 +146,11 @@ func load_state() -> void:
 			if missed_ticks > 0 and new_plant.has_method("process_missed_ticks"):
 				new_plant.process_missed_ticks(missed_ticks)
 
-	if not StateManager.farm_planted_tiles.is_empty():
-		farm_tile_manager.planted_tiles.clear()
-		for coord in StateManager.farm_planted_tiles:
-			farm_tile_manager.planted_tiles[coord] = StateManager.farm_planted_tiles[coord]
+	farm_tile_manager.planted_tiles.clear()
+	for child in get_children():
+		if child is FarmPlant:
+			var mapped_coord = farm_tile_manager.get_mapped_coord(child.global_position)
+			farm_tile_manager.planted_tiles[mapped_coord] = true
 			
 	for child in ItemManager.ground_item_root.get_children():
 		child.queue_free()

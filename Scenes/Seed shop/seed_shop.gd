@@ -28,6 +28,9 @@ var phone_icon_pos: Vector2
 var book_icon_pos: Vector2
 
 func _ready():
+	if StateManager.next_shop_id != "":
+		shop_id = StateManager.next_shop_id
+		StateManager.next_shop_id = ""
 	add_to_group("shop") 
 	add_to_group("save_state")
 	if has_node("Seller"):
