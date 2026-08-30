@@ -42,10 +42,15 @@ func refresh_slot(item: Item) -> void:
 
 func _handle_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("quick_inventory_transfer"):
+		var current_scene = get_tree().current_scene
+		if current_scene and current_scene.has_method("sell") and current_item:
+			current_scene.sell(current_item, self)
+			accept_event()
+			return
+			
 		if connected_inventory.is_quick_transfer_allowed:
 			InventoryManager.quick_transfer_item(self)
 		accept_event()
-	
 	if event.is_action_pressed("right click"):
 		if current_stack_split_ui:
 			current_stack_split_ui.close_ui()
