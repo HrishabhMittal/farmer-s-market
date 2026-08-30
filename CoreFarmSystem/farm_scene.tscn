@@ -824,6 +824,7 @@ tile_set = SubResource("TileSet_fhu6q")
 script = ExtResource("3_wsyp5")
 
 [node name="Farmer" parent="." unique_id=1605516437 instance=ExtResource("10_miwjd")]
+z_index = 10
 position = Vector2(-454, 1606)
 scale = Vector2(0.6, 0.6)
 
