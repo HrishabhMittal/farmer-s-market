@@ -77,28 +77,38 @@ func _unhandled_input(event: InputEvent) -> void:
 		if is_phone_open:
 			close_phone()
 			get_viewport().set_input_as_handled()
-			return
-
+		return
+		
+	# Handle selling items dropped from the mouse
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if PlayerHeldItem and not PlayerHeldItem.is_empty():
-			var held_item = PlayerHeldItem.get_held_item()
-			if held_item and held_item.item_data:
-				if ItemTypes.ItemType.VEGETABLE in held_item.item_data.item_type:
-					# removed this, too annoying
-					#var is_confirmed = await ConfirmationDialogue.ask_confirmation("Sell?")
-					#if is_confirmed:
-					var item_id = held_item.item_data.item_id
-					var unit_price = item_prices.get(item_id, held_item.item_data.value)
-					var total_sale = unit_price * held_item.amount
-					StateManager.money += total_sale
-					AudioManager.play_sfx("Sell")
-					if InfocardManager:
-						InfocardManager.show_floating_text("+%d Coins" % total_sale, get_global_mouse_position(), "Green")
-					PlayerHeldItem.clear_item()
-				else:
-					if InfocardManager:
-						InfocardManager.show_floating_text("Can only sell crops!", get_global_mouse_position(), "Red")
-					get_viewport().set_input_as_handled()
+			sell(PlayerHeldItem.get_held_item())
+			get_viewport().set_input_as_handled()
+
+func sell(item: Item, source_slot = null) -> void:
+	if not item or not item.item_data:
+		return
+		
+	if ItemTypes.ItemType.VEGETABLE in item.item_data.item_type:
+		var item_id = item.item_data.item_id
+		var unit_price = item_prices.get(item_id, item.item_data.value)
+		var total_sale = unit_price * item.amount
+		StateManager.money += total_sale
+		AudioManager.play_sfx("Sell")
+		
+		if InfocardManager:
+			var pos = source_slot.global_position if source_slot else get_global_mouse_position()
+			InfocardManager.show_floating_text("+%d Coins" % total_sale, pos, "Green")
+			
+		if source_slot:
+			source_slot.connected_inventory.replace_item(null, source_slot.slot_index)
+			InfocardManager.hide_infocard()
+		else:
+			PlayerHeldItem.clear_item()
+	else:
+		if InfocardManager:
+			var pos = source_slot.global_position if source_slot else get_global_mouse_position()
+			InfocardManager.show_floating_text("Can only sell crops!", pos, "Red")
 
 func _exit_tree() -> void:
 	save_state()
