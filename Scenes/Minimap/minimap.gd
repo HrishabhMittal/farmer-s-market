@@ -54,6 +54,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		if is_phone_open:
 			close_phone()
 			get_viewport().set_input_as_handled()
+			
+	# Consume all unhandled input
+	# get_viewport().set_input_as_handled() # It's disabling dialogue input
 
 func ask_mom_money():
 	DialogueManager.show_dialog([GameDialogues.MOM_ASK_MONEY], "Mom")

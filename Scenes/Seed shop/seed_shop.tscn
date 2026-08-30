@@ -26,6 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://iov8kbojiiar" path="res://Assets/Images/Buttons/book_unpressed.png" id="18_fwdn7"]
 [ext_resource type="Texture2D" uid="uid://31xc7j0yqvcc" path="res://Assets/Images/red_button_highlight.png" id="19_04boa"]
 [ext_resource type="Texture2D" uid="uid://itf56v4lentt" path="res://Assets/Images/Buttons/book_pressed.png" id="19_m2dk3"]
+[ext_resource type="Script" uid="uid://c4r41nj14jbhw" path="res://CoreFarmSystem/side_bar.gd" id="24_04boa"]
+[ext_resource type="Texture2D" uid="uid://qx6dt23aiarx" path="res://Assets/Images/Buttons/inventory_unpressed.png" id="25_ar7y6"]
+[ext_resource type="Texture2D" uid="uid://b27mot8on6vg1" path="res://Assets/Images/Buttons/inventory_pressed.png" id="26_rx5m7"]
+[ext_resource type="Texture2D" uid="uid://dws3ueoq2qko1" path="res://Assets/Images/Buttons/info_unpressed.png" id="27_gfv6d"]
+[ext_resource type="Texture2D" uid="uid://dnbijokxwr4ms" path="res://Assets/Images/Buttons/info_pressed.png" id="28_0b3vv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqjoi"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -148,22 +153,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PhoneIcon" type="TextureButton" parent="CanvasLayer" unique_id=1959379226]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -128.0
-offset_right = 128.0
+offset_left = 4.0
+offset_top = -68.0
+offset_right = 68.0
+offset_bottom = -4.0
 grow_vertical = 0
-scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(10, -10)
 pivot_offset_ratio = Vector2(0, 1)
+offset_transform_enabled = true
 texture_normal = ExtResource("16_fwdn7")
 texture_pressed = ExtResource("17_m2dk3")
 texture_hover = ExtResource("16_fwdn7")
 texture_disabled = ExtResource("16_fwdn7")
 texture_focused = ExtResource("16_fwdn7")
+stretch_mode = 0
 
 [node name="BookIcon" type="TextureButton" parent="CanvasLayer" unique_id=139514709]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -181,6 +192,47 @@ texture_pressed = ExtResource("19_m2dk3")
 texture_hover = ExtResource("18_fwdn7")
 texture_disabled = ExtResource("18_fwdn7")
 texture_focused = ExtResource("18_fwdn7")
+
+[node name="SideBar" type="VBoxContainer" parent="CanvasLayer" unique_id=205817330 node_paths=PackedStringArray("inventory_button", "control_info_button")]
+z_index = -5
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -69.0
+offset_bottom = 69.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+script = ExtResource("24_04boa")
+inventory_button = NodePath("InventoryButton")
+control_info_button = NodePath("ControlInfoButton")
+only_inventory_button_is_active = true
+
+[node name="InventoryButton" type="TextureButton" parent="CanvasLayer/SideBar" unique_id=452597827]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("25_ar7y6")
+texture_pressed = ExtResource("26_rx5m7")
+texture_hover = ExtResource("25_ar7y6")
+texture_disabled = ExtResource("25_ar7y6")
+texture_focused = ExtResource("25_ar7y6")
+stretch_mode = 0
+
+[node name="ControlInfoButton" type="TextureButton" parent="CanvasLayer/SideBar" unique_id=985397042]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("27_gfv6d")
+texture_pressed = ExtResource("28_0b3vv")
+texture_hover = ExtResource("27_gfv6d")
+texture_disabled = ExtResource("27_gfv6d")
+texture_focused = ExtResource("27_gfv6d")
+stretch_mode = 0
 
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("9_6qx44")]
 target_scene_path = "uid://bykas3tdowgd8"

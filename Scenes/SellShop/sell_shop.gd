@@ -45,6 +45,9 @@ func _ready() -> void:
 	if not StateManager.visited_scenes.get("sell_shop", false):
 		StateManager.visited_scenes["sell_shop"] = true
 		DialogueManager.show_dialog([GameDialogues.MOM_SELL_SHOP], "Mom")
+		
+	phone_icon.mouse_entered.connect(UIAnimationManager.scale_expand_highlight.bind(phone_icon))
+	phone_icon.mouse_exited.connect(UIAnimationManager.scale_expand_unhighlight.bind(phone_icon))
 
 func _on_phone_icon_clicked():
 	if is_phone_open: return

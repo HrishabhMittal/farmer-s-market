@@ -62,13 +62,16 @@ offset_bottom = 214.0
 theme_override_font_sizes/font_size = 30
 
 [node name="PhoneIcon" type="TextureButton" parent="CanvasLayer" unique_id=905234072]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -128.0
-offset_right = 128.0
+offset_left = 4.0
+offset_top = -68.0
+offset_right = 68.0
+offset_bottom = -4.0
 grow_vertical = 0
-scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(10, -10)
 pivot_offset_ratio = Vector2(0, 1)
 texture_normal = ExtResource("9_2hb4f")
@@ -76,6 +79,7 @@ texture_pressed = ExtResource("10_6uq2t")
 texture_hover = ExtResource("9_2hb4f")
 texture_disabled = ExtResource("9_2hb4f")
 texture_focused = ExtResource("9_2hb4f")
+stretch_mode = 0
 
 [node name="SideBar" type="VBoxContainer" parent="CanvasLayer" unique_id=104013555 node_paths=PackedStringArray("inventory_button", "control_info_button")]
 z_index = -5
