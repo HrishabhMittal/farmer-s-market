@@ -10,7 +10,9 @@ var connected_inventory: Inventory
 var slot_index: int
 var current_item: Item
 var marked_as_seed_slot: bool = false
+
 var current_inspection_ui: SeedInspectionUI
+var current_stack_split_ui: StackSplitUI
 
 func _ready():
 	gui_input.connect(_handle_gui_input)
@@ -45,12 +47,16 @@ func _handle_gui_input(event: InputEvent) -> void:
 		accept_event()
 	
 	if event.is_action_pressed("right click"):
+		if current_stack_split_ui:
+			current_stack_split_ui.close_ui()
+			return
+		
 		# Only allowed when there is no item on mouse pointer
 		if not current_item or not PlayerHeldItem.is_empty():
 			return
 		
 		# Show stack split prompt
-		InfocardManager.show_stack_split_ui(self)
+		current_stack_split_ui = InfocardManager.show_stack_split_ui(self)
 	
 	# Actually it can be used to inspect any item
 	if event.is_action_pressed("inspect_item_inventory"):

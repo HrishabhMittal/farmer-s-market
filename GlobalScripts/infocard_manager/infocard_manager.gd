@@ -25,11 +25,13 @@ func show_floating_text(text: String, text_position: Vector2, text_color: String
 
 
 @export var stack_split_ui_scene: PackedScene
-func show_stack_split_ui(slot_ui: SlotUI) -> void:
+func show_stack_split_ui(slot_ui: SlotUI) -> StackSplitUI:
 	var new_stack_split_ui: StackSplitUI = stack_split_ui_scene.instantiate()
 	add_child(new_stack_split_ui)
 	new_stack_split_ui.initialize(slot_ui)
 	new_stack_split_ui.global_position = get_viewport().get_mouse_position()
+	
+	return new_stack_split_ui
 	
 @export var seed_inspection_ui_scene: PackedScene
 func show_seed_inspection_ui(seed: Item) -> SeedInspectionUI:

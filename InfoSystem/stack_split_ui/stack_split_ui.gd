@@ -34,4 +34,7 @@ func accept_split(slot_ui: SlotUI) -> void:
 	
 func _unhandled_input(event):
 	if event.is_action_pressed("left click") or event.is_action_pressed("right click"):
-		call_deferred("queue_free")
+		close_ui()
+
+func close_ui() -> void:
+	call_deferred("queue_free")
