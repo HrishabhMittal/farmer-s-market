@@ -82,6 +82,10 @@ func _on_btn_police_pressed() -> void:
 		return
 	is_calling = true
 	
+	var current_scene = get_tree().current_scene
+	if current_scene and "shop_id" in current_scene:
+		current_shop_id = current_scene.shop_id
+	
 	var sfx = AudioManager.play_ringtone("Farm Police", 2)
 	if sfx:
 		await sfx.finished

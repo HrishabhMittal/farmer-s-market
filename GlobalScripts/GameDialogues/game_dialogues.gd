@@ -31,4 +31,4 @@ const BANK_DEPOSIT = "Ah, right on schedule! Another fine deposit toward your ul
 const BANK_ENDING = "Thank you for your final deposit! Your loyalty tier has officially been processed... Wait, what's that sound? Ah, security! Grab the cash bags and start the getaway vehicle, boss! Thanks for funding our early retirement, farmer. Trust no one."
 
 const CALL_MOM_BUSY = "[You dial your mother’s number, but a sharp, rhythmic busy tone drones in your ear. The line is constantly engaged—she’s probably talking the ear off someone else.]"
-const CALL_POLICE = "Dispatch, this is the farm up on the ridge. I’d like to file an official report on a merchant operating in the market. Their ledger and pricing don't add up, and I suspect foul play. Please send an officer to check them out."
+const CALL_POLICE = "Police Dispatch. We read you loud and clear. We've logged your official report regarding the suspicious merchant. An officer will be dispatched to the market to investigate their goods for foul play. We will have him replaced by tomorrow."
