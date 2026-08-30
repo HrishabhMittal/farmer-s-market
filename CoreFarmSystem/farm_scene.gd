@@ -174,3 +174,10 @@ func _unhandled_input(event: InputEvent) -> void:
 					tool_manager.tool_selected.emit($ToolBar/HBoxContainer/WateringCan)
 			KEY_4:
 				select_seed_slot()
+	
+	# If player has something on the mouse cursor and clicks on a empty tile, it will drop the item
+	if event.is_action_pressed("left click") and not PlayerHeldItem.is_empty():
+		var mouse_pos := get_global_mouse_position()
+		if farm_tile_manager.get_tile_type(mouse_pos) != "none":
+			ItemManager.spawn_ground_item(PlayerHeldItem.get_held_item(), PlayerHeldItem.get_held_item().amount, mouse_pos)
+			PlayerHeldItem.clear_item()
