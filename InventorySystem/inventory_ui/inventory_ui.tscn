@@ -28,7 +28,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="InventoryUi" type="CanvasLayer" unique_id=1716554813 node_paths=PackedStringArray("slot_anchor", "close_button")]
-layer = 2
+layer = 4
 script = ExtResource("1_7hq4x")
 slot_ui_scene = ExtResource("2_xha1v")
 slot_anchor = NodePath("PanelContainer/VBoxContainer/PanelContainer/ScrollContainer/GridContainer")

@@ -80,6 +80,7 @@ func _handle_gui_input(event: InputEvent) -> void:
 				current_scene.select_seed_slot()
 			return
 		PlayerHeldItem.pick_item(current_item, self)
+		InfocardManager.hide_infocard()
 		
 	if event.is_action_pressed("right click"):
 		accept_event()
