@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b4lbktdub2rs3" path="res://Assets/Images/Phone/phone icon.png" id="2_2rb1k"]
 [ext_resource type="Texture2D" uid="uid://bxjamg2yf76na" path="res://Assets/Images/Phone/phone call list.png" id="3_4b8e6"]
 [ext_resource type="Texture2D" uid="uid://cg0lbls0j6xh6" path="res://Assets/call screen.png" id="4_51th7"]
-[ext_resource type="Texture2D" uid="uid://d3enrr0qneajr" path="res://Assets/Images/Phone/phone browser.png" id="5_2rb1k"]
-[ext_resource type="Texture2D" uid="uid://plxnwnmyxv23" path="res://Assets/Images/Phone/phone bank.png" id="6_2rb1k"]
+[ext_resource type="Texture2D" uid="uid://buayxily1hqwo" path="res://Assets/no internet screen.png" id="5_2rb1k"]
+[ext_resource type="Texture2D" uid="uid://cxl1jlxe6a10g" path="res://Assets/bank screen.png" id="6_2rb1k"]
 
 [node name="Phone" type="Node2D" unique_id=1370161008]
 script = ExtResource("1_ynqvl")
@@ -19,6 +19,7 @@ scale = Vector2(0.3, 0.3)
 metadata/_edit_use_anchors_ = true
 
 [node name="MainScreen" type="Control" parent="UI_Root" unique_id=1030673942]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -139,12 +140,22 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_2rb1k")
 
+[node name="Label" type="Label" parent="UI_Root/BrowserScreen" unique_id=1635540847]
+layout_mode = 0
+offset_left = 173.33334
+offset_top = 569.99994
+offset_right = 515.3334
+offset_bottom = 664.99994
+theme_override_colors/font_color = Color(0.3019608, 0.44313726, 0.58431375, 1)
+theme_override_font_sizes/font_size = 70
+text = "NO INTERNET"
+
 [node name="BtnBack" type="Button" parent="UI_Root/BrowserScreen" unique_id=188643922]
 layout_mode = 0
-offset_left = 263.3333
-offset_top = 846.6667
-offset_right = 416.66666
-offset_bottom = 980.0
+offset_left = 249.99998
+offset_top = 870.0
+offset_right = 403.3333
+offset_bottom = 1003.3333
 focus_mode = 0
 
 [node name="BankScreen" type="Control" parent="UI_Root" unique_id=788167410]
@@ -159,65 +170,56 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_2rb1k")
 
-[node name="Label" type="Label" parent="UI_Root/BankScreen" unique_id=1406301486]
-layout_mode = 0
-offset_left = 103.33333
-offset_top = 143.33331
-offset_right = 283.3333
-offset_bottom = 212.33331
-theme_override_font_sizes/font_size = 50
-text = "BALANCE:"
-
 [node name="BankBalance" type="Label" parent="UI_Root/BankScreen" unique_id=1190636283]
 layout_mode = 0
-offset_left = 296.66663
-offset_top = 143.33344
-offset_right = 523.33325
-offset_bottom = 212.33344
+offset_left = 99.999985
+offset_top = 143.33333
+offset_right = 326.66663
+offset_bottom = 212.33333
 theme_override_font_sizes/font_size = 50
 
 [node name="AmountInput" type="LineEdit" parent="UI_Root/BankScreen" unique_id=196463134]
 layout_mode = 0
 offset_left = 86.666664
-offset_top = 320.0
-offset_right = 576.6666
-offset_bottom = 460.0
+offset_top = 343.3333
+offset_right = 596.6666
+offset_bottom = 483.33328
 theme_override_font_sizes/font_size = 70
 placeholder_text = "0"
 alignment = 1
 
 [node name="BtnDeposit" type="Button" parent="UI_Root/BankScreen" unique_id=752128233]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 673.3333
-offset_right = 446.66663
-offset_bottom = 786.6666
+offset_left = 206.66664
+offset_top = 656.6666
+offset_right = 456.66663
+offset_bottom = 800.0
 focus_mode = 0
 
 [node name="BtnBack" type="Button" parent="UI_Root/BankScreen" unique_id=23034784]
 layout_mode = 0
-offset_left = 273.3333
+offset_left = 266.66666
 offset_top = 863.33325
-offset_right = 396.66675
+offset_right = 390.0001
 offset_bottom = 976.66656
 focus_mode = 0
 
 [node name="Label3" type="Label" parent="UI_Root/BankScreen" unique_id=196928689]
 layout_mode = 0
-offset_left = 96.666664
-offset_top = 250.0
-offset_right = 353.66666
-offset_bottom = 319.0
+offset_left = 93.33333
+offset_top = 256.66666
+offset_right = 361.3333
+offset_bottom = 325.66666
 theme_override_font_sizes/font_size = 50
 text = "ENTER MONEY:"
 
 [node name="Label2" type="Label" parent="UI_Root/BankScreen" unique_id=1825284208]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 0
-offset_left = 93.33333
-offset_top = 503.33334
-offset_right = 596.66675
-offset_bottom = 644.3334
+offset_left = 100.0
+offset_top = 493.3333
+offset_right = 603.3335
+offset_bottom = 634.3334
 theme_override_font_sizes/font_size = 50
 text = "DEPOSIT MONEY! WIN BIG PRIZE AT 10000 DOLLARS"
 autowrap_mode = 3
