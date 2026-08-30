@@ -19,6 +19,7 @@ signal farm_tilemanager_ready(farmtile_manager: FarmTileManager)
 @warning_ignore_restore("unused_signal")
 
 var tick_timer: Timer
+var one_second_timer: Timer
 
 func _ready():
 	tick_timer = Timer.new()
@@ -26,3 +27,9 @@ func _ready():
 	tick_timer.autostart = true
 	tick_timer.timeout.connect(func(): global_growth_tick.emit())
 	add_child(tick_timer)
+	
+	# To update the grow_bar of plants
+	one_second_timer = Timer.new()
+	one_second_timer.wait_time = 1.0
+	one_second_timer.autostart = true
+	add_child(one_second_timer)
