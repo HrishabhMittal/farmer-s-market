@@ -1,7 +1,7 @@
 extends Node
 
 # --- TIME ---
-var TICK_SPEED: float = 30.0
+var TICK_SPEED: float = 5.0
 
 
 # --- CROPS ---

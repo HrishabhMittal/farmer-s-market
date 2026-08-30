@@ -13,12 +13,13 @@ func hide_farmplant_infocard() -> void:
 	%FarmplantInfocard.hide_infocard()
 
 @export var floating_text_scene: PackedScene
-func show_floating_text(text: String, text_position: Vector2, text_color: String = "Green") -> void:
+func show_floating_text(text: String, text_position: Vector2, text_color: String = "Green", new_font_size: int = 40, new_duration: float = 0.8, position_randomization_strength: int = 0) -> void:
 	var new_floating_text := floating_text_scene.instantiate()
-	new_floating_text.initialize(text, text_color)
+	new_floating_text.initialize(text, text_color, new_font_size, new_duration)
 	
 	var screen_pos = get_viewport().get_canvas_transform() * text_position # Needs to adjust for the zoom because the root is a canvaslayer
-	new_floating_text.global_position = screen_pos
+	#new_floating_text.global_position = screen_pos
+	new_floating_text.global_position = screen_pos + Vector2(randi_range(-1*position_randomization_strength, position_randomization_strength), randi_range(-1*position_randomization_strength, position_randomization_strength))
 	
 	add_child(new_floating_text)
 	new_floating_text.animate()
