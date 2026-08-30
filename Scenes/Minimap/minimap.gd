@@ -35,10 +35,9 @@ func _on_phone_icon_clicked():
 	if is_phone_open:
 		return
 	is_phone_open = true
-	
 	var tween = create_tween().set_parallel(true)
 
-	tween.tween_property(phone_icon, "position:x", phone_icon_pos.x + 100.0, 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_property(phone_icon, "position:x", phone_icon_pos.x - 100.0, 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	tween.tween_property(phone_icon, "modulate:a", 0.0, 0.4)
 
 	tween.tween_property(phone, "position:y", phone_original_pos.y, 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
@@ -47,7 +46,6 @@ func close_phone():
 	if not is_phone_open:
 		return
 	is_phone_open = false
-	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(phone, "position:y", 1200.0, 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	tween.tween_property(phone_icon, "position:x", phone_icon_pos.x, 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)

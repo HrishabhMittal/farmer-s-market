@@ -55,7 +55,7 @@ func _on_phone_icon_clicked():
 	
 	var tween = create_tween().set_parallel(true)
 	# Icon slides right and fades out
-	tween.tween_property(phone_icon, "position:x", phone_icon_pos.x + 100.0, 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_property(phone_icon, "position:x", phone_icon_pos.x - 100.0, 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	tween.tween_property(phone_icon, "modulate:a", 0.0, 0.4)
 	# Phone pops up from bottom
 	tween.tween_property(phone, "position:y", phone_original_pos.y, 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
