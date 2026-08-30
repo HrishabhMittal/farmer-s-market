@@ -32,7 +32,7 @@ func _ready():
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):
-		if get_tree().current_scene and get_tree().current_scene.name in ["FarmScene", "SellShop"]:
+		if get_tree().current_scene and get_tree().current_scene.name in ["FarmScene", "SellShop", "seed_shop", "minimap"]:
 			if player_ui:
 				if player_ui.visible:
 					AudioManager.play_sfx("close menu sfx")

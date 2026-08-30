@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b27mot8on6vg1" path="res://Assets/Images/Buttons/inventory_pressed.png" id="13_mivnd"]
 [ext_resource type="Texture2D" uid="uid://dws3ueoq2qko1" path="res://Assets/Images/Buttons/info_unpressed.png" id="14_cdccw"]
 [ext_resource type="Texture2D" uid="uid://dnbijokxwr4ms" path="res://Assets/Images/Buttons/info_pressed.png" id="15_8hoow"]
-[ext_resource type="Texture2D" uid="uid://de6ra11vopyn7" path="res://Assets/Images/infocard.png" id="16_uxg6y"]
+[ext_resource type="Texture2D" uid="uid://bgsnwov50jc2w" path="res://Assets/sell_shop_card.png" id="16_uxg6y"]
 
 [node name="SellShop" type="Node2D" unique_id=1734394036]
 script = ExtResource("1_1lxjk")

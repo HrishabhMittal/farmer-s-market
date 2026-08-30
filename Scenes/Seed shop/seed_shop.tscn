@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://b27mot8on6vg1" path="res://Assets/Images/Buttons/inventory_pressed.png" id="26_rx5m7"]
 [ext_resource type="Texture2D" uid="uid://dws3ueoq2qko1" path="res://Assets/Images/Buttons/info_unpressed.png" id="27_gfv6d"]
 [ext_resource type="Texture2D" uid="uid://dnbijokxwr4ms" path="res://Assets/Images/Buttons/info_pressed.png" id="28_0b3vv"]
-[ext_resource type="Texture2D" uid="uid://de6ra11vopyn7" path="res://Assets/Images/infocard.png" id="29_ar7y6"]
+[ext_resource type="Texture2D" uid="uid://co08w6gxo2rxr" path="res://Assets/seed_shop_card.png" id="29_ar7y6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqjoi"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

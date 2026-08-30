@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 	if not StateManager.visited_scenes.get("minimap", false):
 		StateManager.visited_scenes["minimap"] = true
-		DialogueManager.show_dialog([GameDialogues.MOM_MINIMAP], "Mom")
+		DialogueManager.show_dialog(GameDialogues.MOM_MINIMAP, "Mom")
 	elif randf() <= GameConfig.mom_ask_money_chance:
 		ask_mom_money()
 		

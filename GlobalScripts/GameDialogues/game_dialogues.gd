@@ -1,7 +1,10 @@
 extends Node
 
-const MOM_MINIMAP = "Hey sweetheart! Just making sure you settled in okay. Remember, you can use the minimap to get around—just click on any building to head straight there. Oh, and don't forget to sleep in your bed every night to start a fresh day!"
-const MOM_FARM = ["You're actually farming? That's cute. By the way, use keys 1 through 4 or click to switch your tools. Press I for your inventory, and if you want to use the barn for storage, just stand right next to it with your inventory open.", "Also, just a quick tip so you don’t get lost: you actually have to put seeds into your tool slot to plant them. And they won't grow an inch unless you water them every day, alright?"]
+const MOM_MINIMAP = [
+	"Hey sweetheart! Just making sure you settled in okay. Remember, you can use the minimap to get around—just click on any building to head straight there. Oh, and don't forget to sleep in your bed every night to start a fresh day!",
+	"I've also made some handy infocards for you so you don't get lost, just click the info icon on the side! And oh, have you heard about the amazing FARMBOT 9000? Just deposit 10,000 coins in the bank to get it! You do know how to use your phone, right?"
+]
+const MOM_FARM = ["You're actually commited to farming? That's cute. By the way, use keys 1 through 4 or click to switch your tools. Press I for your inventory, and if you want to use the barn for storage, just stand right next to it with your inventory open.", "Also, just a quick tip so you don’t get lost: you actually have to put seeds into your tool slot to plant them. And they won't grow an inch unless you water them every day, alright?"]
 const MOM_SELL_SHOP = "Oh, you're heading to the market to sell your harvest? Just remember to drag items right out of your inventory to sell them for whatever price is advertised on the board. And hey, if you genuinely feel like a merchant is ripping you off hard, call the police—they'll investigate and get the crook arrested by the next day."
 const MOM_SEED_SHOP = "Buying seeds can be tricky around here. Make sure to look closely into the reference book on the counter so you don't get swindled. And keep in mind, they only restock their seed stock tomorrow!"
 

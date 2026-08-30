@@ -14,6 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://b1e5w1pw4ifa4" path="res://Assets/Images/Buttons/phone_unpressed.png" id="12_sxj1a"]
 [ext_resource type="Texture2D" uid="uid://bdda6qqk88itr" path="res://Assets/Images/Buttons/phone_pressed.png" id="13_2t02g"]
 [ext_resource type="PackedScene" uid="uid://b22me6041ndvg" path="res://Scenes/ExitIcon/exit_icon.tscn" id="14_sxj1a"]
+[ext_resource type="Script" uid="uid://c4r41nj14jbhw" path="res://CoreFarmSystem/side_bar.gd" id="14_vmftf"]
+[ext_resource type="Texture2D" uid="uid://qx6dt23aiarx" path="res://Assets/Images/Buttons/inventory_unpressed.png" id="15_ewvxy"]
+[ext_resource type="Texture2D" uid="uid://b27mot8on6vg1" path="res://Assets/Images/Buttons/inventory_pressed.png" id="16_ocmmo"]
+[ext_resource type="Texture2D" uid="uid://dws3ueoq2qko1" path="res://Assets/Images/Buttons/info_unpressed.png" id="17_5k47v"]
+[ext_resource type="Texture2D" uid="uid://dnbijokxwr4ms" path="res://Assets/Images/Buttons/info_pressed.png" id="18_3vbkp"]
+[ext_resource type="Texture2D" uid="uid://csdf2ul1n7iyp" path="res://Assets/minimap_card.png" id="19_ibvgr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8dva"]
 atlas = ExtResource("4_7okmr")
@@ -179,6 +185,67 @@ texture_hover = ExtResource("12_sxj1a")
 texture_disabled = ExtResource("12_sxj1a")
 texture_focused = ExtResource("12_sxj1a")
 stretch_mode = 0
+
+[node name="SideBar" type="VBoxContainer" parent="CanvasLayer" unique_id=1332204058 node_paths=PackedStringArray("inventory_button", "control_info_button")]
+z_index = -5
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -69.0
+offset_bottom = 69.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+script = ExtResource("14_vmftf")
+inventory_button = NodePath("MarginContainer/InventoryButton")
+control_info_button = NodePath("MarginContainer2/ControlInfoButton")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/SideBar" unique_id=936055895]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="InventoryButton" type="TextureButton" parent="CanvasLayer/SideBar/MarginContainer" unique_id=852751886]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("15_ewvxy")
+texture_pressed = ExtResource("16_ocmmo")
+texture_hover = ExtResource("15_ewvxy")
+texture_disabled = ExtResource("15_ewvxy")
+texture_focused = ExtResource("15_ewvxy")
+stretch_mode = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/SideBar" unique_id=665856584]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="ControlInfoButton" type="TextureButton" parent="CanvasLayer/SideBar/MarginContainer2" unique_id=1135959843]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("17_5k47v")
+texture_pressed = ExtResource("18_3vbkp")
+texture_hover = ExtResource("17_5k47v")
+texture_disabled = ExtResource("17_5k47v")
+texture_focused = ExtResource("17_5k47v")
+stretch_mode = 0
+
+[node name="ControlInfoImage" type="TextureRect" parent="CanvasLayer" unique_id=29827775]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("19_ibvgr")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("14_sxj1a")]
 target_scene_path = "uid://bv16fgug31wcv"
