@@ -4,21 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://b45s1jjrvpyp8" path="res://Assets/Images/Farm/Potato/icon.png" id="2_2dgdf"]
 [ext_resource type="Texture2D" uid="uid://bkk02okxv11iy" path="res://Assets/Images/General/coin icon.png" id="2_6r6l8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5roh6"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(0.52086383, 0.55546874, 0.18009338, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(1, 0.7415515, 0.14296877, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dgdf"]
+bg_color = Color(0.972549, 0.90588236, 0.8039216, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.7764706, 0.4117647, 0.20392157, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2850"]
 content_margin_left = 4.0
@@ -42,7 +38,7 @@ descript_label = NodePath("PanelContainer/VBoxContainer/PanelContainer/Descripti
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1022690139]
 custom_minimum_size = Vector2(400, 0)
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5roh6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2dgdf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=940364674]
 layout_mode = 2

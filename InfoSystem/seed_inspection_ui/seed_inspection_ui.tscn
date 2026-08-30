@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b2ilwnssrgmvb" path="res://InfoSystem/seed_inspection_ui/seed_inspection_ui.gd" id="1_564sx"]
 [ext_resource type="Texture2D" uid="uid://b2ilu3uwq326g" path="res://Assets/potato bad seed tear.png" id="1_suun7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_go7g8"]
-bg_color = Color(0.35234374, 0.30696285, 0.23755677, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_564sx"]
+bg_color = Color(0.972549, 0.90588236, 0.8039216, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -30,7 +30,7 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_go7g8")
+theme_override_styles/panel = SubResource("StyleBoxFlat_564sx")
 script = ExtResource("1_564sx")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=666247085]
