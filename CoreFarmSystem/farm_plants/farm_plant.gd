@@ -34,6 +34,10 @@ func _ready():
 	%GrowBar.value = int(SignalBus.tick_timer.wait_time - SignalBus.tick_timer.time_left)
 	SignalBus.one_second_timer.timeout.connect(update_growth_bar)
 	
+	hide_growbar()
+	#plant_texture.mouse_entered.connect(show_growbar)
+	#plant_texture.mouse_exited.connect(hide_growbar) 
+	
 func _process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	var rect = Rect2(global_position + plant_texture.position, plant_texture.size)
@@ -120,11 +124,13 @@ func highlight() -> void:
 	modulate = Color(1.2, 1.2, 1.2, 1)
 	InfocardManager.show_farmplant_infocard(self)
 	is_hovered = true
+	show_growbar()
 
 func unhighlight() -> void:
 	modulate = Color(1.0, 1.0, 1.0, 1)
 	InfocardManager.hide_farmplant_infocard()
 	is_hovered = false
+	hide_growbar()
 
 func recalculate_grow_bar_position() -> void:
 	await get_tree().process_frame
@@ -142,6 +148,12 @@ func update_growth_bar() -> void:
 		%GrowBar.value = int(SignalBus.tick_timer.wait_time - SignalBus.tick_timer.time_left)
 	
 	%GrowBar.value += 1
+
+func show_growbar() -> void:
+	%GrowBar.visible = true
+
+func hide_growbar() -> void:
+	%GrowBar.visible = false
 
 # Generates a display name based on the seed quality
 func generate_display_name(seed_item: Item) -> void:
