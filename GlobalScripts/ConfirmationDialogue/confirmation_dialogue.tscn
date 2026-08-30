@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c165kl3vebjb4" path="res://Assets/Images/green_button_highlight.png" id="7_xn7wv"]
 
 [node name="ConfirmationDialogue" type="CanvasLayer" unique_id=21617337]
-layer = 128
+layer = 257
 script = ExtResource("1_u1sf1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=776238349]

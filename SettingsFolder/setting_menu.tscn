@@ -89,3 +89,8 @@ text = "Credits"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Save & Quit"
+
+[node name="ClearButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1039198015]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Clear Save"
