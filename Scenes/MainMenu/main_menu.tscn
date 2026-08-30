@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bqnlbefp38487" path="res://Scenes/MainMenu/texture_rect.gd" id="5_adu2g"]
 [ext_resource type="Script" uid="uid://b453vo5j6qvce" path="res://Scenes/MainMenu/texture_rect_2.gd" id="6_0l8wx"]
 
-[node name="main_menu" type="Control" unique_id=93825119 node_paths=PackedStringArray("play_button", "exit_button")]
+[node name="main_menu" type="Control" unique_id=93825119]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,8 +15,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0l8wx")
-play_button = NodePath("right_menu_container/VBoxContainer/Play")
-exit_button = NodePath("right_menu_container/VBoxContainer/Exit")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=609043684]
 layout_mode = 1
@@ -98,6 +96,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 160
 text = "PLAY"
+
+[node name="Settings" type="TextureButton" parent="right_menu_container/VBoxContainer" unique_id=811757312]
+layout_mode = 2
+offset_transform_scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_adu2g")
+
+[node name="Label" type="Label" parent="right_menu_container/VBoxContainer/Settings" unique_id=1810827185]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -283.5
+offset_top = -108.5
+offset_right = 283.5
+offset_bottom = 108.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 160
+text = "SETTINGS"
 
 [node name="Exit" type="TextureButton" parent="right_menu_container/VBoxContainer" unique_id=1522467655]
 layout_mode = 2

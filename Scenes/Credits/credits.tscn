@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bljnphdgd0qba"]
+
+[ext_resource type="Script" uid="uid://ud0wsy7kjui8" path="res://Scenes/Credits/credits.gd" id="1_ykwev"]
+
+[node name="Credits" type="Control" unique_id=226326119]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ykwev")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=959191289]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=742333719]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -63.0
+offset_right = 20.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2013533924]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1510293450]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Artist"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=684339888]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "kitzelos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer" unique_id=161392464]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Music/SFX"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CenterContainer/VBoxContainer" unique_id=34864360]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "file_unseen
+OtterOat"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="CenterContainer/VBoxContainer" unique_id=665948574]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Developers"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1413275141]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "dedblu
+On4ll
+Plazty
+ST3"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer" unique_id=765155660]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label7" type="Label" parent="CenterContainer/VBoxContainer" unique_id=70517297]
+layout_mode = 2
+text = "click anywhere to exit"
+horizontal_alignment = 1
+vertical_alignment = 1

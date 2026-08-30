@@ -19,13 +19,20 @@ const MUSIC_PATH = "res://Assets/Audio/Music/"
 const SFX_PATH = "res://Assets/Audio/SFX/"
 
 func _ready() -> void:
-	# FIX: Create the SFX container node dynamically
+	for bus_name in ["Music", "SFX"]:
+		if AudioServer.get_bus_index(bus_name) == -1:
+			AudioServer.add_bus()
+			var new_idx = AudioServer.get_bus_count() - 1
+			AudioServer.set_bus_name(new_idx, bus_name)
+			AudioServer.set_bus_send(new_idx, "Master")
 	sfx_players = Node.new()
 	sfx_players.name = "SFXPlayers"
 	add_child(sfx_players)
 	
 	music_player_1 = AudioStreamPlayer.new()
+	music_player_1.bus = "Music"
 	music_player_2 = AudioStreamPlayer.new()
+	music_player_2.bus = "Music"
 	add_child(music_player_1)
 	add_child(music_player_2)
 	
@@ -84,6 +91,7 @@ func play_sfx(sfx_name: String, volume_multiplier: float = 1.0, from_position: f
 
 	var sfx_player: SFXPlayer = sfx_player_scene.instantiate()
 	sfx_player.stream = stream
+	sfx_player.bus = "SFX"
 	var final_volume = clamp(sfx_volume * volume_multiplier, 0.0, 1.0)
 	sfx_player.volume_db = linear_to_db(final_volume)
 	sfx_player.from_position = from_position

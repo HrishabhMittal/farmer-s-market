@@ -1,89 +1,91 @@
 [gd_scene format=3 uid="uid://dipv23qijupeh"]
 
-[ext_resource type="Script" uid="uid://b6ccnph7ybr47" path="res://SettingsFolder/volume_slider.gd" id="1_4lq7d"]
 [ext_resource type="Script" uid="uid://dgs7bfnb6adff" path="res://SettingsFolder/setting_menu.gd" id="1_b5v16"]
-
-[sub_resource type="Animation" id="Animation_4lq7d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-166, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_b5v16"]
-resource_name = "close"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.39999998),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-166, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_jfc16"]
-resource_name = "open"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-166, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kurl3"]
-_data = {
-&"RESET": SubResource("Animation_4lq7d"),
-&"close": SubResource("Animation_b5v16"),
-&"open": SubResource("Animation_jfc16")
-}
+[ext_resource type="PackedScene" uid="uid://cykk1hilklhjv" path="res://SettingsFolder/volume_slider.tscn" id="3_b5v16"]
 
 [node name="SettingMenu" type="CanvasLayer" unique_id=570373305]
+layer = 256
 script = ExtResource("1_b5v16")
 
 [node name="Panel" type="Panel" parent="." unique_id=1382044695]
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -166.0
-offset_right = -18.0
+offset_right = 1152.0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=966252380]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -21.0
+offset_right = 22.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1320986211]
 layout_mode = 2
-text = "Volume"
+theme_override_font_sizes/font_size = 50
+text = "SETTINGS"
 
-[node name="VolumeSlider" type="HSlider" parent="Panel/VBoxContainer" unique_id=1671985079]
+[node name="MasterContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=814917990]
 layout_mode = 2
-script = ExtResource("1_4lq7d")
-metadata/_custom_type_script = "uid://b6ccnph7ybr47"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=128142539]
-libraries/ = SubResource("AnimationLibrary_kurl3")
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MasterContainer" unique_id=1858217331]
+layout_mode = 2
+text = "MASTER"
+
+[node name="VolumeSlider" parent="Panel/VBoxContainer/MasterContainer" unique_id=70292061 instance=ExtResource("3_b5v16")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MusicContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=874002683]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MusicContainer" unique_id=1815443127]
+layout_mode = 2
+text = "MUSIC  "
+
+[node name="VolumeSlider" parent="Panel/VBoxContainer/MusicContainer" unique_id=1597835180 instance=ExtResource("3_b5v16")]
+layout_mode = 2
+size_flags_horizontal = 3
+audio_bus_name = "Music"
+
+[node name="SFXContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1276276670]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/SFXContainer" unique_id=975886559]
+layout_mode = 2
+text = "SFX      "
+
+[node name="VolumeSlider" parent="Panel/VBoxContainer/SFXContainer" unique_id=1073472786 instance=ExtResource("3_b5v16")]
+layout_mode = 2
+size_flags_horizontal = 3
+audio_bus_name = "SFX"
+
+[node name="Spacer" type="Control" parent="Panel/VBoxContainer" unique_id=1917255617]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1898689789]
+layout_mode = 2
+
+[node name="ReturnButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=310517121]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main Menu"
+
+[node name="CreditsButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1513996966]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+
+[node name="SaveQuitButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=12076266]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Save & Quit"
