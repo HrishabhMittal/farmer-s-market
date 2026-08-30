@@ -8,6 +8,7 @@ signal global_growth_tick()
 signal day_ended()
 signal player_picked_seed()
 signal player_dropped_seed()
+signal changing_scene()
 
 signal crop_harvested(farm_plant: FarmPlant)
 signal item_added(item: Item)

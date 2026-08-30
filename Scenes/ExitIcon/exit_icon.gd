@@ -20,5 +20,6 @@ func _on_texture_button_pressed() -> void:
 	if target_scene_path != "":
 		InventoryManager.close_all_uis()
 		TravelTransition.change_scene(target_scene_path)
+		SignalBus.changing_scene.emit()
 	else:
 		push_error("no target path scene")

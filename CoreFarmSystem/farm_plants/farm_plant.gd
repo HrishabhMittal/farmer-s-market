@@ -25,7 +25,7 @@ func _ready():
 	if production_amount <= 1 and GameConfig.crop_seed_yields.has(base_seed_id):
 		production_amount = GameConfig.crop_seed_yields[base_seed_id]
 		
-	plant_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#plant_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if not is_fully_grown and growth_cycle_texture.size() > current_growth_cycle:
 		plant_texture.texture = growth_cycle_texture[current_growth_cycle]
 		
@@ -35,18 +35,19 @@ func _ready():
 	SignalBus.one_second_timer.timeout.connect(update_growth_bar)
 	
 	hide_growbar()
-	#plant_texture.mouse_entered.connect(show_growbar)
-	#plant_texture.mouse_exited.connect(hide_growbar) 
+	SignalBus.changing_scene.connect(unhighlight)
+	plant_texture.mouse_entered.connect(highlight)
+	plant_texture.mouse_exited.connect(unhighlight) 
 	
 func _process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	var rect = Rect2(global_position + plant_texture.position, plant_texture.size)
 	var currently_hovered = rect.has_point(mouse_pos)
 	
-	if currently_hovered and not is_hovered:
-		highlight()
-	elif not currently_hovered and is_hovered:
-		unhighlight()
+	#if currently_hovered and not is_hovered:
+		#highlight()
+	#elif not currently_hovered and is_hovered:
+		#unhighlight()
 
 	if is_hovered and is_fully_grown:
 		if Input.is_action_pressed("left click") or Input.is_action_pressed("interact"):
