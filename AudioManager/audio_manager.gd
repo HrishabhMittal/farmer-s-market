@@ -6,6 +6,7 @@ var sfx_volume: float = 1.0
 var sfx_player_scene: PackedScene = preload("res://AudioManager/sfx_player.tscn")
 var sfx_players: Node
 var duck_tween: Tween
+var fade_tween: Tween
 # Internal state
 var active_music_player: AudioStreamPlayer
 var music_player_1: AudioStreamPlayer
@@ -124,3 +125,19 @@ func _unduck_music() -> void:
 	duck_tween = create_tween()
 	var target_db = linear_to_db(music_volume) 
 	duck_tween.tween_property(active_music_player, "volume_db", target_db, 1.0)
+
+
+func mute_music(transition_duration: float = 1.0) -> void:
+	if active_music_player and active_music_player.playing:
+		if fade_tween and fade_tween.is_valid():
+			fade_tween.kill()
+		fade_tween = create_tween()
+		fade_tween.tween_property(active_music_player, "volume_db", -80.0, transition_duration)
+
+func unmute_music(transition_duration: float = 1.0) -> void:
+	if active_music_player and active_music_player.playing:
+		if fade_tween and fade_tween.is_valid():
+			fade_tween.kill()
+		fade_tween = create_tween()
+		var target_db = linear_to_db(music_volume)
+		fade_tween.tween_property(active_music_player, "volume_db", target_db, transition_duration)

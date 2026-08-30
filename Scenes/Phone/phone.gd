@@ -141,13 +141,9 @@ func _on_btn_deposit_pressed() -> void:
 		
 		if is_ending:
 			await DialogueManager.dialogue_finished
-			
-			await CutsceneManager.play()
-			
 			get_tree().call_group("save_state", "save_state")
 			StateManager.save_to_file()
-			
-			TravelTransition.change_scene("res://Scenes/MainMenu/main_menu.tscn")
+			await CutsceneManager.transition_with_cutscene("ending", "res://Scenes/MainMenu/main_menu.tscn")
 			
 	else:
 		if InfocardManager:
