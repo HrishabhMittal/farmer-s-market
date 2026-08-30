@@ -73,6 +73,7 @@ func _unhandled_input(_event: InputEvent):
 
 func _handle_visiblity_change() -> void:
 	if visible:
+		refresh_inventory()
 		SignalBus.inventory_opned.emit(connected_inventory)
 	else:
 		SignalBus.inventory_closed.emit(connected_inventory)

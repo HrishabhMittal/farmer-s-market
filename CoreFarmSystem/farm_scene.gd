@@ -158,6 +158,8 @@ func load_state() -> void:
 	for g_data in StateManager.farm_ground_items:
 		ItemManager.spawn_ground_item_from_id(g_data["id"], g_data["amount"], Vector2(g_data["x"], g_data["y"]))
 
+	seed_slot.refresh_slot(StateManager.active_seed_inventory.slots[0])
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		match event.keycode:

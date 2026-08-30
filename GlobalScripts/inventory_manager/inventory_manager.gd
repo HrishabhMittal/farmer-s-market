@@ -29,6 +29,9 @@ func _ready():
 	player_ui.set_inventory_name("Backpack")
 	add_child(player_ui)
 	player_ui.visible = false
+	
+	player_ui.refresh_inventory()
+	barn_ui.refresh_inventory()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("inventory"):

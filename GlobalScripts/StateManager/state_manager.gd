@@ -34,6 +34,8 @@ var shop_is_scammer: Dictionary = {}
 func _ready() -> void:
 	get_tree().set_auto_accept_quit(false)
 	load_from_file()
+	
+	#print(OS.get_data_dir())
 
 
 func _notification(what: int) -> void:

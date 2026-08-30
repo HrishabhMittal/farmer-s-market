@@ -91,8 +91,11 @@ func _handle_gui_input(event: InputEvent) -> void:
 		accept_event()
 		if connected_inventory == StateManager.active_seed_inventory and PlayerHeldItem.is_empty():
 			PlayerHeldItem.pick_item(current_item, self)
+	
+	#refresh_slot(current_item)
 
 func _highlight() -> void:
+	#refresh_slot(current_item)
 	if not current_item:
 		return
 		
@@ -127,6 +130,7 @@ var duration: float = 0.5
 var glow_tween: Tween
 
 func start_glow() -> void:
+	#refresh_slot(current_item)
 	if glow_tween and glow_tween.is_running():
 		glow_tween.kill()
 
