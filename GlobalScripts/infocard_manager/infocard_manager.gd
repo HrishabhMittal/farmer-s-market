@@ -39,3 +39,9 @@ func show_seed_inspection_ui(seed: Item) -> SeedInspectionUI:
 	add_child(new_ui)
 	new_ui.inspect_item(seed)
 	return new_ui # Returning because the caller needs to disable it
+
+func _unhandled_input(event):
+	if event.is_action_pressed("left click") or\
+	event.is_action_pressed("right click") or\
+	event.is_action_pressed("esc"):
+		hide_infocard()
