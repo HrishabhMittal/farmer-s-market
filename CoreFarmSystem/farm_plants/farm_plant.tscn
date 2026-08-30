@@ -1,16 +1,6 @@
 [gd_scene format=3 uid="uid://b5maie0020lln"]
 
 [ext_resource type="Script" uid="uid://cnxlflephylnm" path="res://CoreFarmSystem/farm_plants/farm_plant.gd" id="1_mpp53"]
-[ext_resource type="Texture2D" uid="uid://bc4giyqyiuhjd" path="res://CoreFarmSystem/farm_plants/grow_bar.png" id="2_b2u7j"]
-[ext_resource type="Texture2D" uid="uid://los4jfvcmbo" path="res://Assets/Images/Farm/Tomato/stage_3.png" id="2_wnjn7"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7w6jo"]
-atlas = ExtResource("2_b2u7j")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tuwn8"]
-atlas = ExtResource("2_b2u7j")
-region = Rect2(64, 0, 64, 64)
 
 [node name="FarmPlant" type="Node2D" unique_id=1529433205 node_paths=PackedStringArray("plant_texture")]
 script = ExtResource("1_mpp53")
@@ -28,22 +18,4 @@ offset_bottom = 24.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("2_wnjn7")
 expand_mode = 2
-
-[node name="GrowBar" type="TextureProgressBar" parent="." unique_id=904876867]
-unique_name_in_owner = true
-z_index = 5
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-value = 15.0
-rounded = true
-fill_mode = 4
-texture_under = SubResource("AtlasTexture_7w6jo")
-texture_progress = SubResource("AtlasTexture_tuwn8")

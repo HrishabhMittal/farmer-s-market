@@ -28,12 +28,6 @@ func _ready():
 	plant_texture.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if not is_fully_grown and growth_cycle_texture.size() > current_growth_cycle:
 		plant_texture.texture = growth_cycle_texture[current_growth_cycle]
-		
-	recalculate_grow_bar_position()
-	%GrowBar.max_value = int(GameConfig.TICK_SPEED)
-	%GrowBar.value = int(SignalBus.tick_timer.wait_time - SignalBus.tick_timer.time_left)
-	SignalBus.one_second_timer.timeout.connect(update_growth_bar)
-	
 func _process(_delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
 	var rect = Rect2(global_position + plant_texture.position, plant_texture.size)
@@ -60,7 +54,6 @@ func _on_growth_tick() -> void:
 	
 	var should_grow: bool = randi_range(1, 100) <= growth_chance
 	if not should_grow:
-		InfocardManager.show_floating_text("Need more time!", global_position, "Blue", 15, 5.0, 15)
 		return
 		
 	if is_watered():
@@ -69,7 +62,6 @@ func _on_growth_tick() -> void:
 		tile_manager.unwater_tile(global_position)
 		current_growth_time += 1
 		_handle_growth()
-	InfocardManager.show_floating_text("Water pls!", global_position, "Red", 15, 5.0, 15)
 
 func process_missed_ticks(ticks: int) -> void:
 	for i in range(ticks):
@@ -94,8 +86,7 @@ func _handle_growth() -> void:
 			
 	if current_growth_cycle >= growth_cycle_day.size():
 		is_fully_grown = true
-	
-	recalculate_grow_bar_position()
+
 
 func harvest() -> void:
 	var player = get_tree().get_first_node_in_group("Player")
@@ -125,23 +116,6 @@ func unhighlight() -> void:
 	modulate = Color(1.0, 1.0, 1.0, 1)
 	InfocardManager.hide_farmplant_infocard()
 	is_hovered = false
-
-func recalculate_grow_bar_position() -> void:
-	await get_tree().process_frame
-	
-	var texture_top_center: Vector2 = $TextureRect.global_position + Vector2($TextureRect.size.x/2, 0) - Vector2(%GrowBar.size.x/2, %GrowBar.size.y/2)
-	%GrowBar.global_position = texture_top_center
-
-func update_growth_bar() -> void:
-	if is_fully_grown:
-		%GrowBar.value = %GrowBar.max_value
-		SignalBus.one_second_timer.timeout.disconnect(update_growth_bar)
-		return
-	
-	if %GrowBar.value == %GrowBar.max_value:
-		%GrowBar.value = int(SignalBus.tick_timer.wait_time - SignalBus.tick_timer.time_left)
-	
-	%GrowBar.value += 1
 
 # Generates a display name based on the seed quality
 func generate_display_name(seed_item: Item) -> void:
