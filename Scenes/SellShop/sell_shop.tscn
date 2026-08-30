@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b27mot8on6vg1" path="res://Assets/Images/Buttons/inventory_pressed.png" id="13_mivnd"]
 [ext_resource type="Texture2D" uid="uid://dws3ueoq2qko1" path="res://Assets/Images/Buttons/info_unpressed.png" id="14_cdccw"]
 [ext_resource type="Texture2D" uid="uid://dnbijokxwr4ms" path="res://Assets/Images/Buttons/info_pressed.png" id="15_8hoow"]
+[ext_resource type="Texture2D" uid="uid://de6ra11vopyn7" path="res://Assets/Images/infocard.png" id="16_uxg6y"]
 
 [node name="SellShop" type="Node2D" unique_id=1734394036]
 script = ExtResource("1_1lxjk")
@@ -98,7 +99,6 @@ theme_override_constants/separation = 10
 script = ExtResource("11_hm6h4")
 inventory_button = NodePath("InventoryButton")
 control_info_button = NodePath("ControlInfoButton")
-only_inventory_button_is_active = true
 
 [node name="InventoryButton" type="TextureButton" parent="CanvasLayer/SideBar" unique_id=724089346]
 custom_minimum_size = Vector2(64, 64)
@@ -121,3 +121,16 @@ texture_hover = ExtResource("14_cdccw")
 texture_disabled = ExtResource("14_cdccw")
 texture_focused = ExtResource("14_cdccw")
 stretch_mode = 0
+
+[node name="ControlInfoImage" type="TextureRect" parent="CanvasLayer" unique_id=714553102]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_uxg6y")
+expand_mode = 3
+stretch_mode = 5
