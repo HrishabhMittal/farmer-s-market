@@ -135,7 +135,7 @@ func unhighlight() -> void:
 func recalculate_grow_bar_position() -> void:
 	await get_tree().process_frame
 	
-	var texture_top_center: Vector2 = $TextureRect.global_position + Vector2($TextureRect.size.x/2, 0) - Vector2(%GrowBar.size.x/2, %GrowBar.size.y/2)
+	var texture_top_center: Vector2 = $TextureRect.global_position + Vector2($TextureRect.size.x/2, 0) - Vector2(32, 32)
 	%GrowBar.global_position = texture_top_center
 
 func update_growth_bar() -> void:
