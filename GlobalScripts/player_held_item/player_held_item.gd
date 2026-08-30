@@ -84,6 +84,9 @@ func _make_item(item_id: String, amount: int = 0) -> Item:
 	return Item.new(ItemManager.get_item(item_id), amount)
 
 func clear_item() -> void:
+	if is_held_item_seed():
+		SignalBus.player_dropped_seed.emit()
+	
 	mouse_inventory.make_empty()
 	_hide_item_on_mouse()
 
