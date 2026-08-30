@@ -1,7 +1,7 @@
 extends Node
 
-var music_volume: float = 1.0 : set = set_music_volume
-var sfx_volume: float = 1.0
+var music_volume: float = 0.9 : set = set_music_volume
+var sfx_volume: float = 0.6
 
 var sfx_player_scene: PackedScene = preload("res://AudioManager/sfx_player.tscn")
 var sfx_players: Node
