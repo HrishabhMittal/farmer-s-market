@@ -24,8 +24,8 @@ const POLICE_REPORT_MIXED = "Your reports yesterday were a mixed bag. You succes
 const POLICE_TRUST_NEGATIVE = "Look at your record with us—you're deeply in the red. Because of this stunt, you've officially triggered a fine for public nuisance. And remember: If you keep messing around we will have to locked you up."
 const POLICE_TRUST_ZERO = "Your file is sitting right on the edge of trouble. You've got zero margin for error left with this department. Straighten out your act, and make sure your next call is actually backed by proof."
 const POLICE_TRUST_LOW = "We'll log the information for now, but your standing with us is still shaky. Keep your head down, do your job, and don't waste our time unless you're completely sure."
-const POLICE_TRUST_MODERATE = "Given your solid track record with us so far, we're willing to give you the benefit of the doubt on this one. Keep up the vigilance and maintain that standing."
-const POLICE_TRUST_HIGH = "As one of our most trusted informants, we always take your word seriously. Your standing with the department is spotless—keep helping us keep this town clean, and we'll always have your back."
+const POLICE_TRUST_MODERATE = "Given your solid track record with us so far, we're willing to give you the benefit of the doubt on this one. Keep this up and you'll receive monetary rewards."
+const POLICE_TRUST_HIGH = "Thanks for keeping the town safe! We will award you monetarily for your efforts. Your reward has been added to your balance."
 
 const BANK_DEPOSIT = "Ah, right on schedule! Another fine deposit toward your ultimate loyalty tier. Your balance is looking healthier every day. Just keep saving up to reach that milestone for the grand farming gift!"
 const BANK_ENDING = "Thank you for your final deposit! Your loyalty tier has officially been processed... Wait, what's that sound? Ah, security! Grab the cash bags and start the getaway vehicle, boss! Thanks for funding our early retirement, farmer. Trust no one."

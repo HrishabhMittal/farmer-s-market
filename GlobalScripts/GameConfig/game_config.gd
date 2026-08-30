@@ -75,6 +75,7 @@ var crop_seed_yields: Dictionary = {
 
 # --- SCAMMER / MARKET ---
 var fine_amount: int = 300
+var reward_amount: int = 300
 var minimum_price_ratio: float = 0.75 
 var scammer_chance: float = 0.25
 var scammer_defective_ratio: float = 0.9

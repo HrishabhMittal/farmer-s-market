@@ -176,6 +176,8 @@ func reset_shops_and_get_feedback() -> Array[String]:
 			if money < 0:
 				money = 0
 			feedback.append(GameDialogues.POLICE_TRUST_NEGATIVE)
+			var center_screen = get_viewport().get_visible_rect().size / 2.0
+			InfocardManager.show_floating_text("-%d Coins" % GameConfig.fine_amount, center_screen, "Red")
 		elif police_trust_score == 0: 
 			feedback.append(GameDialogues.POLICE_TRUST_ZERO)
 		elif police_trust_score == 1: 
@@ -184,7 +186,9 @@ func reset_shops_and_get_feedback() -> Array[String]:
 			feedback.append(GameDialogues.POLICE_TRUST_MODERATE)
 		else: 
 			feedback.append(GameDialogues.POLICE_TRUST_HIGH)
-		
+			money += GameConfig.reward_amount
+			var center_screen = get_viewport().get_visible_rect().size / 2.0
+			InfocardManager.show_floating_text("+%d Coins" % GameConfig.reward_amount, center_screen, "Green")
 	sell_shops.clear()
 	seed_shops.clear()
 	shop_is_scammer.clear()
