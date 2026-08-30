@@ -16,7 +16,10 @@ func _ready():
 	if only_inventory_button_is_active: # Will skip other things
 		control_info_button.visible = false
 		return
+		
 	control_info_button.pressed.connect(_on_control_info_button_pressed)
+	control_info_button.mouse_entered.connect(UIAnimationManager.scale_expand_shake_highlight.bind(control_info_button))
+	control_info_button.mouse_exited.connect(UIAnimationManager.scale_expand_shake_unhighlight.bind(control_info_button))
 	
 	%ControlInfoImage.pivot_offset = size / 2.0
 	%ControlInfoImage.offset_transform_enabled = true	

@@ -19,6 +19,7 @@ layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="SlotUI" unique_id=1216013097]
 custom_minimum_size = Vector2(64, 64)
@@ -26,6 +27,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 pivot_offset = Vector2(32, 32)
+mouse_filter = 2
 expand_mode = 2
 
 [node name="Label" type="Label" parent="SlotUI" unique_id=344134900]
