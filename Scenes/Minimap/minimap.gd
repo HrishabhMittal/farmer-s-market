@@ -26,6 +26,10 @@ func _ready() -> void:
 		DialogueManager.show_dialog([GameDialogues.MOM_MINIMAP], "Mom")
 	elif randf() <= GameConfig.mom_ask_money_chance:
 		ask_mom_money()
+		
+	phone_icon.mouse_entered.connect(UIAnimationManager.scale_expand_highlight.bind(phone_icon))
+	phone_icon.mouse_exited.connect(UIAnimationManager.scale_expand_unhighlight.bind(phone_icon))
+
 
 func _on_phone_icon_clicked():
 	if is_phone_open:

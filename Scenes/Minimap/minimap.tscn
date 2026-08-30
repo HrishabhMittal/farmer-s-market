@@ -160,21 +160,25 @@ texture = ExtResource("5_12lvx")
 [node name="Phone" parent="CanvasLayer" unique_id=1370161008 instance=ExtResource("11_rjbcc")]
 position = Vector2(9, 313)
 
-[node name="PhoneIcon" type="TextureButton" parent="CanvasLayer" unique_id=1752881504]
+[node name="PhoneIcon" type="TextureButton" parent="CanvasLayer" unique_id=1618293825]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -128.0
-offset_right = 128.0
+offset_top = -64.0
+offset_right = 64.0
 grow_vertical = 0
-scale = Vector2(0.15, 0.15)
 pivot_offset = Vector2(10, -10)
 pivot_offset_ratio = Vector2(0, 1)
+offset_transform_enabled = true
+offset_transform_position = Vector2(8, -8)
 texture_normal = ExtResource("12_sxj1a")
 texture_pressed = ExtResource("13_2t02g")
 texture_hover = ExtResource("12_sxj1a")
 texture_disabled = ExtResource("12_sxj1a")
 texture_focused = ExtResource("12_sxj1a")
+stretch_mode = 0
 
 [node name="ExitButtonUI" parent="." unique_id=203447004 instance=ExtResource("14_sxj1a")]
 target_scene_path = "uid://bv16fgug31wcv"
