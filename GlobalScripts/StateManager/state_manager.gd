@@ -32,6 +32,7 @@ var police_trust_score: int = 1
 var shop_is_scammer: Dictionary = {}
 
 func _ready() -> void:
+	return
 	get_tree().set_auto_accept_quit(false)
 	load_from_file()
 	

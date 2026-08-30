@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://jbuylrie72mf" path="res://InfoSystem/floating_text/floating_text.gd" id="1_nbqkf"]
 
 [node name="FloatingText" type="RichTextLabel" unique_id=2078341871]
-theme_override_constants/outline_size = 10
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "123"

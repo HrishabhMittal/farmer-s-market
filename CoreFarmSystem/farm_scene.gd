@@ -2,7 +2,7 @@ extends Node2D
 
 @export var farm_tile_manager: FarmTileManager
 @export var tool_manager: FarmToolManager
-var is_test_enabled: bool = false
+var is_test_enabled: bool = true
 
 var seed_slot: SlotUI
 func _ready():
@@ -52,11 +52,11 @@ func interact():
 func test_stuff() -> void:
 	#InventoryManager.add_item_to_barn("pumpkin_seed", 20)
 	#InventoryManager.add_item_to_barn("carrot_seed", 220)
-	StateManager.player_inventory.add_item(ItemManager.make_item("potato_seed"), 15)
-	StateManager.player_inventory.add_item(ItemManager.make_item("cabbage_seed_chomped"), 15)
-	StateManager.player_inventory.add_item(ItemManager.make_item("pumpkin_seed_barcode"), 15)
-	StateManager.player_inventory.add_item(ItemManager.make_item("carrot_seed_spot"), 15)
-	StateManager.player_inventory.add_item(ItemManager.make_item("tomato_seed_tear"), 15)
+	StateManager.player_inventory.add_item(ItemManager.make_item("potato_seed"), 25)
+	StateManager.player_inventory.add_item(ItemManager.make_item("cabbage_seed_chomped"), 25)
+	StateManager.player_inventory.add_item(ItemManager.make_item("pumpkin_seed_barcode"), 25)
+	StateManager.player_inventory.add_item(ItemManager.make_item("carrot_seed_spot"), 25)
+	StateManager.player_inventory.add_item(ItemManager.make_item("tomato_seed_tear"), 25)
 	#StateManager.player_inventory.remove_item(ItemManager.make_item("carrot_seed"), 34)
 	#StateManager.player_inventory.add_item(ItemManager.make_item("potato_seed"), 10)
 	#for i in range(100):
