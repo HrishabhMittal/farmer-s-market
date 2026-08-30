@@ -17,7 +17,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if player_node:
-				player_node.travel_to_building(target.global_position, target_scene_path, is_home)
+				player_node.travel_to_building(target.global_position, target_scene_path, target_shop_id, is_home)
 
 func _on_mouse_entered() -> void:
 	if hover_tween and hover_tween.is_valid():
