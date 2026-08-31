@@ -134,9 +134,10 @@ func _on_btn_deposit_pressed() -> void:
 		var dialog_line = ""
 		var is_ending = false
 		
-		if StateManager.bank_balance >= GameConfig.target_money:
+		if StateManager.bank_balance >= GameConfig.target_money and not StateManager.win_showed:
 			dialog_line = GameDialogues.BANK_ENDING
 			is_ending = true
+			StateManager.win_showed = true
 		else:
 			dialog_line = GameDialogues.BANK_DEPOSIT
 			
@@ -148,7 +149,6 @@ func _on_btn_deposit_pressed() -> void:
 			get_tree().call_group("save_state", "save_state")
 			StateManager.save_to_file()
 			await CutsceneManager.transition_with_cutscene("ending", "res://Scenes/MainMenu/main_menu.tscn")
-			
 	else:
 		if InfocardManager:
 			InfocardManager.show_floating_text("Invalid funds!", get_global_mouse_position(), "Red")

@@ -16,6 +16,9 @@ var next_shop_id: String = ""
 var position_set_once: bool = false
 var target_position: Vector2
 
+# wincon
+var win_showed: bool = false
+
 # shop
 var sell_shops: Dictionary = {}
 var seed_shops: Dictionary = {}
@@ -66,7 +69,8 @@ func save_to_file() -> void:
 		"police_trust_score": police_trust_score,
 		"shop_is_scammer": shop_is_scammer,
 		"visited_scenes": visited_scenes,
-		"replaced_shops": replaced_shops
+		"replaced_shops": replaced_shops,
+		"win_showed": win_showed
 	}
 	var json_string = JSON.stringify(save_dict)
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -100,6 +104,7 @@ func load_from_file() -> void:
 	farm_ground_items = save_dict.get("farm_ground_items", [])
 	farm_planted_tiles = _deserialize_vector_dict(save_dict.get("farm_planted_tiles", {}))
 	last_farm_save_time = save_dict.get("last_farm_save_time", 0.0)
+	win_showed = save_dict.get("win_showed", false)
 
 func _serialize_inventory(inv: Inventory) -> Array:
 	var data = []
