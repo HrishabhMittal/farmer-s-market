@@ -78,7 +78,7 @@ layout_mode = 2
 [node name="ReturnButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=310517121]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Main Menu"
+text = "Close Settings"
 
 [node name="CreditsButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1513996966]
 unique_name_in_owner = true

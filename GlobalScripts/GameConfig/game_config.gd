@@ -9,13 +9,12 @@ var TICK_SPEED: float = 10.0
 
 
 var seeds_per_bag: Dictionary = {
-	"pumpkin_seed": 10,
-	"carrot_seed": 10,
-	"cabbage_seed": 10,
-	"potato_seed": 10,
-	"tomato_seed": 10
+	"pumpkin_seed": 15,
+	"carrot_seed": 15,
+	"cabbage_seed": 15,
+	"potato_seed": 15,
+	"tomato_seed": 15
 }
-
 
 
 var crop_growth_chances: Dictionary = {

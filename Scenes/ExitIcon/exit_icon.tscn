@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://crhpx1bvdigof" path="res://Scenes/ExitIcon/exit_icon.gd" id="1_u2lpu"]
 [ext_resource type="Texture2D" uid="uid://dwdb17d4y5n3v" path="res://Assets/Images/Buttons/exit_unpressed.png" id="2_6nujg"]
 [ext_resource type="Texture2D" uid="uid://bpjmc22xj0gdm" path="res://Assets/Images/Buttons/exit_pressed.png" id="3_kehli"]
+[ext_resource type="Texture2D" uid="uid://cjpyxae4w1782" path="res://Assets/settings_unpressed.png" id="4_1hegx"]
+[ext_resource type="Texture2D" uid="uid://crk4xtb4ird3v" path="res://Assets/settings_pressed.png" id="5_yfsfh"]
 
 [node name="ExitButtonUI" type="CanvasLayer" unique_id=203447004]
 script = ExtResource("1_u2lpu")
@@ -13,7 +15,10 @@ offset_bottom = 50.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer" unique_id=450916294]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2134053512]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=450916294]
 custom_minimum_size = Vector2(64, 64)
 custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
@@ -26,4 +31,15 @@ texture_focused = ExtResource("2_6nujg")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="TextureButton2" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=734209466]
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("4_1hegx")
+texture_pressed = ExtResource("5_yfsfh")
+texture_hover = ExtResource("4_1hegx")
+texture_disabled = ExtResource("4_1hegx")
+texture_focused = ExtResource("4_1hegx")
+stretch_mode = 4
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]

@@ -3,11 +3,14 @@ extends CanvasLayer
 
 @export_file("*.tscn") var target_scene_path: String
 @export var exit_msg: String = "Exit this Scene?"
-@onready var exit_button: TextureButton = $MarginContainer/TextureButton
+@onready var exit_button: TextureButton = $MarginContainer/HBoxContainer/TextureButton
+@onready var settings_button: TextureButton = $MarginContainer/HBoxContainer/TextureButton2
 
 func _ready():
 	exit_button.mouse_entered.connect(UIAnimationManager.scale_expand_highlight.bind(exit_button))
 	exit_button.mouse_exited.connect(UIAnimationManager.scale_expand_unhighlight.bind(exit_button)) 
+	settings_button.mouse_entered.connect(UIAnimationManager.scale_expand_highlight.bind(settings_button))
+	settings_button.mouse_exited.connect(UIAnimationManager.scale_expand_unhighlight.bind(settings_button)) 
 
 func _on_texture_button_pressed() -> void:
 	# Not allowing to leave farm if he is carrying something on the mouse cursor
@@ -23,3 +26,7 @@ func _on_texture_button_pressed() -> void:
 		SignalBus.changing_scene.emit()
 	else:
 		push_error("no target path scene")
+
+
+func _on_texture_button_2_pressed() -> void:
+	SettingMenu.toggle_settings()

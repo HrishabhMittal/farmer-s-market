@@ -84,6 +84,6 @@ layout_mode = 2
 
 [node name="Label7" type="Label" parent="CenterContainer/VBoxContainer" unique_id=70517297]
 layout_mode = 2
-text = "click anywhere to exit"
+text = "click anywhere to go to main menu"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -3,7 +3,7 @@ extends Control
 var is_exiting: bool = false
 
 func _ready() -> void:
-	AudioManager.play_music("Farm Day Alternate")
+	AudioManager.play_music("Credits Song")
 
 func _input(event: InputEvent) -> void:
 	if is_exiting:
@@ -12,4 +12,5 @@ func _input(event: InputEvent) -> void:
 	
 	if is_mouse_click:
 		is_exiting = true
-		get_tree().change_scene_to_file("res://Scenes/MainMenu/main_menu.tscn")
+		AudioManager.play_music("Farm Day Alternate")
+		TravelTransition.change_scene("res://Scenes/MainMenu/main_menu.tscn")

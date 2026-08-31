@@ -55,12 +55,12 @@ func _on_clear_pressed() -> void:
 func _on_return_pressed() -> void:
 	toggle_settings()
 	
-	var current_scene = get_tree().current_scene
-	if current_scene and current_scene.name != "main_menu":
-		get_tree().call_group("save_state", "save_state")
-		if StateManager:
-			StateManager.save_to_file()
-		TravelTransition.change_scene("res://Scenes/MainMenu/main_menu.tscn")
+	#var current_scene = get_tree().current_scene
+	#if current_scene and current_scene.name != "main_menu":
+		#get_tree().call_group("save_state", "save_state")
+	if StateManager:
+		StateManager.save_to_file()
+		#TravelTransition.change_scene("res://Scenes/MainMenu/main_menu.tscn")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("esc"):
