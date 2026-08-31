@@ -1,7 +1,7 @@
 extends Node
 
 const SAVE_PATH = "user://farm_save.json"
-
+var day_number: int = 1
 var police_called_shops: Array = []
 var visited_scenes: Dictionary = {}
 var replaced_shops: Dictionary = {}
@@ -35,6 +35,7 @@ var police_trust_score: int = 1
 var shop_is_scammer: Dictionary = {}
 
 func _ready() -> void:
+	randomize()
 	get_tree().set_auto_accept_quit(false)
 	load_from_file()
 	
@@ -51,6 +52,7 @@ func save_to_file() -> void:
 	var save_dict = {
 		"money": money,
 		"bank_balance": bank_balance,
+		"day_number": day_number,
 		"barn_inventory": _serialize_inventory(barn_inventory),
 		"player_inventory": _serialize_inventory(player_inventory),
 		"active_seed_inventory": _serialize_inventory(active_seed_inventory),
@@ -92,7 +94,7 @@ func load_from_file() -> void:
 	_deserialize_inventory(barn_inventory, save_dict.get("barn_inventory", []))
 	_deserialize_inventory(player_inventory, save_dict.get("player_inventory", []))
 	_deserialize_inventory(active_seed_inventory, save_dict.get("active_seed_inventory", []))
-	
+	day_number = save_dict.get("day_number", 1)
 	position_set_once = save_dict.get("position_set_once", false)
 	target_position = Vector2(save_dict.get("target_position_x", 0), save_dict.get("target_position_y", 0))
 	sell_shops = save_dict.get("sell_shops", {})
@@ -138,23 +140,33 @@ func _deserialize_vector_dict(dict: Dictionary) -> Dictionary:
 		result[Vector2i(int(parts[0]), int(parts[1]))] = dict[key]
 	return result
 
-
 func reset_shops() -> void:
+	day_number += 1
+	
 	for arrested_shop_id in police_called_shops:
 		if shop_is_scammer.has(arrested_shop_id) and shop_is_scammer[arrested_shop_id]:
 			police_trust_score += 1
 		else:
 			police_trust_score -= 1
-			
 		seller_appearances.erase(arrested_shop_id)
-		
-	sell_shops.clear()
-	seed_shops.clear()
-	shop_is_scammer.clear()
+		sell_shops.erase(arrested_shop_id)
+		seed_shops.erase(arrested_shop_id)
+		shop_is_scammer.erase(arrested_shop_id)
+	
 	police_called_shops.clear()
+	
+	if day_number % GameConfig.farmers_reset_days == 0:
+		seller_appearances.clear()
+		replaced_shops.clear()
+		sell_shops.clear()
+		seed_shops.clear()
+		shop_is_scammer.clear()
 
 func reset_shops_and_get_feedback() -> Array[String]:
+	day_number += 1
+	
 	var feedback: Array[String] = []
+	
 	if police_called_shops.size() > 0:
 		var scams = 0
 		var innocents = 0
@@ -165,7 +177,11 @@ func reset_shops_and_get_feedback() -> Array[String]:
 			else:
 				innocents += 1
 				replaced_shops[id] = "innocent"
+			
 			seller_appearances.erase(id)
+			sell_shops.erase(id) 
+			seed_shops.erase(id)
+			shop_is_scammer.erase(id)
 			
 		if scams > 0 and innocents == 0:
 			feedback.append(GameDialogues.POLICE_REPORT_ONLY_SCAMMERS)
@@ -178,7 +194,6 @@ func reset_shops_and_get_feedback() -> Array[String]:
 		police_trust_score += net_change
 		
 		if police_trust_score < 0:
-			# Deduct the fine
 			money -= GameConfig.fine_amount
 			if money < 0:
 				money = 0
@@ -196,8 +211,14 @@ func reset_shops_and_get_feedback() -> Array[String]:
 			money += GameConfig.reward_amount
 			var center_screen = get_viewport().get_visible_rect().size / 2.0
 			InfocardManager.show_floating_text("+%d Coins" % GameConfig.reward_amount, center_screen, "Green")
-	sell_shops.clear()
-	seed_shops.clear()
-	shop_is_scammer.clear()
+			
 	police_called_shops.clear()
+	
+	if day_number % GameConfig.farmers_reset_days == 0:
+		seller_appearances.clear()
+		replaced_shops.clear()
+		sell_shops.clear()
+		seed_shops.clear()
+		shop_is_scammer.clear()
+	
 	return feedback
