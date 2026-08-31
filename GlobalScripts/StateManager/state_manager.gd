@@ -7,7 +7,7 @@ var visited_scenes: Dictionary = {}
 var replaced_shops: Dictionary = {}
 var bank_balance: int = 0
 # money and inventory
-var money: int = 500
+var money: int = 1000
 var barn_inventory: Inventory
 var player_inventory: Inventory
 var active_seed_inventory: Inventory
@@ -87,7 +87,7 @@ func load_from_file() -> void:
 		return
 	visited_scenes = save_dict.get("visited_scenes", {})
 	replaced_shops = save_dict.get("replaced_shops", {})
-	money = save_dict.get("money", 500)
+	money = save_dict.get("money", 1000)
 	bank_balance = save_dict.get("bank_balance", 0)
 	police_trust_score = save_dict.get("police_trust_score", 1)
 	shop_is_scammer = save_dict.get("shop_is_scammer", {})
